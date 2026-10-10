@@ -1,0 +1,147 @@
+:root {
+  /* Brand Color System */
+  --color-primary: #3b0a07;
+  --color-primary-hover: #4e0f0a;
+  --color-primary-dark: #2a0705;
+  --color-primary-soft: rgba(59, 10, 7, 0.05);
+
+  --color-accent: #c8a96a;
+  --color-accent-hover: #b59556;
+  --color-accent-subtle: rgba(200, 169, 106, 0.18);
+  --color-accent-border: rgba(200, 169, 106, 0.45);
+
+  /* Neutrals */
+  --color-bg-canvas: #faf7f2;
+  --color-bg-surface: #ffffff;
+  --color-bg-subtle: #f5f0e6;
+  --color-bg-dark: #1f0605;
+
+  --color-text-headline: #1c1917;
+  --color-text-body: #44403c;
+  --color-text-muted: #6b635b;
+  --color-text-inverted: #faf7f2;
+  --color-text-accent: #8e6c2e;
+
+  /* Borders & Dividers */
+  --border-hairline: 1px solid rgba(59, 10, 7, 0.12);
+  --border-medium: 1px solid rgba(59, 10, 7, 0.24);
+  --border-accent: 1px solid rgba(200, 169, 106, 0.45);
+  --border-white-subtle: 1px solid rgba(250, 247, 242, 0.15);
+
+  /* Typography Families */
+  --font-display: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Spacing Scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* Layout Containers */
+  --container-max-width: 1200px;
+  --container-reading-width: 68ch;
+  --gutter: clamp(1.25rem, 3.5vw, 2.5rem);
+  --section-padding: clamp(4rem, 7vw, 6.5rem);
+
+  /* Micro Transitions */
+  --transition-fast: 160ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-standard: 240ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Global Reset & Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: var(--color-bg-canvas);
+  color: var(--color-text-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--color-text-body);
+  background-color: var(--color-bg-canvas);
+  overflow-x: hidden;
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--color-text-headline);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+p {
+  font-family: var(--font-body);
+  color: var(--color-text-body);
+  font-weight: 400;
+  line-height: 1.68;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--font-body);
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Accessible Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+/* Editorial Reading Column */
+.reading-width {
+  max-width: var(--container-reading-width);
+}
+
+/* Hairline Rule */
+.hairline-divider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(59, 10, 7, 0.12);
+  border: none;
+  margin: 0;
+}
+
+/* Accessibility Focus States */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
