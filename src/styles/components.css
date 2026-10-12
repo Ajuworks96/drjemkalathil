@@ -389,54 +389,98 @@
   display: none;
   align-items: center;
   justify-content: center;
-  padding: 7px;
+  width: 38px;
+  height: 38px;
+  padding: 0;
   color: var(--color-primary);
-  border: 1px solid rgba(200, 169, 106, 0.4);
+  border: 1px solid rgba(200, 169, 106, 0.45);
   background: #ffffff;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.mobile-header-toggle:hover {
+  border-color: var(--color-primary);
+  background-color: #faf7f2;
 }
 
 .mobile-executive-drawer {
   display: flex;
   flex-direction: column;
-  padding: var(--space-4) 0;
-  border-top: var(--border-hairline);
-  gap: var(--space-1);
+  padding: 16px 0 24px 0;
+  border-top: 1px solid rgba(200, 169, 106, 0.25);
+  gap: 2px;
+  animation: mobileDrawerSlide 0.22s ease-out;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@keyframes mobileDrawerSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .mobile-drawer-link {
-  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
   font-family: var(--font-body);
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--color-text-headline);
+  color: var(--color-primary);
   text-decoration: none;
-  border-radius: 6px;
-  transition: background-color var(--transition-fast);
+  border-radius: 4px;
+  border-bottom: 1px solid rgba(59, 10, 7, 0.05);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
 }
 
-.mobile-drawer-link:hover {
+.mobile-drawer-link:hover,
+.mobile-drawer-link:active {
   background-color: rgba(200, 169, 106, 0.12);
-  color: var(--color-primary);
+  color: #7d5918;
 }
 
 .mobile-drawer-cta-wrap {
-  padding-top: var(--space-4);
-  margin-top: var(--space-2);
-  border-top: var(--border-hairline);
+  padding-top: 16px;
+  margin-top: 12px;
+  border-top: 1px solid rgba(200, 169, 106, 0.25);
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  gap: 12px;
 }
 
 .mobile-drawer-call {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(200, 169, 106, 0.45);
+  background-color: #ffffff;
   font-family: var(--font-body);
   font-size: 0.8125rem;
   font-weight: 600;
   color: var(--color-primary);
   text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.mobile-drawer-call:hover,
+.mobile-drawer-call:active {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: #ffffff;
 }
 
 /* --------------------------------------------------------------------------
@@ -3444,10 +3488,70 @@
 }
 
 @media (max-width: 768px) {
-  .nav-action-cluster {
-    gap: 6px;
+  /* Top Utility Ribbon on Mobile */
+  .navbar-top-utility {
+    padding: 4px 0;
   }
 
+  .utility-dept,
+  .utility-loc,
+  .utility-status,
+  .utility-call-link,
+  .utility-left .utility-sep,
+  .utility-right .utility-sep {
+    display: none;
+  }
+
+  .utility-inst {
+    font-size: 0.625rem;
+    letter-spacing: 0.08em;
+  }
+
+  .utility-lang-switcher {
+    gap: 4px;
+    font-size: 0.625rem;
+  }
+
+  .lang-choice-btn {
+    font-size: 0.625rem;
+    padding: 1px 3px;
+  }
+
+  /* Main Navigation Bar on Mobile */
+  .navbar-main-inner {
+    padding: 8px 0;
+    gap: 8px;
+  }
+
+  .brand-luxury-suite {
+    gap: 8px;
+    min-width: 0;
+    flex-shrink: 1;
+  }
+
+  .brand-crest-frame svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .brand-lead-name {
+    font-size: 1rem;
+    line-height: 1.15;
+    white-space: nowrap;
+  }
+
+  .brand-lead-sub {
+    display: none;
+  }
+
+  .nav-action-cluster {
+    gap: 6px;
+    margin-left: auto;
+    flex-shrink: 0;
+    align-items: center;
+  }
+
+  /* Direct Desk Call Pill on Mobile */
   .nav-desk-call-pill {
     padding: 6px 10px;
     gap: 5px;
@@ -3458,13 +3562,90 @@
   }
 
   .nav-luxury-cta-btn {
-    padding: 7px 14px;
+    padding: 7px 13px;
     font-size: 0.6875rem;
+    gap: 5px;
+    letter-spacing: 0.03em;
   }
 
-  .utility-status,
-  .utility-right .utility-sep {
+  .cta-arrow-icon {
+    width: 11px;
+    height: 11px;
+  }
+
+  .mobile-header-toggle {
+    display: flex;
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 640px) {
+  /* On compact mobile screens, convert call pill to dedicated 36px circular call button */
+  .pill-call-number {
     display: none;
+  }
+
+  .nav-desk-call-pill {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    border-color: rgba(200, 169, 106, 0.55);
+  }
+
+  .pill-call-icon {
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    color: var(--color-primary);
+  }
+
+  .pill-call-icon svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .nav-luxury-cta-btn {
+    padding: 7px 11px;
+    font-size: 0.65625rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar-container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .brand-crest-frame svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .brand-lead-name {
+    font-size: 0.875rem;
+  }
+
+  .nav-action-cluster {
+    gap: 4px;
+  }
+
+  .nav-desk-call-pill {
+    width: 32px;
+    height: 32px;
+  }
+
+  .mobile-header-toggle {
+    width: 32px;
+    height: 32px;
+  }
+
+  .nav-luxury-cta-btn {
+    padding: 6px 9px;
+    font-size: 0.625rem;
   }
 
 
