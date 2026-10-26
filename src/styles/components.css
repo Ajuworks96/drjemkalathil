@@ -683,7 +683,7 @@
 /* Center doctor cutout */
 .hero-doctor-cutout-wrap {
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   left: 23%;
   height: clamp(480px, 66vh, 680px);
   z-index: 3;
@@ -895,8 +895,8 @@
   grid-template-columns: repeat(4, 1fr);
   gap: var(--space-4);
   padding-top: var(--space-6);
-  margin-top: var(--space-6);
-  border-top: 1px solid rgba(200, 169, 106, 0.22);
+  margin-top: 0;
+  border-top: 1px solid rgba(200, 169, 106, 0.35);
 }
 
 .credential-item {
