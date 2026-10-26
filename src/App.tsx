@@ -1,22 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import './App.css';
 import { Navbar } from './components/Navbar';
-import { HeroSection } from './components/HeroSection';
-import { EditorialIntroSection } from './components/EditorialIntroSection';
-import { ClinicalChaptersSection } from './components/ClinicalChaptersSection';
-import { EditorialBreathingTransition } from './components/EditorialBreathingTransition';
-import { SecondOpinionMonumentSection } from './components/SecondOpinionMonumentSection';
-import { PatientPathwayJourney } from './components/PatientPathwayJourney';
-import { DocumentTeaserSection } from './components/DocumentTeaserSection';
-import { SurgeonEditorialProfile } from './components/SurgeonEditorialProfile';
-import { GulfRouteMinimal } from './components/GulfRouteMinimal';
-import { ClinicalClarificationsAccordion } from './components/ClinicalClarificationsAccordion';
-import { PhysiciansDarkEditorial } from './components/PhysiciansDarkEditorial';
-import { FinalManifestoCTA } from './components/FinalManifestoCTA';
 import { Footer } from './components/Footer';
 import { SecondOpinionModal } from './components/SecondOpinionModal';
+import { HomePage } from './pages/HomePage';
+import { ClinicalAreasPage } from './pages/ClinicalAreasPage';
+import { HowItWorksPage } from './pages/HowItWorksPage';
+import { DocumentUploadPage } from './pages/DocumentUploadPage';
+import { ContactPage } from './pages/ContactPage';
 
-export const App: React.FC = () => {
+const ScrollToTop: React.FC = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
+export const AppContent: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedDomain, setSelectedDomain] = useState<string | undefined>(undefined);
 
@@ -31,57 +35,41 @@ export const App: React.FC = () => {
 
   return (
     <div className="site-wrapper">
+      <ScrollToTop />
       {/* 00. LOCKED APPROVED EXECUTIVE HEADER WITH DIRECT DESK CALL & LANGUAGE SWITCHER */}
       <Navbar onRequestSecondOpinion={() => handleOpenModal()} />
 
       <main className="main-content">
-        {/* 00. LOCKED APPROVED HERO SECTION (DO NOT TOUCH) */}
-        <HeroSection onRequestSecondOpinion={() => handleOpenModal()} />
-
-        {/* 01. EDITORIAL OPENING: WHEN THE DIAGNOSIS IS COMPLEX, CLARITY MATTERS */}
-        <EditorialIntroSection />
-
-        {/* 02. THREE LARGE INTERACTIVE CLINICAL CHAPTERS */}
-        <ClinicalChaptersSection onRequestSecondOpinion={(domainId) => handleOpenModal(domainId)} />
-
-        {/* 03. QUIET EDITORIAL BREATHING TRANSITION */}
-        <EditorialBreathingTransition />
-
-        {/* 04. PRIMARY CONVERSION: FULL-WIDTH #3B0A07 SECOND OPINION MONUMENT */}
-        <SecondOpinionMonumentSection onRequestSecondOpinion={() => handleOpenModal()} />
-
-        {/* 05. CLINICAL PATHWAY: HOW IT WORKS (HORIZONTAL PROGRESSIVE LINE) */}
-        <PatientPathwayJourney />
-
-        {/* 06. MEDICAL DOCUMENT EXPERIENCE: CLEAN TEASER */}
-        <DocumentTeaserSection onRequestSecondOpinion={() => handleOpenModal()} />
-
-        {/* 07. DR. JEM KALATHIL: EXPERTISE MATTERS. UNDERSTANDING MATTERS TOO. */}
-        <SurgeonEditorialProfile onRequestSecondOpinion={() => handleOpenModal()} />
-
-        {/* 08. GULF & REGIONAL PATIENTS: HORIZONTAL GEOGRAPHIC ROUTE */}
-        <GulfRouteMinimal onRequestSecondOpinion={() => handleOpenModal()} />
-
-        {/* 09. CLINICAL CLARIFICATIONS: MINIMAL EDITORIAL ACCORDION */}
-        <ClinicalClarificationsAccordion />
-
-        {/* 10. FOR REFERRING PHYSICIANS: DARK SOPHISTICATED EDITORIAL */}
-        <PhysiciansDarkEditorial onRequestSecondOpinion={() => handleOpenModal()} />
-
-        {/* 11. FINAL MANIFESTO CTA: FROM FEAR TO HOPE. FROM CONFUSION TO CLARITY. */}
-        <FinalManifestoCTA onRequestSecondOpinion={() => handleOpenModal()} />
+        <Routes>
+          <Route path="/" element={<HomePage onRequestSecondOpinion={handleOpenModal} />} />
+          <Route path="/clinical-areas" element={<ClinicalAreasPage onRequestSecondOpinion={handleOpenModal} />} />
+          <Route path="/patient-journey" element={<HowItWorksPage onRequestSecondOpinion={() => handleOpenModal()} />} />
+          <Route path="/how-it-works" element={<HowItWorksPage onRequestSecondOpinion={() => handleOpenModal()} />} />
+          <Route path="/upload-records" element={<DocumentUploadPage />} />
+          <Route path="/document-upload" element={<DocumentUploadPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="*" element={<HomePage onRequestSecondOpinion={handleOpenModal} />} />
+        </Routes>
       </main>
 
-      {/* 12. SIMPLIFIED PUBLICATION EDITORIAL FOOTER */}
+      {/* PUBLICATION EDITORIAL FOOTER */}
       <Footer onRequestSecondOpinion={() => handleOpenModal()} />
 
-      {/* STREAMLINED COMPREHENSIVE SECOND OPINION MODAL & DOCUMENT UPLOAD */}
+      {/* STREAMLINED COMPREHENSIVE SECOND OPINION MODAL */}
       <SecondOpinionModal
         isOpen={isModalOpen}
         onClose={handleCloseModal}
         initialDomainId={selectedDomain}
       />
     </div>
+  );
+};
+
+export const App: React.FC = () => {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
   );
 };
 

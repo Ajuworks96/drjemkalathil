@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { CLINICAL_DOCTOR_INFO } from '../constants/content';
 
 export interface FooterProps {
@@ -35,14 +36,11 @@ export const Footer: React.FC<FooterProps> = ({ onRequestSecondOpinion }) => {
         {/* Essential Navigation & Direct Desk Line */}
         <div className="publication-footer-middle">
           <nav className="publication-essential-nav" aria-label="Footer Essential Navigation">
-            <a href="#about-concept" className="publication-nav-link">Overview</a>
-            <a href="#clinical-areas" className="publication-nav-link">Disciplines</a>
-            <a href="#second-opinion" className="publication-nav-link">Second Opinion</a>
-            <a href="#how-it-works" className="publication-nav-link">How It Works</a>
-            <a href="#surgeon" className="publication-nav-link">The Surgeon</a>
-            <a href="#gulf-care" className="publication-nav-link">Gulf Care</a>
-            <a href="#faq" className="publication-nav-link">Clarifications</a>
-            <a href="#physicians" className="publication-nav-link">For Physicians</a>
+            <Link to="/" className="publication-nav-link">Home</Link>
+            <Link to="/clinical-areas" className="publication-nav-link">Clinical Areas</Link>
+            <Link to="/patient-journey" className="publication-nav-link">Patient Journey</Link>
+            <Link to="/upload-records" className="publication-nav-link">Upload Records</Link>
+            <Link to="/contact" className="publication-nav-link">Contact</Link>
           </nav>
 
           <div className="publication-desk-summary">

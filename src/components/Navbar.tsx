@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { CLINICAL_DOCTOR_INFO } from '../constants/content';
 import type { SupportedLanguage } from '../types';
 import { LanguageNoticeModal } from './LanguageNoticeModal';
@@ -12,15 +13,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestSecondOpinion }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeLang, setActiveLang] = useState<SupportedLanguage>('en');
   const [noticeLang, setNoticeLang] = useState<SupportedLanguage | null>(null);
+  const location = useLocation();
 
   const navLinks = [
-    { href: '#about-concept', label: 'Overview' },
-    { href: '#clinical-areas', label: 'Disciplines' },
-    { href: '#how-it-works', label: 'How It Works' },
-    { href: '#surgeon', label: 'The Surgeon' },
-    { href: '#gulf-care', label: 'Gulf Care' },
+    { to: '/', label: 'Home' },
+    { to: '/clinical-areas', label: 'Clinical Areas' },
+    { to: '/patient-journey', label: 'Patient Journey' },
+    { to: '/upload-records', label: 'Upload Records' },
+    { to: '/contact', label: 'Contact' },
   ];
-
 
   const handleLinkClick = () => {
     setMobileMenuOpen(false);
@@ -122,7 +123,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestSecondOpinion }) => {
           <div className="navbar-container">
             <div className="navbar-main-inner">
               {/* Bespoke Heraldic Brand Crest & Typography */}
-              <a href="#" className="brand-luxury-suite" aria-label="Dr. Jem Kalathil Homepage">
+              <Link to="/" className="brand-luxury-suite" aria-label="Dr. Jem Kalathil Homepage">
                 <div className="brand-crest-frame" aria-hidden="true">
                   <svg width="44" height="44" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="24" cy="24" r="23" fill="#3B0A07" stroke="#C8A96A" strokeWidth="1" />
@@ -142,18 +143,24 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestSecondOpinion }) => {
                     FRCS (EDINBURGH) · HEAD OF SURGICAL ONCOLOGY
                   </span>
                 </div>
-              </a>
+              </Link>
 
               {/* Centered Editorial Navigation Links */}
               <nav className="nav-navigation-menu" aria-label="Main Navigation">
                 <ul className="nav-links-row">
-                  {navLinks.map((link) => (
-                    <li key={link.href}>
-                      <a href={link.href} className="nav-link-item">
-                        {link.label}
-                      </a>
-                    </li>
-                  ))}
+                  {navLinks.map((link) => {
+                    const isActive = location.pathname === link.to;
+                    return (
+                      <li key={link.to}>
+                        <Link
+                          to={link.to}
+                          className={`nav-link-item ${isActive ? 'is-active' : ''}`}
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    );
+                  })}
                 </ul>
               </nav>
 
@@ -237,16 +244,22 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestSecondOpinion }) => {
                   </div>
                 </div>
 
-                {navLinks.map((link) => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    className="mobile-drawer-link"
-                    onClick={handleLinkClick}
-                  >
-                    {link.label}
-                  </a>
-                ))}
+                {navLinks.map((link) => {
+                  const isActive = location.pathname === link.to;
+                  return (
+                    <Link
+                      key={link.to}
+                      to={link.to}
+                      className={`mobile-drawer-link ${isActive ? 'is-active' : ''}`}
+                      onClick={handleLinkClick}
+                    >
+                      <span>{link.label}</span>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                        <polyline points="9 18 15 12 9 6" />
+                      </svg>
+                    </Link>
+                  );
+                })}
 
                 <div className="mobile-drawer-cta-wrap">
                   <a

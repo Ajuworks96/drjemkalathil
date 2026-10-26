@@ -74,6 +74,67 @@ export const SIMPLE_CLINICAL_AREAS = [
   },
 ];
 
+export interface ClinicalAreaDetailedItem {
+  id: string;
+  number: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  imageSrc: string;
+  procedures: string[];
+}
+
+export const CLINICAL_AREAS: ClinicalAreaDetailedItem[] = [
+  {
+    id: 'breast',
+    number: '01',
+    title: 'Oncoplastic Breast Surgery & Conservation',
+    subtitle: 'TISSUE PRESERVATION & MARGIN CONTROL',
+    description:
+      'Advancing breast conservation through oncoplastic techniques that avoid mastectomy where clinically feasible, without compromising radical disease clearance. Integrating dual-tracer sentinel lymph node biopsies and aesthetic volume displacement.',
+    imageSrc: '/images/clinical_case_review.jpg',
+    procedures: [
+      'Level I & Level II Oncoplastic Volume Displacement',
+      'Dual-Tracer Sentinel Lymph Node Biopsy (SLNB)',
+      'Skin & Nipple-Areola Sparing Mastectomy',
+      'Immediate Dual-Plane Breast Reconstruction',
+      'Radio-Guided Occult Lesion Localization (ROLL)',
+    ],
+  },
+  {
+    id: 'hipec',
+    number: '02',
+    title: 'Peritoneal Oncology, Cytoreduction & HIPEC',
+    subtitle: 'CURATIVE PERITONEAL CLEARANCE',
+    description:
+      'Pioneering aggressive multi-compartment peritonectomy combined with Hyperthermic Intraperitoneal Chemotherapy (41.5°C–42.5°C) for patients historically deemed inoperable due to peritoneal spread from colorectal, ovarian, or appendiceal origins.',
+    imageSrc: '/images/surgical_theatre.jpg',
+    procedures: [
+      'Sugarbaker Peritoneal Cancer Index (PCI) Staging',
+      'Complete Multi-Compartment Peritonectomy (CC-0 / CC-1)',
+      'Heated Intraperitoneal Perfusion (42°C for 60–90 min)',
+      'Pseudomyxoma Peritonei (PMP) Clearance',
+      'Secondary Cytoreduction for Recurrent Ovarian Cancer',
+    ],
+  },
+  {
+    id: 'minimally-invasive',
+    number: '03',
+    title: 'Minimally Invasive & Robotic Surgical Oncology',
+    subtitle: 'ROBOTIC DEXTERITY & ACCELERATED HEALING',
+    description:
+      'Deploying advanced daVinci robotic technology and 3D high-definition visualization for complex deep pelvis, retroperitoneal, and gastrointestinal resections—sparing critical nerves and blood vessels with minimal trauma.',
+    imageSrc: '/images/robotic_oncology_frontier.jpg',
+    procedures: [
+      'Robotic Low Anterior Resection & Sphincter Sparing',
+      'Minimally Invasive Esophagectomy & Gastrectomy',
+      'Retroperitoneal Sarcoma Compartmental Mobilization',
+      'Complex Pelvic & Retroperitoneal Nodal Dissection',
+      'Enhanced Recovery After Surgery (ERAS) Protocols',
+    ],
+  },
+];
+
 
 export interface EditorialChapterData {
   id: string;
