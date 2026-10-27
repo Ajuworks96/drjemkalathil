@@ -58,7 +58,7 @@ export const ClinicalChaptersSection: React.FC<ClinicalChaptersSectionProps> = (
       <div className="editorial-container">
         <header className="chapters-master-header">
           <span className="editorial-gold-kicker">SPECIALIST CLINICAL CHAPTERS</span>
-          <h2 className="chapters-master-title">AREAS OF CLINICAL FOCUS</h2>
+          <h2 className="chapters-master-title">Areas of Clinical Focus</h2>
           <div className="chapters-header-rule" aria-hidden="true" />
         </header>
       </div>
@@ -90,8 +90,8 @@ export const ClinicalChaptersSection: React.FC<ClinicalChaptersSectionProps> = (
             <div className="ch1-content-col">
               <span className="chapter-num" aria-hidden="true">01</span>
               <h3 className="ch1-heading">
-                <span className="ch-line">WHEN HOPE</span>
-                <span className="ch-line">SEEMS LOST</span>
+                <span className="ch-line">When Hope</span>
+                <span className="ch-line">Seems Lost</span>
               </h3>
 
               <div className="ch1-disciplines-list">
@@ -154,8 +154,8 @@ export const ClinicalChaptersSection: React.FC<ClinicalChaptersSectionProps> = (
             <div className="ch2-content-col">
               <span className="chapter-num" aria-hidden="true">02</span>
               <h3 className="ch2-heading">
-                <span className="ch-line">PRECISION</span>
-                <span className="ch-line">THAT PROTECTS YOU</span>
+                <span className="ch-line">Precision</span>
+                <span className="ch-line">That Protects You</span>
               </h3>
 
               {/* Horizontal dividers between procedures */}
@@ -227,9 +227,8 @@ export const ClinicalChaptersSection: React.FC<ClinicalChaptersSectionProps> = (
             <div className="ch3-text-monument">
               <span className="ch3-num" aria-hidden="true">03</span>
               <h3 className="ch3-heading">
-                <span className="ch-line">SURGERY</span>
-                <span className="ch-line">AT THE</span>
-                <span className="ch-line">FRONTIER</span>
+                <span className="ch-line">Surgery</span>
+                <span className="ch-line">at the Frontier</span>
               </h3>
 
               <div className="ch3-disciplines-row">

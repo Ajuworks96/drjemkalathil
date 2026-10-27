@@ -36,8 +36,8 @@ export const EditorialIntroSection: React.FC = () => {
 
         {/* Large headline with line-by-line reveal */}
         <h2 className="editorial-intro-headline">
-          <span className="headline-line headline-line-1">WHEN THE DIAGNOSIS IS COMPLEX,</span>
-          <span className="headline-line headline-line-2">CLARITY MATTERS.</span>
+          <span className="headline-line headline-line-1">When the Diagnosis Is Complex,</span>
+          <span className="headline-line headline-line-2">Clarity Matters.</span>
         </h2>
 
         {/* Short 2-3 line paragraph */}

@@ -73,8 +73,8 @@ export const ContactPage: React.FC = () => {
               <span className="subpage-stat-label">09:00 AM – 04:00 PM IST</span>
             </div>
             <div className="subpage-stat-item">
-              <span className="subpage-stat-val">+91 484 669 9999</span>
-              <span className="subpage-stat-label">Direct Clinical Secretary Desk</span>
+              <span className="subpage-stat-val">Clinical Desk</span>
+              <span className="subpage-stat-label">+91 484 669 9999 (OPD)</span>
             </div>
             <div className="subpage-stat-item">
               <span className="subpage-stat-val">Gulf Desk</span>
