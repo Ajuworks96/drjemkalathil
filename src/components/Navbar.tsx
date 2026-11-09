@@ -122,27 +122,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestSecondOpinion }) => {
         <div className="navbar-main-bar">
           <div className="navbar-container">
             <div className="navbar-main-inner">
-              {/* Bespoke Heraldic Brand Crest & Typography */}
-              <Link to="/" className="brand-luxury-suite" aria-label="Dr. Jem Kalathil Homepage">
-                <div className="brand-crest-frame" aria-hidden="true">
-                  <svg width="44" height="44" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="24" cy="24" r="23" fill="#3B0A07" stroke="#C8A96A" strokeWidth="1" />
-                    <circle cx="24" cy="24" r="20" stroke="#C8A96A" strokeWidth="0.7" strokeDasharray="1.5 2" opacity="0.65" />
-                    <path d="M12 28C11.5 24 13.5 19 16 16C16 18.5 15.5 22 14.5 25" stroke="#C8A96A" strokeWidth="1" strokeLinecap="round" />
-                    <path d="M14 31C14 27.5 16 23.5 18.5 21C18 23.5 17.5 26.5 16.5 29" stroke="#C8A96A" strokeWidth="1" strokeLinecap="round" />
-                    <path d="M36 28C36.5 24 34.5 19 32 16C32 18.5 32.5 22 33.5 25" stroke="#C8A96A" strokeWidth="1" strokeLinecap="round" />
-                    <path d="M34 31C34 27.5 32 23.5 29.5 21C30 23.5 30.5 26.5 31.5 29" stroke="#C8A96A" strokeWidth="1" strokeLinecap="round" />
-                    <text x="24" y="28.5" fontFamily="'Poppins', sans-serif" fontSize="14" fontWeight="600" fill="#FDFBF7" textAnchor="middle" letterSpacing="0.8">JK</text>
-                    <circle cx="24" cy="37.5" r="1.5" fill="#C8A96A" />
-                  </svg>
-                </div>
-
-                <div className="brand-typography-block">
-                  <span className="brand-lead-name">Dr. Jem Kalathil</span>
-                  <span className="brand-lead-sub">
-                    FRCS (EDINBURGH) · HEAD OF SURGICAL ONCOLOGY
-                  </span>
-                </div>
+              {/* Bespoke Luxury Brand Logo */}
+              <Link to="/" className="brand-luxury-suite" aria-label="Hope & Clarity by Dr. Jem Kalathil">
+                <img
+                  src="/images/hope_and_clarity_logo_trimmed.png"
+                  alt="Hope & Clarity by Dr. Jem Kalathil"
+                  className="brand-logo-img"
+                  width="156"
+                  height="50"
+                  loading="eager"
+                />
               </Link>
 
               {/* Centered Editorial Navigation Links */}
@@ -215,6 +204,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestSecondOpinion }) => {
             {/* Mobile Drawer Menu */}
             {mobileMenuOpen && (
               <nav className="mobile-executive-drawer" aria-label="Mobile Navigation">
+                <div className="mobile-drawer-brand">
+                  <img
+                    src="/images/hope_and_clarity_logo_trimmed.png"
+                    alt="Hope & Clarity by Dr. Jem Kalathil"
+                    className="mobile-drawer-logo"
+                    width="150"
+                    height="48"
+                  />
+                </div>
                 <div className="mobile-drawer-lang-row">
                   <span className="mobile-lang-label">Language:</span>
                   <div className="utility-lang-switcher">

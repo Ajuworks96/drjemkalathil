@@ -54,7 +54,7 @@ export const PatientPathwayJourney: React.FC = () => {
       <div className="editorial-container">
         <header className="pathway-section-header">
           <span className="editorial-gold-kicker">CLINICAL PATHWAY</span>
-          <h2 className="pathway-main-heading">HOW IT WORKS</h2>
+          <h2 className="pathway-main-heading">How It Works</h2>
         </header>
 
         {/* Horizontal Clinical Pathway with progressively drawing line */}

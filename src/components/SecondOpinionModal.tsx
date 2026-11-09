@@ -228,7 +228,7 @@ export const SecondOpinionModal: React.FC<SecondOpinionModalProps> = ({
           <div>
             <span className="simple-modal-eyebrow">DEPARTMENT OF SURGICAL ONCOLOGY</span>
             <h2 id="so-modal-title" className="modal-header-title">
-              REQUEST A SECOND OPINION
+              Request a Second Opinion
             </h2>
             <p className="modal-header-sub">
               Share your medical information and questions with our team for review.
@@ -267,14 +267,14 @@ export const SecondOpinionModal: React.FC<SecondOpinionModalProps> = ({
 
               <span className="success-ref-code">CASE REFERENCE: {submissionResult.referenceId}</span>
 
-              <h3 className="success-heading">CASE RECEIVED</h3>
+              <h3 className="success-heading">Case Received Successfully</h3>
 
               <p className="success-message">
                 Thank you. Your information has been received by the Hope &amp; Clarity team.
               </p>
 
               <div className="success-promise-card">
-                <span className="promise-title">48-HOUR RESPONSE PROMISE</span>
+                <span className="promise-title">48-Hour Response Promise</span>
                 <p className="promise-desc">
                   We aim to respond within 48 hours. Our clinical coordinator will review your submitted reports 
                   and reach out via WhatsApp / phone ({submissionResult.patientPhone}) with next steps.

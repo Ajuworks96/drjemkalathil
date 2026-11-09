@@ -20,7 +20,7 @@ export const PhysiciansDarkEditorial: React.FC<PhysiciansDarkEditorialProps> = (
         <div className="physicians-dark-box">
           <div className="physicians-dark-left">
             <span className="physicians-gold-kicker">COLLEGIAL ONCOLOGY PARTNERSHIP</span>
-            <h2 className="physicians-dark-headline">FOR REFERRING PHYSICIANS</h2>
+            <h2 className="physicians-dark-headline">For Referring Physicians</h2>
             <blockquote className="physicians-quote">
               “Complex cases deserve thoughtful collaboration.”
             </blockquote>
@@ -38,7 +38,7 @@ export const PhysiciansDarkEditorial: React.FC<PhysiciansDarkEditorialProps> = (
               className="physicians-refer-btn"
               onClick={handleReferClick}
             >
-              <span>REFER A PATIENT</span>
+              <span>Refer a Patient</span>
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>

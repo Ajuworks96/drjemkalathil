@@ -65,8 +65,8 @@ export const SurgeonEditorialProfile: React.FC<SurgeonEditorialProfileProps> = (
               <div className="surgeon-headline-wrap">
                 <span className="editorial-gold-kicker">SURGICAL LEADERSHIP</span>
                 <h2 className="surgeon-editorial-headline">
-                  EXPERTISE MATTERS.<br />
-                  UNDERSTANDING MATTERS TOO.
+                  Expertise Matters.<br />
+                  Understanding Matters Too.
                 </h2>
               </div>
             </div>
@@ -121,7 +121,7 @@ export const SurgeonEditorialProfile: React.FC<SurgeonEditorialProfileProps> = (
                 className="surgeon-primary-action-btn"
                 onClick={handleCtaClick}
               >
-                <span>MEET DR. JEM KALATHIL</span>
+                <span>Meet Dr. Jem Kalathil</span>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>

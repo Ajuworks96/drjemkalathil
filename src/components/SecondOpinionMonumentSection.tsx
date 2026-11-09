@@ -71,8 +71,8 @@ export const SecondOpinionMonumentSection: React.FC<SecondOpinionMonumentProps> 
 
         {/* Headline reveals line-by-line */}
         <h2 className="monument-headline">
-          <span className="headline-part">GET A</span>
-          <span className="headline-part">SECOND OPINION</span>
+          <span className="headline-part">Get a</span>
+          <span className="headline-part">Second Opinion</span>
         </h2>
 
         {/* Lead Narrative */}
@@ -88,7 +88,7 @@ export const SecondOpinionMonumentSection: React.FC<SecondOpinionMonumentProps> 
             className="monument-primary-btn"
             onClick={handleRequestClick}
           >
-            <span>REQUEST A SECOND OPINION</span>
+            <span>Request a Second Opinion</span>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>

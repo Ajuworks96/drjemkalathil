@@ -54,8 +54,8 @@ export const GulfRouteMinimal: React.FC<GulfRouteMinimalProps> = ({
         <header className="gulf-route-header">
           <span className="editorial-gold-kicker">CROSS-BORDER CLINICAL ACCESS</span>
           <h2 className="gulf-route-title">
-            <span className="route-line-break">SECOND OPINIONS,</span>
-            <span className="route-line-break">WHEREVER YOU ARE.</span>
+            <span className="route-line-break">Second Opinions,</span>
+            <span className="route-line-break">Wherever You Are.</span>
           </h2>
           <p className="gulf-route-supporting">
             Patients can share their medical information remotely for review.
@@ -88,7 +88,7 @@ export const GulfRouteMinimal: React.FC<GulfRouteMinimalProps> = ({
             className="monument-primary-btn"
             onClick={handleCtaClick}
           >
-            <span>REQUEST A SECOND OPINION</span>
+            <span>Request a Second Opinion</span>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>

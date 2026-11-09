@@ -19,7 +19,7 @@ export const DocumentTeaserSection: React.FC<DocumentTeaserSectionProps> = ({
         <div className="document-teaser-card">
           <div className="teaser-left">
             <span className="teaser-gold-kicker">SECURE RECORD SUBMISSION</span>
-            <h3 className="teaser-headline">READY TO SHARE YOUR CASE?</h3>
+            <h3 className="teaser-headline">Ready to Share Your Case?</h3>
             <p className="teaser-body">
               Upload reports, scans, prescriptions and clinical notes through our secure second-opinion form.
             </p>
@@ -31,7 +31,7 @@ export const DocumentTeaserSection: React.FC<DocumentTeaserSectionProps> = ({
               className="teaser-cta-button"
               onClick={handleClick}
             >
-              <span>START YOUR SECOND OPINION</span>
+              <span>Start Your Second Opinion</span>
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>

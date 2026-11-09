@@ -29,8 +29,16 @@ export const EditorialIntroSection: React.FC = () => {
       aria-label="Hope and Clarity Introduction"
     >
       <div className="editorial-intro-container">
-        {/* Small gold label */}
+        {/* Heraldic HC Monogram & Gold Label */}
         <div className="editorial-intro-tag-wrap">
+          <img
+            src="/images/hc_monogram.png"
+            alt=""
+            className="editorial-intro-monogram"
+            width="56"
+            height="36"
+            aria-hidden="true"
+          />
           <span className="editorial-intro-gold-tag">HOPE & CLARITY</span>
         </div>
 

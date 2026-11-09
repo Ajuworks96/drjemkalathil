@@ -13,11 +13,25 @@ export const Footer: React.FC<FooterProps> = ({ onRequestSecondOpinion }) => {
         {/* Top Publication Masthead */}
         <div className="publication-footer-masthead">
           <div className="publication-brand-block">
-            <span className="publication-brand-title">HOPE & CLARITY</span>
+            <Link to="/" className="publication-logo-link" aria-label="Hope & Clarity by Dr. Jem Kalathil">
+              <img
+                src="/images/hope_and_clarity_logo_trimmed.png"
+                alt="Hope & Clarity by Dr. Jem Kalathil"
+                className="publication-footer-logo"
+                width="220"
+                height="70"
+                loading="lazy"
+              />
+            </Link>
             <p className="publication-brand-motto">
               From fear to hope.<br />
               From confusion to clarity.
             </p>
+            <div className="publication-credentials-tag">
+              <span>Department of Surgical Oncology</span>
+              <span className="dot-sep" aria-hidden="true">·</span>
+              <span>Aster Medcity, Kochi</span>
+            </div>
           </div>
 
           <div className="publication-cta-wrap">

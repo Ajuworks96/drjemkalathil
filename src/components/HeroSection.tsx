@@ -77,15 +77,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
           </p>
         </div>
 
-        {/* Right Content Block (Matches Dr. James profile box & CTA) */}
+        {/* Right Content Block (Authoritative Profile Card & Second Opinion Action) */}
         <div className="hero-right-card">
-          <span className="hero-right-kicker">I AM DR. JEM KALATHIL</span>
+          <span className="hero-right-kicker">HEAD OF SURGICAL ONCOLOGY</span>
           <h1 className="hero-right-name">Dr. Jem Kalathil</h1>
           <div className="hero-right-creds">
             {CLINICAL_DOCTOR_INFO.credentials}
           </div>
           <div className="hero-right-dept">
-            Head of Department · Surgical Oncology, Aster Medcity
+            Senior Consultant · Aster Medcity, Kochi
           </div>
 
           <div className="hero-right-actions">

@@ -45,7 +45,7 @@ export const ClinicalClarificationsAccordion: React.FC = () => {
       <div className="editorial-container">
         <header className="faq-editorial-header">
           <span className="editorial-gold-kicker">FOR PATIENTS AND CAREGIVERS</span>
-          <h2 className="faq-editorial-title">CLINICAL CLARIFICATIONS</h2>
+          <h2 className="faq-editorial-title">Clinical Clarifications</h2>
         </header>
 
         {/* Large Horizontal Editorial Accordion Rows */}

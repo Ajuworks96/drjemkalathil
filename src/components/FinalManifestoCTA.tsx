@@ -43,9 +43,18 @@ export const FinalManifestoCTA: React.FC<FinalManifestoCTAProps> = ({
         <div className="manifesto-inner-wrap">
           <div className="manifesto-gold-line-top" aria-hidden="true" />
 
+          <img
+            src="/images/hc_monogram.png"
+            alt=""
+            className="manifesto-monogram"
+            width="58"
+            height="38"
+            aria-hidden="true"
+          />
+
           <h2 className="manifesto-huge-heading">
-            <span className="manifesto-line">FROM FEAR TO HOPE.</span>
-            <span className="manifesto-line">FROM CONFUSION TO CLARITY.</span>
+            <span className="manifesto-line">From Fear to Hope.</span>
+            <span className="manifesto-line">From Confusion to Clarity.</span>
           </h2>
 
           <p className="manifesto-minimal-text">
@@ -58,7 +67,7 @@ export const FinalManifestoCTA: React.FC<FinalManifestoCTAProps> = ({
               className="manifesto-primary-btn"
               onClick={handleRequestClick}
             >
-              <span>REQUEST A SECOND OPINION</span>
+              <span>Request a Second Opinion</span>
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
