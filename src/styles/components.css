@@ -25,7 +25,7 @@
 
 /* 1.1 Top Institutional Utility Ribbon */
 .navbar-top-utility {
-  background-color: #260503;
+  background-color: #060606;
   border-bottom: 1px solid rgba(200, 169, 106, 0.24);
   color: rgba(250, 247, 242, 0.82);
   font-family: var(--font-body);
@@ -170,7 +170,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 12px 0;
-  border-bottom: 1px solid rgba(59, 10, 7, 0.1);
+  border-bottom: 1px solid rgba(10, 10, 10, 0.1);
   margin-bottom: 12px;
 }
 
@@ -186,7 +186,7 @@
 
 /* 1.2 Main Executive Frosted Bar */
 .navbar-main-bar {
-  background: rgba(22, 3, 2, 0.95);
+  background: rgba(10, 10, 10, 0.96);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border-bottom: 1px solid rgba(200, 169, 106, 0.25);
@@ -314,7 +314,7 @@
 .nav-desk-call-pill:hover {
   border-color: var(--color-accent);
   background-color: var(--color-accent);
-  color: #180302;
+  color: #0a0a0a;
   transform: translateY(-1px);
 }
 
@@ -332,8 +332,8 @@
 }
 
 .nav-desk-call-pill:hover .pill-call-icon {
-  background-color: rgba(24, 3, 2, 0.25);
-  color: #180302;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #0a0a0a;
 }
 
 .pill-call-number {
@@ -363,7 +363,7 @@
   white-space: nowrap;
   flex-shrink: 0;
   min-width: max-content;
-  box-shadow: 0 3px 12px rgba(59, 10, 7, 0.16);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
   transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
@@ -371,7 +371,7 @@
 .nav-luxury-cta-btn:hover {
   background-color: var(--color-primary-hover);
   transform: translateY(-1px);
-  box-shadow: 0 5px 16px rgba(59, 10, 7, 0.24);
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.35);
 }
 
 .cta-arrow-icon {
@@ -478,7 +478,7 @@
 .mobile-drawer-call:active {
   border-color: var(--color-accent);
   background-color: var(--color-accent);
-  color: #180302;
+  color: #0a0a0a;
 }
 
 /* --------------------------------------------------------------------------
@@ -594,7 +594,7 @@
 
 .section-divider-line {
   height: 1px;
-  background-color: rgba(59, 10, 7, 0.12);
+  background-color: rgba(10, 10, 10, 0.12);
   flex-grow: 1;
 }
 
@@ -622,9 +622,9 @@
   position: relative;
   padding-top: clamp(1.5rem, 3.5vw, 3rem);
   padding-bottom: clamp(3rem, 5vw, 4.5rem);
-  background: radial-gradient(circle at 70% 28%, rgba(200, 169, 106, 0.16) 0%, transparent 45%),
-              radial-gradient(circle at 26% 45%, rgba(68, 12, 9, 0.8) 0%, transparent 60%),
-              linear-gradient(165deg, #180302 0%, #240504 52%, #120202 100%);
+  background: radial-gradient(circle at 70% 28%, rgba(200, 169, 106, 0.14) 0%, transparent 45%),
+              radial-gradient(circle at 26% 45%, rgba(26, 26, 26, 0.85) 0%, transparent 60%),
+              linear-gradient(165deg, #0c0c0c 0%, #060606 52%, #000000 100%);
   border-bottom: 1px solid rgba(200, 169, 106, 0.24);
   overflow: hidden;
 }
@@ -699,7 +699,7 @@
   transform: translateX(-50%);
   width: 85%;
   height: 75%;
-  background: radial-gradient(circle, rgba(200, 169, 106, 0.18) 0%, rgba(59, 10, 7, 0.35) 50%, transparent 75%);
+  background: radial-gradient(circle, rgba(200, 169, 106, 0.16) 0%, rgba(20, 20, 20, 0.5) 50%, transparent 75%);
   filter: blur(44px);
   z-index: -1;
   pointer-events: none;
@@ -750,7 +750,7 @@
 
 .channel-icon-btn:hover {
   background-color: var(--color-accent);
-  color: #180302;
+  color: #0a0a0a;
   border-color: var(--color-accent);
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(200, 169, 106, 0.35);
@@ -771,7 +771,7 @@
   width: 100%;
   max-width: 460px;
   margin-bottom: var(--space-4);
-  background: rgba(26, 4, 3, 0.82);
+  background: rgba(14, 14, 14, 0.88);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border: 1px solid rgba(200, 169, 106, 0.42);
@@ -827,7 +827,7 @@
   width: 100%;
   justify-content: center;
   background: linear-gradient(135deg, #c8a96a 0%, #b59556 100%);
-  color: #180302;
+  color: #0a0a0a;
   border: 1px solid rgba(255, 255, 255, 0.35);
   font-weight: 600;
   box-shadow: 0 8px 24px rgba(200, 169, 106, 0.3);
@@ -836,7 +836,7 @@
 
 .hero-primary-cta:hover {
   background: linear-gradient(135deg, #dfc082 0%, #c8a96a 100%);
-  color: #120202;
+  color: #0a0a0a;
   box-shadow: 0 10px 28px rgba(200, 169, 106, 0.45);
   transform: translateY(-2px);
 }
@@ -1031,7 +1031,7 @@
   font-family: var(--font-body);
   font-size: 0.95rem;
   line-height: 1.75;
-  color: #4a2024;
+  color: #33302c;
   max-width: 680px;
   margin: 0 auto clamp(1.5rem, 2.8vw, 2.25rem) auto;
   opacity: 0;
@@ -1062,7 +1062,7 @@
   font-style: italic;
   font-weight: 400;
   line-height: 1.6;
-  color: #633318;
+  color: #1a1a1a;
   margin: 0;
   letter-spacing: 0.01em;
 }
@@ -1092,7 +1092,7 @@
 .clinical-chapters-master {
   padding: clamp(5.5rem, 9.5vw, 8.5rem) 0 clamp(4rem, 7vw, 6rem) 0;
   background-color: #FAF7F2;
-  border-top: 1px solid rgba(59, 10, 7, 0.08);
+  border-top: 1px solid rgba(10, 10, 10, 0.08);
 }
 
 .chapters-master-header {
@@ -1238,7 +1238,7 @@
    CHAPTER 01: WHEN HOPE SEEMS LOST (Grid-Breaker 55% / 45%)
    -------------------------------------------------------------------------- */
 .chapter-one {
-  border-bottom: 1px solid rgba(59, 10, 7, 0.08);
+  border-bottom: 1px solid rgba(10, 10, 10, 0.08);
 }
 
 .ch1-asymmetric-grid {
@@ -1259,7 +1259,7 @@
   overflow: hidden;
   clip-path: inset(0 0 0 0);
   border: 1px solid rgba(200, 169, 106, 0.4);
-  box-shadow: 0 16px 40px rgba(59, 10, 7, 0.06);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
 }
 
 .ch1-image {
@@ -1309,7 +1309,7 @@
   font-family: var(--font-body);
   font-size: 0.8125rem;
   font-weight: 600;
-  color: #633318;
+  color: var(--color-primary);
   letter-spacing: 0.02em;
 }
 
@@ -1333,7 +1333,7 @@
    CHAPTER 02: PRECISION THAT PROTECTS YOU (Image on LEFT, Text on RIGHT)
    -------------------------------------------------------------------------- */
 .chapter-two {
-  border-bottom: 1px solid rgba(59, 10, 7, 0.08);
+  border-bottom: 1px solid rgba(10, 10, 10, 0.08);
 }
 
 .ch2-split-grid {
@@ -1353,7 +1353,7 @@
   height: clamp(380px, 44vw, 500px);
   overflow: hidden;
   border: 1px solid rgba(200, 169, 106, 0.4);
-  box-shadow: 0 16px 40px rgba(59, 10, 7, 0.06);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
   opacity: 0;
   transform: translateX(-24px);
   transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1390,7 +1390,7 @@
   display: flex;
   flex-direction: column;
   margin-bottom: var(--space-6);
-  border-top: 1px solid rgba(59, 10, 7, 0.1);
+  border-top: 1px solid rgba(10, 10, 10, 0.1);
 }
 
 .procedure-row {
@@ -1398,7 +1398,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 12px 0;
-  border-bottom: 1px solid rgba(59, 10, 7, 0.08);
+  border-bottom: 1px solid rgba(10, 10, 10, 0.08);
   gap: 12px;
 }
 
@@ -1456,9 +1456,9 @@
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(38, 5, 3, 0.94) 0%,
-    rgba(59, 10, 7, 0.88) 55%,
-    rgba(20, 3, 2, 0.92) 100%
+    rgba(10, 10, 10, 0.95) 0%,
+    rgba(18, 18, 18, 0.88) 55%,
+    rgba(5, 5, 5, 0.96) 100%
   );
 }
 
@@ -1591,16 +1591,18 @@
 }
 
 /* --------------------------------------------------------------------------
-   PRIMARY CONVERSION: FULL-WIDTH #3B0A07 SECOND OPINION MONUMENT
+   PRIMARY CONVERSION: FULL-WIDTH LUXURY OBSIDIAN BLACK SECOND OPINION MONUMENT
    -------------------------------------------------------------------------- */
 .second-opinion-monument-fullwidth {
   width: 100%;
-  background-color: #3B0A07;
+  background: linear-gradient(180deg, #0a0a0a 0%, #000000 100%);
   color: #FAF7F2;
   padding: clamp(6.5rem, 11vw, 10rem) 0;
   position: relative;
   overflow: hidden;
   text-align: center;
+  border-top: 1px solid rgba(200, 169, 106, 0.25);
+  border-bottom: 1px solid rgba(200, 169, 106, 0.25);
   transition: background-color 0.8s ease;
 }
 
@@ -1769,7 +1771,7 @@
   align-items: center;
   gap: 12px;
   background-color: var(--color-accent);
-  color: #260503;
+  color: #0a0a0a;
   border: 1px solid var(--color-accent);
   padding: 16px 34px;
   font-family: var(--font-body);
@@ -1817,7 +1819,7 @@
 .patient-pathway-journey {
   padding: clamp(6rem, 10vw, 9.5rem) 0;
   background-color: var(--color-bg-canvas);
-  border-top: 1px solid rgba(59, 10, 7, 0.08);
+  border-top: 1px solid rgba(10, 10, 10, 0.08);
 }
 
 .pathway-section-header {
@@ -1845,7 +1847,7 @@
   left: 12%;
   right: 12%;
   height: 1px;
-  background-color: rgba(59, 10, 7, 0.12);
+  background-color: rgba(10, 10, 10, 0.12);
   z-index: 1;
 }
 
@@ -1880,7 +1882,7 @@
   height: 44px;
   border-radius: 50%;
   background-color: var(--color-bg-canvas);
-  border: 1px solid rgba(59, 10, 7, 0.2);
+  border: 1px solid rgba(10, 10, 10, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1893,14 +1895,14 @@
   font-family: var(--font-display);
   font-size: 1.15rem;
   font-weight: 600;
-  color: rgba(59, 10, 7, 0.4);
+  color: rgba(10, 10, 10, 0.4);
   transition: color 0.5s ease;
 }
 
 .station-active .station-indicator-wrap {
   border-color: var(--color-accent);
   box-shadow: 0 0 16px rgba(200, 169, 106, 0.35);
-  background-color: #260503;
+  background-color: #0a0a0a;
 }
 
 .station-active .station-number {
@@ -1931,8 +1933,8 @@
 .document-teaser-strip {
   padding: clamp(2.5rem, 5vw, 4rem) 0;
   background-color: #FAF5EE;
-  border-top: 1px solid rgba(59, 10, 7, 0.08);
-  border-bottom: 1px solid rgba(59, 10, 7, 0.08);
+  border-top: 1px solid rgba(10, 10, 10, 0.08);
+  border-bottom: 1px solid rgba(10, 10, 10, 0.08);
 }
 
 .document-teaser-card {
@@ -1992,7 +1994,7 @@
 }
 
 .teaser-cta-button:hover {
-  background-color: #4e0f0a;
+  background-color: #222222;
   transform: translateY(-2px);
 }
 
@@ -2002,7 +2004,7 @@
 .surgeon-editorial-section {
   padding: clamp(6rem, 10vw, 9.5rem) 0;
   background-color: #FAF7F2;
-  border-bottom: 1px solid rgba(59, 10, 7, 0.08);
+  border-bottom: 1px solid rgba(10, 10, 10, 0.08);
 }
 
 .surgeon-editorial-grid {
@@ -2022,7 +2024,7 @@
   height: clamp(440px, 48vw, 560px);
   overflow: hidden;
   border: 1px solid rgba(200, 169, 106, 0.45);
-  box-shadow: 0 16px 44px rgba(59, 10, 7, 0.08);
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.08);
 }
 
 .surgeon-portrait-img {
@@ -2169,7 +2171,7 @@
 }
 
 .surgeon-primary-action-btn:hover {
-  background-color: #4e0f0a;
+  background-color: #222222;
   transform: translateY(-2px);
 }
 
@@ -2192,7 +2194,7 @@
 .gulf-route-minimal-section {
   padding: clamp(6rem, 10vw, 9.5rem) 0;
   background-color: var(--color-bg-canvas);
-  border-bottom: 1px solid rgba(59, 10, 7, 0.08);
+  border-bottom: 1px solid rgba(10, 10, 10, 0.08);
   text-align: center;
 }
 
@@ -2236,7 +2238,7 @@
   left: 6%;
   right: 6%;
   height: 1px;
-  background-color: rgba(59, 10, 7, 0.12);
+  background-color: rgba(10, 10, 10, 0.12);
   z-index: 1;
 }
 
@@ -2323,7 +2325,7 @@
 .clinical-faq-editorial-section {
   padding: clamp(6rem, 10vw, 9.5rem) 0;
   background-color: #FAF7F2;
-  border-bottom: 1px solid rgba(59, 10, 7, 0.08);
+  border-bottom: 1px solid rgba(10, 10, 10, 0.08);
 }
 
 .faq-editorial-header {
@@ -2342,11 +2344,11 @@
 .faq-editorial-accordion-list {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid rgba(59, 10, 7, 0.12);
+  border-top: 1px solid rgba(10, 10, 10, 0.1);
 }
 
 .faq-editorial-row {
-  border-bottom: 1px solid rgba(59, 10, 7, 0.12);
+  border-bottom: 1px solid rgba(10, 10, 10, 0.1);
   transition: background-color var(--transition-fast);
 }
 
@@ -2417,7 +2419,7 @@
    -------------------------------------------------------------------------- */
 .physicians-dark-section {
   padding: clamp(5.5rem, 9vw, 8.5rem) 0;
-  background-color: #260503;
+  background-color: #0a0a0a;
   color: #FAF7F2;
   border-bottom: 1px solid rgba(200, 169, 106, 0.2);
 }
@@ -2479,7 +2481,7 @@
   align-items: center;
   gap: 12px;
   background-color: var(--color-accent);
-  color: #260503;
+  color: #0a0a0a;
   border: 1px solid var(--color-accent);
   padding: 16px 32px;
   font-family: var(--font-body);
@@ -2608,7 +2610,7 @@
 }
 
 .manifesto-primary-btn:hover {
-  background-color: #4e0f0a;
+  background-color: #222222;
   transform: translateY(-2px);
 }
 
@@ -2705,7 +2707,7 @@
 }
 
 .simple-modal-commitment-strip {
-  background-color: #260503;
+  background-color: #0a0a0a;
   padding: 10px 28px;
   border-bottom: 1px solid rgba(200, 169, 106, 0.3);
 }
@@ -2738,7 +2740,7 @@
   gap: 16px;
   padding: 14px 20px;
   background-color: #FAF5EE;
-  border-bottom: 1px solid rgba(59, 10, 7, 0.08);
+  border-bottom: 1px solid rgba(10, 10, 10, 0.08);
   margin-bottom: 24px;
 }
 
@@ -2771,7 +2773,7 @@
 
 .step-dot-wrap.active .step-num-pill {
   background-color: var(--color-accent);
-  color: #260503;
+  color: #0a0a0a;
 }
 
 .step-name {
@@ -2784,7 +2786,7 @@
 .step-connecting-line {
   width: 40px;
   height: 1px;
-  background-color: rgba(59, 10, 7, 0.2);
+  background-color: rgba(10, 10, 10, 0.2);
 }
 
 .form-section-intro {
@@ -2821,7 +2823,7 @@
   font-size: 0.875rem;
   color: var(--color-primary);
   background-color: #FFFFFF;
-  border: 1px solid rgba(59, 10, 7, 0.2);
+  border: 1px solid rgba(10, 10, 10, 0.18);
   padding: 10px 14px;
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
@@ -2931,7 +2933,7 @@
   justify-content: space-between;
   padding: 10px 14px;
   background-color: #FFFFFF;
-  border: 1px solid rgba(59, 10, 7, 0.1);
+  border: 1px solid rgba(10, 10, 10, 0.1);
   gap: 12px;
 }
 
@@ -2962,7 +2964,7 @@
 }
 
 .badge-doc {
-  background-color: rgba(59, 10, 7, 0.08);
+  background-color: rgba(10, 10, 10, 0.08);
   color: var(--color-primary);
 }
 
@@ -3050,7 +3052,7 @@
   align-items: center;
   justify-content: space-between;
   padding-top: 16px;
-  border-top: 1px solid rgba(59, 10, 7, 0.1);
+  border-top: 1px solid rgba(10, 10, 10, 0.1);
   margin-top: 24px;
 }
 
@@ -3071,7 +3073,7 @@
   font-weight: 700;
   letter-spacing: 0.14em;
   color: var(--color-accent);
-  background-color: #260503;
+  background-color: #0a0a0a;
   padding: 4px 12px;
   margin-bottom: 12px;
 }
@@ -3233,7 +3235,7 @@
   padding: 10px 18px;
   background: transparent;
   color: var(--color-primary);
-  border: 1px solid rgba(59, 10, 7, 0.25);
+  border: 1px solid rgba(10, 10, 10, 0.2);
   font-family: var(--font-body);
   font-size: 0.8125rem;
   font-weight: 600;
@@ -3243,7 +3245,7 @@
 }
 
 .lang-btn-continue:hover {
-  background-color: rgba(59, 10, 7, 0.05);
+  background-color: rgba(10, 10, 10, 0.05);
 }
 
 /* RTL Support for Arabic */
@@ -3266,7 +3268,7 @@
    19. SIMPLIFIED PUBLICATION EDITORIAL FOOTER
    -------------------------------------------------------------------------- */
 .publication-editorial-footer {
-  background-color: #260503;
+  background-color: #0a0a0a;
   color: #FAF7F2;
   padding: clamp(5rem, 8vw, 7rem) 0 clamp(2rem, 3.5vw, 3rem) 0;
   border-top: 2px solid var(--color-accent);
@@ -3929,8 +3931,8 @@
 
 .subpage-wrapper {
   min-height: 100vh;
-  background: linear-gradient(180deg, #130204 0%, #1a0306 240px, #0e0102 100%);
-  color: #f4ede4;
+  background: linear-gradient(180deg, #0a0a0a 0%, #111111 240px, #060606 100%);
+  color: #faf7f2;
   position: relative;
   overflow-x: hidden;
 }
@@ -3938,7 +3940,7 @@
 /* 1. Subpage Editorial Header & Breadcrumb */
 .subpage-editorial-hero {
   padding: 115px 0 65px;
-  background: radial-gradient(ellipse 90% 80% at 50% -20%, #420a0f 0%, #190306 60%, #0d0102 100%);
+  background: radial-gradient(ellipse 90% 80% at 50% -20%, #1a1a1a 0%, #0d0d0d 60%, #060606 100%);
   border-bottom: 1px solid rgba(212, 175, 55, 0.28);
   position: relative;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
@@ -3952,7 +3954,7 @@
   transform: translateX(-50%);
   width: 1000px;
   height: 360px;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, rgba(90, 16, 12, 0) 70%);
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
   pointer-events: none;
 }
 
@@ -4114,7 +4116,7 @@
 /* 2. Clinical Areas Detailed Showcase */
 .disciplines-detailed-section {
   padding: 85px 0 100px;
-  background: linear-gradient(180deg, #0d0102 0%, #150204 100%);
+  background: linear-gradient(180deg, #0a0a0a 0%, #111111 100%);
 }
 
 .disciplines-tab-nav {
@@ -4189,7 +4191,7 @@
 }
 
 .discipline-active-card {
-  background: #170305;
+  background: #0e0e0e;
   border: 1px solid rgba(212, 175, 55, 0.28);
   border-radius: 10px;
   padding: 34px 38px;
@@ -4658,7 +4660,7 @@
 }
 
 .faq-dark-item {
-  background: #170305;
+  background: #0e0e0e;
   border: 1px solid rgba(212, 175, 55, 0.2);
   border-radius: 8px;
   overflow: hidden;
@@ -4714,7 +4716,7 @@
 
 .subpage-bottom-cta {
   padding: 85px 0;
-  background: radial-gradient(circle at 50% 0%, #2f070b 0%, #100203 100%);
+  background: radial-gradient(circle at 50% 0%, #161616 0%, #080808 100%);
   border-top: 1px solid rgba(212, 175, 55, 0.25);
   text-align: center;
 }
@@ -4756,7 +4758,7 @@
 /* 5. Patient Pathway / How It Works Detailed Stages */
 .subpage-pathway-interactive-section {
   padding: 85px 0;
-  background: linear-gradient(180deg, #0e0102 0%, #160204 100%);
+  background: linear-gradient(180deg, #0a0a0a 0%, #111111 100%);
 }
 
 .pathway-track-header {
@@ -4986,7 +4988,7 @@
 }
 
 .checklist-dark-card {
-  background: #160204;
+  background: #0e0e0e;
   border: 1px solid rgba(212, 175, 55, 0.22);
   border-radius: 8px;
   padding: 28px 24px;
@@ -5115,7 +5117,7 @@
   border: 1px solid rgba(212, 175, 55, 0.26);
   border-radius: 8px;
   overflow: hidden;
-  background: #160204;
+  background: #0e0e0e;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
 }
 
@@ -5293,7 +5295,7 @@
 /* 9. Medical Document Upload Wizard & Bank-Grade Form */
 .upload-form-section {
   padding: 60px 0 100px;
-  background: linear-gradient(180deg, #0e0102 0%, #150204 100%);
+  background: linear-gradient(180deg, #0a0a0a 0%, #111111 100%);
 }
 
 .dossier-wizard-nav {
@@ -5349,7 +5351,7 @@
 
 .wizard-step-pill.is-active .w-num {
   background: #d4af37;
-  color: #120204;
+  color: #0a0a0a;
 }
 
 .wizard-sep {
@@ -5367,7 +5369,7 @@
 }
 
 .form-section-card {
-  background: rgba(23, 3, 5, 0.8);
+  background: rgba(14, 14, 14, 0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(212, 175, 55, 0.22);
@@ -5775,7 +5777,7 @@
 .upload-success-monument {
   max-width: 800px;
   margin: 30px auto;
-  background: #170305;
+  background: #0e0e0e;
   border: 1px solid rgba(212, 175, 55, 0.38);
   border-radius: 10px;
   padding: 54px 50px;
@@ -5882,7 +5884,7 @@
 /* 10. Contact Page & Consultation Grid */
 .contact-main-section {
   padding: 80px 0 100px;
-  background: linear-gradient(180deg, #0d0102 0%, #150204 100%);
+  background: linear-gradient(180deg, #0a0a0a 0%, #111111 100%);
 }
 
 .contact-columns-grid {
@@ -5893,7 +5895,7 @@
 }
 
 .contact-card-premium {
-  background: #170305;
+  background: #0e0e0e;
   border: 1px solid rgba(212, 175, 55, 0.26);
   border-radius: 10px;
   overflow: hidden;
@@ -6116,7 +6118,7 @@
 }
 
 .campus-travel-card {
-  background: #170305;
+  background: #0e0e0e;
   border: 1px solid rgba(212, 175, 55, 0.24);
   border-radius: 10px;
   padding: 28px 24px;
@@ -6164,7 +6166,7 @@
 }
 
 .contact-form-card {
-  background: rgba(23, 3, 5, 0.85);
+  background: rgba(14, 14, 14, 0.88);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(212, 175, 55, 0.24);

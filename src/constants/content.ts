@@ -6,7 +6,7 @@ export const CLINICAL_DOCTOR_INFO = {
   role: 'Senior Consultant & Head of Department of Surgical Oncology',
   hospital: 'Aster Medcity, Kochi',
   location: 'Cheranallur, Kochi, Kerala 682027, India',
-  experienceYears: '25+',
+  experienceYears: '30+',
   fellowships: [
     'Fellow of the Royal College of Surgeons (FRCS), Edinburgh',
     'Former Senior Consultant, Breast Unit, Royal Hospital, Muscat, Oman',

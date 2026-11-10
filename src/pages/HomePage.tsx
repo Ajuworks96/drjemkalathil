@@ -31,7 +31,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onRequestSecondOpinion }) =>
       {/* 03. QUIET EDITORIAL BREATHING TRANSITION */}
       <EditorialBreathingTransition />
 
-      {/* 04. PRIMARY CONVERSION: FULL-WIDTH #3B0A07 SECOND OPINION MONUMENT */}
+      {/* 04. PRIMARY CONVERSION: FULL-WIDTH LUXURY BLACK SECOND OPINION MONUMENT */}
       <SecondOpinionMonumentSection onRequestSecondOpinion={() => onRequestSecondOpinion()} />
 
       {/* 05. CLINICAL PATHWAY: HOW IT WORKS (HORIZONTAL PROGRESSIVE LINE) */}

@@ -103,13 +103,13 @@ export const ClinicalAreasPage: React.FC<ClinicalAreasPageProps> = ({ onRequestS
               Disciplines of Precision & Surgical Leadership
             </h1>
             <p className="subpage-lead">
-              Under the clinical leadership of <strong>Dr. Jem Kalathil</strong> (FRCS Edinburgh, 25+ Years Experience), our quaternary surgical oncology units balance complete curative cancer clearance with anatomical dignity, tissue preservation, and accelerated recovery.
+              Under the clinical leadership of <strong>Dr. Jem Kalathil</strong> (FRCS Edinburgh, 30+ Years Experience), our quaternary surgical oncology units balance complete curative cancer clearance with anatomical dignity, tissue preservation, and accelerated recovery.
             </p>
           </div>
 
           <div className="subpage-stats-strip">
             <div className="subpage-stat-item">
-              <span className="subpage-stat-val">25+</span>
+              <span className="subpage-stat-val">30+</span>
               <span className="subpage-stat-label">Years Surgical Leadership</span>
             </div>
             <div className="subpage-stat-item">

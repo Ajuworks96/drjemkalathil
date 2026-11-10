@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { CLINICAL_DOCTOR_INFO } from '../constants/content';
 
+const CURRENT_YEAR = new Date().getFullYear();
+
 export interface FooterProps {
   onRequestSecondOpinion: () => void;
 }
@@ -88,7 +90,7 @@ export const Footer: React.FC<FooterProps> = ({ onRequestSecondOpinion }) => {
         {/* Bottom Colophon Bar */}
         <div className="publication-colophon-bar">
           <div className="colophon-left">
-            <span>© {new Date().getFullYear()} Dr. Jem Kalathil. All rights reserved.</span>
+            <span>© {CURRENT_YEAR} Dr. Jem Kalathil. All rights reserved.</span>
             <span className="colophon-sep" aria-hidden="true">/</span>
             <span>Department of Surgical Oncology, Aster Medcity</span>
           </div>

@@ -11,6 +11,13 @@ export interface SecondOpinionModalProps {
   initialDomainId?: string;
 }
 
+const getInitialCondition = (domainId?: string): string => {
+  if (domainId === 'peritoneal-hipec') return 'Peritoneal Surface Malignancy / HIPEC Candidate';
+  if (domainId === 'breast-oncology') return 'Breast Cancer / Oncoplastic Evaluation';
+  if (domainId === 'sarcoma-soft-tissue') return 'Soft Tissue / Retroperitoneal Sarcoma';
+  return '';
+};
+
 export const SecondOpinionModal: React.FC<SecondOpinionModalProps> = ({
   isOpen,
   onClose,
@@ -25,7 +32,7 @@ export const SecondOpinionModal: React.FC<SecondOpinionModalProps> = ({
     city: '',
     contactPhone: '',
     contactEmail: '',
-    diagnosisCondition: '',
+    diagnosisCondition: getInitialCondition(initialDomainId),
     currentTreatment: '',
     previousSurgery: '',
     treatingHospitalDoctor: '',
@@ -39,24 +46,16 @@ export const SecondOpinionModal: React.FC<SecondOpinionModalProps> = ({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissionResult, setSubmissionResult] = useState<SubmissionResponse | null>(null);
 
-  // Sync initial domain if provided
-  useEffect(() => {
-    if (initialDomainId) {
-      setFormData((prev) => ({
-        ...prev,
-        diagnosisCategory: initialDomainId as any,
-        diagnosisCondition:
-          prev.diagnosisCondition ||
-          (initialDomainId === 'peritoneal-hipec'
-            ? 'Peritoneal Surface Malignancy / HIPEC Candidate'
-            : initialDomainId === 'breast-oncology'
-            ? 'Breast Cancer / Oncoplastic Evaluation'
-            : initialDomainId === 'sarcoma-soft-tissue'
-            ? 'Soft Tissue / Retroperitoneal Sarcoma'
-            : ''),
-      }));
-    }
-  }, [initialDomainId]);
+  // Sync initial domain during render when prop changes
+  const [prevDomainId, setPrevDomainId] = useState(initialDomainId);
+  if (initialDomainId !== prevDomainId) {
+    setPrevDomainId(initialDomainId);
+    setFormData((prev) => ({
+      ...prev,
+      diagnosisCategory: initialDomainId ? (initialDomainId as any) : '',
+      diagnosisCondition: prev.diagnosisCondition || getInitialCondition(initialDomainId),
+    }));
+  }
 
   // Track form open/start
   useEffect(() => {

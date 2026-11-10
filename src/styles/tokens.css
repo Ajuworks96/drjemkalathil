@@ -1,32 +1,35 @@
 :root {
-  /* Brand Color System */
-  --color-primary: #3b0a07;
-  --color-primary-hover: #4e0f0a;
-  --color-primary-dark: #2a0705;
-  --color-primary-soft: rgba(59, 10, 7, 0.05);
+  /* Brand Color System — Luxury Obsidian Black & Warm Champagne Gold */
+  --color-primary: #0a0a0a;
+  --color-primary-hover: #1a1a1a;
+  --color-primary-dark: #000000;
+  --color-primary-soft: rgba(10, 10, 10, 0.05);
 
   --color-accent: #c8a96a;
-  --color-accent-hover: #b59556;
+  --color-accent-hover: #d4af37;
   --color-accent-subtle: rgba(200, 169, 106, 0.18);
   --color-accent-border: rgba(200, 169, 106, 0.45);
 
-  /* Neutrals */
+  /* Neutrals — Warm Cream / Ivory Canvas & Obsidian Black */
   --color-bg-canvas: #faf7f2;
   --color-bg-surface: #ffffff;
   --color-bg-subtle: #f5f0e6;
-  --color-bg-dark: #1f0605;
+  --color-bg-dark: #0a0a0a;
+  --color-bg-dark-card: #141414;
+  --color-bg-dark-elevated: #1c1c1c;
 
-  --color-text-headline: #1c1917;
-  --color-text-body: #44403c;
-  --color-text-muted: #6b635b;
+  --color-text-headline: #0a0a0a;
+  --color-text-body: #33302c;
+  --color-text-muted: #6b665f;
   --color-text-inverted: #faf7f2;
-  --color-text-accent: #8e6c2e;
+  --color-text-accent: #9a7b38;
 
   /* Borders & Dividers */
-  --border-hairline: 1px solid rgba(59, 10, 7, 0.12);
-  --border-medium: 1px solid rgba(59, 10, 7, 0.24);
+  --border-hairline: 1px solid rgba(10, 10, 10, 0.1);
+  --border-medium: 1px solid rgba(10, 10, 10, 0.2);
   --border-accent: 1px solid rgba(200, 169, 106, 0.45);
   --border-white-subtle: 1px solid rgba(250, 247, 242, 0.15);
+  --border-dark-subtle: 1px solid rgba(255, 255, 255, 0.1);
 
   /* Typography Families */
   --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
@@ -136,7 +139,7 @@ img {
 .hairline-divider {
   width: 100%;
   height: 1px;
-  background-color: rgba(59, 10, 7, 0.12);
+  background-color: rgba(10, 10, 10, 0.1);
   border: none;
   margin: 0;
 }

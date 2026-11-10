@@ -113,7 +113,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
               <span className="trust-score">5.0</span>
             </div>
             <div className="trust-label">
-              <strong>25+ Years Surgical Leadership</strong> · Aster Medcity Quaternary Care
+              <strong>30+ Years Surgical Leadership</strong> · Aster Medcity Quaternary Care
             </div>
           </div>
         </div>

@@ -83,7 +83,7 @@ export const SurgeonEditorialProfile: React.FC<SurgeonEditorialProfileProps> = (
             {/* Narrative & Concise Credentials */}
             <div className="surgeon-narrative-block">
               <p className="surgeon-lead-prose">
-                With over 25 years of specialized oncological practice, Dr. Jem Kalathil focuses on high-complexity
+                With over 30 years of specialized oncological practice, Dr. Jem Kalathil focuses on high-complexity
                 malignancies where meticulous surgical planning, complete margin clearance, and thoughtful tissue
                 preservation make the difference between uncertainty and long-term recovery.
               </p>
