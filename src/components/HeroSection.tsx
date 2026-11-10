@@ -72,6 +72,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
             </a>
           </div>
 
+          <div className="hero-pillars-pill-strip" aria-label="Core Clinical Disciplines">
+            <span>Oncoplasty</span>
+            <span className="pillar-dot" aria-hidden="true">•</span>
+            <span>HIPEC</span>
+            <span className="pillar-dot" aria-hidden="true">•</span>
+            <span>Robotic Surgery</span>
+            <span className="pillar-dot" aria-hidden="true">•</span>
+            <span>Patient Guidance</span>
+          </div>
+
           <p className="hero-left-statement">
             Dedicated to organ-preserving breast oncology, advanced HIPEC cytoreduction, and clear surgical second opinions.
           </p>

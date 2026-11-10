@@ -635,7 +635,7 @@
   max-width: 1240px;
   margin: 0 auto;
   padding: 0 var(--gutter);
-  min-height: 590px;
+  min-height: clamp(590px, 74vh, 720px);
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -682,8 +682,8 @@
 .hero-doctor-cutout-wrap {
   position: absolute;
   bottom: -1px;
-  left: 23%;
-  height: clamp(480px, 66vh, 680px);
+  left: 20%;
+  height: clamp(520px, 72vh, 720px);
   z-index: 3;
   display: flex;
   align-items: flex-end;
@@ -708,7 +708,7 @@
 .hero-doctor-cutout {
   height: 100%;
   width: auto;
-  max-width: 520px;
+  max-width: clamp(520px, 46vw, 660px);
   object-fit: contain;
   object-position: bottom;
   display: block;
@@ -754,6 +754,25 @@
   border-color: var(--color-accent);
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(200, 169, 106, 0.35);
+}
+
+.hero-pillars-pill-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.hero-pillars-pill-strip .pillar-dot {
+  color: rgba(250, 247, 242, 0.35);
+  font-size: 0.55rem;
 }
 
 .hero-left-statement {
@@ -3514,8 +3533,8 @@
   }
 
   .hero-doctor-cutout-wrap {
-    left: 6%;
-    height: 480px;
+    left: 4%;
+    height: 520px;
   }
 
   .hero-watermark-text {
@@ -3684,7 +3703,7 @@
     position: relative;
     left: auto;
     bottom: auto;
-    height: clamp(320px, 52vh, 420px);
+    height: clamp(340px, 56vh, 460px);
     margin: 0 auto;
   }
 
