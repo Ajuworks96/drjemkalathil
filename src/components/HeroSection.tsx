@@ -113,7 +113,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
                 <div className="frame-inner-glow" />
               </div>
 
-              {/* Doctor Cutout Silhouette (Cropped at hands, scaled prominently) */}
+              {/* Doctor Cutout Silhouette (Black suit studio portrait cropped cleanly at hands) */}
               <div className="stage-doctor-cutout-wrap">
                 <img
                   src="/images/dr_jem_kalathil_cutout.png"
@@ -124,7 +124,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
                 />
               </div>
 
-              {/* FLOATING CARD 1: Top Left - 3 Clinical Disciplines (Modeled after reference badge) */}
+              {/* FLOATING CARD 1: Top Left - 3 Clinical Disciplines (Desktop view) */}
               <div className="floating-card floating-disciplines-card" aria-label="Key Clinical Pillars">
                 <div className="discipline-item">
                   <div className="discipline-icon-box" aria-hidden="true">
@@ -165,7 +165,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
                 </div>
               </div>
 
-              {/* FLOATING CARD 2: Floating Overlay on Doctor Right (Modeled after reference profile card) */}
+              {/* FLOATING CARD 2: Floating Overlay on Doctor Right (Desktop view) */}
               <div className="floating-card floating-doctor-profile-card">
                 <div className="doctor-profile-row">
                   <div className="doctor-avatar-circle">
@@ -187,7 +187,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
                 </div>
               </div>
 
-              {/* FLOATING CARD 3: Floating Bottom Left (Modeled after reference bottom pill) */}
+              {/* FLOATING CARD 3: Floating Bottom Left (Desktop view) */}
               <div className="floating-card floating-companion-pill">
                 <div className="companion-icon-wrap" aria-hidden="true">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -201,6 +201,38 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
               </div>
 
             </div>
+
+            {/* Mobile-Only Premium Clinical Feature Strip (Underneath Doctor Portrait on Mobile) */}
+            <div className="hero-mobile-disciplines-strip" aria-label="Core Clinical Focus Areas">
+              <div className="mobile-disc-pill">
+                <span className="disc-dot" aria-hidden="true" />
+                <span>Breast Oncoplasty</span>
+              </div>
+              <div className="mobile-disc-pill">
+                <span className="disc-dot" aria-hidden="true" />
+                <span>Advanced HIPEC</span>
+              </div>
+              <div className="mobile-disc-pill">
+                <span className="disc-dot" aria-hidden="true" />
+                <span>Robotic Precision</span>
+              </div>
+            </div>
+
+            {/* Mobile-Only Clean Trust & Location Card (Below doctor frame, zero obstruction) */}
+            <div className="hero-mobile-doctor-card">
+              <div className="mobile-doc-avatar">
+                <img src="/images/dr_jem_kalathil.jpg" alt="Dr. Jem Kalathil" />
+              </div>
+              <div className="mobile-doc-meta">
+                <div className="mobile-doc-name-row">
+                  <span className="name">Dr. Jem Kalathil</span>
+                  <span className="rating">★ 5.0</span>
+                </div>
+                <span className="role">Senior Consultant &amp; Head of Surgical Oncology</span>
+                <span className="loc">● OPD Consultations at Aster Medcity, Kochi</span>
+              </div>
+            </div>
+
           </div>
 
         </div>

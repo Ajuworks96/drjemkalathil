@@ -977,8 +977,8 @@
 /* FLOATING CARD 1: Top Left - 3 Disciplines */
 .floating-disciplines-card {
   position: absolute;
-  top: 8%;
-  left: -8%;
+  top: 10%;
+  left: -14%;
   border-radius: 20px;
   padding: 14px 18px;
   display: flex;
@@ -1033,8 +1033,8 @@
 /* FLOATING CARD 2: Floating Overlay on Doctor Right */
 .floating-doctor-profile-card {
   position: absolute;
-  bottom: 12%;
-  right: -8%;
+  bottom: 8%;
+  right: -12%;
   border-radius: 18px;
   padding: 14px 18px;
   display: flex;
@@ -1139,7 +1139,7 @@
 .floating-companion-pill {
   position: absolute;
   bottom: -4%;
-  left: -4%;
+  left: -8%;
   border-radius: 999px;
   padding: 10px 18px;
   display: flex;
@@ -1178,6 +1178,15 @@
   font-family: var(--font-body);
   font-size: 0.65rem;
   color: rgba(250, 247, 242, 0.7);
+}
+
+/* Mobile-Only Elegance Features (Hidden on Desktop) */
+.hero-mobile-disciplines-strip {
+  display: none;
+}
+
+.hero-mobile-doctor-card {
+  display: none;
 }
 
 /* Bottom credentials row */
@@ -3813,19 +3822,23 @@
   }
 
   .hero-visual-stage {
-    max-width: 440px;
+    max-width: 400px;
   }
 
   .floating-disciplines-card {
-    left: -2%;
+    top: 6%;
+    left: -6%;
+    padding: 10px 14px;
   }
 
   .floating-doctor-profile-card {
-    right: -2%;
+    bottom: 6%;
+    right: -6%;
+    padding: 10px 14px;
   }
 
   .floating-companion-pill {
-    left: 0;
+    display: none;
   }
 
   .hero-bottom-credentials {
@@ -4004,50 +4017,125 @@
   }
 
   .hero-visual-stage {
-    max-width: 360px;
+    max-width: 320px;
+    margin: 0 auto;
   }
 
-  .floating-disciplines-card {
-    padding: 10px 14px;
-    gap: 8px;
-    left: -2%;
-  }
-
-  .discipline-icon-box {
-    width: 26px;
-    height: 26px;
-  }
-
-  .discipline-title {
-    font-size: 0.6875rem;
-  }
-
-  .discipline-sub {
-    font-size: 0.6rem;
-  }
-
-  .floating-doctor-profile-card {
-    padding: 10px 14px;
-    right: -2%;
-  }
-
-  .doctor-avatar-circle {
-    width: 36px;
-    height: 36px;
-  }
-
-  .profile-name {
-    font-size: 0.8125rem;
-  }
-
-  .profile-role,
-  .profile-rating-line,
-  .profile-status-pill {
-    font-size: 0.625rem;
-  }
-
+  /* Completely hide floating cards on mobile so they NEVER cover Dr. Jem's face */
+  .floating-disciplines-card,
+  .floating-doctor-profile-card,
   .floating-companion-pill {
-    display: none;
+    display: none !important;
+  }
+
+  /* Show dedicated, clean mobile disciplines strip underneath doctor frame */
+  .hero-mobile-disciplines-strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+    width: 100%;
+  }
+
+  .mobile-disc-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(200, 169, 106, 0.08);
+    border: 1px solid rgba(200, 169, 106, 0.32);
+    color: #faf7f2;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .disc-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    box-shadow: 0 0 6px var(--color-accent);
+  }
+
+  /* Show dedicated, premium mobile doctor credentials card */
+  .hero-mobile-doctor-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+    padding: 12px 16px;
+    border-radius: 16px;
+    background: rgba(16, 16, 16, 0.95);
+    border: 1px solid rgba(200, 169, 106, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    width: 100%;
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mobile-doc-avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1.5px solid var(--color-accent);
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .mobile-doc-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .mobile-doc-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    text-align: left;
+    min-width: 0;
+  }
+
+  .mobile-doc-name-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .mobile-doc-name-row .name {
+    font-family: var(--font-display);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #ffffff;
+  }
+
+  .mobile-doc-name-row .rating {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-accent);
+  }
+
+  .mobile-doc-meta .role {
+    font-family: var(--font-body);
+    font-size: 0.6875rem;
+    color: rgba(250, 247, 242, 0.75);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .mobile-doc-meta .loc {
+    font-family: var(--font-body);
+    font-size: 0.6875rem;
+    color: #4ade80;
+    font-weight: 500;
   }
 
   .hero-bottom-credentials {
