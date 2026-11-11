@@ -51,9 +51,9 @@ export const GulfPatientSection: React.FC<GulfPatientSectionProps> = ({ onReques
                 <path d="M20 170 Q 230 130 440 170" stroke="#C8A96A" strokeWidth="0.8" strokeDasharray="3 4" opacity="0.4" />
 
                 {/* Hub Anchor Point: Kochi */}
-                <circle cx="380" cy="110" r="6" fill="#3B0A07" stroke="#C8A96A" strokeWidth="2" />
+                <circle cx="380" cy="110" r="6" fill="#0A0A0A" stroke="#C8A96A" strokeWidth="2" />
                 <circle cx="380" cy="110" r="14" stroke="#C8A96A" strokeWidth="0.75" strokeDasharray="2 3" opacity="0.7" />
-                <text x="380" y="145" fill="#3B0A07" fontFamily="'Poppins', sans-serif" fontSize="11" fontWeight="600" textAnchor="middle" letterSpacing="0.08em">KOCHI (COK)</text>
+                <text x="380" y="145" fill="#0A0A0A" fontFamily="'Poppins', sans-serif" fontSize="11" fontWeight="600" textAnchor="middle" letterSpacing="0.08em">KOCHI (COK)</text>
 
                 {/* Gulf Origin Nodes */}
                 <circle cx="80" cy="95" r="4" fill="#C8A96A" />
@@ -66,7 +66,7 @@ export const GulfPatientSection: React.FC<GulfPatientSectionProps> = ({ onReques
                 <text x="230" y="62" fill="#665544" fontFamily="'Montserrat', sans-serif" fontSize="10" fontWeight="500" textAnchor="middle">RUH / KWI</text>
 
                 {/* Direct Arcs to Kochi */}
-                <path d="M80 95 Q 230 30 380 110" stroke="#3B0A07" strokeWidth="1.5" strokeDasharray="4 4" />
+                <path d="M80 95 Q 230 30 380 110" stroke="#C8A96A" strokeWidth="1.5" strokeDasharray="4 4" />
               </svg>
             </div>
           </div>
