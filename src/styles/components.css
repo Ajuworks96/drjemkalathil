@@ -616,16 +616,16 @@
 }
 
 /* --------------------------------------------------------------------------
-   4. EDITORIAL HERO SECTION (DARK LUXURY EDITORIAL COMPOSITION)
+   4. EDITORIAL HERO SECTION — LUXURY OBSIDIAN & GOLD SEO LAYOUT
    -------------------------------------------------------------------------- */
 .editorial-james-hero {
   position: relative;
-  padding-top: clamp(1.5rem, 3.5vw, 3rem);
+  padding-top: clamp(2rem, 4vw, 3.5rem);
   padding-bottom: clamp(3rem, 5vw, 4.5rem);
-  background: radial-gradient(circle at 70% 28%, rgba(200, 169, 106, 0.14) 0%, transparent 45%),
-              radial-gradient(circle at 26% 45%, rgba(26, 26, 26, 0.85) 0%, transparent 60%),
-              linear-gradient(165deg, #0c0c0c 0%, #060606 52%, #000000 100%);
-  border-bottom: 1px solid rgba(200, 169, 106, 0.24);
+  background: radial-gradient(circle at 75% 35%, rgba(200, 169, 106, 0.12) 0%, transparent 50%),
+              radial-gradient(circle at 20% 50%, rgba(24, 24, 24, 0.9) 0%, transparent 65%),
+              linear-gradient(165deg, #0c0c0c 0%, #060606 50%, #000000 100%);
+  border-bottom: 1px solid rgba(200, 169, 106, 0.22);
   overflow: hidden;
 }
 
@@ -635,232 +635,160 @@
   max-width: 1240px;
   margin: 0 auto;
   padding: 0 var(--gutter);
-  min-height: clamp(590px, 74vh, 720px);
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+  padding-bottom: clamp(2rem, 3.5vw, 3.5rem);
 }
 
-/* Giant background watermark: "Kalathil" */
-.hero-watermark-text {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: var(--font-display);
-  font-size: clamp(6rem, 15.5vw, 13.5rem);
-  font-weight: 700;
-  letter-spacing: -0.035em;
-  color: rgba(250, 247, 242, 0.045);
-  text-shadow: 0 0 50px rgba(200, 169, 106, 0.08);
-  line-height: 0.95;
-  user-select: none;
-  pointer-events: none;
-  z-index: 1;
-  white-space: nowrap;
+/* 2-Column Split Layout Grid (Modelled on authoritative medical UI) */
+.hero-split-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: center;
 }
 
-/* Luminous crystal & gold medical emblem in top-right background */
-.hero-crystal-emblem-wrap {
-  position: absolute;
-  top: 15px;
-  right: 6%;
-  width: clamp(170px, 23vw, 310px);
-  z-index: 2;
-  pointer-events: none;
-  opacity: 0.95;
-  filter: drop-shadow(0 16px 40px rgba(200, 169, 106, 0.35));
-}
-
-.hero-crystal-emblem {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Center doctor cutout */
-.hero-doctor-cutout-wrap {
-  position: absolute;
-  bottom: -1px;
-  left: 20%;
-  height: clamp(520px, 72vh, 720px);
-  z-index: 3;
-  display: flex;
-  align-items: flex-end;
-  filter: drop-shadow(0 24px 44px rgba(0, 0, 0, 0.65)) drop-shadow(0 4px 16px rgba(200, 169, 106, 0.16));
-  pointer-events: none;
-}
-
-.hero-doctor-cutout-wrap::before {
-  content: '';
-  position: absolute;
-  top: 12%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 85%;
-  height: 75%;
-  background: radial-gradient(circle, rgba(200, 169, 106, 0.16) 0%, rgba(20, 20, 20, 0.5) 50%, transparent 75%);
-  filter: blur(44px);
-  z-index: -1;
-  pointer-events: none;
-}
-
-.hero-doctor-cutout {
-  height: 100%;
-  width: auto;
-  max-width: clamp(520px, 46vw, 660px);
-  object-fit: contain;
-  object-position: bottom;
-  display: block;
-}
-
-/* Left metadata under doctor's left */
-.hero-left-meta {
-  position: relative;
-  z-index: 4;
-  max-width: 240px;
-  margin-top: auto;
-  padding-bottom: var(--space-8);
+/* ================= LEFT COLUMN: SEO HEADINGS & ACTIONS ================= */
+.hero-content-col {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  z-index: 3;
 }
 
-.hero-channel-links {
+/* Top Eyebrow Badge Pill */
+.hero-eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(200, 169, 106, 0.08);
+  border: 1px solid rgba(200, 169, 106, 0.32);
+  color: var(--color-accent);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  margin-bottom: var(--space-4);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.pill-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 8px var(--color-accent);
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(0.85); }
+}
+
+.pill-icon {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.pill-text {
+  color: #faf7f2;
+}
+
+/* Primary SEO Heading (H1) */
+.hero-seo-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 4.2vw, 3.85rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  margin-bottom: var(--space-3);
+}
+
+.hero-title-accent {
+  color: var(--color-accent);
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* Doctor Authority Line */
+.hero-doctor-title-line {
   display: flex;
   align-items: center;
   gap: 10px;
-}
-
-.channel-icon-btn {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  border: 1px solid rgba(200, 169, 106, 0.35);
-  background-color: rgba(255, 255, 255, 0.06);
-  color: #faf7f2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-.channel-icon-btn:hover {
-  background-color: var(--color-accent);
-  color: #0a0a0a;
-  border-color: var(--color-accent);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(200, 169, 106, 0.35);
-}
-
-.hero-pillars-pill-strip {
-  display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-body);
-  font-size: 0.65rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  font-weight: 600;
-  line-height: 1.5;
-}
-
-.hero-pillars-pill-strip .pillar-dot {
-  color: rgba(250, 247, 242, 0.35);
-  font-size: 0.55rem;
-}
-
-.hero-left-statement {
-  font-family: var(--font-body);
-  font-size: 0.8125rem;
-  line-height: 1.62;
-  color: rgba(250, 247, 242, 0.78);
-}
-
-/* Right content box */
-.hero-right-card {
-  position: relative;
-  z-index: 4;
-  margin-left: auto;
-  width: 100%;
-  max-width: 460px;
   margin-bottom: var(--space-4);
-  background: rgba(14, 14, 14, 0.88);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(200, 169, 106, 0.42);
-  border-radius: 4px;
-  padding: clamp(1.75rem, 2.8vw, 2.5rem);
-  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(200, 169, 106, 0.22);
 }
 
-.hero-right-kicker {
-  display: block;
-  font-family: var(--font-body);
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: 6px;
-}
-
-.hero-right-name {
+.doctor-primary-name {
   font-family: var(--font-display);
-  font-size: clamp(2.1rem, 3.4vw, 2.85rem);
-  font-weight: 600;
-  line-height: 1.15;
-  color: #ffffff;
-  margin-bottom: 6px;
-  letter-spacing: -0.02em;
-}
-
-.hero-right-creds {
-  font-family: var(--font-body);
-  font-size: 0.9375rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: #faf7f2;
-  margin-bottom: 4px;
+  letter-spacing: -0.01em;
 }
 
-.hero-right-dept {
+.doctor-title-separator {
+  color: rgba(200, 169, 106, 0.5);
+  font-weight: 700;
+}
+
+.doctor-credentials-badge {
   font-family: var(--font-body);
   font-size: 0.8125rem;
-  color: rgba(250, 247, 242, 0.75);
-  margin-bottom: var(--space-6);
+  font-weight: 600;
+  color: var(--color-accent);
+  padding: 3px 10px;
+  border-radius: 4px;
+  background: rgba(200, 169, 106, 0.1);
+  border: 1px solid rgba(200, 169, 106, 0.28);
 }
 
-.hero-right-actions {
+/* SEO Lead Description Paragraph */
+.hero-lead-description {
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 1.15vw, 1.05rem);
+  line-height: 1.72;
+  color: rgba(250, 247, 242, 0.82);
   margin-bottom: var(--space-6);
+  max-width: 540px;
+}
+
+/* Action Buttons Group */
+.hero-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-8);
 }
 
 .hero-primary-cta {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  width: 100%;
-  justify-content: center;
+  padding: 14px 28px;
+  border-radius: 999px;
   background: linear-gradient(135deg, #c8a96a 0%, #b59556 100%);
   color: #0a0a0a;
   border: 1px solid rgba(255, 255, 255, 0.35);
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
   font-weight: 600;
   box-shadow: 0 8px 24px rgba(200, 169, 106, 0.3);
   transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
+  cursor: pointer;
 }
 
 .hero-primary-cta:hover {
   background: linear-gradient(135deg, #dfc082 0%, #c8a96a 100%);
   color: #0a0a0a;
-  box-shadow: 0 10px 28px rgba(200, 169, 106, 0.45);
+  box-shadow: 0 10px 30px rgba(200, 169, 106, 0.45);
   transform: translateY(-2px);
 }
 
-.cta-arrow {
+.hero-primary-cta .cta-arrow {
   transition: transform var(--transition-fast);
 }
 
@@ -868,42 +796,388 @@
   transform: translateX(4px);
 }
 
-.hero-trust-bar {
+.hero-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 24px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #faf7f2;
+  border: 1px solid rgba(200, 169, 106, 0.45);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+}
+
+.hero-secondary-btn:hover {
+  background: rgba(200, 169, 106, 0.16);
+  border-color: var(--color-accent);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Trust Proof & Social Proof Strip */
+.hero-social-proof-strip {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding-top: var(--space-3);
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: var(--space-4);
   border-top: 1px solid rgba(200, 169, 106, 0.22);
 }
 
-.trust-stars-row {
+.proof-rating-badge {
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(200, 169, 106, 0.25);
 }
 
-.star-icon {
-  color: #c8a96a;
-  font-size: 0.875rem;
+.proof-rating-badge .stars-cluster {
+  color: var(--color-accent);
+  font-size: 0.8125rem;
+  letter-spacing: 2px;
   line-height: 1;
 }
 
-.trust-score {
+.proof-rating-badge .rating-score {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 0.8125rem;
   color: #ffffff;
-  margin-left: 6px;
 }
 
-.trust-label {
+.proof-text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.proof-metric {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.proof-sub {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  color: rgba(250, 247, 242, 0.7);
+}
+
+.proof-call-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(200, 169, 106, 0.1);
+  border: 1px solid rgba(200, 169, 106, 0.32);
+  color: var(--color-accent);
   font-family: var(--font-body);
   font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: auto;
+  transition: all var(--transition-fast);
+}
+
+.proof-call-link:hover {
+  background: var(--color-accent);
+  color: #0a0a0a;
+  border-color: var(--color-accent);
+}
+
+/* ================= RIGHT COLUMN: VISUAL STAGE WITH DOCTOR & FLOATING CARDS ================= */
+.hero-visual-col {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.hero-visual-stage {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* Rounded Backdrop Frame (Obsidian Black with subtle gold hairline & radial glow) */
+.stage-backdrop-frame {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  aspect-ratio: 1 / 1.05;
+  background: radial-gradient(circle at 50% 25%, rgba(200, 169, 106, 0.16) 0%, rgba(22, 22, 22, 0.9) 55%, #0e0e0e 100%);
+  border: 1px solid rgba(200, 169, 106, 0.32);
+  border-radius: 32px;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(200, 169, 106, 0.25);
+  overflow: hidden;
+}
+
+.frame-inner-glow {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 70%;
+  background: radial-gradient(circle, rgba(200, 169, 106, 0.15) 0%, transparent 70%);
+  filter: blur(35px);
+  pointer-events: none;
+}
+
+/* Doctor Cutout Silhouette (Cropped at hands, scaled prominently) */
+.stage-doctor-cutout-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 96%;
+  height: 106%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.stage-doctor-img {
+  width: auto;
+  height: 100%;
+  max-height: 540px;
+  object-fit: contain;
+  object-position: bottom center;
+  display: block;
+  filter: drop-shadow(0 18px 36px rgba(0, 0, 0, 0.7));
+}
+
+/* Floating Card Common Styles */
+.floating-card {
+  background: rgba(14, 14, 14, 0.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(200, 169, 106, 0.35);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(200, 169, 106, 0.2);
+  z-index: 4;
+}
+
+/* FLOATING CARD 1: Top Left - 3 Disciplines */
+.floating-disciplines-card {
+  position: absolute;
+  top: 8%;
+  left: -8%;
+  border-radius: 20px;
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: float-gentle 6s ease-in-out infinite;
+}
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.discipline-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.discipline-icon-box {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(200, 169, 106, 0.12);
+  border: 1px solid rgba(200, 169, 106, 0.3);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.discipline-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.discipline-title {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.25;
+}
+
+.discipline-sub {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  color: rgba(250, 247, 242, 0.65);
+}
+
+/* FLOATING CARD 2: Floating Overlay on Doctor Right */
+.floating-doctor-profile-card {
+  position: absolute;
+  bottom: 12%;
+  right: -8%;
+  border-radius: 18px;
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  animation: float-gentle-reverse 7s ease-in-out infinite;
+}
+
+@keyframes float-gentle-reverse {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+.doctor-profile-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.doctor-avatar-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-accent);
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.doctor-profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-name {
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.profile-role {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
   color: rgba(250, 247, 242, 0.75);
 }
 
-.trust-label strong {
+.profile-rating-line {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  margin-top: 2px;
+}
+
+.profile-rating-line .star {
+  color: var(--color-accent);
+  font-size: 0.75rem;
+}
+
+.profile-rating-line .score {
+  font-weight: 700;
   color: #ffffff;
+}
+
+.profile-rating-line .years {
+  color: rgba(250, 247, 242, 0.6);
+}
+
+.profile-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  padding: 4px 10px;
+  background: rgba(200, 169, 106, 0.1);
+  border-radius: 999px;
+  border: 1px solid rgba(200, 169, 106, 0.22);
+}
+
+.status-live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 8px #4ade80;
+}
+
+/* FLOATING CARD 3: Floating Bottom Left Pill */
+.floating-companion-pill {
+  position: absolute;
+  bottom: -4%;
+  left: -4%;
+  border-radius: 999px;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: float-gentle 8s ease-in-out infinite;
+}
+
+.companion-icon-wrap {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(200, 169, 106, 0.15);
+  border: 1px solid rgba(200, 169, 106, 0.3);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.companion-text-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.companion-title {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.25;
+}
+
+.companion-desc {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  color: rgba(250, 247, 242, 0.7);
 }
 
 /* Bottom credentials row */
@@ -3528,21 +3802,30 @@
     font-size: 1.05rem;
   }
 
-  .hero-stage-container {
-    min-height: 520px;
+  .hero-split-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
   }
 
-  .hero-doctor-cutout-wrap {
-    left: 4%;
-    height: 520px;
+  .hero-content-col {
+    max-width: 100%;
+    align-items: flex-start;
   }
 
-  .hero-watermark-text {
-    font-size: clamp(5rem, 13vw, 9rem);
+  .hero-visual-stage {
+    max-width: 440px;
   }
 
-  .hero-right-card {
-    max-width: 400px;
+  .floating-disciplines-card {
+    left: -2%;
+  }
+
+  .floating-doctor-profile-card {
+    right: -2%;
+  }
+
+  .floating-companion-pill {
+    left: 0;
   }
 
   .hero-bottom-credentials {
@@ -3681,47 +3964,90 @@
   }
 
   .hero-stage-container {
+    padding-bottom: var(--space-6);
+  }
+
+  .hero-split-grid {
+    gap: var(--space-8);
+  }
+
+  .hero-seo-title {
+    font-size: clamp(2.1rem, 7vw, 2.75rem);
+  }
+
+  .hero-lead-description {
+    font-size: 0.9375rem;
+  }
+
+  .hero-actions-group {
     flex-direction: column;
-    min-height: auto;
-    align-items: center;
-    gap: var(--space-6);
-    padding-top: var(--space-6);
+    width: 100%;
+    align-items: stretch;
   }
 
-  .hero-watermark-text {
-    font-size: clamp(3.5rem, 14vw, 5.5rem);
-    top: 5px;
-  }
-
-  .hero-crystal-emblem-wrap {
-    width: 120px;
-    right: 2%;
-    top: 0;
-  }
-
-  .hero-doctor-cutout-wrap {
-    position: relative;
-    left: auto;
-    bottom: auto;
-    height: clamp(340px, 56vh, 460px);
-    margin: 0 auto;
-  }
-
-  .hero-left-meta {
-    max-width: 100%;
-    align-items: center;
-    text-align: center;
-    padding-bottom: 0;
-  }
-
-  .hero-right-card {
-    max-width: 100%;
-    margin-left: 0;
-    text-align: center;
-  }
-
-  .trust-stars-row {
+  .hero-primary-cta,
+  .hero-secondary-btn {
+    width: 100%;
     justify-content: center;
+  }
+
+  .hero-social-proof-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .proof-call-link {
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-visual-stage {
+    max-width: 360px;
+  }
+
+  .floating-disciplines-card {
+    padding: 10px 14px;
+    gap: 8px;
+    left: -2%;
+  }
+
+  .discipline-icon-box {
+    width: 26px;
+    height: 26px;
+  }
+
+  .discipline-title {
+    font-size: 0.6875rem;
+  }
+
+  .discipline-sub {
+    font-size: 0.6rem;
+  }
+
+  .floating-doctor-profile-card {
+    padding: 10px 14px;
+    right: -2%;
+  }
+
+  .doctor-avatar-circle {
+    width: 36px;
+    height: 36px;
+  }
+
+  .profile-name {
+    font-size: 0.8125rem;
+  }
+
+  .profile-role,
+  .profile-rating-line,
+  .profile-status-pill {
+    font-size: 0.625rem;
+  }
+
+  .floating-companion-pill {
+    display: none;
   }
 
   .hero-bottom-credentials {
