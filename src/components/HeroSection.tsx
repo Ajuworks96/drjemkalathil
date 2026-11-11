@@ -27,84 +27,90 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
           {/* ================= LEFT COLUMN: SEO HEADLINE & ACTIONS ================= */}
           <div className="hero-content-col">
             
-            {/* Top Eyebrow Badge (Modeled after reference pill) */}
-            <div className="hero-eyebrow-pill" role="status">
-              <span className="pill-pulse-dot" aria-hidden="true" />
-              <svg className="pill-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
-              </svg>
-              <span className="pill-text">Senior Consultant &amp; Head of Surgical Oncology · Aster Medcity, Kochi</span>
-            </div>
-
-            {/* Primary SEO Heading (H1) */}
-            <h1 className="hero-seo-title">
-              Hope &amp; Clarity in <br />
-              <span className="hero-title-accent">Cancer Surgery.</span>
-            </h1>
-
-            {/* Doctor Authority Line */}
-            <div className="hero-doctor-title-line">
-              <span className="doctor-primary-name" itemProp="name">Dr. Jem Kalathil</span>
-              <span className="doctor-title-separator" aria-hidden="true">·</span>
-              <span className="doctor-credentials-badge">MBBS, MS, FRCS (Edinburgh)</span>
-            </div>
-
-            {/* SEO Lead Description Paragraph */}
-            <p className="hero-lead-description" itemProp="description">
-              Dedicated to organ-preserving breast oncoplasty, advanced HIPEC cytoreduction, and precision robotic oncology. Offering transparent surgical guidance and evidence-backed second opinions for patients across Kerala, India, and the Gulf.
-            </p>
-
-            {/* Action Buttons Row (Modeled after reference dual CTAs) */}
-            <div className="hero-actions-group">
-              <Button
-                variant="primary"
-                size="lg"
-                className="hero-primary-cta"
-                onClick={onRequestSecondOpinion}
-              >
-                <span>Request Second Opinion</span>
-                <svg className="cta-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
+            {/* Header Block (On mobile: order 1) */}
+            <div className="hero-header-block">
+              {/* Top Eyebrow Badge (Modeled after reference pill, fully responsive) */}
+              <div className="hero-eyebrow-pill" role="status">
+                <span className="pill-pulse-dot" aria-hidden="true" />
+                <svg className="pill-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
                 </svg>
-              </Button>
+                <span className="pill-text">Head of Surgical Oncology · Aster Medcity, Kochi</span>
+              </div>
 
-              <a href="/clinical-areas" className="hero-secondary-btn">
-                <span>Explore Clinical Areas</span>
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M9 18l6-6-6-6" />
-                </svg>
-              </a>
+              {/* Primary SEO Heading (H1) */}
+              <h1 className="hero-seo-title">
+                Hope &amp; Clarity in <br />
+                <span className="hero-title-accent">Cancer Surgery.</span>
+              </h1>
+
+              {/* Doctor Authority Line */}
+              <div className="hero-doctor-title-line">
+                <span className="doctor-primary-name" itemProp="name">Dr. Jem Kalathil</span>
+                <span className="doctor-title-separator" aria-hidden="true">·</span>
+                <span className="doctor-credentials-badge">MBBS, MS, FRCS (Edin)</span>
+              </div>
             </div>
 
-            {/* Trust Proof & Social Proof Strip (Modeled after reference avatar/rating) */}
-            <div className="hero-social-proof-strip">
-              <div className="proof-rating-badge">
-                <div className="stars-cluster" aria-label="5 out of 5 stars">
-                  ★★★★★
+            {/* Actions Block (On mobile: order 3) */}
+            <div className="hero-actions-block">
+              {/* SEO Lead Description Paragraph */}
+              <p className="hero-lead-description" itemProp="description">
+                Dedicated to organ-preserving breast oncoplasty, advanced HIPEC cytoreduction, and precision robotic oncology. Offering transparent surgical guidance and evidence-backed second opinions for patients across Kerala, India, and the Gulf.
+              </p>
+
+              {/* Action Buttons Row (Modeled after reference dual CTAs) */}
+              <div className="hero-actions-group">
+                <Button
+                  variant="primary"
+                  size="lg"
+                  className="hero-primary-cta"
+                  onClick={onRequestSecondOpinion}
+                >
+                  <span>Request Second Opinion</span>
+                  <svg className="cta-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </Button>
+
+                <a href="/clinical-areas" className="hero-secondary-btn">
+                  <span>Explore Clinical Areas</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M9 18l6-6-6-6" />
+                  </svg>
+                </a>
+              </div>
+
+              {/* Trust Proof & Social Proof Strip (Modeled after reference avatar/rating) */}
+              <div className="hero-social-proof-strip">
+                <div className="proof-rating-badge">
+                  <div className="stars-cluster" aria-label="5 out of 5 stars">
+                    ★★★★★
+                  </div>
+                  <span className="rating-score">5.0</span>
                 </div>
-                <span className="rating-score">5.0</span>
-              </div>
-              <div className="proof-text-block">
-                <span className="proof-metric">30+ Years Practice</span>
-                <span className="proof-sub">Royal College of Surgeons (FRCS) · Aster Medcity</span>
-              </div>
+                <div className="proof-text-block">
+                  <span className="proof-metric">30+ Years Practice</span>
+                  <span className="proof-sub">Royal College of Surgeons (FRCS) · Aster Medcity</span>
+                </div>
 
-              {/* Direct Desk Line */}
-              <a 
-                href={`tel:${CLINICAL_DOCTOR_INFO.secretaryPhone.replace(/\s+/g, '')}`} 
-                className="proof-call-link"
-                title="Call Clinical Desk directly"
-              >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                </svg>
-                <span>Direct Desk: +91 484 669 9999</span>
-              </a>
+                {/* Direct Desk Line */}
+                <a 
+                  href={`tel:${CLINICAL_DOCTOR_INFO.secretaryPhone.replace(/\s+/g, '')}`} 
+                  className="proof-call-link"
+                  title="Call Clinical Desk directly"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                  <span>Direct Desk: +91 484 669 9999</span>
+                </a>
+              </div>
             </div>
 
           </div>
 
-          {/* ================= RIGHT COLUMN: VISUAL STAGE WITH DOCTOR & FLOATING CARDS ================= */}
+          {/* ================= RIGHT COLUMN: VISUAL STAGE WITH DOCTOR & FLOATING CARDS (On mobile: order 2) ================= */}
           <div className="hero-visual-col">
             <div className="hero-visual-stage">
               

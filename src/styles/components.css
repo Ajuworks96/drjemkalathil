@@ -653,12 +653,26 @@
   z-index: 3;
 }
 
+.hero-header-block {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.hero-actions-block {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 /* Top Eyebrow Badge Pill */
 .hero-eyebrow-pill {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   width: fit-content;
+  max-width: 100%;
+  box-sizing: border-box;
   padding: 6px 14px;
   border-radius: 999px;
   background: rgba(200, 169, 106, 0.08);
@@ -679,6 +693,7 @@
   background: var(--color-accent);
   box-shadow: 0 0 8px var(--color-accent);
   animation: pulse-dot 2s infinite ease-in-out;
+  flex-shrink: 0;
 }
 
 @keyframes pulse-dot {
@@ -693,6 +708,8 @@
 
 .pill-text {
   color: #faf7f2;
+  white-space: normal;
+  line-height: 1.35;
 }
 
 /* Primary SEO Heading (H1) */
@@ -704,6 +721,8 @@
   letter-spacing: -0.025em;
   color: #ffffff;
   margin-bottom: var(--space-3);
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 
 .hero-title-accent {
@@ -716,8 +735,9 @@
 .hero-doctor-title-line {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px 10px;
   flex-wrap: wrap;
+  max-width: 100%;
   margin-bottom: var(--space-4);
 }
 
@@ -743,6 +763,8 @@
   border-radius: 4px;
   background: rgba(200, 169, 106, 0.1);
   border: 1px solid rgba(200, 169, 106, 0.28);
+  white-space: normal;
+  max-width: 100%;
 }
 
 /* SEO Lead Description Paragraph */
@@ -3977,48 +3999,111 @@
   }
 
   .hero-stage-container {
-    padding-bottom: var(--space-6);
+    padding: 0 16px var(--space-6);
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .hero-split-grid {
-    gap: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Flatten hero-content-col so its children interleave with visual-col */
+  .hero-content-col {
+    display: contents;
+  }
+
+  /* ORDER 1: Title & Doctor Authority Block */
+  .hero-header-block {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .hero-eyebrow-pill {
+    padding: 5px 12px;
+    border-radius: 12px;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-bottom: var(--space-3);
+  }
+
+  .hero-eyebrow-pill .pill-text {
+    font-size: clamp(0.6875rem, 2.8vw, 0.75rem);
+    line-height: 1.35;
+    white-space: normal;
   }
 
   .hero-seo-title {
-    font-size: clamp(2.1rem, 7vw, 2.75rem);
+    font-size: clamp(1.85rem, 7.5vw, 2.5rem);
+    line-height: 1.15;
+    margin-bottom: var(--space-2);
+    width: 100%;
+    max-width: 100%;
+    word-break: break-word;
   }
 
-  .hero-lead-description {
-    font-size: 0.9375rem;
+  .hero-doctor-title-line {
+    margin-bottom: var(--space-2);
+    gap: 6px 8px;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 100%;
   }
 
-  .hero-actions-group {
+  .doctor-primary-name {
+    font-size: 1.05rem;
+  }
+
+  .doctor-credentials-badge {
+    font-size: 0.72rem;
+    padding: 2px 7px;
+    white-space: normal;
+  }
+
+  /* ORDER 2: Doctor Studio Portrait (Prominently visible directly under headline!) */
+  .hero-visual-col {
+    order: 2;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
     flex-direction: column;
-    width: 100%;
-    align-items: stretch;
-  }
-
-  .hero-primary-cta,
-  .hero-secondary-btn {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .hero-social-proof-strip {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  .proof-call-link {
-    margin-left: 0;
-    width: 100%;
-    justify-content: center;
+    align-items: center;
+    margin: var(--space-2) 0 var(--space-4) 0;
+    overflow-x: hidden;
   }
 
   .hero-visual-stage {
-    max-width: 320px;
+    width: 100%;
+    max-width: 290px;
     margin: 0 auto;
+  }
+
+  .stage-backdrop-frame {
+    aspect-ratio: 1 / 1.05;
+    border-radius: 22px;
+  }
+
+  .stage-doctor-cutout-wrap {
+    width: 96%;
+    height: 104%;
+  }
+
+  .stage-doctor-img {
+    max-height: 310px;
+    width: auto;
+    object-fit: contain;
   }
 
   /* Completely hide floating cards on mobile so they NEVER cover Dr. Jem's face */
@@ -4033,54 +4118,55 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 6px;
     flex-wrap: wrap;
-    margin-top: 18px;
+    margin-top: 12px;
     width: 100%;
+    max-width: 100%;
   }
 
   .mobile-disc-pill {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 6px 14px;
+    gap: 5px;
+    padding: 5px 12px;
     border-radius: 999px;
     background: rgba(200, 169, 106, 0.08);
-    border: 1px solid rgba(200, 169, 106, 0.32);
+    border: 1px solid rgba(200, 169, 106, 0.3);
     color: #faf7f2;
     font-family: var(--font-body);
-    font-size: 0.75rem;
+    font-size: 0.6875rem;
     font-weight: 500;
   }
 
   .disc-dot {
-    width: 5px;
-    height: 5px;
+    width: 4px;
+    height: 4px;
     border-radius: 50%;
     background: var(--color-accent);
     box-shadow: 0 0 6px var(--color-accent);
   }
 
-  /* Show dedicated, premium mobile doctor credentials card */
   .hero-mobile-doctor-card {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-top: 12px;
-    padding: 12px 16px;
-    border-radius: 16px;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 10px 14px;
+    border-radius: 14px;
     background: rgba(16, 16, 16, 0.95);
     border: 1px solid rgba(200, 169, 106, 0.3);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
     width: 100%;
-    max-width: 360px;
+    max-width: 320px;
+    box-sizing: border-box;
     margin-left: auto;
     margin-right: auto;
   }
 
   .mobile-doc-avatar {
-    width: 46px;
-    height: 46px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
     border: 1.5px solid var(--color-accent);
     overflow: hidden;
@@ -4111,20 +4197,20 @@
 
   .mobile-doc-name-row .name {
     font-family: var(--font-display);
-    font-size: 0.9375rem;
+    font-size: 0.875rem;
     font-weight: 600;
     color: #ffffff;
   }
 
   .mobile-doc-name-row .rating {
-    font-size: 0.75rem;
+    font-size: 0.6875rem;
     font-weight: 700;
     color: var(--color-accent);
   }
 
   .mobile-doc-meta .role {
     font-family: var(--font-body);
-    font-size: 0.6875rem;
+    font-size: 0.625rem;
     color: rgba(250, 247, 242, 0.75);
     white-space: nowrap;
     overflow: hidden;
@@ -4133,14 +4219,70 @@
 
   .mobile-doc-meta .loc {
     font-family: var(--font-body);
-    font-size: 0.6875rem;
+    font-size: 0.625rem;
     color: #4ade80;
     font-weight: 500;
   }
 
+  /* ORDER 3: Description, Action Buttons & Trust Strip */
+  .hero-actions-block {
+    order: 3;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    align-items: stretch;
+  }
+
+  .hero-lead-description {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin-bottom: var(--space-4);
+    text-align: left;
+  }
+
+  .hero-actions-group {
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    align-items: stretch;
+    gap: 10px;
+    margin-bottom: var(--space-4);
+  }
+
+  .hero-primary-cta,
+  .hero-secondary-btn {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+    padding: 13px 18px;
+    font-size: 0.875rem;
+  }
+
+  .hero-social-proof-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding-top: var(--space-3);
+  }
+
+  .proof-call-link {
+    margin-left: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+    padding: 10px 14px;
+    font-size: 0.75rem;
+  }
+
   .hero-bottom-credentials {
     grid-template-columns: 1fr;
-    gap: var(--space-4);
+    gap: var(--space-3);
   }
 }
 
