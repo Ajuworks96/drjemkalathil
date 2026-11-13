@@ -2,7 +2,7 @@ import { createClient } from '@sanity/client';
 import imageUrlBuilder from '@sanity/image-url';
 
 // Environment variables with fallback
-export const SANITY_PROJECT_ID = import.meta.env.VITE_SANITY_PROJECT_ID || '';
+export const SANITY_PROJECT_ID = import.meta.env.VITE_SANITY_PROJECT_ID || 'u7oqruvi';
 export const SANITY_DATASET = import.meta.env.VITE_SANITY_DATASET || 'production';
 export const SANITY_API_VERSION = '2024-03-01';
 
