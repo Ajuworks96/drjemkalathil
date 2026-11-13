@@ -6,3 +6,4 @@ Host: https://drjemkalathil.vercel.app
 
 # Sitemaps
 Sitemap: https://drjemkalathil.vercel.app/sitemap.xml
+

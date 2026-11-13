@@ -154,3 +154,4 @@ export async function fetchPageSeo(pageSlug: string): Promise<PageSeoData | null
     return null;
   }
 }
+

@@ -4,3 +4,4 @@ import siteSettings from './siteSettings';
 import article from './article';
 
 export const schemaTypes = [review, pageSeo, siteSettings, article];
+
