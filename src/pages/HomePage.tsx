@@ -7,6 +7,7 @@ import { SecondOpinionMonumentSection } from '../components/SecondOpinionMonumen
 import { PatientPathwayJourney } from '../components/PatientPathwayJourney';
 import { DocumentTeaserSection } from '../components/DocumentTeaserSection';
 import { SurgeonEditorialProfile } from '../components/SurgeonEditorialProfile';
+import { PatientReviewsSection } from '../components/PatientReviewsSection';
 import { GulfRouteMinimal } from '../components/GulfRouteMinimal';
 import { ClinicalClarificationsAccordion } from '../components/ClinicalClarificationsAccordion';
 import { PhysiciansDarkEditorial } from '../components/PhysiciansDarkEditorial';
@@ -42,6 +43,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onRequestSecondOpinion }) =>
 
       {/* 07. DR. JEM KALATHIL: EXPERTISE MATTERS. UNDERSTANDING MATTERS TOO. */}
       <SurgeonEditorialProfile onRequestSecondOpinion={() => onRequestSecondOpinion()} />
+
+      {/* 07.1 VERIFIED PATIENT EXPERIENCES & SURGICAL OUTCOMES (CMS-POWERED) */}
+      <PatientReviewsSection />
 
       {/* 08. GULF & REGIONAL PATIENTS: HORIZONTAL GEOGRAPHIC ROUTE */}
       <GulfRouteMinimal onRequestSecondOpinion={() => onRequestSecondOpinion()} />

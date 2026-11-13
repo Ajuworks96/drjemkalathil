@@ -7016,3 +7016,281 @@
     font-size: 0.82rem;
   }
 }
+
+/* --------------------------------------------------------------------------
+   PATIENT EXPERIENCES & VERIFIED REVIEWS SECTION (CMS-POWERED)
+   -------------------------------------------------------------------------- */
+.patient-reviews-section {
+  background-color: #0d0d0d;
+  padding: clamp(3.5rem, 6vw, 6rem) 0;
+  border-top: 1px solid rgba(200, 169, 106, 0.16);
+  border-bottom: 1px solid rgba(200, 169, 106, 0.16);
+  position: relative;
+  overflow: hidden;
+}
+
+.reviews-section-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto clamp(2.5rem, 4vw, 3.75rem);
+}
+
+.reviews-eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(200, 169, 106, 0.08);
+  border: 1px solid rgba(200, 169, 106, 0.28);
+  color: var(--color-accent);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4);
+}
+
+.pill-gold-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 8px var(--color-accent);
+}
+
+.reviews-main-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  line-height: 1.2;
+  color: #ffffff;
+  margin-bottom: var(--space-3);
+  letter-spacing: -0.02em;
+}
+
+.title-gold-italic {
+  color: var(--color-accent);
+  font-style: italic;
+  font-family: var(--font-display);
+}
+
+.reviews-sub-description {
+  font-family: var(--font-body);
+  font-size: clamp(0.9375rem, 1.4vw, 1.05rem);
+  line-height: 1.65;
+  color: rgba(250, 247, 242, 0.75);
+  margin-bottom: var(--space-4);
+}
+
+.reviews-aggregate-bar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(16, 16, 16, 0.9);
+  border: 1px solid rgba(200, 169, 106, 0.2);
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: rgba(250, 247, 242, 0.85);
+}
+
+.aggregate-stars {
+  color: var(--color-accent);
+  letter-spacing: 2px;
+  font-size: 0.875rem;
+}
+
+.aggregate-score {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.aggregate-divider {
+  color: rgba(200, 169, 106, 0.4);
+}
+
+.aggregate-metric {
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+.aggregate-location {
+  color: rgba(250, 247, 242, 0.65);
+}
+
+/* 2-Column Cards Grid */
+.reviews-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  margin-bottom: var(--space-8);
+}
+
+.review-luxury-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #141414;
+  border: 1px solid rgba(200, 169, 106, 0.22);
+  border-radius: 18px;
+  padding: clamp(1.5rem, 2.8vw, 2.25rem);
+  position: relative;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.review-luxury-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(200, 169, 106, 0.45);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 20px rgba(200, 169, 106, 0.08);
+}
+
+.card-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.card-stars-row {
+  color: var(--color-accent);
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+.card-treatment-tag {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(200, 169, 106, 0.1);
+  border: 1px solid rgba(200, 169, 106, 0.28);
+  color: var(--color-accent);
+}
+
+.review-quote-text {
+  font-family: var(--font-display);
+  font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+  line-height: 1.7;
+  font-style: italic;
+  color: #faf7f2;
+  margin: 0 0 var(--space-6) 0;
+  flex-grow: 1;
+}
+
+.card-author-footer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.author-avatar-initial {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(200, 169, 106, 0.25), rgba(200, 169, 106, 0.08));
+  border: 1.5px solid var(--color-accent);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.author-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.author-name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.author-name {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.verified-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: rgba(74, 222, 128, 0.12);
+  border: 1px solid rgba(74, 222, 128, 0.35);
+  color: #4ade80;
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  font-weight: 600;
+}
+
+.author-sub-line {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: rgba(250, 247, 242, 0.55);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.author-sep {
+  color: rgba(250, 247, 242, 0.3);
+}
+
+.reviews-disclaimer-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: rgba(16, 16, 16, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: rgba(250, 247, 242, 0.6);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.reviews-disclaimer-note svg {
+  flex-shrink: 0;
+  color: var(--color-accent);
+}
+
+@media (max-width: 900px) {
+  .reviews-cards-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .reviews-aggregate-bar {
+    border-radius: 14px;
+    padding: 8px 12px;
+    font-size: 0.75rem;
+  }
+}
