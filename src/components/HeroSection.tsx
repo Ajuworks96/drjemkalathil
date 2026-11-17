@@ -104,7 +104,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
 
           </div>
 
-          {/* ================= RIGHT COLUMN: VISUAL STAGE WITH DOCTOR & FLOATING CARDS (On mobile: order 2) ================= */}
+          {/* ================= RIGHT COLUMN: VISUAL STAGE WITH DOCTOR & CLEAN SPECIALTY DOCK ================= */}
           <div className="hero-visual-col">
             <div className="hero-visual-stage">
               
@@ -113,121 +113,58 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
                 <div className="frame-inner-glow" />
               </div>
 
-              {/* Doctor Cutout Silhouette (Black suit studio portrait cropped cleanly at hands) */}
+              {/* Doctor Cutout Silhouette (Black suit studio portrait cropped cleanly at hands - 100% unobstructed) */}
               <div className="stage-doctor-cutout-wrap">
                 <img
                   src="/images/dr_jem_kalathil_cutout.png"
-                  alt="Dr. Jem Kalathil, Senior Consultant & Head of Surgical Oncology"
+                  alt="Dr. Jem Kalathil, Lead Senior Consultant, Surgical Oncology"
                   className="stage-doctor-img"
                   loading="eager"
                   fetchPriority="high"
                 />
               </div>
 
-              {/* FLOATING CARD 1: Top Left - 3 Standardised Specialty Names (Desktop view) */}
-              <div className="floating-card floating-disciplines-card" aria-label="Key Clinical Pillars">
-                <div className="discipline-item">
-                  <div className="discipline-icon-box" aria-hidden="true">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-                    </svg>
-                  </div>
-                  <div className="discipline-meta">
-                    <span className="discipline-title">Breast Cancer Surgery, Oncoplasty &amp; Reconstruction</span>
-                    <span className="discipline-sub">Organ Preservation &amp; Symmetry</span>
-                  </div>
-                </div>
+            </div>
 
-                <div className="discipline-item">
-                  <div className="discipline-icon-box" aria-hidden="true">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <circle cx="12" cy="12" r="10" />
-                      <path d="m4.93 4.93 4.24 4.24M14.83 9.17l4.24-4.24M14.83 14.83l4.24 4.24M9.17 14.83l-4.24 4.24" />
-                    </svg>
-                  </div>
-                  <div className="discipline-meta">
-                    <span className="discipline-title">Peritoneal Surface Malignancies &amp; HIPEC</span>
-                    <span className="discipline-sub">Curative Cytoreduction</span>
-                  </div>
-                </div>
-
-                <div className="discipline-item">
-                  <div className="discipline-icon-box" aria-hidden="true">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <rect width="18" height="18" x="3" y="3" rx="2" />
-                      <path d="M9 9h6M9 15h6" />
-                    </svg>
-                  </div>
-                  <div className="discipline-meta">
-                    <span className="discipline-title">Robotic Surgical Oncology</span>
-                    <span className="discipline-sub">Da Vinci Precision</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* FLOATING CARD 2: Floating Overlay on Doctor Right (NMC compliant - ratings removed) */}
-              <div className="floating-card floating-doctor-profile-card">
-                <div className="doctor-profile-row">
-                  <div className="doctor-avatar-circle">
-                    <img src="/images/dr_jem_kalathil.jpg" alt="Dr. Jem Kalathil" className="avatar-img" />
-                  </div>
-                  <div className="doctor-profile-info">
-                    <span className="profile-name">Dr. Jem Kalathil</span>
-                    <span className="profile-role">Lead Senior Consultant · Surgical Oncology</span>
-                    <div className="profile-exp-line">
-                      <span className="years">30+ Years Clinical Leadership</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="profile-status-pill">
-                  <span className="status-live-dot" aria-hidden="true" />
-                  <span>Specialist Referral &amp; Second Opinion Practice</span>
-                </div>
-              </div>
-
-              {/* FLOATING CARD 3: Floating Bottom Left (Desktop view) */}
-              <div className="floating-card floating-companion-pill">
-                <div className="companion-icon-wrap" aria-hidden="true">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            {/* Core Clinical Focus Areas Dock (Grounded cleanly UNDERNEATH doctor portrait - zero obstruction of face) */}
+            <div className="hero-disciplines-dock" aria-label="Core Clinical Focus Areas">
+              <a href="/clinical-areas" className="dock-discipline-item">
+                <div className="dock-icon-box" aria-hidden="true">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
                   </svg>
                 </div>
-                <div className="companion-text-meta">
-                  <span className="companion-title">Clear Second Opinions</span>
-                  <span className="companion-desc">Evidence-based clinical clarity</span>
+                <div className="dock-meta">
+                  <span className="dock-title">Breast Cancer Surgery, Oncoplasty &amp; Reconstruction</span>
+                  <span className="dock-sub">Organ Preservation &amp; Symmetry</span>
                 </div>
-              </div>
+              </a>
 
-            </div>
-
-            {/* Mobile-Only Premium Clinical Feature Strip (Underneath Doctor Portrait on Mobile) */}
-            <div className="hero-mobile-disciplines-strip" aria-label="Core Clinical Focus Areas">
-              <div className="mobile-disc-pill">
-                <span className="disc-dot" aria-hidden="true" />
-                <span>Breast Cancer Surgery, Oncoplasty &amp; Reconstruction</span>
-              </div>
-              <div className="mobile-disc-pill">
-                <span className="disc-dot" aria-hidden="true" />
-                <span>Peritoneal Surface Malignancies &amp; HIPEC</span>
-              </div>
-              <div className="mobile-disc-pill">
-                <span className="disc-dot" aria-hidden="true" />
-                <span>Robotic Surgical Oncology</span>
-              </div>
-            </div>
-
-            {/* Mobile-Only Clean Clinical Authority Card (NMC compliant - ratings removed) */}
-            <div className="hero-mobile-doctor-card">
-              <div className="mobile-doc-avatar">
-                <img src="/images/dr_jem_kalathil.jpg" alt="Dr. Jem Kalathil" />
-              </div>
-              <div className="mobile-doc-meta">
-                <div className="mobile-doc-name-row">
-                  <span className="name">Dr. Jem Kalathil</span>
+              <a href="/clinical-areas" className="dock-discipline-item">
+                <div className="dock-icon-box" aria-hidden="true">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="m4.93 4.93 4.24 4.24M14.83 9.17l4.24-4.24M14.83 14.83l4.24 4.24M9.17 14.83l-4.24 4.24" />
+                  </svg>
                 </div>
-                <span className="role">Lead Senior Consultant · Surgical Oncology</span>
-                <span className="loc">● Clinical Consultations &amp; Tele-Oncology</span>
-              </div>
+                <div className="dock-meta">
+                  <span className="dock-title">Peritoneal Surface Malignancies &amp; HIPEC</span>
+                  <span className="dock-sub">Curative Cytoreduction</span>
+                </div>
+              </a>
+
+              <a href="/clinical-areas" className="dock-discipline-item">
+                <div className="dock-icon-box" aria-hidden="true">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <rect width="18" height="18" x="3" y="3" rx="2" />
+                    <path d="M9 9h6M9 15h6" />
+                  </svg>
+                </div>
+                <div className="dock-meta">
+                  <span className="dock-title">Robotic Surgical Oncology</span>
+                  <span className="dock-sub">Da Vinci Precision</span>
+                </div>
+              </a>
             </div>
 
           </div>
