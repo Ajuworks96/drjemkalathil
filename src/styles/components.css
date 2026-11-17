@@ -932,20 +932,21 @@
 .hero-visual-stage {
   position: relative;
   width: 100%;
-  max-width: 440px;
+  max-width: 500px;
   margin: 0 auto;
 }
 
-/* Rounded Backdrop Frame (Obsidian Black with subtle gold hairline & radial glow) */
+/* Rounded Backdrop Frame (Highlighted Obsidian Black with champagne gold halo glow) */
 .stage-backdrop-frame {
   position: relative;
   z-index: 1;
-  width: 84%;
+  width: 82%;
   aspect-ratio: 1 / 1.15;
-  background: radial-gradient(circle at 35% 25%, rgba(200, 169, 106, 0.18) 0%, rgba(20, 20, 20, 0.94) 55%, #0e0e0e 100%);
-  border: 1px solid rgba(200, 169, 106, 0.32);
-  border-radius: 28px;
-  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(200, 169, 106, 0.25);
+  margin-top: 36px;
+  background: radial-gradient(circle at 35% 25%, rgba(200, 169, 106, 0.28) 0%, rgba(22, 22, 22, 0.95) 52%, #0c0c0c 100%);
+  border: 1.5px solid rgba(200, 169, 106, 0.4);
+  border-radius: 32px;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.85), 0 0 60px rgba(200, 169, 106, 0.18), inset 0 1px 0 rgba(200, 169, 106, 0.4);
   overflow: hidden;
 }
 
@@ -954,21 +955,21 @@
   top: 10%;
   left: 32%;
   transform: translateX(-50%);
-  width: 75%;
-  height: 70%;
-  background: radial-gradient(circle, rgba(200, 169, 106, 0.18) 0%, transparent 70%);
-  filter: blur(35px);
+  width: 85%;
+  height: 75%;
+  background: radial-gradient(circle, rgba(200, 169, 106, 0.28) 0%, rgba(200, 169, 106, 0.08) 50%, transparent 75%);
+  filter: blur(40px);
   pointer-events: none;
 }
 
-/* Doctor Cutout Silhouette - Positioned on left side of frame so face is 100% unobstructed */
+/* Doctor Cutout Silhouette - Prominent Big Format, Pops Out Above Frame */
 .stage-doctor-cutout-wrap {
   position: absolute;
   bottom: 0;
-  left: 32%;
+  left: 31%;
   transform: translateX(-50%);
-  width: 86%;
-  height: 104%;
+  width: 95%;
+  height: 114%;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -979,24 +980,24 @@
 .stage-doctor-img {
   width: auto;
   height: 100%;
-  max-height: 520px;
+  max-height: 575px;
   object-fit: contain;
   object-position: bottom center;
   display: block;
-  filter: drop-shadow(0 18px 36px rgba(0, 0, 0, 0.75));
+  filter: drop-shadow(0 20px 45px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 32px rgba(200, 169, 106, 0.22));
 }
 
 /* 3 FLOATING SPECIALTY CARDS - Stacked on the RIGHT overlapping the frame edge (Exact Mockup Match) */
 .hero-floating-specialties-stack {
   position: absolute;
-  top: 50%;
-  right: -14%;
+  top: 54%;
+  right: -12%;
   transform: translateY(-50%);
-  width: 310px;
-  max-width: 320px;
+  width: 320px;
+  max-width: 330px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   z-index: 4;
 }
 
@@ -1004,30 +1005,30 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 12px 16px;
-  background: rgba(14, 14, 14, 0.94);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(200, 169, 106, 0.35);
+  padding: 13px 18px;
+  background: rgba(14, 14, 14, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(200, 169, 106, 0.38);
   border-radius: 18px;
-  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(200, 169, 106, 0.2);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(200, 169, 106, 0.25);
   text-decoration: none;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .floating-specialty-card:hover {
   background: rgba(24, 24, 24, 0.98);
-  border-color: rgba(200, 169, 106, 0.65);
+  border-color: rgba(200, 169, 106, 0.7);
   transform: translateX(4px);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.75), 0 0 18px rgba(200, 169, 106, 0.2);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 20px rgba(200, 169, 106, 0.25);
 }
 
 .specialty-card-icon {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 10px;
   background: rgba(200, 169, 106, 0.12);
-  border: 1px solid rgba(200, 169, 106, 0.32);
+  border: 1px solid rgba(200, 169, 106, 0.35);
   color: var(--color-accent);
   display: flex;
   align-items: center;
@@ -1037,7 +1038,7 @@
 }
 
 .floating-specialty-card:hover .specialty-card-icon {
-  background: rgba(200, 169, 106, 0.22);
+  background: rgba(200, 169, 106, 0.25);
   border-color: var(--color-accent);
   color: #ffffff;
 }
@@ -1050,7 +1051,7 @@
 
 .specialty-card-title {
   font-family: var(--font-body);
-  font-size: 0.8125rem;
+  font-size: 0.835rem;
   font-weight: 600;
   color: #ffffff;
   line-height: 1.25;
@@ -1058,8 +1059,8 @@
 
 .specialty-card-sub {
   font-family: var(--font-body);
-  font-size: 0.6875rem;
-  color: rgba(200, 169, 106, 0.9);
+  font-size: 0.7rem;
+  color: rgba(200, 169, 106, 0.95);
   margin-top: 3px;
   line-height: 1.2;
 }
@@ -3697,35 +3698,44 @@
   }
 
   .hero-visual-stage {
-    max-width: 400px;
+    max-width: 440px;
   }
 
   .stage-backdrop-frame {
-    width: 86%;
+    width: 84%;
+    margin-top: 28px;
+  }
+
+  .stage-doctor-cutout-wrap {
+    height: 112%;
+  }
+
+  .stage-doctor-img {
+    max-height: 500px;
   }
 
   .hero-floating-specialties-stack {
     right: -8%;
-    width: 270px;
-    gap: 8px;
+    width: 290px;
+    gap: 10px;
   }
 
   .floating-specialty-card {
-    padding: 10px 14px;
-    border-radius: 14px;
+    padding: 11px 15px;
+    border-radius: 16px;
   }
 
   .specialty-card-icon {
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
   }
 
   .specialty-card-title {
-    font-size: 0.75rem;
+    font-size: 0.78rem;
   }
 
   .specialty-card-sub {
-    font-size: 0.625rem;
+    font-size: 0.66rem;
   }
 
   .hero-bottom-credentials {
@@ -3971,31 +3981,43 @@
     object-fit: contain;
   }
 
+  .hero-visual-stage {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .stage-backdrop-frame {
     width: 100%;
-    aspect-ratio: 1 / 1.05;
-    border-radius: 22px;
+    aspect-ratio: 1 / 1.1;
+    border-radius: 26px;
+    margin-top: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 35px rgba(200, 169, 106, 0.18);
   }
 
   .stage-doctor-cutout-wrap {
     left: 50%;
     width: 96%;
-    height: 104%;
+    height: 112%;
   }
 
   .stage-doctor-img {
-    max-height: 310px;
+    max-height: 360px;
     width: auto;
     object-fit: contain;
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 25px rgba(200, 169, 106, 0.22));
   }
 
   /* On mobile: Stack the 3 cards neatly under the doctor frame */
   .hero-floating-specialties-stack {
     position: static;
     transform: none;
-    margin-top: 12px;
+    margin-top: 14px;
     width: 100%;
-    max-width: 300px;
+    max-width: 320px;
     gap: 8px;
   }
 
