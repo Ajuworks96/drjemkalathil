@@ -484,14 +484,31 @@ export async function fetchWordpressPage(slug: string): Promise<Record<string, a
   if (!wpUrl) return null;
 
   try {
+    // 1. Try exact slug match
     const url = `${wpUrl.replace(/\/$/, '')}/wp-json/wp/v2/pages?slug=${encodeURIComponent(slug)}&_embed=true`;
     const response = await fetch(url);
-    if (!response.ok) return null;
+    if (response.ok) {
+      const pages = await response.json();
+      if (Array.isArray(pages) && pages.length > 0) {
+        return pages[0];
+      }
+    }
 
-    const pages = await response.json();
-    if (!Array.isArray(pages) || pages.length === 0) return null;
+    // 2. Fallback: If requesting home and not found by slug, check if there's any published page
+    if (slug === 'home' || slug === 'site-settings') {
+      const fallbackUrl = `${wpUrl.replace(/\/$/, '')}/wp-json/wp/v2/pages?per_page=5&_embed=true`;
+      const fallbackRes = await fetch(fallbackUrl);
+      if (fallbackRes.ok) {
+        const allPages = await fallbackRes.json();
+        if (Array.isArray(allPages) && allPages.length > 0) {
+          // Look for any page with acf fields populated
+          const pageWithAcf = allPages.find((p) => p.acf && Object.keys(p.acf).length > 0);
+          return pageWithAcf || allPages[0];
+        }
+      }
+    }
 
-    return pages[0];
+    return null;
   } catch (error) {
     console.warn(`Could not fetch WordPress page for slug: ${slug}`, error);
     return null;

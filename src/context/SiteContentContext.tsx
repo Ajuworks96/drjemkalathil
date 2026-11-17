@@ -61,3 +61,4 @@ export const SiteContentProvider: React.FC<{ children: React.ReactNode }> = ({ c
 };
 
 export const useSiteContent = () => useContext(SiteContentContext);
+
