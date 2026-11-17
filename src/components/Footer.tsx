@@ -30,9 +30,9 @@ export const Footer: React.FC<FooterProps> = ({ onRequestSecondOpinion }) => {
               From confusion to clarity.
             </p>
             <div className="publication-credentials-tag">
-              <span>Department of Surgical Oncology</span>
+              <span>Surgical Oncology & Clinical Second Opinion</span>
               <span className="dot-sep" aria-hidden="true">·</span>
-              <span>Aster Medcity, Kochi</span>
+              <span>Kochi, Kerala</span>
             </div>
           </div>
 
@@ -91,8 +91,6 @@ export const Footer: React.FC<FooterProps> = ({ onRequestSecondOpinion }) => {
         <div className="publication-colophon-bar">
           <div className="colophon-left">
             <span>© {CURRENT_YEAR} Dr. Jem Kalathil. All rights reserved.</span>
-            <span className="colophon-sep" aria-hidden="true">/</span>
-            <span>Department of Surgical Oncology, Aster Medcity</span>
           </div>
 
           <div className="colophon-right">

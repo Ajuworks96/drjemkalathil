@@ -94,14 +94,14 @@ export const DocumentUploadPage: React.FC = () => {
 
           <div className="subpage-hero-meta">
             <div className="hero-crest-badge">
-              <img src="/images/clinical_crystal_emblem.png" alt="Aster Medcity Crest" className="hero-crest-img" />
-              <span>256-BIT ENCRYPTED · STRICT CONFIDENTIALITY · ASTER MEDCITY</span>
+              <img src="/images/clinical_crystal_emblem.png" alt="Clinical Emblem" className="hero-crest-img" />
+              <span>256-BIT ENCRYPTED · STRICT CONFIDENTIALITY · CLINICAL-GRADE SECURITY</span>
             </div>
             <h1 className="subpage-title">
               Secure Medical Document Upload
             </h1>
             <p className="subpage-lead">
-              Submit your pathology reports, imaging scans, and clinical summaries directly for review by <strong>Dr. Jem Kalathil</strong> and his senior surgical oncology panel at Aster Medcity.
+              Submit your pathology reports, imaging scans, and clinical summaries directly for review by <strong>Dr. Jem Kalathil</strong> and his clinical second-opinion team.
             </p>
           </div>
 
@@ -141,7 +141,7 @@ export const DocumentUploadPage: React.FC = () => {
               <span className="success-reference-tag">DOSSIER REF: #{generatedRef}</span>
               <h2 className="success-heading">Medical Dossier Received Successfully</h2>
               <p className="success-message">
-                Thank you, <strong>{formData.patientName || 'Patient'}</strong>. Your clinical records have been securely transmitted to Dr. Jem Kalathil’s surgical oncology desk at Aster Medcity, Kochi.
+                Thank you, <strong>{formData.patientName || 'Patient'}</strong>. Your clinical records have been securely transmitted to Dr. Jem Kalathil’s clinical surgical oncology desk in Kochi.
               </p>
 
               <div className="success-next-steps-card">
@@ -373,10 +373,10 @@ export const DocumentUploadPage: React.FC = () => {
                           onChange={handleInputChange}
                           className="select-input"
                         >
-                          <option value="breast">Breast Cancer (Invasive Ductal, DCIS, Lobular)</option>
-                          <option value="hipec">Peritoneal Surface Spread (Colorectal, Ovarian, Appendix, PMP)</option>
-                          <option value="sarcoma">Retroperitoneal / Extremity Soft Tissue Sarcoma</option>
-                          <option value="gi">Gastrointestinal / Esophageal / Colorectal Cancer</option>
+                          <option value="breast">Breast Cancer Surgery, Oncoplasty & Reconstruction</option>
+                          <option value="hipec">Peritoneal Surface Malignancies & HIPEC</option>
+                          <option value="robotic">Robotic Surgical Oncology (GI, Gynaecological & Pelvic)</option>
+                          <option value="sarcoma">Soft Tissue Sarcomas (Retroperitoneal & Extremity)</option>
                           <option value="other">Other Complex or Borderline Malignancy</option>
                         </select>
                       </div>
@@ -629,7 +629,7 @@ export const DocumentUploadPage: React.FC = () => {
                     {/* Medical Confidentiality Agreement */}
                     <div className="consent-statement-box">
                       <p>
-                        <strong>Patient Confidentiality & Data Stewardship:</strong> By transmitting these medical records, you authorize Dr. Jem Kalathil and the Department of Surgical Oncology at Aster Medcity to evaluate your diagnostic reports for clinical triage and second opinion purposes. All records are stored on secure, encrypted hospital servers complying with Indian medical record ethics and international confidentiality standards.
+                        <strong>Patient Confidentiality & Clinical Data Protection:</strong> By submitting these medical records, you authorize Dr. Jem Kalathil and his clinical review team to evaluate your diagnostic reports solely for specialist surgical second opinion and clinical triage. All uploaded records are encrypted in transit and at rest in compliance with applicable Indian medical data protection standards (including the Digital Personal Data Protection Act 2023 and NMC ethics guidelines). Submission of records for a second opinion does not establish a formal doctor-patient relationship; an in-person physical consultation or formal teleconsultation is required before any treatment plan is finalized or initiated.
                       </p>
                       <label className="consent-checkbox-row">
                         <input

@@ -85,7 +85,7 @@ export const ProcessStep: React.FC = () => {
           <div className="journey-meta-content">
             <span className="meta-tag-highlight">OBJECTIVE CLINICAL AUTONOMY</span>
             <p className="meta-desc">
-              At no point in this journey is there any pressure to undergo surgery at Aster Medcity. The written roadmap is yours to discuss with your family and proceed with your treating surgical team.
+              At no point in this journey is there any pressure to undergo surgery at our centre. The written roadmap is yours to discuss with your family and proceed with your treating surgical team.
             </p>
           </div>
         </div>

@@ -727,7 +727,6 @@
 
 .hero-title-accent {
   color: var(--color-accent);
-  font-style: italic;
   font-weight: 600;
 }
 
@@ -756,13 +755,13 @@
 
 .doctor-credentials-badge {
   font-family: var(--font-body);
-  font-size: 0.8125rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  color: var(--color-accent);
-  padding: 3px 10px;
-  border-radius: 4px;
-  background: rgba(200, 169, 106, 0.1);
-  border: 1px solid rgba(200, 169, 106, 0.28);
+  color: #faf7f2;
+  padding: 3px 12px;
+  border-radius: 999px;
+  background: rgba(200, 169, 106, 0.12);
+  border: 1px solid rgba(200, 169, 106, 0.35);
   white-space: normal;
   max-width: 100%;
 }

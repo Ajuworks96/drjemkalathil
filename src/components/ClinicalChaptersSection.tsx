@@ -95,11 +95,9 @@ export const ClinicalChaptersSection: React.FC<ClinicalChaptersSectionProps> = (
               </h3>
 
               <div className="ch1-disciplines-list">
-                <span className="discipline-tag">Peritoneal Surface Malignancies</span>
+                <span className="discipline-tag">Peritoneal Surface Malignancies & HIPEC</span>
                 <span className="discipline-sep" aria-hidden="true">·</span>
-                <span className="discipline-tag">HIPEC</span>
-                <span className="discipline-sep" aria-hidden="true">·</span>
-                <span className="discipline-tag">Cytoreductive Surgery</span>
+                <span className="discipline-tag">Cytoreductive Surgery (CRS)</span>
               </div>
 
               <div className="chapter-gold-hairline" aria-hidden="true" />
@@ -232,11 +230,11 @@ export const ClinicalChaptersSection: React.FC<ClinicalChaptersSectionProps> = (
               </h3>
 
               <div className="ch3-disciplines-row">
-                <span className="ch3-spec-pill">Robotic Oncology</span>
+                <span className="ch3-spec-pill">Robotic Surgical Oncology</span>
                 <span className="ch3-spec-bullet" aria-hidden="true">/</span>
-                <span className="ch3-spec-pill">Minimally Invasive Cancer Surgery</span>
+                <span className="ch3-spec-pill">GI, Gynaecological & Pelvic Resection</span>
                 <span className="ch3-spec-bullet" aria-hidden="true">/</span>
-                <span className="ch3-spec-pill">Complex Resection</span>
+                <span className="ch3-spec-pill">Extremity & Retroperitoneal Sarcomas</span>
               </div>
 
               <p className="ch3-description">

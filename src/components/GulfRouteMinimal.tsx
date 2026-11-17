@@ -29,7 +29,7 @@ export const GulfRouteMinimal: React.FC<GulfRouteMinimalProps> = ({
   }, []);
 
   const geographicLocations = [
-    { name: 'Kerala', hub: 'Clinical Base · Aster Medcity' },
+    { name: 'Kerala', hub: 'Clinical Surgical Base · Kochi' },
     { name: 'United Arab Emirates', hub: 'Direct Tele-Review' },
     { name: 'Saudi Arabia', hub: 'Direct Tele-Review' },
     { name: 'Qatar', hub: 'Direct Tele-Review' },

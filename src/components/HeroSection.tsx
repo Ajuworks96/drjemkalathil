@@ -35,7 +35,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
                 <svg className="pill-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
                 </svg>
-                <span className="pill-text">Head of Surgical Oncology · Aster Medcity, Kochi</span>
+                <span className="pill-text">Surgical Oncologist · Breast, Peritoneal &amp; Robotic Surgery</span>
               </div>
 
               {/* Primary SEO Heading (H1) */}
@@ -48,15 +48,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
               <div className="hero-doctor-title-line">
                 <span className="doctor-primary-name" itemProp="name">Dr. Jem Kalathil</span>
                 <span className="doctor-title-separator" aria-hidden="true">·</span>
-                <span className="doctor-credentials-badge">MBBS, MS, FRCS (Edin)</span>
+                <span className="doctor-credentials-badge">MS (General Surgery) · Surgical Oncology</span>
               </div>
             </div>
 
             {/* Actions Block (On mobile: order 3) */}
             <div className="hero-actions-block">
-              {/* SEO Lead Description Paragraph */}
+              {/* SEO Lead Description Paragraph (Rewritten per compliance brief) */}
               <p className="hero-lead-description" itemProp="description">
-                Dedicated to organ-preserving breast oncoplasty, advanced HIPEC cytoreduction, and precision robotic oncology. Offering transparent surgical guidance and evidence-backed second opinions for patients across Kerala, India, and the Gulf.
+                Surgical oncology guided by precision, preservation, and transparency. Specialising in Breast Cancer Surgery with Oncoplasty &amp; Reconstruction, Peritoneal Surface Malignancies &amp; HIPEC, and Robotic Surgical Oncology — with dedicated second-opinion pathways for patients across Kerala, India, and the Gulf.
               </p>
 
               {/* Action Buttons Row (Modeled after reference dual CTAs) */}
@@ -81,17 +81,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
                 </a>
               </div>
 
-              {/* Trust Proof & Social Proof Strip (Modeled after reference avatar/rating) */}
+              {/* Trust Proof & Direct Desk Strip (NMC compliant - ratings removed) */}
               <div className="hero-social-proof-strip">
-                <div className="proof-rating-badge">
-                  <div className="stars-cluster" aria-label="5 out of 5 stars">
-                    ★★★★★
-                  </div>
-                  <span className="rating-score">5.0</span>
-                </div>
                 <div className="proof-text-block">
-                  <span className="proof-metric">30+ Years Practice</span>
-                  <span className="proof-sub">Royal College of Surgeons (FRCS) · Aster Medcity</span>
+                  <span className="proof-metric">30+ Years Dedicated Practice</span>
+                  <span className="proof-sub">Senior Surgical Oncologist · Comprehensive Cancer Care</span>
                 </div>
 
                 {/* Direct Desk Line */}
@@ -130,7 +124,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
                 />
               </div>
 
-              {/* FLOATING CARD 1: Top Left - 3 Clinical Disciplines (Desktop view) */}
+              {/* FLOATING CARD 1: Top Left - 3 Standardised Specialty Names (Desktop view) */}
               <div className="floating-card floating-disciplines-card" aria-label="Key Clinical Pillars">
                 <div className="discipline-item">
                   <div className="discipline-icon-box" aria-hidden="true">
@@ -139,8 +133,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
                     </svg>
                   </div>
                   <div className="discipline-meta">
-                    <span className="discipline-title">Breast Oncoplasty</span>
-                    <span className="discipline-sub">Organ Preservation</span>
+                    <span className="discipline-title">Breast Cancer Surgery, Oncoplasty &amp; Reconstruction</span>
+                    <span className="discipline-sub">Organ Preservation &amp; Symmetry</span>
                   </div>
                 </div>
 
@@ -152,8 +146,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
                     </svg>
                   </div>
                   <div className="discipline-meta">
-                    <span className="discipline-title">Advanced HIPEC</span>
-                    <span className="discipline-sub">Cytoreductive Surgery</span>
+                    <span className="discipline-title">Peritoneal Surface Malignancies &amp; HIPEC</span>
+                    <span className="discipline-sub">Curative Cytoreduction</span>
                   </div>
                 </div>
 
@@ -165,31 +159,29 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
                     </svg>
                   </div>
                   <div className="discipline-meta">
-                    <span className="discipline-title">Robotic Surgery</span>
+                    <span className="discipline-title">Robotic Surgical Oncology</span>
                     <span className="discipline-sub">Da Vinci Precision</span>
                   </div>
                 </div>
               </div>
 
-              {/* FLOATING CARD 2: Floating Overlay on Doctor Right (Desktop view) */}
+              {/* FLOATING CARD 2: Floating Overlay on Doctor Right (NMC compliant - ratings removed) */}
               <div className="floating-card floating-doctor-profile-card">
                 <div className="doctor-profile-row">
                   <div className="doctor-avatar-circle">
-                    <img src="/images/dr_jem_kalathil.jpg" alt="" className="avatar-img" />
+                    <img src="/images/dr_jem_kalathil.jpg" alt="Dr. Jem Kalathil" className="avatar-img" />
                   </div>
                   <div className="doctor-profile-info">
                     <span className="profile-name">Dr. Jem Kalathil</span>
-                    <span className="profile-role">Head of Surgical Oncology</span>
-                    <div className="profile-rating-line">
-                      <span className="star" aria-hidden="true">★</span>
-                      <span className="score">5.0</span>
-                      <span className="years">(30+ Years Exp)</span>
+                    <span className="profile-role">Lead Senior Consultant · Surgical Oncology</span>
+                    <div className="profile-exp-line">
+                      <span className="years">30+ Years Clinical Leadership</span>
                     </div>
                   </div>
                 </div>
                 <div className="profile-status-pill">
                   <span className="status-live-dot" aria-hidden="true" />
-                  <span>OPD at Aster Medcity, Kochi</span>
+                  <span>Specialist Referral &amp; Second Opinion Practice</span>
                 </div>
               </div>
 
@@ -212,19 +204,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
             <div className="hero-mobile-disciplines-strip" aria-label="Core Clinical Focus Areas">
               <div className="mobile-disc-pill">
                 <span className="disc-dot" aria-hidden="true" />
-                <span>Breast Oncoplasty</span>
+                <span>Breast Cancer Surgery, Oncoplasty &amp; Reconstruction</span>
               </div>
               <div className="mobile-disc-pill">
                 <span className="disc-dot" aria-hidden="true" />
-                <span>Advanced HIPEC</span>
+                <span>Peritoneal Surface Malignancies &amp; HIPEC</span>
               </div>
               <div className="mobile-disc-pill">
                 <span className="disc-dot" aria-hidden="true" />
-                <span>Robotic Precision</span>
+                <span>Robotic Surgical Oncology</span>
               </div>
             </div>
 
-            {/* Mobile-Only Clean Trust & Location Card (Below doctor frame, zero obstruction) */}
+            {/* Mobile-Only Clean Clinical Authority Card (NMC compliant - ratings removed) */}
             <div className="hero-mobile-doctor-card">
               <div className="mobile-doc-avatar">
                 <img src="/images/dr_jem_kalathil.jpg" alt="Dr. Jem Kalathil" />
@@ -232,10 +224,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
               <div className="mobile-doc-meta">
                 <div className="mobile-doc-name-row">
                   <span className="name">Dr. Jem Kalathil</span>
-                  <span className="rating">★ 5.0</span>
                 </div>
-                <span className="role">Senior Consultant &amp; Head of Surgical Oncology</span>
-                <span className="loc">● OPD Consultations at Aster Medcity, Kochi</span>
+                <span className="role">Lead Senior Consultant · Surgical Oncology</span>
+                <span className="loc">● Clinical Consultations &amp; Tele-Oncology</span>
               </div>
             </div>
 
@@ -244,24 +235,24 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
         </div>
       </div>
 
-      {/* Baseline Credentials Bar */}
+      {/* Baseline Clinical Authority Bar (NMC compliant - FRCS & institutional promotion replaced) */}
       <div className="container">
         <div className="hero-bottom-credentials">
           <div className="credential-item">
-            <span className="credential-value">{CLINICAL_DOCTOR_INFO.experienceYears}</span>
-            <span className="credential-label">Years of Dedicated Surgical Practice</span>
+            <span className="credential-value">30+ Years</span>
+            <span className="credential-label">Dedicated Surgical Oncology Practice</span>
           </div>
           <div className="credential-item">
-            <span className="credential-value">FRCS</span>
-            <span className="credential-label">Royal College of Surgeons, Edinburgh</span>
+            <span className="credential-value">High-Volume Specialist</span>
+            <span className="credential-label">Peritoneal Surface Oncology &amp; HIPEC</span>
           </div>
           <div className="credential-item">
-            <span className="credential-value">HIPEC &amp; Breast</span>
-            <span className="credential-label">Pioneering Organ-Preserving Surgery</span>
+            <span className="credential-value">Organ Preservation</span>
+            <span className="credential-label">Oncoplastic Breast Surgery &amp; Reconstruction</span>
           </div>
           <div className="credential-item">
-            <span className="credential-value">Aster Medcity</span>
-            <span className="credential-label">Senior Consultant &amp; Head of Department</span>
+            <span className="credential-value">MDT Standard</span>
+            <span className="credential-label">Multidisciplinary Tumor Board Scrutiny</span>
           </div>
         </div>
       </div>

@@ -87,8 +87,8 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onRequestSecondO
 
           <div className="subpage-hero-meta">
             <div className="hero-crest-badge">
-              <img src="/images/clinical_crystal_emblem.png" alt="Aster Medcity Crest" className="hero-crest-img" />
-              <span>OBJECTIVE SURGICAL CLARITY · ASTER MEDCITY</span>
+              <img src="/images/clinical_crystal_emblem.png" alt="Clinical Emblem" className="hero-crest-img" />
+              <span>OBJECTIVE SURGICAL CLARITY · SPECIALIST CLINICAL DESK</span>
             </div>
             <h1 className="subpage-title">
               The Clinical Pathway: From Diagnostic Uncertainty to Calm Certainty
@@ -126,7 +126,7 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onRequestSecondO
             <span className="editorial-gold-kicker">A RIGOROUS 4-STAGE PROTOCOL</span>
             <h2 className="pathway-track-title">How Your Case is Processed</h2>
             <p className="pathway-track-lead">
-              Every dossier submitted to Dr. Jem Kalathil moves through four strict clinical milestones designed to ensure zero diagnostic oversights.
+              Every dossier submitted to Dr. Jem Kalathil moves through four strict clinical milestones designed to ensure rigorous multi-stage clinical scrutiny designed to minimise diagnostic gaps.
             </p>
           </div>
 
@@ -167,7 +167,7 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onRequestSecondO
                 </div>
                 <h3 className="stage-heading">Independent Surgical Staging & Tumor Board Evaluation</h3>
                 <p className="stage-text">
-                  Dr. Jem Kalathil re-evaluates surgical resectability from a quaternary perspective. In complex borderline cases—such as exploring organ preservation where mastectomy was advised, or calculating Sugarbaker PCI feasibility for peritoneal spread—scans are cross-examined with Aster Medcity's multidisciplinary oncology panel.
+                  Dr. Jem Kalathil re-evaluates surgical resectability from a quaternary perspective. In complex borderline cases—such as exploring organ preservation where mastectomy was advised, or calculating Sugarbaker PCI feasibility for peritoneal spread—scans are cross-examined within a multidisciplinary oncology panel framework.
                 </p>
                 <div className="stage-checklist-inline">
                   <span className="checklist-item">✓ Independent Staging & Margin Validation</span>
@@ -190,7 +190,7 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onRequestSecondO
                 </div>
                 <h3 className="stage-heading">Detailed 1-on-1 Discussion with Dr. Jem Kalathil</h3>
                 <p className="stage-text">
-                  You and your family meet directly with Dr. Jem Kalathil—either in person at Aster Medcity Kochi or via encrypted video teleconsultation. Dr. Jem translates intricate clinical data into transparent, human language, reviews surgical alternatives, and answers every question without time pressure.
+                  You and your family meet directly with Dr. Jem Kalathil—either in person at our clinical consultation suite in Kochi or via encrypted video teleconsultation. Dr. Jem translates intricate clinical data into transparent, human language, reviews surgical alternatives, and answers every question without time pressure.
                 </p>
                 <div className="stage-checklist-inline">
                   <span className="checklist-item">✓ Direct 1-on-1 Consultation Time</span>
@@ -213,9 +213,12 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onRequestSecondO
                 </div>
                 <h3 className="stage-heading">Formal Signed Memorandum & Actionable Treatment Roadmap</h3>
                 <p className="stage-text">
-                  You receive a formal written Clinical Memorandum detailing Dr. Jem Kalathil's findings, alternative surgical options, and recommended timelines. You are empowered to proceed with absolute clarity—whether returning to your primary local oncologist with our backing, or transitioning to Aster Medcity for surgical admission.
+                  You receive a formal written Clinical Memorandum detailing Dr. Jem Kalathil's findings, alternative surgical options, and recommended timelines. You are empowered to proceed with absolute clarity—whether returning to your primary local oncologist with our backing, or transitioning to Kochi for surgical admission if indicated.
                 </p>
-                <div className="stage-checklist-inline">
+                <div className="stage-memorandum-caveat" style={{ marginTop: '0.75rem', padding: '0.625rem 0.875rem', background: 'rgba(200, 169, 106, 0.05)', borderLeft: '2px solid rgba(200, 169, 106, 0.4)', borderRadius: '4px', fontSize: '0.75rem', lineHeight: '1.5', color: '#a0a5aa' }}>
+                  <em>The Second Opinion Clinical Memorandum is an independent surgical assessment prepared solely for patient education and clinical guidance. It does not establish a formal doctor-patient relationship, replace in-person clinical examination, or constitute a legally binding prescription.</em>
+                </div>
+                <div className="stage-checklist-inline" style={{ marginTop: '1rem' }}>
                   <span className="checklist-item">✓ Signed Written Clinical Assessment</span>
                   <span className="checklist-item">✓ Collaborative Respect for Local Doctors</span>
                   <span className="checklist-item">✓ Dedicated International / Gulf Concierge</span>
@@ -333,7 +336,7 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onRequestSecondO
                 </tr>
                 <tr>
                   <td className="row-aspect">Histopathology Review</td>
-                  <td className="row-standard">Passive glance at the summary conclusion line only.</td>
+                  <td className="row-standard">Summary review without independent re-analysis of raw histopathology.</td>
                   <td className="row-jem">Rigorous re-examination of IHC markers, margins, and tumor grade.</td>
                 </tr>
                 <tr>
@@ -344,7 +347,7 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onRequestSecondO
                 <tr>
                   <td className="row-aspect">Multidisciplinary Backup</td>
                   <td className="row-standard">Single clinician perspective without tumor board scrutiny.</td>
-                  <td className="row-jem">Aster Medcity Quaternary Multidisciplinary Tumor Board (MDT).</td>
+                  <td className="row-jem">Quaternary Multidisciplinary Tumor Board (MDT) Scrutiny.</td>
                 </tr>
                 <tr>
                   <td className="row-aspect">Deliverable to Patient</td>
@@ -365,12 +368,12 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onRequestSecondO
               <span className="gulf-badge-gold">DEDICATED INTERNATIONAL LIAISON</span>
               <h2 className="gulf-concierge-title">Traveling from the Gulf Region to Kochi?</h2>
               <p className="gulf-concierge-desc">
-                Patients from UAE, Oman, Qatar, Saudi Arabia, Kuwait, and Bahrain receive direct coordination before boarding a flight. We review records remotely first to confirm surgical suitability.
+                Patients from UAE, Oman, Qatar, Saudi Arabia, Kuwait, and Bahrain receive direct coordination before boarding a flight. We review your dossier remotely and confirm surgical suitability before you book your travel. No unnecessary journeys.
               </p>
               <div className="gulf-services-grid">
                 <div className="gulf-service-item">
                   <span className="service-dot">●</span>
-                  <span>Cochin International Airport (COK) reception — 45 mins to Aster Medcity</span>
+                  <span>Cochin International Airport (COK) reception — 45 mins to clinical consultation centre</span>
                 </div>
                 <div className="gulf-service-item">
                   <span className="service-dot">●</span>
@@ -409,7 +412,7 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onRequestSecondO
             <span className="subpage-cta-kicker">COMMENCE YOUR EVALUATION WITH COMPLETE CONFIDENCE</span>
             <h2 className="subpage-cta-title">Begin Your Pathway to Clarity</h2>
             <p className="subpage-cta-text">
-              Have your diagnostic reports and scans reviewed by Dr. Jem Kalathil and his senior surgical oncology team at Aster Medcity.
+              Have your diagnostic reports and scans reviewed by Dr. Jem Kalathil and his senior clinical oncology team.
             </p>
             <div className="subpage-cta-actions">
               <Button

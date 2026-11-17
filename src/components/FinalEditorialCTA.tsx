@@ -46,7 +46,7 @@ export const FinalEditorialCTA: React.FC<FinalEditorialCTAProps> = ({ onRequestS
           </div>
 
           <div className="final-discreet-footnote">
-            Direct surgical second opinion under Dr. Jem Kalathil · Quaternary Surgical Care, Aster Medcity Kochi
+            Direct surgical second opinion under Dr. Jem Kalathil · Specialist Surgical Oncology, Kochi
           </div>
         </div>
       </div>

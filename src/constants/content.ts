@@ -2,16 +2,17 @@ import type { ClinicalPillarData, ProcessStepData, PreparationChecklistItem, Faq
 
 export const CLINICAL_DOCTOR_INFO = {
   name: 'Dr. Jem Kalathil',
-  credentials: 'MBBS, MS (General Surgery), FRCS (Edinburgh)',
-  role: 'Senior Consultant & Head of Department of Surgical Oncology',
+  credentials: 'MBBS, MS (General Surgery)',
+  role: 'Lead Senior Consultant, Surgical Oncology',
   hospital: 'Aster Medcity, Kochi',
   location: 'Cheranallur, Kochi, Kerala 682027, India',
   experienceYears: '30+',
   fellowships: [
-    'Fellow of the Royal College of Surgeons (FRCS), Edinburgh',
+    'UICC Fellowship in Milan under Professor Umberto Veronesi',
+    'Former Additional Professor of Surgical Oncology, Regional Cancer Centre (RCC), Thiruvananthapuram',
     'Former Senior Consultant, Breast Unit, Royal Hospital, Muscat, Oman',
-    'Former Professor of Surgical Oncology, Regional Cancer Centre (RCC), Thiruvananthapuram',
-    'Advanced Surgical Oncology Training & Observerships in United Kingdom & Italy',
+    'Advanced Surgical Oncology Training & Observerships in United Kingdom, Italy & Singapore',
+    'Lead Principal Investigator on Clinical Trials, Aster Clinical Research Centre',
   ],
   secretaryPhone: '+91 484 669 9999',
   clinicalDeskPhone: '+91 949 771 2345',
@@ -49,7 +50,7 @@ export const SIMPLE_CLINICAL_AREAS = [
     number: '01',
     title: 'WHEN HOPE SEEMS LOST',
     domainId: 'peritoneal-hipec',
-    specialties: ['Peritoneal Surface Malignancies', 'HIPEC', 'Cytoreductive Surgery'],
+    specialties: ['Peritoneal Surface Malignancies & HIPEC', 'Cytoreductive Surgery', 'Sugarbaker PCI Staging'],
     description: 'For patients who have been told that surgical options may be limited or exhausted.',
     imageSrc: '/images/surgical_theatre.jpg',
     imageAlt: 'Surgical theatre for cytoreductive peritonectomy and heated intraperitoneal chemotherapy',
@@ -58,7 +59,7 @@ export const SIMPLE_CLINICAL_AREAS = [
     number: '02',
     title: 'PRECISION THAT PROTECTS YOU',
     domainId: 'breast-oncology',
-    specialties: ['Oncoplastic Breast Surgery', 'Sentinel Node Biopsy', 'Radio-Guided Surgery', 'Breast Reconstruction'],
+    specialties: ['Breast Cancer Surgery, Oncoplasty & Reconstruction', 'Radio-Guided Surgery', 'Organ Preservation'],
     description: 'Surgical precision that preserves tissue, aesthetics, and long-term peace of mind.',
     imageSrc: '/images/clinical_case_review.jpg',
     imageAlt: 'Oncoplastic breast surgery margin planning and diagnostic review',
@@ -67,7 +68,7 @@ export const SIMPLE_CLINICAL_AREAS = [
     number: '03',
     title: 'SURGERY AT THE FRONTIER',
     domainId: 'sarcoma-soft-tissue',
-    specialties: ['Robotic Oncology', 'Minimally Invasive Cancer Surgery', 'Complex Resection'],
+    specialties: ['Robotic Surgical Oncology', 'Complex Compartmental Resection', 'Sphincter Preservation'],
     description: 'Advanced robotic instrumentation for deep anatomical access with minimal trauma.',
     imageSrc: '/images/robotic_oncology_frontier.jpg',
     imageAlt: 'Robotic oncology surgical suite performing complex resection',
@@ -88,23 +89,23 @@ export const CLINICAL_AREAS: ClinicalAreaDetailedItem[] = [
   {
     id: 'breast',
     number: '01',
-    title: 'Oncoplastic Breast Surgery & Conservation',
+    title: 'Breast Cancer Surgery, Oncoplasty & Reconstruction',
     subtitle: 'TISSUE PRESERVATION & MARGIN CONTROL',
     description:
-      'Advancing breast conservation through oncoplastic techniques that avoid mastectomy where clinically feasible, without compromising radical disease clearance. Integrating dual-tracer sentinel lymph node biopsies and aesthetic volume displacement.',
+      'Advancing breast conservation through oncoplastic techniques that avoid mastectomy where clinically feasible, without compromising radical disease clearance. Integrating radio-guided surgery, sentinel lymph node biopsies, and aesthetic volume displacement.',
     imageSrc: '/images/clinical_case_review.jpg',
     procedures: [
-      'Level I & Level II Oncoplastic Volume Displacement',
-      'Dual-Tracer Sentinel Lymph Node Biopsy (SLNB)',
-      'Skin & Nipple-Areola Sparing Mastectomy',
-      'Immediate Dual-Plane Breast Reconstruction',
-      'Radio-Guided Occult Lesion Localization (ROLL)',
+      'Organ-Preserving Oncoplasty with Advanced Reconstructive Techniques',
+      'Radio-Guided Surgery (ROLL, SNOLL & Dual-Tracer Sentinel Node Biopsy)',
+      'Oncoplastic Symmetrisation & Contralateral Balancing',
+      'Intraoperative Margin Assessment & Re-Excision Planning',
+      'LYMPHA (Immediate Lymphatic Reconstruction for Lymphoedema Prevention)',
     ],
   },
   {
     id: 'hipec',
     number: '02',
-    title: 'Peritoneal Oncology, Cytoreduction & HIPEC',
+    title: 'Peritoneal Surface Malignancies & HIPEC',
     subtitle: 'CURATIVE PERITONEAL CLEARANCE',
     description:
       'Pioneering aggressive multi-compartment peritonectomy combined with Hyperthermic Intraperitoneal Chemotherapy (41.5°C–42.5°C) for patients historically deemed inoperable due to peritoneal spread from colorectal, ovarian, or appendiceal origins.',
@@ -120,7 +121,7 @@ export const CLINICAL_AREAS: ClinicalAreaDetailedItem[] = [
   {
     id: 'minimally-invasive',
     number: '03',
-    title: 'Minimally Invasive & Robotic Surgical Oncology',
+    title: 'Robotic Surgical Oncology',
     subtitle: 'ROBOTIC DEXTERITY & ACCELERATED HEALING',
     description:
       'Deploying advanced daVinci robotic technology and 3D high-definition visualization for complex deep pelvis, retroperitoneal, and gastrointestinal resections—sparing critical nerves and blood vessels with minimal trauma.',
@@ -342,7 +343,7 @@ export const PROCESS_STEPS: ProcessStepData[] = [
     title: 'CLARIFY THE CLINICAL PICTURE',
     timeline: 'Scheduled at Your Convenience',
     summary:
-      'A dedicated 45-minute clinical dialogue—conducted in person at Aster Medcity or via secure tele-oncology. Scans are displayed millimeter by millimeter, demystifying surgical options.',
+      'A dedicated 45-minute clinical dialogue—conducted in person in Kochi or via secure tele-oncology. Scans are displayed millimeter by millimeter, demystifying surgical options.',
     patientAction: 'Attend with trusted family members. Ask every unaddressed question regarding alternatives, margins, and recovery.',
     clinicalOutput: 'Transparent, unhurried discussion of conservative options, radical resections, recovery timelines, and risks.',
   },
@@ -352,7 +353,7 @@ export const PROCESS_STEPS: ProcessStepData[] = [
     timeline: 'Delivered Immediately Following Review',
     summary:
       'You receive a structured, written surgical blueprint detailing the recommended approach, rationale, and sequencing to share with your family and local oncological team.',
-    patientAction: 'Use the written blueprint to proceed with surgery at Aster Medcity or coordinate with your local clinical team.',
+    patientAction: 'Use the written blueprint to proceed with surgery in Kochi if indicated, or coordinate with your local clinical team.',
     clinicalOutput: 'Empowered, objective clarity with zero pressure, allowing you to move forward with peace of mind.',
   },
 ];

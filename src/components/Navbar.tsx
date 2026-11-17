@@ -53,16 +53,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestSecondOpinion }) => {
   return (
     <>
       <header className="navbar-executive-wrapper" role="banner">
-        {/* 1. Top Institutional Utility Strip */}
+        {/* 1. Top Clinical Utility Strip */}
         <div className="navbar-top-utility">
           <div className="navbar-container">
             <div className="navbar-top-inner">
               <div className="utility-left">
-                <span className="utility-inst">ASTER MEDCITY</span>
-                <span className="utility-sep" aria-hidden="true">/</span>
-                <span className="utility-dept">DEPARTMENT OF SURGICAL ONCOLOGY</span>
-                <span className="utility-sep" aria-hidden="true">/</span>
-                <span className="utility-loc">CHERANALLUR, KOCHI</span>
+                <span className="utility-inst">SURGICAL ONCOLOGY &amp; CLINICAL SECOND OPINION</span>
               </div>
 
               <div className="utility-right">

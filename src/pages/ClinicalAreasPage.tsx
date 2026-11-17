@@ -48,13 +48,13 @@ const CLINICAL_PAGE_FAQS = [
     num: '03',
     question: 'Can I get an independent review if surgery was recommended elsewhere?',
     answer:
-      'Yes. More than 40% of the cases reviewed by Dr. Jem Kalathil at Aster Medcity are second opinions where patients were previously told that mastectomy was their only option, or that peritoneal disease was inoperable. An independent quaternary evaluation provides scientific reassurance or introduces alternatives.',
+      'Yes. More than 40% of the cases reviewed by Dr. Jem Kalathil are second opinions where patients were previously told that mastectomy was their only option, or that peritoneal disease was inoperable. An independent quaternary evaluation provides scientific reassurance or introduces alternatives.',
   },
   {
     num: '04',
     question: 'How does the Multidisciplinary Tumor Board (MDT) protect patient outcomes?',
     answer:
-      'At Aster Medcity, complex oncology cases are never decided by a single clinician. The MDT brings together surgical oncologists, medical oncologists, radiation oncologists, and specialist onco-pathologists to cross-verify staging, review microscopic biopsy margins, and determine optimal surgical sequencing.',
+      'Complex oncology cases are never decided by a single clinician. The MDT brings together surgical oncologists, medical oncologists, radiation oncologists, and specialist onco-pathologists to cross-verify staging, review microscopic biopsy margins, and determine optimal surgical sequencing.',
   },
 ];
 
@@ -83,38 +83,36 @@ export const ClinicalAreasPage: React.FC<ClinicalAreasPageProps> = ({ onRequestS
 
   return (
     <div className="subpage-wrapper">
-      {/* 1. Page Editorial Header (Dark Luxury Theme) */}
+      {/* 1. Page Editorial Header (Dark Luxury Theme - Clean Medical Authority) */}
       <section className="subpage-editorial-hero" aria-label="Clinical Disciplines Overview">
         <div className="editorial-container">
           <div className="subpage-breadcrumb">
             <span className="crumb-item">HOME</span>
             <span className="crumb-sep">/</span>
-            <span className="crumb-item">DEPARTMENT OF SURGICAL ONCOLOGY</span>
-            <span className="crumb-sep">/</span>
-            <span className="crumb-active">CLINICAL DISCIPLINES</span>
+            <span className="crumb-active">CLINICAL SPECIALISATIONS</span>
           </div>
 
           <div className="subpage-hero-meta">
             <div className="hero-crest-badge">
-              <img src="/images/clinical_crystal_emblem.png" alt="Aster Medcity Crest" className="hero-crest-img" />
-              <span>ASTER MEDCITY · KOCHI · QUATERNARY SURGICAL ONCOLOGY</span>
+              <img src="/images/clinical_crystal_emblem.png" alt="Clinical Specialisations" className="hero-crest-img" />
+              <span>SURGICAL ONCOLOGY &amp; CLINICAL SECOND OPINION</span>
             </div>
             <h1 className="subpage-title">
-              Disciplines of Precision & Surgical Leadership
+              Clinical Specialisations
             </h1>
             <p className="subpage-lead">
-              Under the clinical leadership of <strong>Dr. Jem Kalathil</strong> (FRCS Edinburgh, 30+ Years Experience), our quaternary surgical oncology units balance complete curative cancer clearance with anatomical dignity, tissue preservation, and accelerated recovery.
+              Under the clinical leadership of <strong>Dr. Jem Kalathil</strong> (Surgical Oncologist, 30+ Years Experience), our specialised surgical oncology practice balances complete curative cancer clearance with anatomical dignity, tissue preservation, and accelerated recovery.
             </p>
           </div>
 
           <div className="subpage-stats-strip">
             <div className="subpage-stat-item">
               <span className="subpage-stat-val">30+</span>
-              <span className="subpage-stat-label">Years Surgical Leadership</span>
+              <span className="subpage-stat-label">Years Dedicated Practice</span>
             </div>
             <div className="subpage-stat-item">
-              <span className="subpage-stat-val">FRCS</span>
-              <span className="subpage-stat-label">Royal College of Surgeons, Edinburgh</span>
+              <span className="subpage-stat-val">Fellowship-Trained</span>
+              <span className="subpage-stat-label">Surgical Oncology Specialist</span>
             </div>
             <div className="subpage-stat-item">
               <span className="subpage-stat-val">HIPEC</span>
@@ -166,7 +164,7 @@ export const ClinicalAreasPage: React.FC<ClinicalAreasPageProps> = ({ onRequestS
                     className="discipline-feature-img"
                   />
                   <div className="discipline-image-tag">
-                    <span className="tag-dot">●</span> ASTER MEDCITY · KOCHI
+                    <span className="tag-dot">●</span> CLINICAL SURGICAL SUITE
                   </div>
                 </div>
 
@@ -176,7 +174,7 @@ export const ClinicalAreasPage: React.FC<ClinicalAreasPageProps> = ({ onRequestS
                   <p className="metric-text">
                     “In oncological surgery, the microscopic margin is everything. Preserving anatomy is only meaningful when curative disease clearance is absolute.”
                   </p>
-                  <span className="metric-author">— Dr. Jem Kalathil, FRCS (Edin)</span>
+                  <span className="metric-author">— Dr. Jem Kalathil, Surgical Oncologist</span>
                 </div>
 
                 {/* Benchmark Specifications */}
@@ -234,10 +232,12 @@ export const ClinicalAreasPage: React.FC<ClinicalAreasPageProps> = ({ onRequestS
                   <ul className="criteria-list">
                     {activeArea.id === 'breast' && (
                       <>
+                        <li><span className="priority-pill">DIAGNOSTIC</span> <strong>Excision Biopsy Proposed for Diagnosis:</strong> Before undergoing open excision biopsy for an undiagnosed breast lump, evaluate minimally invasive core needle biopsy and radio-guided localization options.</li>
                         <li><span className="priority-pill">HIGH PRIORITY</span> <strong>Proposed Total Mastectomy:</strong> When mastectomy is recommended without evaluating oncoplastic breast conservation or volume displacement techniques.</li>
                         <li><span className="priority-pill">NEOADJUVANT</span> <strong>Post-Chemotherapy Downstaging:</strong> Reassessing surgical feasibility following chemotherapy before irreversible tissue excision.</li>
+                        <li><span className="priority-pill">AXILLARY</span> <strong>Axillary Surgery Planning:</strong> Comprehensive review of node-positive disease to evaluate targeted axillary dissection (TAD) versus full axillary clearance.</li>
                         <li><span className="priority-pill">MARGIN CHECK</span> <strong>Uncertain Margin Status:</strong> When previous lumpectomy margins are close or positive, requiring specialized margin re-excision.</li>
-                        <li><span className="priority-pill">SPARING</span> <strong>Lymphedema Prevention:</strong> Evaluating dual-tracer Sentinel Lymph Node Biopsy (SLNB) to spare full axillary dissection.</li>
+                        <li><span className="priority-pill">PREVENTION</span> <strong>Advanced Lymphoedema Prevention & Management:</strong> Primary prevention protocols including axillary reverse mapping (ARM) and lymphovenous anastomosis (LVA) planning.</li>
                       </>
                     )}
                     {activeArea.id === 'hipec' && (
@@ -296,7 +296,7 @@ export const ClinicalAreasPage: React.FC<ClinicalAreasPageProps> = ({ onRequestS
             <span className="simple-section-tag">QUATERNARY ONCOLOGY STANDARD</span>
             <h2 className="protocol-headline">Multidisciplinary Tumor Board (MDT) Integration</h2>
             <p className="protocol-lead">
-              At Aster Medcity, no surgical decision is made in clinical isolation. Every complex case is cross-scrutinized in a structured tumor board combining surgical, medical, radiation, radiology, and histopathology experts.
+              No oncological surgical decision is made in isolation. Complex cases are reviewed within a multidisciplinary tumor board framework combining surgical oncology, medical oncology, radiation oncology, onco-radiology, and subspecialty histopathology to achieve consensus-driven treatment plans.
             </p>
           </div>
 

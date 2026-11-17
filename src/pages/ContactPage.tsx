@@ -45,21 +45,21 @@ export const ContactPage: React.FC = () => {
           <div className="subpage-breadcrumb">
             <span className="crumb-item">HOME</span>
             <span className="crumb-sep">/</span>
-            <span className="crumb-item">DEPARTMENT OF SURGICAL ONCOLOGY</span>
+            <span className="crumb-item">CONTACT</span>
             <span className="crumb-sep">/</span>
             <span className="crumb-active">CONSULTATION & DIRECT DESK</span>
           </div>
 
           <div className="subpage-hero-meta">
             <div className="hero-crest-badge">
-              <img src="/images/clinical_crystal_emblem.png" alt="Aster Medcity Crest" className="hero-crest-img" />
-              <span>DIRECT INSTITUTIONAL & CLINICAL DESK · ASTER MEDCITY</span>
+              <img src="/images/clinical_crystal_emblem.png" alt="Clinical Emblem" className="hero-crest-img" />
+              <span>DIRECT CLINICAL DESK · SPECIALIST REFERRAL & SECOND OPINION</span>
             </div>
             <h1 className="subpage-title">
               Consultation Locations & Appointment Scheduling
             </h1>
             <p className="subpage-lead">
-              Direct access to <strong>Dr. Jem Kalathil</strong> and the Department of Surgical Oncology at Aster Medcity, Kochi. Coordinate in-person appointments, schedule dedicated video tele-oncology consultations, or connect with our international patient desk.
+              Direct access to <strong>Dr. Jem Kalathil's</strong> clinical surgical oncology practice in Kochi. Coordinate in-person consultations, schedule dedicated video tele-oncology sessions, or connect with our Gulf and international patient liaison desk.
             </p>
           </div>
 
@@ -161,11 +161,11 @@ export const ContactPage: React.FC = () => {
                 <span className="gulf-tag">GULF & INTERNATIONAL PATIENTS</span>
                 <h3 className="gulf-box-title">Dedicated Travel & Tele-Oncology Support</h3>
                 <p className="gulf-box-desc">
-                  Patients from UAE, Oman, Qatar, Saudi Arabia, Kuwait, and Bahrain receive direct coordination before traveling to Kochi:
+                  Patients from UAE, Oman, Qatar, Saudi Arabia, Kuwait, and Bahrain receive direct coordination before traveling to Kochi. We review your dossier remotely and confirm surgical suitability before you book your travel. No unnecessary journeys:
                 </p>
                 <ul className="gulf-box-perks">
                   <li>Preliminary teleconsultation review of pathology & imaging before flight booking.</li>
-                  <li>Airport reception at Cochin International Airport (COK) — 45 mins from Aster Medcity.</li>
+                  <li>Airport reception at Cochin International Airport (COK) — 45 mins to hospital campus.</li>
                   <li>Priority fast-track surgical scheduling and local accommodation guidance.</li>
                   <li>Multilingual patient liaisons fluent in Arabic, English, and Malayalam.</li>
                 </ul>
@@ -354,10 +354,11 @@ export const ContactPage: React.FC = () => {
                           onChange={handleChange}
                           className="select-input"
                         >
-                          <option value="breast">Oncoplastic Breast Surgery & Breast Conservation</option>
-                          <option value="hipec">Peritoneal Surface Oncology & HIPEC (Ovarian/Colorectal/Appendix)</option>
-                          <option value="sarcoma">Robotic Oncology / Retroperitoneal Soft Tissue Sarcoma</option>
-                          <option value="second_opinion">General Quaternary Oncology Second Opinion</option>
+                          <option value="breast">Breast Cancer Surgery, Oncoplasty & Reconstruction</option>
+                          <option value="hipec">Peritoneal Surface Malignancies & HIPEC</option>
+                          <option value="robotic">Robotic Surgical Oncology (GI, Gynaecological & Pelvic)</option>
+                          <option value="sarcoma">Soft Tissue Sarcomas (Retroperitoneal & Extremity)</option>
+                          <option value="second_opinion">Specialist Surgical Second Opinion</option>
                         </select>
                       </div>
 

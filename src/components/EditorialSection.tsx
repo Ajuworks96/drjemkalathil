@@ -35,7 +35,7 @@ const PROGRESSION_PHASES: ProgressionPillar[] = [
     phase: '04',
     keyword: 'DECIDE',
     summary: 'Armed with an objective written surgical roadmap, unclouded by commercial pressure or clinical haste.',
-    clarityOutcome: 'Proceeding with peace of mind—at Aster Medcity or locally.',
+    clarityOutcome: 'Proceeding with peace of mind—in Kochi or locally.',
   },
 ];
 

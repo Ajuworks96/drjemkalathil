@@ -49,7 +49,7 @@ export const SurgeonEditorialProfile: React.FC<SurgeonEditorialProfileProps> = (
             <div className="surgeon-portrait-canvas">
               <img
                 src="/images/dr_jem_kalathil.jpg"
-                alt="Dr. Jem Kalathil, Senior Consultant Surgical Oncologist at Aster Medcity"
+                alt="Dr. Jem Kalathil, Senior Consultant Surgical Oncologist"
                 className="surgeon-portrait-img"
                 loading="lazy"
               />
@@ -75,40 +75,43 @@ export const SurgeonEditorialProfile: React.FC<SurgeonEditorialProfileProps> = (
             <div className="surgeon-identity-meta">
               <h3 className="surgeon-full-name">{CLINICAL_DOCTOR_INFO.name}</h3>
               <p className="surgeon-clinical-role">
-                Surgical Oncologist<br />
-                <span className="surgeon-hospital">{CLINICAL_DOCTOR_INFO.hospital}</span>
+                Lead Senior Consultant, Surgical Oncology
               </p>
             </div>
 
             {/* Narrative & Concise Credentials */}
             <div className="surgeon-narrative-block">
               <p className="surgeon-lead-prose">
-                With over 30 years of specialized oncological practice, Dr. Jem Kalathil focuses on high-complexity
-                malignancies where meticulous surgical planning, complete margin clearance, and thoughtful tissue
-                preservation make the difference between uncertainty and long-term recovery.
+                Dr Jem Kalathil is a Surgical Oncologist with over thirty years of experience and is Lead Senior Consultant, Surgical Oncology, at the Aster International Institute of Oncology, Aster Medcity, Kochi.
+              </p>
+
+              <p className="surgeon-lead-prose" style={{ marginTop: '14px' }}>
+                His practice is focused on three areas: oncoplastic breast cancer surgery and reconstruction, sentinel node biopsy and radio-guided localisation of non-palpable lesions; cytoreductive surgery with HIPEC for peritoneal surface malignancies; and robotic and complex surgery for gastrointestinal and gynaecological cancers, and extremity and retroperitoneal sarcomas.
               </p>
 
               <div className="surgeon-concise-credentials">
                 <div className="cred-bullet-item">
                   <span className="cred-bullet-marker" aria-hidden="true">—</span>
-                  <span className="cred-bullet-text">Fellow of the Royal College of Surgeons (FRCS), Edinburgh</span>
+                  <span className="cred-bullet-text">UICC Fellowship in Milan under Professor Umberto Veronesi</span>
                 </div>
                 <div className="cred-bullet-item">
                   <span className="cred-bullet-marker" aria-hidden="true">—</span>
-                  <span className="cred-bullet-text">Former Professor of Surgical Oncology, Regional Cancer Centre (RCC)</span>
+                  <span className="cred-bullet-text">Former Additional Professor of Surgical Oncology, Regional Cancer Centre, Thiruvananthapuram</span>
                 </div>
                 <div className="cred-bullet-item">
                   <span className="cred-bullet-marker" aria-hidden="true">—</span>
-                  <span className="cred-bullet-text">Former Senior Consultant, Breast Unit, Royal Hospital Muscat</span>
+                  <span className="cred-bullet-text">Heads the Aster Clinical Research Centre and is Lead Principal Investigator on clinical trials</span>
+                </div>
+                <div className="cred-bullet-item">
+                  <span className="cred-bullet-marker" aria-hidden="true">—</span>
+                  <span className="cred-bullet-text">Trained in the United Kingdom, Italy, Singapore and India</span>
                 </div>
               </div>
 
               {showFullCredentials && (
                 <div className="surgeon-expanded-fellowships">
                   <p className="fellowship-note">
-                    Trained in advanced cytoreductive peritonectomy and heated intraperitoneal chemotherapy (HIPEC)
-                    with international observerships across the United Kingdom and Europe. Overseeing multidisciplinary
-                    tumor board reviews at Aster Medcity.
+                    Formerly Senior Consultant, Breast Unit, Royal Hospital, Muscat. Fellowship of the Royal College of Surgeons (FRCS), Edinburgh. Directing advanced cytoreductive surgery, radio-guided breast oncoplastic surgery, and robotic surgical oncology.
                   </p>
                 </div>
               )}

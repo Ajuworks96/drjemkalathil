@@ -225,7 +225,7 @@ export const SecondOpinionModal: React.FC<SecondOpinionModalProps> = ({
         {/* Header */}
         <div className="modal-header simple-so-header">
           <div>
-            <span className="simple-modal-eyebrow">DEPARTMENT OF SURGICAL ONCOLOGY</span>
+            <span className="simple-modal-eyebrow">CLINICAL SECOND OPINION DESK</span>
             <h2 id="so-modal-title" className="modal-header-title">
               Request a Second Opinion
             </h2>

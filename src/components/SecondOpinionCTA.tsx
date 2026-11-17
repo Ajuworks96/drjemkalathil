@@ -57,7 +57,7 @@ export const SecondOpinionCTA: React.FC<SecondOpinionCTAProps> = ({ onRequestSec
               <span className="col-gold-num">03</span>
               <h3 className="col-title">Tele-Oncology & In-Person</h3>
               <p className="col-desc">
-                Consult via secure video conference from across India and the Gulf, or attend clinic at Aster Medcity, Kochi.
+                Consult via secure video conference from across India and the Gulf, or attend clinical consultation in Kochi.
               </p>
             </div>
           </div>
