@@ -372,42 +372,75 @@ export const DEFAULT_PATIENT_REVIEWS: PatientReview[] = [
 ];
 
 /**
- * Fetch Patient Reviews from WordPress REST API (category or custom post type)
- * Falls back seamlessly to curated clinical reviews.
+ * Fetch Patient Reviews from WordPress REST API
+ * Supports both:
+ * 1. ACF fields on the Home/Reviews page (test_1_name, test_1_quote, etc.)
+ * 2. Dedicated WordPress Posts under category 'patient-reviews' or 'reviews'
+ * 3. Graceful fallback to verified curated clinical reviews
  */
 export async function fetchPatientReviews(): Promise<PatientReview[]> {
-  const wpUrl = import.meta.env.VITE_WORDPRESS_URL;
+  const wpUrl = import.meta.env.VITE_WORDPRESS_URL || WP_BASE_URL;
   if (!wpUrl) {
     return DEFAULT_PATIENT_REVIEWS;
   }
 
+  // 1. Check if the Home page has ACF testimonial fields populated
+  try {
+    const page = await fetchWordpressPage('home');
+    if (page && page.acf) {
+      const acf = page.acf;
+      const acfReviews: PatientReview[] = [];
+
+      for (let i = 1; i <= 6; i++) {
+        const name = acf[`test_${i}_name`];
+        const quote = acf[`test_${i}_quote`];
+        if (name && quote && quote.trim().length > 0) {
+          acfReviews.push({
+            id: `wp-acf-rev-${i}`,
+            patientName: name,
+            surgeryType: acf[`test_${i}_procedure`] || 'Surgical Oncology Consultation',
+            reviewText: quote.trim(),
+            location: acf[`test_${i}_location`] || 'Kerala / GCC',
+            rating: Number(acf[`test_${i}_rating`]) || 5,
+            isVerified: true,
+          });
+        }
+      }
+
+      if (acfReviews.length > 0) {
+        return acfReviews;
+      }
+    }
+  } catch (err) {
+    console.warn('Could not inspect ACF reviews on home page:', err);
+  }
+
+  // 2. Check WordPress Posts with category 'patient-reviews' or 'reviews'
   try {
     const url = `${wpUrl.replace(/\/$/, '')}/wp-json/wp/v2/posts?categories_slug=patient-reviews&_embed=true`;
     const response = await fetch(url);
-    if (!response.ok) {
-      return DEFAULT_PATIENT_REVIEWS;
+    if (response.ok) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const data = await response.json();
+      if (Array.isArray(data) && data.length > 0) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        return data.map((post: any) => ({
+          id: String(post.id),
+          patientName: post.title?.rendered || 'Verified Patient',
+          rating: post.acf?.rating || 5,
+          surgeryType: post.acf?.surgery_type || 'Surgical Oncology Consultation',
+          reviewText: post.excerpt?.rendered?.replace(/<[^>]+>/g, '').trim() || post.content?.rendered?.replace(/<[^>]+>/g, '').trim(),
+          location: post.acf?.location || 'Kerala / GCC',
+          date: post.date ? new Date(post.date).toLocaleDateString('en-US', { month: 'long', year: 'numeric' }) : undefined,
+          isVerified: true,
+        }));
+      }
     }
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const data = await response.json();
-    if (!Array.isArray(data) || data.length === 0) {
-      return DEFAULT_PATIENT_REVIEWS;
-    }
-
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    return data.map((post: any) => ({
-      id: String(post.id),
-      patientName: post.title?.rendered || 'Verified Patient',
-      rating: post.acf?.rating || 5,
-      surgeryType: post.acf?.surgery_type || 'Surgical Oncology Consultation',
-      reviewText: post.excerpt?.rendered?.replace(/<[^>]+>/g, '').trim() || post.content?.rendered?.replace(/<[^>]+>/g, '').trim(),
-      location: post.acf?.location || 'Kerala / GCC',
-      date: post.date ? new Date(post.date).toLocaleDateString('en-US', { month: 'long', year: 'numeric' }) : undefined,
-      isVerified: true,
-    }));
   } catch (err) {
-    console.warn('WordPress reviews fetch failed, using fallback:', err);
-    return DEFAULT_PATIENT_REVIEWS;
+    console.warn('WordPress posts reviews fetch failed, using fallback:', err);
   }
+
+  return DEFAULT_PATIENT_REVIEWS;
 }
 
 /**

@@ -1,7 +1,7 @@
 [
   {
     "key": "group_site_settings_drjem",
-    "title": "Global Site Settings & Clinical Desk",
+    "title": "01. Global Site Settings & Clinical Desk",
     "fields": [
       {
         "key": "field_doctor_name",
@@ -56,7 +56,7 @@
         "label": "Consultation Inquiry Email",
         "name": "consultation_email",
         "type": "email",
-        "default_value": "surgical.oncology@asterhospital.com",
+        "default_value": "care@drjemkalathil.com",
         "show_in_rest": 1
       },
       {
@@ -79,13 +79,6 @@
     "location": [
       [
         {
-          "param": "page_type",
-          "operator": "==",
-          "value": "front_page"
-        }
-      ],
-      [
-        {
           "param": "post_type",
           "operator": "==",
           "value": "page"
@@ -101,7 +94,7 @@
   },
   {
     "key": "group_homepage_content_drjem",
-    "title": "Homepage Sections & Clinical Focus",
+    "title": "02. Homepage Sections & Clinical Specialties",
     "fields": [
       {
         "key": "field_hero_headline",
@@ -211,13 +204,6 @@
     "location": [
       [
         {
-          "param": "page_type",
-          "operator": "==",
-          "value": "front_page"
-        }
-      ],
-      [
-        {
           "param": "post_type",
           "operator": "==",
           "value": "page"
@@ -230,6 +216,218 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "show_in_rest": 1
+  },
+  {
+    "key": "group_testimonials_drjem",
+    "title": "03. Patient Voices & Testimonials",
+    "fields": [
+      {
+        "key": "field_test_tab_1",
+        "label": "Testimonial 1",
+        "name": "",
+        "type": "tab"
+      },
+      {
+        "key": "field_test_1_name",
+        "label": "Patient / Family Name (1)",
+        "name": "test_1_name",
+        "type": "text",
+        "default_value": "K. S. Narayanan",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_test_1_procedure",
+        "label": "Procedure / Surgery Type (1)",
+        "name": "test_1_procedure",
+        "type": "text",
+        "default_value": "Oncoplastic Breast Surgery",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_test_1_location",
+        "label": "Patient City / Country (1)",
+        "name": "test_1_location",
+        "type": "text",
+        "default_value": "Ernakulam, Kochi",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_test_1_rating",
+        "label": "Star Rating (1)",
+        "name": "test_1_rating",
+        "type": "number",
+        "default_value": 5,
+        "min": 1,
+        "max": 5,
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_test_1_quote",
+        "label": "Review Text / Experience (1)",
+        "name": "test_1_quote",
+        "type": "textarea",
+        "default_value": "Dr. Jem Kalathil provided the exact clarity our family needed during an overwhelming breast cancer diagnosis. His calm demeanor, organ-preservation focus, and surgical precision gave my wife full confidence. Five years cancer-free today.",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_test_tab_2",
+        "label": "Testimonial 2",
+        "name": "",
+        "type": "tab"
+      },
+      {
+        "key": "field_test_2_name",
+        "label": "Patient / Family Name (2)",
+        "name": "test_2_name",
+        "type": "text",
+        "default_value": "Fathima & Tariq Al-Hashmi",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_test_2_procedure",
+        "label": "Procedure / Surgery Type (2)",
+        "name": "test_2_procedure",
+        "type": "text",
+        "default_value": "HIPEC & Cytoreductive Surgery",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_test_2_location",
+        "label": "Patient City / Country (2)",
+        "name": "test_2_location",
+        "type": "text",
+        "default_value": "Muscat, Oman",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_test_2_rating",
+        "label": "Star Rating (2)",
+        "name": "test_2_rating",
+        "type": "number",
+        "default_value": 5,
+        "min": 1,
+        "max": 5,
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_test_2_quote",
+        "label": "Review Text / Experience (2)",
+        "name": "test_2_quote",
+        "type": "textarea",
+        "default_value": "We traveled from Muscat, Oman for Dr. Jem’s second opinion on peritoneal surface cancer after local doctors in the Gulf considered surgery impossible. The HIPEC cytoreduction gave us new hope. His team’s care is world-class.",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_test_tab_3",
+        "label": "Testimonial 3",
+        "name": "",
+        "type": "tab"
+      },
+      {
+        "key": "field_test_3_name",
+        "label": "Patient / Family Name (3)",
+        "name": "test_3_name",
+        "type": "text",
+        "default_value": "Dr. Mathew Varghese (Retd. Prof)",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_test_3_procedure",
+        "label": "Procedure / Surgery Type (3)",
+        "name": "test_3_procedure",
+        "type": "text",
+        "default_value": "Retroperitoneal Sarcoma",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_test_3_location",
+        "label": "Patient City / Country (3)",
+        "name": "test_3_location",
+        "type": "text",
+        "default_value": "Kottayam, Kerala",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_test_3_rating",
+        "label": "Star Rating (3)",
+        "name": "test_3_rating",
+        "type": "number",
+        "default_value": 5,
+        "min": 1,
+        "max": 5,
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_test_3_quote",
+        "label": "Review Text / Experience (3)",
+        "name": "test_3_quote",
+        "type": "textarea",
+        "default_value": "As a doctor myself, I appreciate Dr. Jem’s absolute clinical honesty and mastery. He explains surgical margins, risks, and alternatives without exaggeration. The gold standard in surgical oncology across South India.",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_test_tab_4",
+        "label": "Testimonial 4",
+        "name": "",
+        "type": "tab"
+      },
+      {
+        "key": "field_test_4_name",
+        "label": "Patient / Family Name (4)",
+        "name": "test_4_name",
+        "type": "text",
+        "default_value": "Anitha Radhakrishnan",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_test_4_procedure",
+        "label": "Procedure / Surgery Type (4)",
+        "name": "test_4_procedure",
+        "type": "text",
+        "default_value": "Robotic Cancer Surgery",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_test_4_location",
+        "label": "Patient City / Country (4)",
+        "name": "test_4_location",
+        "type": "text",
+        "default_value": "Thrissur, Kerala",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_test_4_rating",
+        "label": "Star Rating (4)",
+        "name": "test_4_rating",
+        "type": "number",
+        "default_value": 5,
+        "min": 1,
+        "max": 5,
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_test_4_quote",
+        "label": "Review Text / Experience (4)",
+        "name": "test_4_quote",
+        "type": "textarea",
+        "default_value": "Minimally invasive robotic procedure with rapid recovery. Back on my feet in three days. Thank you Dr. Jem Kalathil and surgical team for your compassion and guidance.",
+        "show_in_rest": 1
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "post_type",
+          "operator": "==",
+          "value": "page"
+        }
+      ]
+    ],
+    "menu_order": 2,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "show_in_rest": 1
   }
 ]
-

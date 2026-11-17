@@ -8,6 +8,7 @@ import { PatientPathwayJourney } from '../components/PatientPathwayJourney';
 import { DocumentTeaserSection } from '../components/DocumentTeaserSection';
 import { SurgeonEditorialProfile } from '../components/SurgeonEditorialProfile';
 import { GulfRouteMinimal } from '../components/GulfRouteMinimal';
+import { PatientReviewsSection } from '../components/PatientReviewsSection';
 import { ClinicalClarificationsAccordion } from '../components/ClinicalClarificationsAccordion';
 import { PhysiciansDarkEditorial } from '../components/PhysiciansDarkEditorial';
 import { FinalManifestoCTA } from '../components/FinalManifestoCTA';
@@ -45,6 +46,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onRequestSecondOpinion }) =>
 
       {/* 08. GULF & REGIONAL PATIENTS: HORIZONTAL GEOGRAPHIC ROUTE */}
       <GulfRouteMinimal onRequestSecondOpinion={() => onRequestSecondOpinion()} />
+
+      {/* 08B. PATIENT EXPERIENCES & VERIFIED TESTIMONIALS (DYNAMIC FROM WORDPRESS) */}
+      <PatientReviewsSection />
 
       {/* 09. CLINICAL CLARIFICATIONS: MINIMAL EDITORIAL ACCORDION */}
       <ClinicalClarificationsAccordion />

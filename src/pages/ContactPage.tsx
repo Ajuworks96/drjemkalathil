@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { CLINICAL_DOCTOR_INFO, WHATSAPP_COORDINATOR_NUMBER } from '../constants/content';
 import { Button } from '../components/Button';
+import { useSiteContent } from '../context/SiteContentContext';
 
 export const ContactPage: React.FC = () => {
+  const { siteSettings } = useSiteContent();
   const [sentSuccess, setSentSuccess] = useState(false);
   const [consultationMode, setConsultationMode] = useState<'in_person' | 'video'>('in_person');
   const [openTravelFaq, setOpenTravelFaq] = useState<number | null>(null);
@@ -35,7 +36,7 @@ export const ContactPage: React.FC = () => {
   const whatsappMessage = encodeURIComponent(
     `Hello Dr. Jem Kalathil's Clinical Desk, I would like to schedule an appointment for ${formData.name || 'a patient'}. Preferred Mode: ${consultationMode === 'in_person' ? 'In-Person at Kochi' : 'Video Teleconsultation'}.`
   );
-  const whatsappUrl = `https://wa.me/${WHATSAPP_COORDINATOR_NUMBER.replace(/[^0-9]/g, '')}?text=${whatsappMessage}`;
+  const whatsappUrl = `https://wa.me/${siteSettings.whatsappPhone.replace(/[^0-9]/g, '')}?text=${whatsappMessage}`;
 
   return (
     <div className="subpage-wrapper">
@@ -116,7 +117,7 @@ export const ContactPage: React.FC = () => {
                       <div className="method-icon-wrap">📞</div>
                       <div>
                         <span className="method-label">Direct Clinical Secretary Desk</span>
-                        <a href="tel:+914846699999" className="method-val">{CLINICAL_DOCTOR_INFO.secretaryPhone}</a>
+                        <a href={`tel:${siteSettings.secretaryPhone.replace(/\s+/g, '')}`} className="method-val">{siteSettings.secretaryPhone}</a>
                       </div>
                     </div>
 
@@ -130,7 +131,7 @@ export const ContactPage: React.FC = () => {
                           rel="noopener noreferrer"
                           className="method-val"
                         >
-                          {WHATSAPP_COORDINATOR_NUMBER} (Direct Chat)
+                          {siteSettings.whatsappPhone} (Direct Chat)
                         </a>
                       </div>
                     </div>
@@ -139,8 +140,8 @@ export const ContactPage: React.FC = () => {
                       <div className="method-icon-wrap">✉️</div>
                       <div>
                         <span className="method-label">Clinical Secretary Email</span>
-                        <a href={`mailto:${CLINICAL_DOCTOR_INFO.email}`} className="method-val">
-                          {CLINICAL_DOCTOR_INFO.email}
+                        <a href={`mailto:${siteSettings.consultationEmail}`} className="method-val">
+                          {siteSettings.consultationEmail}
                         </a>
                       </div>
                     </div>
@@ -149,7 +150,7 @@ export const ContactPage: React.FC = () => {
                       <div className="method-icon-wrap">🏥</div>
                       <div>
                         <span className="method-label">Outpatient Consultation Hours</span>
-                        <span className="method-val-text">Monday to Saturday: 09:00 AM – 04:00 PM IST</span>
+                        <span className="method-val-text">{siteSettings.opdSchedule}</span>
                       </div>
                     </div>
                   </div>
