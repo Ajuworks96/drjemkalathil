@@ -56,6 +56,7 @@ export const Footer: React.FC<FooterProps> = ({ onRequestSecondOpinion }) => {
             <Link to="/clinical-areas" className="publication-nav-link">Clinical Areas</Link>
             <Link to="/patient-journey" className="publication-nav-link">Patient Journey</Link>
             <Link to="/upload-records" className="publication-nav-link">Upload Records</Link>
+            <Link to="/articles" className="publication-nav-link">Clinical Insights</Link>
             <Link to="/contact" className="publication-nav-link">Contact</Link>
           </nav>
 

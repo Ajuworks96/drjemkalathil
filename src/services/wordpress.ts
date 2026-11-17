@@ -37,7 +37,7 @@ export interface WPCategory {
 
 // Configurable WordPress API Base URL
 export const WP_BASE_URL =
-  import.meta.env.VITE_WORDPRESS_URL || 'https://cms.drjemkalathil.com';
+  import.meta.env.VITE_WORDPRESS_URL || 'https://backend.jemkalathil.com';
 
 /**
  * Curated Oncology Articles (used as default fallback if WP URL is not yet connected)
@@ -131,7 +131,7 @@ export async function fetchWordpressPosts(params?: {
   categoryId?: number;
   search?: string;
 }): Promise<WPPost[]> {
-  const wpUrl = import.meta.env.VITE_WORDPRESS_URL;
+  const wpUrl = import.meta.env.VITE_WORDPRESS_URL || WP_BASE_URL;
 
   // If no live WordPress URL configured yet, return fallback articles
   if (!wpUrl) {
@@ -158,8 +158,20 @@ export async function fetchWordpressPosts(params?: {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const rawPosts = await response.json();
 
+    if (!Array.isArray(rawPosts) || rawPosts.length === 0) {
+      return FALLBACK_ARTICLES;
+    }
+
+    // Filter out standard WordPress boilerplate "Hello world!" if desirable
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    return rawPosts.map((post: any) => {
+    const filteredPosts = rawPosts.filter((post: any) => post.slug !== 'hello-world');
+
+    if (filteredPosts.length === 0) {
+      return FALLBACK_ARTICLES;
+    }
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return filteredPosts.map((post: any) => {
       // Extract featured media
       const featuredImage =
         post._embedded?.['wp:featuredmedia']?.[0]?.source_url ||
@@ -233,7 +245,7 @@ export async function fetchWordpressPosts(params?: {
  * Fetch a single post by slug from WordPress
  */
 export async function fetchWordpressPostBySlug(slug: string): Promise<WPPost | null> {
-  const wpUrl = import.meta.env.VITE_WORDPRESS_URL;
+  const wpUrl = import.meta.env.VITE_WORDPRESS_URL || WP_BASE_URL;
 
   if (!wpUrl) {
     const fallback = FALLBACK_ARTICLES.find((p) => p.slug === slug);

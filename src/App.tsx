@@ -9,6 +9,8 @@ import { ClinicalAreasPage } from './pages/ClinicalAreasPage';
 import { HowItWorksPage } from './pages/HowItWorksPage';
 import { DocumentUploadPage } from './pages/DocumentUploadPage';
 import { ContactPage } from './pages/ContactPage';
+import { ArticlesPage } from './pages/ArticlesPage';
+import { ArticleDetailPage } from './pages/ArticleDetailPage';
 
 const ScrollToTop: React.FC = () => {
   const { pathname } = useLocation();
@@ -47,6 +49,10 @@ export const AppContent: React.FC = () => {
           <Route path="/how-it-works" element={<HowItWorksPage onRequestSecondOpinion={() => handleOpenModal()} />} />
           <Route path="/upload-records" element={<DocumentUploadPage />} />
           <Route path="/document-upload" element={<DocumentUploadPage />} />
+          <Route path="/articles" element={<ArticlesPage onRequestSecondOpinion={() => handleOpenModal()} />} />
+          <Route path="/articles/:slug" element={<ArticleDetailPage onRequestSecondOpinion={() => handleOpenModal()} />} />
+          <Route path="/blog" element={<ArticlesPage onRequestSecondOpinion={() => handleOpenModal()} />} />
+          <Route path="/blog/:slug" element={<ArticleDetailPage onRequestSecondOpinion={() => handleOpenModal()} />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<HomePage onRequestSecondOpinion={handleOpenModal} />} />
         </Routes>

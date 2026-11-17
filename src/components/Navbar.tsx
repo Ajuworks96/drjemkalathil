@@ -20,6 +20,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestSecondOpinion }) => {
     { to: '/clinical-areas', label: 'Clinical Areas' },
     { to: '/patient-journey', label: 'Patient Journey' },
     { to: '/upload-records', label: 'Upload Records' },
+    { to: '/articles', label: 'Clinical Insights' },
     { to: '/contact', label: 'Contact' },
   ];
 
