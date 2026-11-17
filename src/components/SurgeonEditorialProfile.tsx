@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { CLINICAL_DOCTOR_INFO } from '../constants/content';
 import { trackCtaClick } from '../utils/analytics';
+import { useSiteContent } from '../context/SiteContentContext';
 
 export interface SurgeonEditorialProfileProps {
   onRequestSecondOpinion: () => void;
@@ -12,6 +12,7 @@ export const SurgeonEditorialProfile: React.FC<SurgeonEditorialProfileProps> = (
   const sectionRef = useRef<HTMLElement>(null);
   const [inView, setInView] = useState(false);
   const [showFullCredentials, setShowFullCredentials] = useState(false);
+  const { siteSettings, homeContent } = useSiteContent();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -73,16 +74,16 @@ export const SurgeonEditorialProfile: React.FC<SurgeonEditorialProfileProps> = (
 
             {/* Doctor Identity */}
             <div className="surgeon-identity-meta">
-              <h3 className="surgeon-full-name">{CLINICAL_DOCTOR_INFO.name}</h3>
+              <h3 className="surgeon-full-name">{siteSettings.doctorName}</h3>
               <p className="surgeon-clinical-role">
-                Lead Senior Consultant, Surgical Oncology
+                {siteSettings.doctorRole}
               </p>
             </div>
 
             {/* Narrative & Concise Credentials */}
             <div className="surgeon-narrative-block">
               <p className="surgeon-lead-prose">
-                Dr Jem Kalathil is a Surgical Oncologist with over thirty years of experience and is Lead Senior Consultant, Surgical Oncology, at the Aster International Institute of Oncology, Aster Medcity, Kochi.
+                {homeContent.surgeonProfileBio}
               </p>
 
               <p className="surgeon-lead-prose" style={{ marginTop: '14px' }}>

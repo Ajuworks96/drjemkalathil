@@ -11,6 +11,7 @@ import { DocumentUploadPage } from './pages/DocumentUploadPage';
 import { ContactPage } from './pages/ContactPage';
 import { ArticlesPage } from './pages/ArticlesPage';
 import { ArticleDetailPage } from './pages/ArticleDetailPage';
+import { SiteContentProvider } from './context/SiteContentContext';
 
 const ScrollToTop: React.FC = () => {
   const { pathname } = useLocation();
@@ -74,7 +75,9 @@ export const AppContent: React.FC = () => {
 export const App: React.FC = () => {
   return (
     <BrowserRouter>
-      <AppContent />
+      <SiteContentProvider>
+        <AppContent />
+      </SiteContentProvider>
     </BrowserRouter>
   );
 };

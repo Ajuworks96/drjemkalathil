@@ -4,6 +4,7 @@ import { CLINICAL_DOCTOR_INFO } from '../constants/content';
 import type { SupportedLanguage } from '../types';
 import { LanguageNoticeModal } from './LanguageNoticeModal';
 import { trackCtaClick } from '../utils/analytics';
+import { useSiteContent } from '../context/SiteContentContext';
 
 export interface NavbarProps {
   onRequestSecondOpinion: () => void;
@@ -14,6 +15,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestSecondOpinion }) => {
   const [activeLang, setActiveLang] = useState<SupportedLanguage>('en');
   const [noticeLang, setNoticeLang] = useState<SupportedLanguage | null>(null);
   const location = useLocation();
+  const { siteSettings } = useSiteContent();
 
   const navLinks = [
     { to: '/', label: 'Home' },
@@ -154,9 +156,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestSecondOpinion }) => {
               <div className="nav-action-cluster">
                 {/* Direct Desk Call Pill */}
                 <a
-                  href={`tel:${CLINICAL_DOCTOR_INFO.secretaryPhone.replace(/\s+/g, '')}`}
+                  href={`tel:${siteSettings.secretaryPhone.replace(/\s+/g, '')}`}
                   className="nav-desk-call-pill"
-                  aria-label={`Call clinical desk at ${CLINICAL_DOCTOR_INFO.secretaryPhone}`}
+                  aria-label={`Call clinical desk at ${siteSettings.secretaryPhone}`}
                   title="Direct Clinical Desk Line"
                 >
                   <span className="pill-call-icon" aria-hidden="true">
@@ -164,7 +166,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestSecondOpinion }) => {
                       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                     </svg>
                   </span>
-                  <span className="pill-call-number">{CLINICAL_DOCTOR_INFO.secretaryPhone}</span>
+                  <span className="pill-call-number">{siteSettings.secretaryPhone}</span>
                 </a>
 
                 {/* Luxury CTA Button */}

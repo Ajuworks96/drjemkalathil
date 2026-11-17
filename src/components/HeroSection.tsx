@@ -1,12 +1,15 @@
 import React from 'react';
 import { Button } from './Button';
 import { CLINICAL_DOCTOR_INFO } from '../constants/content';
+import { useSiteContent } from '../context/SiteContentContext';
 
 export interface HeroSectionProps {
   onRequestSecondOpinion: () => void;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion }) => {
+  const { homeContent, siteSettings } = useSiteContent();
+
   return (
     <section 
       className="editorial-james-hero" 
@@ -15,11 +18,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
       itemType="https://schema.org/Physician"
     >
       {/* Hidden Structured Data for Search Engine Crawlers (Medical SEO & Local E-E-A-T) */}
-      <meta itemProp="name" content="Dr. Jem Kalathil" />
+      <meta itemProp="name" content={siteSettings.doctorName} />
       <meta itemProp="medicalSpecialty" content="Surgical Oncology" />
       <meta itemProp="hospitalAffiliation" content="Aster Medcity, Kochi" />
-      <meta itemProp="telephone" content={CLINICAL_DOCTOR_INFO.secretaryPhone} />
-      <meta itemProp="email" content={CLINICAL_DOCTOR_INFO.email} />
+      <meta itemProp="telephone" content={siteSettings.secretaryPhone} />
+      <meta itemProp="email" content={siteSettings.consultationEmail} />
 
       <div className="hero-stage-container">
         <div className="hero-split-grid">
@@ -46,17 +49,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
 
               {/* Doctor Authority Line */}
               <div className="hero-doctor-title-line">
-                <span className="doctor-primary-name" itemProp="name">Dr. Jem Kalathil</span>
+                <span className="doctor-primary-name" itemProp="name">{siteSettings.doctorName}</span>
                 <span className="doctor-title-separator" aria-hidden="true">·</span>
-                <span className="doctor-credentials-badge">MS (General Surgery) · Surgical Oncology</span>
+                <span className="doctor-credentials-badge">{siteSettings.doctorCredentials}</span>
               </div>
             </div>
 
             {/* Actions Block (On mobile: order 3) */}
             <div className="hero-actions-block">
-              {/* SEO Lead Description Paragraph (Rewritten per compliance brief) */}
+              {/* SEO Lead Description Paragraph (Dynamic from WordPress) */}
               <p className="hero-lead-description" itemProp="description">
-                Surgical oncology guided by precision, preservation, and transparency. Specialising in Breast Cancer Surgery with Oncoplasty &amp; Reconstruction, Peritoneal Surface Malignancies &amp; HIPEC, and Robotic Surgical Oncology — with dedicated second-opinion pathways for patients across Kerala, India, and the Gulf.
+                {homeContent.heroSubheadline}
               </p>
 
               {/* Action Buttons Row (Modeled after reference dual CTAs) */}
@@ -133,8 +136,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
                     </svg>
                   </div>
                   <div className="specialty-card-meta">
-                    <span className="specialty-card-title">Breast Cancer Surgery, Oncoplasty &amp; Reconstruction</span>
-                    <span className="specialty-card-sub">Organ Preservation &amp; Symmetry</span>
+                    <span className="specialty-card-title">{homeContent.specialty1Title}</span>
+                    <span className="specialty-card-sub">{homeContent.specialty1Subtitle}</span>
                   </div>
                 </a>
 
@@ -146,8 +149,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
                     </svg>
                   </div>
                   <div className="specialty-card-meta">
-                    <span className="specialty-card-title">Peritoneal Surface Malignancies &amp; HIPEC</span>
-                    <span className="specialty-card-sub">Curative Cytoreduction</span>
+                    <span className="specialty-card-title">{homeContent.specialty2Title}</span>
+                    <span className="specialty-card-sub">{homeContent.specialty2Subtitle}</span>
                   </div>
                 </a>
 
@@ -159,8 +162,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
                     </svg>
                   </div>
                   <div className="specialty-card-meta">
-                    <span className="specialty-card-title">Robotic Surgical Oncology</span>
-                    <span className="specialty-card-sub">Da Vinci Precision</span>
+                    <span className="specialty-card-title">{homeContent.specialty3Title}</span>
+                    <span className="specialty-card-sub">{homeContent.specialty3Subtitle}</span>
                   </div>
                 </a>
               </div>
@@ -175,7 +178,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
       <div className="container">
         <div className="hero-bottom-credentials">
           <div className="credential-item">
-            <span className="credential-value">30+ Years</span>
+            <span className="credential-value">{siteSettings.experienceYears} Years</span>
             <span className="credential-label">Dedicated Surgical Oncology Practice</span>
           </div>
           <div className="credential-item">

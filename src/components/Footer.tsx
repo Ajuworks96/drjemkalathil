@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { CLINICAL_DOCTOR_INFO } from '../constants/content';
+import { useSiteContent } from '../context/SiteContentContext';
 
 const CURRENT_YEAR = new Date().getFullYear();
 
@@ -9,6 +9,7 @@ export interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ onRequestSecondOpinion }) => {
+  const { siteSettings } = useSiteContent();
   return (
     <footer className="publication-editorial-footer" role="contentinfo">
       <div className="editorial-container">
@@ -68,10 +69,10 @@ export const Footer: React.FC<FooterProps> = ({ onRequestSecondOpinion }) => {
             <div className="pub-desk-item">
               <span className="pub-desk-label">Direct Clinical Desk</span>
               <a
-                href={`tel:${CLINICAL_DOCTOR_INFO.secretaryPhone.replace(/\s+/g, '')}`}
+                href={`tel:${siteSettings.secretaryPhone.replace(/\s+/g, '')}`}
                 className="pub-desk-val pub-desk-phone"
               >
-                {CLINICAL_DOCTOR_INFO.secretaryPhone}
+                {siteSettings.secretaryPhone}
               </a>
             </div>
           </div>

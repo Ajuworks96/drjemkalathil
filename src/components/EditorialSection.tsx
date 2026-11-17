@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from './Button';
+import { useSiteContent } from '../context/SiteContentContext';
 
 export interface EditorialSectionProps {
   onRequestSecondOpinion: () => void;
@@ -41,6 +42,7 @@ const PROGRESSION_PHASES: ProgressionPillar[] = [
 
 export const EditorialSection: React.FC<EditorialSectionProps> = ({ onRequestSecondOpinion }) => {
   const [activePhaseIndex, setActivePhaseIndex] = useState<number>(0);
+  const { homeContent, siteSettings } = useSiteContent();
 
   return (
     <section id="philosophy" className="editorial-statement-section" aria-labelledby="safeguard-headline">
@@ -55,8 +57,8 @@ export const EditorialSection: React.FC<EditorialSectionProps> = ({ onRequestSec
         {/* Heroic Typographic Dominance */}
         <div className="editorial-manifesto-block">
           <h2 id="safeguard-headline" className="editorial-statement-headline">
-            <span className="statement-line">A second opinion is not disloyalty.</span>
-            <span className="statement-line emphasis-accent">It is an essential oncological safeguard.</span>
+            <span className="statement-line">{homeContent.editorialStatement1}</span>
+            <span className="statement-line emphasis-accent">{homeContent.editorialStatement2}</span>
           </h2>
         </div>
 
@@ -64,10 +66,10 @@ export const EditorialSection: React.FC<EditorialSectionProps> = ({ onRequestSec
         <div className="editorial-narrative-split">
           <div className="editorial-voice-column">
             <p className="editorial-lead-prose">
-              The days following a biopsy are often overwhelmed by shock, urgent advice, and irreversible choices. Patients are told that surgery must take place tomorrow.
+              {homeContent.editorialLeadProse}
             </p>
             <p className="editorial-body-prose">
-              Yet in 25 years of specialized surgical oncology, we know that taking 3 to 5 days to confirm histological receptors, re-examine scan boundaries, and explore organ preservation does not compromise curative outcomes. It protects both life and enduring dignity.
+              {homeContent.editorialBodyProse}
             </p>
             <div className="editorial-cta-wrap">
               <Button
@@ -82,7 +84,7 @@ export const EditorialSection: React.FC<EditorialSectionProps> = ({ onRequestSec
                 </svg>
               </Button>
               <span className="editorial-cta-footnote">
-                Reviewed directly by Dr. Jem Kalathil within 24–48 hours
+                Reviewed directly by {siteSettings.doctorName} within 24–48 hours
               </span>
             </div>
           </div>

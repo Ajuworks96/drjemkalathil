@@ -410,4 +410,143 @@ export async function fetchPatientReviews(): Promise<PatientReview[]> {
   }
 }
 
+/**
+ * Global Site Settings Interface (Managed via WordPress ACF)
+ */
+export interface SiteSettingsData {
+  doctorName: string;
+  doctorCredentials: string;
+  doctorRole: string;
+  experienceYears: string;
+  secretaryPhone: string;
+  whatsappPhone: string;
+  consultationEmail: string;
+  clinicAddress: string;
+  opdSchedule: string;
+}
+
+export const DEFAULT_SITE_SETTINGS: SiteSettingsData = {
+  doctorName: 'Dr. Jem Kalathil',
+  doctorCredentials: 'MBBS, MS (General Surgery)',
+  doctorRole: 'Lead Senior Consultant, Surgical Oncology',
+  experienceYears: '30+',
+  secretaryPhone: '+91 484 669 9999',
+  whatsappPhone: '+91 949 771 2345',
+  consultationEmail: 'surgical.oncology@asterhospital.com',
+  clinicAddress: 'Aster Medcity, Cheranallur, Kochi, Kerala 682027, India',
+  opdSchedule: 'Monday – Saturday, 09:00 AM – 04:00 PM IST',
+};
+
+/**
+ * Homepage Dynamic Content Interface (Managed via WordPress ACF)
+ */
+export interface HomePageData {
+  heroHeadline: string;
+  heroSubheadline: string;
+  specialty1Title: string;
+  specialty1Subtitle: string;
+  specialty2Title: string;
+  specialty2Subtitle: string;
+  specialty3Title: string;
+  specialty3Subtitle: string;
+  editorialStatement1: string;
+  editorialStatement2: string;
+  editorialLeadProse: string;
+  editorialBodyProse: string;
+  surgeonProfileBio: string;
+}
+
+export const DEFAULT_HOMEPAGE_DATA: HomePageData = {
+  heroHeadline: 'When surgical oncology demands indisputable clarity.',
+  heroSubheadline:
+    'Dr Jem Kalathil is a Surgical Oncologist with over thirty years of experience and is Lead Senior Consultant, Surgical Oncology, at the Aster International Institute of Oncology, Aster Medcity, Kochi. His practice is focused on three areas: oncoplastic breast cancer surgery and reconstruction, sentinel node biopsy and radio-guided localisation of non-palpable lesions; cytoreductive surgery with HIPEC for peritoneal surface malignancies; and robotic and complex surgery for gastrointestinal and gynaecological cancers, and extremity and retroperitoneal sarcomas.',
+  specialty1Title: 'Breast Cancer Surgery, Oncoplasty & Reconstruction',
+  specialty1Subtitle: 'Organ Preservation & Symmetry',
+  specialty2Title: 'Peritoneal Surface Malignancies & HIPEC',
+  specialty2Subtitle: 'Curative Cytoreduction',
+  specialty3Title: 'Robotic Surgical Oncology',
+  specialty3Subtitle: 'Da Vinci Precision',
+  editorialStatement1: 'A second opinion is not disloyalty.',
+  editorialStatement2: 'It is an essential oncological safeguard.',
+  editorialLeadProse:
+    'The days following a biopsy are often overwhelmed by shock, urgent advice, and irreversible choices. Patients are told that surgery must take place tomorrow.',
+  editorialBodyProse:
+    'Yet in thirty years of specialized surgical oncology, we know that taking 3 to 5 days to confirm histological receptors, re-examine scan boundaries, and explore organ preservation does not compromise curative outcomes. It protects both life and enduring dignity.',
+  surgeonProfileBio:
+    'Trained in the United Kingdom, Italy, Singapore and India, including a UICC Fellowship in Milan under Professor Umberto Veronesi, he was formerly Additional Professor of Surgical Oncology at the Regional Cancer Centre, Thiruvananthapuram. He heads the Aster Clinical Research Centre and is Lead Principal Investigator on clinical trials.',
+};
+
+/**
+ * Fetch dynamic page data from WordPress by slug
+ */
+export async function fetchWordpressPage(slug: string): Promise<Record<string, any> | null> {
+  const wpUrl = import.meta.env.VITE_WORDPRESS_URL || WP_BASE_URL;
+  if (!wpUrl) return null;
+
+  try {
+    const url = `${wpUrl.replace(/\/$/, '')}/wp-json/wp/v2/pages?slug=${encodeURIComponent(slug)}&_embed=true`;
+    const response = await fetch(url);
+    if (!response.ok) return null;
+
+    const pages = await response.json();
+    if (!Array.isArray(pages) || pages.length === 0) return null;
+
+    return pages[0];
+  } catch (error) {
+    console.warn(`Could not fetch WordPress page for slug: ${slug}`, error);
+    return null;
+  }
+}
+
+/**
+ * Fetch dynamic Homepage content from WordPress ACF
+ */
+export async function fetchHomePageData(): Promise<HomePageData> {
+  const page = await fetchWordpressPage('home');
+  if (!page || !page.acf) {
+    return DEFAULT_HOMEPAGE_DATA;
+  }
+
+  const acf = page.acf;
+  return {
+    heroHeadline: acf.hero_headline || DEFAULT_HOMEPAGE_DATA.heroHeadline,
+    heroSubheadline: acf.hero_subheadline || DEFAULT_HOMEPAGE_DATA.heroSubheadline,
+    specialty1Title: acf.specialty_1_title || DEFAULT_HOMEPAGE_DATA.specialty1Title,
+    specialty1Subtitle: acf.specialty_1_subtitle || DEFAULT_HOMEPAGE_DATA.specialty1Subtitle,
+    specialty2Title: acf.specialty_2_title || DEFAULT_HOMEPAGE_DATA.specialty2Title,
+    specialty2Subtitle: acf.specialty_2_subtitle || DEFAULT_HOMEPAGE_DATA.specialty2Subtitle,
+    specialty3Title: acf.specialty_3_title || DEFAULT_HOMEPAGE_DATA.specialty3Title,
+    specialty3Subtitle: acf.specialty_3_subtitle || DEFAULT_HOMEPAGE_DATA.specialty3Subtitle,
+    editorialStatement1: acf.editorial_statement_1 || DEFAULT_HOMEPAGE_DATA.editorialStatement1,
+    editorialStatement2: acf.editorial_statement_2 || DEFAULT_HOMEPAGE_DATA.editorialStatement2,
+    editorialLeadProse: acf.editorial_lead_prose || DEFAULT_HOMEPAGE_DATA.editorialLeadProse,
+    editorialBodyProse: acf.editorial_body_prose || DEFAULT_HOMEPAGE_DATA.editorialBodyProse,
+    surgeonProfileBio: acf.surgeon_profile_bio || DEFAULT_HOMEPAGE_DATA.surgeonProfileBio,
+  };
+}
+
+/**
+ * Fetch dynamic Site Settings & Desk Info from WordPress ACF
+ */
+export async function fetchSiteSettings(): Promise<SiteSettingsData> {
+  const page = (await fetchWordpressPage('site-settings')) || (await fetchWordpressPage('home'));
+  if (!page || !page.acf) {
+    return DEFAULT_SITE_SETTINGS;
+  }
+
+  const acf = page.acf;
+  return {
+    doctorName: acf.doctor_name || DEFAULT_SITE_SETTINGS.doctorName,
+    doctorCredentials: acf.doctor_credentials || DEFAULT_SITE_SETTINGS.doctorCredentials,
+    doctorRole: acf.doctor_role || DEFAULT_SITE_SETTINGS.doctorRole,
+    experienceYears: acf.experience_years || DEFAULT_SITE_SETTINGS.experienceYears,
+    secretaryPhone: acf.secretary_phone || DEFAULT_SITE_SETTINGS.secretaryPhone,
+    whatsappPhone: acf.whatsapp_phone || DEFAULT_SITE_SETTINGS.whatsappPhone,
+    consultationEmail: acf.consultation_email || DEFAULT_SITE_SETTINGS.consultationEmail,
+    clinicAddress: acf.clinic_address || DEFAULT_SITE_SETTINGS.clinicAddress,
+    opdSchedule: acf.opd_schedule || DEFAULT_SITE_SETTINGS.opdSchedule,
+  };
+}
+
+
 

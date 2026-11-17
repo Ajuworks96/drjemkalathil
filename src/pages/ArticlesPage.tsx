@@ -199,3 +199,4 @@ export const ArticlesPage: React.FC<ArticlesPageProps> = ({ onRequestSecondOpini
     </div>
   );
 };
+
