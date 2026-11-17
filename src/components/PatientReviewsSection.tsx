@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { fetchPatientReviews, type PatientReview } from '../services/sanity';
+import { fetchPatientReviews, type PatientReview } from '../services/wordpress';
 
 export const PatientReviewsSection: React.FC = () => {
   const [reviews, setReviews] = useState<PatientReview[]>([]);
@@ -37,7 +37,7 @@ export const PatientReviewsSection: React.FC = () => {
           </h2>
 
           <p className="reviews-sub-description">
-            Transparent reflections from patients and families who navigated critical breast oncoplasty, advanced HIPEC cytoreduction, and second opinions under Dr. Jem Kalathil at Aster Medcity.
+            Transparent reflections from patients and families who navigated critical breast oncoplasty, advanced HIPEC cytoreduction, and second opinions under Dr. Jem Kalathil.
           </p>
 
           <div className="reviews-aggregate-bar">
@@ -48,7 +48,7 @@ export const PatientReviewsSection: React.FC = () => {
             <span className="aggregate-divider" aria-hidden="true">·</span>
             <span className="aggregate-metric">30+ Years Leadership</span>
             <span className="aggregate-divider" aria-hidden="true">·</span>
-            <span className="aggregate-location">Aster Medcity, Kochi &amp; Overseas GCC</span>
+            <span className="aggregate-location">Kochi, Kerala &amp; Overseas GCC</span>
           </div>
         </div>
 
