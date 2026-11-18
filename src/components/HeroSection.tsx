@@ -111,20 +111,23 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
           <div className="hero-visual-col">
             <div className="hero-visual-stage">
               
-              {/* Rounded Backdrop Frame (Obsidian Black with subtle gold hairline & radial glow) */}
-              <div className="stage-backdrop-frame" aria-hidden="true">
-                <div className="frame-inner-glow" />
-              </div>
+              {/* Dedicated Portrait + Frame Wrapper so cutout ALWAYS stays anchored to the backdrop box on all screen sizes */}
+              <div className="stage-portrait-box">
+                {/* Rounded Backdrop Frame (Obsidian Black with subtle gold hairline & radial glow) */}
+                <div className="stage-backdrop-frame" aria-hidden="true">
+                  <div className="frame-inner-glow" />
+                </div>
 
-              {/* Doctor Cutout Silhouette (Positioned on left side so cards NEVER cover his face) */}
-              <div className="stage-doctor-cutout-wrap">
-                <img
-                  src="/images/dr_jem_kalathil_cutout.png"
-                  alt="Dr. Jem Kalathil, Lead Senior Consultant, Surgical Oncology"
-                  className="stage-doctor-img"
-                  loading="eager"
-                  fetchPriority="high"
-                />
+                {/* Doctor Cutout Silhouette (Positioned on left side on desktop, centered on mobile) */}
+                <div className="stage-doctor-cutout-wrap">
+                  <img
+                    src="/images/dr_jem_kalathil_cutout.png"
+                    alt="Dr. Jem Kalathil, Lead Senior Consultant, Surgical Oncology"
+                    className="stage-doctor-img"
+                    loading="eager"
+                    fetchPriority="high"
+                  />
+                </div>
               </div>
 
               {/* 3 FLOATING SPECIALTY CARDS STACKED ON RIGHT (Exact layout matching user mockup) */}
