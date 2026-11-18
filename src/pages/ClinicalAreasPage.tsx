@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import { CLINICAL_AREAS, WHATSAPP_COORDINATOR_NUMBER, type ClinicalAreaDetailedItem } from '../constants/content';
+import React, { useEffect, useMemo, useState } from 'react';
+import { CLINICAL_AREAS, type ClinicalAreaDetailedItem } from '../constants/content';
 import { Button } from '../components/Button';
 import { trackCtaClick } from '../utils/analytics';
+import { useSiteContent } from '../context/SiteContentContext';
 
 export interface ClinicalAreasPageProps {
   onRequestSecondOpinion: (domainId?: string) => void;
@@ -59,11 +60,38 @@ const CLINICAL_PAGE_FAQS = [
 ];
 
 export const ClinicalAreasPage: React.FC<ClinicalAreasPageProps> = ({ onRequestSecondOpinion }) => {
+  const { clinicalAreasPage, siteSettings } = useSiteContent();
   const [activeAreaId, setActiveAreaId] = useState<string>('breast');
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
+  // Merge dynamic WordPress discipline overrides onto curated clinical areas
+  const mergedAreas: ClinicalAreaDetailedItem[] = useMemo(() => {
+    return CLINICAL_AREAS.map((area) => {
+      const override =
+        clinicalAreasPage.disciplines[area.id as keyof typeof clinicalAreasPage.disciplines];
+      if (!override) return area;
+      return {
+        ...area,
+        title: override.title || area.title,
+        subtitle: override.subtitle || area.subtitle,
+        description: override.description || area.description,
+        procedures: override.procedures && override.procedures.length > 0 ? override.procedures : area.procedures,
+      };
+    });
+  }, [clinicalAreasPage]);
+
+  useEffect(() => {
+    if (clinicalAreasPage.seo?.title) {
+      document.title = clinicalAreasPage.seo.title;
+    }
+    if (clinicalAreasPage.seo?.description) {
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute('content', clinicalAreasPage.seo.description);
+    }
+  }, [clinicalAreasPage]);
+
   const activeArea: ClinicalAreaDetailedItem =
-    CLINICAL_AREAS.find((a: ClinicalAreaDetailedItem) => a.id === activeAreaId) || CLINICAL_AREAS[0];
+    mergedAreas.find((a: ClinicalAreaDetailedItem) => a.id === activeAreaId) || mergedAreas[0];
 
   const currentBenchmark = DISCIPLINE_BENCHMARKS[activeArea.id] || DISCIPLINE_BENCHMARKS.breast;
 
@@ -79,7 +107,7 @@ export const ClinicalAreasPage: React.FC<ClinicalAreasPageProps> = ({ onRequestS
   const whatsappMessage = encodeURIComponent(
     `Hello Dr. Jem Kalathil's Clinical Desk, I would like to enquire about a second opinion consultation regarding ${activeArea.title}.`
   );
-  const whatsappUrl = `https://wa.me/${WHATSAPP_COORDINATOR_NUMBER.replace(/[^0-9]/g, '')}?text=${whatsappMessage}`;
+  const whatsappUrl = `https://wa.me/${siteSettings.whatsappPhone.replace(/[^0-9]/g, '')}?text=${whatsappMessage}`;
 
   return (
     <div className="subpage-wrapper">
@@ -98,16 +126,16 @@ export const ClinicalAreasPage: React.FC<ClinicalAreasPageProps> = ({ onRequestS
               <span>SURGICAL ONCOLOGY &amp; CLINICAL SECOND OPINION</span>
             </div>
             <h1 className="subpage-title">
-              Clinical Specialisations
+              {clinicalAreasPage.pageTitle}
             </h1>
             <p className="subpage-lead">
-              Under the clinical leadership of <strong>Dr. Jem Kalathil</strong> (Surgical Oncologist, 30+ Years Experience), our specialised surgical oncology practice balances complete curative cancer clearance with anatomical dignity, tissue preservation, and accelerated recovery.
+              {clinicalAreasPage.pageLead}
             </p>
           </div>
 
           <div className="subpage-stats-strip">
             <div className="subpage-stat-item">
-              <span className="subpage-stat-val">30+</span>
+              <span className="subpage-stat-val">{siteSettings.experienceYears}</span>
               <span className="subpage-stat-label">Years Dedicated Practice</span>
             </div>
             <div className="subpage-stat-item">
@@ -130,7 +158,7 @@ export const ClinicalAreasPage: React.FC<ClinicalAreasPageProps> = ({ onRequestS
       <section className="disciplines-detailed-section">
         <div className="editorial-container">
           <div className="disciplines-tab-nav" role="tablist" aria-label="Clinical Disciplines Selector">
-            {CLINICAL_AREAS.map((area: ClinicalAreaDetailedItem) => {
+            {mergedAreas.map((area: ClinicalAreaDetailedItem) => {
               const isActive = activeAreaId === area.id;
               return (
                 <button

@@ -1,7 +1,7 @@
 [
   {
     "key": "group_site_settings_drjem",
-    "title": "01. Global Site Settings & Clinical Desk",
+    "title": "01. Global Site Settings & Clinical Desk (Edit on Home Page)",
     "fields": [
       {
         "key": "field_doctor_name",
@@ -56,7 +56,7 @@
         "label": "Consultation Inquiry Email",
         "name": "consultation_email",
         "type": "email",
-        "default_value": "care@drjemkalathil.com",
+        "default_value": "surgical.oncology@asterhospital.com",
         "show_in_rest": 1
       },
       {
@@ -94,7 +94,7 @@
   },
   {
     "key": "group_homepage_content_drjem",
-    "title": "02. Homepage Sections & Clinical Specialties",
+    "title": "02. Homepage Sections & Clinical Specialties (Edit on Home Page)",
     "fields": [
       {
         "key": "field_hero_headline",
@@ -219,7 +219,7 @@
   },
   {
     "key": "group_testimonials_drjem",
-    "title": "03. Patient Voices & Testimonials",
+    "title": "03. Patient Voices & Testimonials (Edit on Home Page)",
     "fields": [
       {
         "key": "field_test_tab_1",
@@ -424,6 +424,300 @@
       ]
     ],
     "menu_order": 2,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "show_in_rest": 1
+  },
+  {
+    "key": "group_clinical_areas_page_drjem",
+    "title": "04. Clinical Areas Page (Edit on Page Slug: clinical-areas)",
+    "fields": [
+      {
+        "key": "field_ca_page_title",
+        "label": "Page Heading",
+        "name": "ca_page_title",
+        "type": "text",
+        "default_value": "Clinical Specialisations",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_ca_page_lead",
+        "label": "Page Lead Description",
+        "name": "ca_page_lead",
+        "type": "textarea",
+        "default_value": "Under the clinical leadership of Dr. Jem Kalathil (Surgical Oncologist, 30+ Years Experience), our specialised surgical oncology practice balances complete curative cancer clearance with anatomical dignity, tissue preservation, and accelerated recovery.",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_ca_tab_breast",
+        "label": "01. Breast Oncology",
+        "name": "",
+        "type": "tab"
+      },
+      {
+        "key": "field_ca_breast_title",
+        "label": "Breast Discipline Title",
+        "name": "ca_breast_title",
+        "type": "text",
+        "default_value": "Breast Cancer Surgery, Oncoplasty & Reconstruction",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_ca_breast_subtitle",
+        "label": "Breast Discipline Subtitle",
+        "name": "ca_breast_subtitle",
+        "type": "text",
+        "default_value": "TISSUE PRESERVATION & MARGIN CONTROL",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_ca_breast_desc",
+        "label": "Breast Discipline Description",
+        "name": "ca_breast_desc",
+        "type": "textarea",
+        "default_value": "Advancing breast conservation through oncoplastic techniques that avoid mastectomy where clinically feasible, without compromising radical disease clearance. Integrating radio-guided surgery, sentinel lymph node biopsies, and aesthetic volume displacement.",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_ca_breast_procedures",
+        "label": "Breast Procedures (One per line)",
+        "name": "ca_breast_procedures",
+        "type": "textarea",
+        "instructions": "Enter each procedure on a new line.",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_ca_tab_hipec",
+        "label": "02. Peritoneal & HIPEC",
+        "name": "",
+        "type": "tab"
+      },
+      {
+        "key": "field_ca_hipec_title",
+        "label": "HIPEC Discipline Title",
+        "name": "ca_hipec_title",
+        "type": "text",
+        "default_value": "Peritoneal Surface Malignancies & HIPEC",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_ca_hipec_subtitle",
+        "label": "HIPEC Discipline Subtitle",
+        "name": "ca_hipec_subtitle",
+        "type": "text",
+        "default_value": "CURATIVE CYTOREDUCTION & HEATED CHEMOTHERAPY",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_ca_hipec_desc",
+        "label": "HIPEC Discipline Description",
+        "name": "ca_hipec_desc",
+        "type": "textarea",
+        "default_value": "Dedicated high-volume Cytoreductive Surgery (CRS) combined with Hyperthermic Intraperitoneal Chemotherapy (HIPEC) for complex ovarian, colorectal, appendiceal, and primary peritoneal cancers.",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_ca_hipec_procedures",
+        "label": "HIPEC Procedures (One per line)",
+        "name": "ca_hipec_procedures",
+        "type": "textarea",
+        "instructions": "Enter each procedure on a new line.",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_ca_tab_robotic",
+        "label": "03. Robotic Surgery",
+        "name": "",
+        "type": "tab"
+      },
+      {
+        "key": "field_ca_robotic_title",
+        "label": "Robotic Discipline Title",
+        "name": "ca_robotic_title",
+        "type": "text",
+        "default_value": "Robotic Surgical Oncology",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_ca_robotic_subtitle",
+        "label": "Robotic Discipline Subtitle",
+        "name": "ca_robotic_subtitle",
+        "type": "text",
+        "default_value": "DA VINCI PRECISION FOR GI, GYNAECOLOGICAL & SARCOMA",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_ca_robotic_desc",
+        "label": "Robotic Discipline Description",
+        "name": "ca_robotic_desc",
+        "type": "textarea",
+        "default_value": "Minimally invasive robotic and complex compartmental cancer surgery for gastrointestinal, colorectal, gynaecological cancers, and extremity or retroperitoneal sarcomas.",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_ca_robotic_procedures",
+        "label": "Robotic Procedures (One per line)",
+        "name": "ca_robotic_procedures",
+        "type": "textarea",
+        "instructions": "Enter each procedure on a new line.",
+        "show_in_rest": 1
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "post_type",
+          "operator": "==",
+          "value": "page"
+        }
+      ]
+    ],
+    "menu_order": 3,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "show_in_rest": 1
+  },
+  {
+    "key": "group_patient_journey_page_drjem",
+    "title": "05. Patient Journey Page (Edit on Page Slug: patient-journey)",
+    "fields": [
+      {
+        "key": "field_pj_page_title",
+        "label": "Page Heading",
+        "name": "pj_page_title",
+        "type": "text",
+        "default_value": "The Clinical Pathway: From Diagnostic Uncertainty to Calm Certainty",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_pj_page_lead",
+        "label": "Page Lead Description",
+        "name": "pj_page_lead",
+        "type": "textarea",
+        "default_value": "A critical cancer diagnosis demands decisive action, but hurried decisions often lead to irreversible regret. Our structured second-opinion pathway provides unhurried evaluation, rigorous scientific scrutiny, and clear surgical direction.",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_pj_turnaround_val",
+        "label": "Review Turnaround Highlight",
+        "name": "pj_turnaround_val",
+        "type": "text",
+        "default_value": "24-48h",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_pj_turnaround_label",
+        "label": "Review Turnaround Label",
+        "name": "pj_turnaround_label",
+        "type": "text",
+        "default_value": "Initial Review Turnaround",
+        "show_in_rest": 1
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "post_type",
+          "operator": "==",
+          "value": "page"
+        }
+      ]
+    ],
+    "menu_order": 4,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "show_in_rest": 1
+  },
+  {
+    "key": "group_upload_records_page_drjem",
+    "title": "06. Upload Records Page (Edit on Page Slug: upload-records)",
+    "fields": [
+      {
+        "key": "field_ur_page_title",
+        "label": "Page Heading",
+        "name": "ur_page_title",
+        "type": "text",
+        "default_value": "Secure Medical Document Upload",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_ur_page_lead",
+        "label": "Page Lead Description",
+        "name": "ur_page_lead",
+        "type": "textarea",
+        "default_value": "Submit your pathology reports, imaging scans, and clinical summaries directly for review by Dr. Jem Kalathil and his clinical second-opinion team.",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_ur_consent_text",
+        "label": "DPDP & NMC Statutory Consent Text",
+        "name": "ur_consent_text",
+        "type": "textarea",
+        "default_value": "By submitting these medical records, you authorize Dr. Jem Kalathil and his clinical review team to evaluate your diagnostic reports solely for specialist surgical second opinion and clinical triage. All uploaded records are encrypted in transit and at rest in compliance with applicable Indian medical data protection standards (including the Digital Personal Data Protection Act 2023 and NMC ethics guidelines). Submission of records for a second opinion does not establish a formal doctor-patient relationship; an in-person physical consultation or formal teleconsultation is required before any treatment plan is finalized or initiated.",
+        "show_in_rest": 1
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "post_type",
+          "operator": "==",
+          "value": "page"
+        }
+      ]
+    ],
+    "menu_order": 5,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "show_in_rest": 1
+  },
+  {
+    "key": "group_contact_page_drjem",
+    "title": "07. Contact Page (Edit on Page Slug: contact)",
+    "fields": [
+      {
+        "key": "field_ct_page_title",
+        "label": "Contact Page Heading",
+        "name": "ct_page_title",
+        "type": "text",
+        "default_value": "Consultation Locations & Appointment Scheduling",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_ct_page_lead",
+        "label": "Contact Page Lead Description",
+        "name": "ct_page_lead",
+        "type": "textarea",
+        "default_value": "Schedule an in-person surgical oncology consultation in Kochi or coordinate a secure remote video evaluation from anywhere in India or the Gulf.",
+        "show_in_rest": 1
+      },
+      {
+        "key": "field_ct_address_block",
+        "label": "Hospital / Clinic Address Block",
+        "name": "ct_address_block",
+        "type": "textarea",
+        "default_value": "Kuttisahib Road, Near Kothad Bridge, South Chittoor, Cheranallur, Kochi, Kerala 682027, India",
+        "show_in_rest": 1
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "post_type",
+          "operator": "==",
+          "value": "page"
+        }
+      ]
+    ],
+    "menu_order": 6,
     "position": "normal",
     "style": "default",
     "label_placement": "top",

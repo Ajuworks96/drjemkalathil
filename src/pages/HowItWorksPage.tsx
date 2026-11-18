@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from '../components/Button';
-import { CLINICAL_DOCTOR_INFO, WHATSAPP_COORDINATOR_NUMBER } from '../constants/content';
+import { CLINICAL_DOCTOR_INFO } from '../constants/content';
+import { useSiteContent } from '../context/SiteContentContext';
 
 export interface HowItWorksPageProps {
   onRequestSecondOpinion: () => void;
@@ -55,9 +56,20 @@ const DOSSIER_CHECKLIST: ChecklistItem[] = [
 ];
 
 export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onRequestSecondOpinion }) => {
+  const { patientJourneyPage, siteSettings } = useSiteContent();
   const [checkedIds, setCheckedIds] = useState<Record<string, boolean>>({
     pathology: true,
   });
+
+  useEffect(() => {
+    if (patientJourneyPage.seo?.title) {
+      document.title = patientJourneyPage.seo.title;
+    }
+    if (patientJourneyPage.seo?.description) {
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute('content', patientJourneyPage.seo.description);
+    }
+  }, [patientJourneyPage]);
 
   const toggleCheck = (id: string) => {
     setCheckedIds((prev) => ({ ...prev, [id]: !prev[id] }));
@@ -70,7 +82,7 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onRequestSecondO
   const whatsappMessage = encodeURIComponent(
     'Hello Dr. Jem Kalathil’s Clinical Desk, I would like guidance on preparing my medical records for a second opinion consultation.'
   );
-  const whatsappUrl = `https://wa.me/${WHATSAPP_COORDINATOR_NUMBER.replace(/[^0-9]/g, '')}?text=${whatsappMessage}`;
+  const whatsappUrl = `https://wa.me/${siteSettings.whatsappPhone.replace(/[^0-9]/g, '')}?text=${whatsappMessage}`;
 
   return (
     <div className="subpage-wrapper">
@@ -91,17 +103,17 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onRequestSecondO
               <span>OBJECTIVE SURGICAL CLARITY · SPECIALIST CLINICAL DESK</span>
             </div>
             <h1 className="subpage-title">
-              The Clinical Pathway: From Diagnostic Uncertainty to Calm Certainty
+              {patientJourneyPage.pageTitle}
             </h1>
             <p className="subpage-lead">
-              A critical cancer diagnosis demands decisive action, but hurried decisions often lead to irreversible regret. Our structured second-opinion pathway provides unhurried evaluation, rigorous scientific scrutiny, and clear surgical direction.
+              {patientJourneyPage.pageLead}
             </p>
           </div>
 
           <div className="subpage-stats-strip">
             <div className="subpage-stat-item">
-              <span className="subpage-stat-val">24-48h</span>
-              <span className="subpage-stat-label">Initial Review Turnaround</span>
+              <span className="subpage-stat-val">{patientJourneyPage.turnaroundVal}</span>
+              <span className="subpage-stat-label">{patientJourneyPage.turnaroundLabel}</span>
             </div>
             <div className="subpage-stat-item">
               <span className="subpage-stat-val">1-on-1</span>

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '../components/Button';
 import { useSiteContent } from '../context/SiteContentContext';
 import { submitDocumentUploadToWordPress } from '../services/wordpress';
@@ -17,7 +17,17 @@ const formatReadableSize = (bytes: number) => {
 };
 
 export const DocumentUploadPage: React.FC = () => {
-  const { siteSettings } = useSiteContent();
+  const { siteSettings, uploadRecordsPage } = useSiteContent();
+
+  useEffect(() => {
+    if (uploadRecordsPage.seo?.title) {
+      document.title = uploadRecordsPage.seo.title;
+    }
+    if (uploadRecordsPage.seo?.description) {
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute('content', uploadRecordsPage.seo.description);
+    }
+  }, [uploadRecordsPage]);
   const [currentStep, setCurrentStep] = useState<number>(1);
   const [formData, setFormData] = useState({
     patientName: '',
@@ -136,10 +146,10 @@ export const DocumentUploadPage: React.FC = () => {
               <span>256-BIT ENCRYPTED · STRICT CONFIDENTIALITY · CLINICAL-GRADE SECURITY</span>
             </div>
             <h1 className="subpage-title">
-              Secure Medical Document Upload
+              {uploadRecordsPage.pageTitle}
             </h1>
             <p className="subpage-lead">
-              Submit your pathology reports, imaging scans, and clinical summaries directly for review by <strong>Dr. Jem Kalathil</strong> and his clinical second-opinion team.
+              {uploadRecordsPage.pageLead}
             </p>
           </div>
 
@@ -705,7 +715,7 @@ export const DocumentUploadPage: React.FC = () => {
                     {/* Medical Confidentiality Agreement */}
                     <div className="consent-statement-box">
                       <p>
-                        <strong>Patient Confidentiality & Clinical Data Protection:</strong> By submitting these medical records, you authorize Dr. Jem Kalathil and his clinical review team to evaluate your diagnostic reports solely for specialist surgical second opinion and clinical triage. All uploaded records are encrypted in transit and at rest in compliance with applicable Indian medical data protection standards (including the Digital Personal Data Protection Act 2023 and NMC ethics guidelines). Submission of records for a second opinion does not establish a formal doctor-patient relationship; an in-person physical consultation or formal teleconsultation is required before any treatment plan is finalized or initiated.
+                        <strong>Patient Confidentiality & Clinical Data Protection:</strong> {uploadRecordsPage.consentText}
                       </p>
                       <label className="consent-checkbox-row">
                         <input

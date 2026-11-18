@@ -1,10 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from '../components/Button';
 import { useSiteContent } from '../context/SiteContentContext';
 import { submitContactToWordPress } from '../services/wordpress';
 
 export const ContactPage: React.FC = () => {
-  const { siteSettings } = useSiteContent();
+  const { siteSettings, contactPage } = useSiteContent();
+
+  useEffect(() => {
+    if (contactPage.seo?.title) {
+      document.title = contactPage.seo.title;
+    }
+    if (contactPage.seo?.description) {
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute('content', contactPage.seo.description);
+    }
+  }, [contactPage]);
   const [sentSuccess, setSentSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
@@ -75,10 +85,10 @@ export const ContactPage: React.FC = () => {
               <span>DIRECT CLINICAL DESK · SPECIALIST REFERRAL & SECOND OPINION</span>
             </div>
             <h1 className="subpage-title">
-              Consultation Locations & Appointment Scheduling
+              {contactPage.pageTitle}
             </h1>
             <p className="subpage-lead">
-              Direct access to <strong>Dr. Jem Kalathil's</strong> clinical surgical oncology practice in Kochi. Coordinate in-person consultations, schedule dedicated video tele-oncology sessions, or connect with our Gulf and international patient liaison desk.
+              {contactPage.pageLead}
             </p>
           </div>
 
@@ -89,11 +99,11 @@ export const ContactPage: React.FC = () => {
             </div>
             <div className="subpage-stat-item">
               <span className="subpage-stat-val">Mon – Sat</span>
-              <span className="subpage-stat-label">09:00 AM – 04:00 PM IST</span>
+              <span className="subpage-stat-label">{siteSettings.opdSchedule}</span>
             </div>
             <div className="subpage-stat-item">
               <span className="subpage-stat-val">Clinical Desk</span>
-              <span className="subpage-stat-label">+91 484 669 9999 (OPD)</span>
+              <span className="subpage-stat-label">{siteSettings.secretaryPhone} (OPD)</span>
             </div>
             <div className="subpage-stat-item">
               <span className="subpage-stat-val">Gulf Desk</span>
@@ -126,8 +136,7 @@ export const ContactPage: React.FC = () => {
                   <h2 className="contact-center-title">Aster Medcity, Kochi</h2>
                   <p className="contact-dept-name">Department of Surgical Oncology</p>
                   <p className="contact-address">
-                    Kuttisahib Road, Near Kothad Bridge, South Chittoor,<br />
-                    Cheranallur, Kochi, Kerala 682027, India
+                    {contactPage.addressBlock}
                   </p>
 
                   <div className="contact-methods-list">

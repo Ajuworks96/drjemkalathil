@@ -787,6 +787,172 @@ export async function submitContactToWordPress(payload: {
   }
 }
 
+/* ==========================================================================
+   DYNAMIC SUBPAGES CONTENT (WordPress Pages + ACF + Rank Math / Yoast SEO)
+   ========================================================================== */
+
+export interface PageSeoMeta {
+  title?: string;
+  description?: string;
+}
+
+export interface ClinicalAreasPageData {
+  pageTitle: string;
+  pageLead: string;
+  disciplines: {
+    breast?: { title?: string; subtitle?: string; description?: string; procedures?: string[] };
+    hipec?: { title?: string; subtitle?: string; description?: string; procedures?: string[] };
+    'minimally-invasive'?: { title?: string; subtitle?: string; description?: string; procedures?: string[] };
+  };
+  seo?: PageSeoMeta;
+}
+
+export const DEFAULT_CLINICAL_AREAS_PAGE: ClinicalAreasPageData = {
+  pageTitle: 'Clinical Specialisations',
+  pageLead:
+    'Under the clinical leadership of Dr. Jem Kalathil (Surgical Oncologist, 30+ Years Experience), our specialised surgical oncology practice balances complete curative cancer clearance with anatomical dignity, tissue preservation, and accelerated recovery.',
+  disciplines: {},
+};
+
+export interface PatientJourneyPageData {
+  pageTitle: string;
+  pageLead: string;
+  turnaroundVal: string;
+  turnaroundLabel: string;
+  seo?: PageSeoMeta;
+}
+
+export const DEFAULT_PATIENT_JOURNEY_PAGE: PatientJourneyPageData = {
+  pageTitle: 'The Clinical Pathway: From Diagnostic Uncertainty to Calm Certainty',
+  pageLead:
+    'A critical cancer diagnosis demands decisive action, but hurried decisions often lead to irreversible regret. Our structured second-opinion pathway provides unhurried evaluation, rigorous scientific scrutiny, and clear surgical direction.',
+  turnaroundVal: '24-48h',
+  turnaroundLabel: 'Initial Review Turnaround',
+};
+
+export interface UploadRecordsPageData {
+  pageTitle: string;
+  pageLead: string;
+  consentText: string;
+  seo?: PageSeoMeta;
+}
+
+export const DEFAULT_UPLOAD_RECORDS_PAGE: UploadRecordsPageData = {
+  pageTitle: 'Secure Medical Document Upload',
+  pageLead:
+    'Submit your pathology reports, imaging scans, and clinical summaries directly for review by Dr. Jem Kalathil and his clinical second-opinion team.',
+  consentText:
+    'By submitting these medical records, you authorize Dr. Jem Kalathil and his clinical review team to evaluate your diagnostic reports solely for specialist surgical second opinion and clinical triage. All uploaded records are encrypted in transit and at rest in compliance with applicable Indian medical data protection standards (including the Digital Personal Data Protection Act 2023 and NMC ethics guidelines). Submission of records for a second opinion does not establish a formal doctor-patient relationship; an in-person physical consultation or formal teleconsultation is required before any treatment plan is finalized or initiated.',
+};
+
+export interface ContactPageData {
+  pageTitle: string;
+  pageLead: string;
+  addressBlock: string;
+  seo?: PageSeoMeta;
+}
+
+export const DEFAULT_CONTACT_PAGE: ContactPageData = {
+  pageTitle: 'Consultation Locations & Appointment Scheduling',
+  pageLead:
+    'Schedule an in-person surgical oncology consultation in Kochi or coordinate a secure remote video evaluation from anywhere in India or the Gulf.',
+  addressBlock:
+    'Kuttisahib Road, Near Kothad Bridge, South Chittoor, Cheranallur, Kochi, Kerala 682027, India',
+};
+
+const parseMultilineList = (raw?: string): string[] | undefined => {
+  if (!raw || !raw.trim()) return undefined;
+  const items = raw
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter(Boolean);
+  return items.length > 0 ? items : undefined;
+};
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const extractPageSeo = (page: any): PageSeoMeta | undefined => {
+  if (!page) return undefined;
+  const title = page.rank_math_seo?.title || page.yoast_head_json?.title;
+  const description = page.rank_math_seo?.description || page.yoast_head_json?.description;
+  if (!title && !description) return undefined;
+  return { title, description };
+};
+
+export async function fetchClinicalAreasPageData(): Promise<ClinicalAreasPageData> {
+  const page = await fetchWordpressPage('clinical-areas');
+  if (!page || !page.acf) return DEFAULT_CLINICAL_AREAS_PAGE;
+  const acf = page.acf;
+
+  return {
+    pageTitle: acf.ca_page_title || DEFAULT_CLINICAL_AREAS_PAGE.pageTitle,
+    pageLead: acf.ca_page_lead || DEFAULT_CLINICAL_AREAS_PAGE.pageLead,
+    disciplines: {
+      breast: {
+        title: acf.ca_breast_title || undefined,
+        subtitle: acf.ca_breast_subtitle || undefined,
+        description: acf.ca_breast_desc || undefined,
+        procedures: parseMultilineList(acf.ca_breast_procedures),
+      },
+      hipec: {
+        title: acf.ca_hipec_title || undefined,
+        subtitle: acf.ca_hipec_subtitle || undefined,
+        description: acf.ca_hipec_desc || undefined,
+        procedures: parseMultilineList(acf.ca_hipec_procedures),
+      },
+      'minimally-invasive': {
+        title: acf.ca_robotic_title || undefined,
+        subtitle: acf.ca_robotic_subtitle || undefined,
+        description: acf.ca_robotic_desc || undefined,
+        procedures: parseMultilineList(acf.ca_robotic_procedures),
+      },
+    },
+    seo: extractPageSeo(page),
+  };
+}
+
+export async function fetchPatientJourneyPageData(): Promise<PatientJourneyPageData> {
+  const page =
+    (await fetchWordpressPage('patient-journey')) || (await fetchWordpressPage('how-it-works'));
+  if (!page || !page.acf) return DEFAULT_PATIENT_JOURNEY_PAGE;
+  const acf = page.acf;
+
+  return {
+    pageTitle: acf.pj_page_title || DEFAULT_PATIENT_JOURNEY_PAGE.pageTitle,
+    pageLead: acf.pj_page_lead || DEFAULT_PATIENT_JOURNEY_PAGE.pageLead,
+    turnaroundVal: acf.pj_turnaround_val || DEFAULT_PATIENT_JOURNEY_PAGE.turnaroundVal,
+    turnaroundLabel: acf.pj_turnaround_label || DEFAULT_PATIENT_JOURNEY_PAGE.turnaroundLabel,
+    seo: extractPageSeo(page),
+  };
+}
+
+export async function fetchUploadRecordsPageData(): Promise<UploadRecordsPageData> {
+  const page =
+    (await fetchWordpressPage('upload-records')) || (await fetchWordpressPage('document-upload'));
+  if (!page || !page.acf) return DEFAULT_UPLOAD_RECORDS_PAGE;
+  const acf = page.acf;
+
+  return {
+    pageTitle: acf.ur_page_title || DEFAULT_UPLOAD_RECORDS_PAGE.pageTitle,
+    pageLead: acf.ur_page_lead || DEFAULT_UPLOAD_RECORDS_PAGE.pageLead,
+    consentText: acf.ur_consent_text || DEFAULT_UPLOAD_RECORDS_PAGE.consentText,
+    seo: extractPageSeo(page),
+  };
+}
+
+export async function fetchContactPageData(): Promise<ContactPageData> {
+  const page = await fetchWordpressPage('contact');
+  if (!page || !page.acf) return DEFAULT_CONTACT_PAGE;
+  const acf = page.acf;
+
+  return {
+    pageTitle: acf.ct_page_title || DEFAULT_CONTACT_PAGE.pageTitle,
+    pageLead: acf.ct_page_lead || DEFAULT_CONTACT_PAGE.pageLead,
+    addressBlock: acf.ct_address_block || DEFAULT_CONTACT_PAGE.addressBlock,
+    seo: extractPageSeo(page),
+  };
+}
+
+
 
 
 
