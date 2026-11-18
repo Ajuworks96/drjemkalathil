@@ -598,5 +598,195 @@ export async function fetchSiteSettings(): Promise<SiteSettingsData> {
   };
 }
 
+/* ==========================================================================
+   WORDPRESS PATIENT PORTAL SUBMISSIONS (drjem/v1 REST API)
+   Sends patient registrations, uploaded medical documents & inquiries directly
+   to WordPress Dashboard -> Patient Portal.
+   ========================================================================== */
+
+export interface WPSubmissionResult {
+  success: boolean;
+  referenceId?: string;
+  submissionId?: number;
+  filesSaved?: number;
+  receivedTimestamp?: string;
+  message?: string;
+}
+
+/**
+ * 1. Submit Second Opinion Request + Uploaded Medical Files to WordPress
+ */
+export async function submitSecondOpinionToWordPress(payload: {
+  patientFullName: string;
+  patientAge: string;
+  patientGender: string;
+  country: string;
+  city: string;
+  contactPhone: string;
+  contactEmail: string;
+  diagnosisCondition: string;
+  currentTreatment: string;
+  previousSurgery: string;
+  treatingHospitalDoctor: string;
+  specificClinicalQuestion: string;
+  consultationMode: string;
+  uploadedFiles: Array<{ file?: File }>;
+}): Promise<WPSubmissionResult> {
+  const wpUrl = (import.meta.env.VITE_WORDPRESS_URL || WP_BASE_URL).replace(/\/$/, '');
+  const endpoint = `${wpUrl}/wp-json/drjem/v1/second-opinion`;
+
+  const body = new FormData();
+  body.append('patientFullName', payload.patientFullName);
+  body.append('patientAge', payload.patientAge);
+  body.append('patientGender', payload.patientGender);
+  body.append('country', payload.country);
+  body.append('city', payload.city);
+  body.append('contactPhone', payload.contactPhone);
+  body.append('contactEmail', payload.contactEmail);
+  body.append('diagnosisCondition', payload.diagnosisCondition);
+  body.append('currentTreatment', payload.currentTreatment);
+  body.append('previousSurgery', payload.previousSurgery);
+  body.append('treatingHospitalDoctor', payload.treatingHospitalDoctor);
+  body.append('specificClinicalQuestion', payload.specificClinicalQuestion);
+  body.append('consultationMode', payload.consultationMode);
+
+  payload.uploadedFiles.forEach((item) => {
+    if (item.file) {
+      body.append('files[]', item.file, item.file.name);
+    }
+  });
+
+  try {
+    const res = await fetch(endpoint, {
+      method: 'POST',
+      body,
+    });
+    const data = await res.json();
+    if (!res.ok || !data.success) {
+      return {
+        success: false,
+        message: data?.message || 'Unable to submit case right now. Please try again or contact via WhatsApp.',
+      };
+    }
+    return data as WPSubmissionResult;
+  } catch (err) {
+    console.error('Second opinion WordPress upload failed:', err);
+    return {
+      success: false,
+      message: 'Network error while connecting to clinical portal. Please check your connection or use WhatsApp.',
+    };
+  }
+}
+
+/**
+ * 2. Submit Secure Medical Document Dossier + Real Files to WordPress
+ */
+export async function submitDocumentUploadToWordPress(
+  payload: {
+    patientName: string;
+    age: string;
+    gender: string;
+    cityCountry: string;
+    phone: string;
+    email: string;
+    submitterRelation: string;
+    cancerType: string;
+    currentStage: string;
+    priorTreatment: string;
+    specificQuestions: string;
+    dicomLink: string;
+    consentGiven: boolean;
+  },
+  files: Array<{ file?: File; category: string }>
+): Promise<WPSubmissionResult> {
+  const wpUrl = (import.meta.env.VITE_WORDPRESS_URL || WP_BASE_URL).replace(/\/$/, '');
+  const endpoint = `${wpUrl}/wp-json/drjem/v1/document-upload`;
+
+  const body = new FormData();
+  body.append('patientName', payload.patientName);
+  body.append('age', payload.age);
+  body.append('gender', payload.gender);
+  body.append('cityCountry', payload.cityCountry);
+  body.append('phone', payload.phone);
+  body.append('email', payload.email);
+  body.append('submitterRelation', payload.submitterRelation);
+  body.append('cancerType', payload.cancerType);
+  body.append('currentStage', payload.currentStage);
+  body.append('priorTreatment', payload.priorTreatment);
+  body.append('specificQuestions', payload.specificQuestions);
+  body.append('dicomLink', payload.dicomLink);
+  body.append('consentGiven', payload.consentGiven ? '1' : '0');
+
+  files.forEach((item) => {
+    if (item.file) {
+      body.append('files[]', item.file, item.file.name);
+      body.append('file_categories[]', item.category);
+    }
+  });
+
+  try {
+    const res = await fetch(endpoint, {
+      method: 'POST',
+      body,
+    });
+    const data = await res.json();
+    if (!res.ok || !data.success) {
+      return {
+        success: false,
+        message: data?.message || 'Unable to upload medical dossier right now. Please try again.',
+      };
+    }
+    return data as WPSubmissionResult;
+  } catch (err) {
+    console.error('Document upload to WordPress failed:', err);
+    return {
+      success: false,
+      message: 'Network error while transmitting medical records. Please try again or reach us on WhatsApp.',
+    };
+  }
+}
+
+/**
+ * 3. Submit Contact / Appointment Request to WordPress
+ */
+export async function submitContactToWordPress(payload: {
+  name: string;
+  phone: string;
+  email: string;
+  cityCountry: string;
+  preferredDate: string;
+  clinicalDomain: string;
+  consultationMode: string;
+  message: string;
+}): Promise<WPSubmissionResult> {
+  const wpUrl = (import.meta.env.VITE_WORDPRESS_URL || WP_BASE_URL).replace(/\/$/, '');
+  const endpoint = `${wpUrl}/wp-json/drjem/v1/contact`;
+
+  try {
+    const res = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    });
+    const data = await res.json();
+    if (!res.ok || !data.success) {
+      return {
+        success: false,
+        message: data?.message || 'Unable to submit appointment request right now.',
+      };
+    }
+    return data as WPSubmissionResult;
+  } catch (err) {
+    console.error('Contact submission to WordPress failed:', err);
+    return {
+      success: false,
+      message: 'Network error while sending inquiry. Please try again or call our clinical desk directly.',
+    };
+  }
+}
+
+
 
 

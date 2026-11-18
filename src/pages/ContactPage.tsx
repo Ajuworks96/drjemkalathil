@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Button } from '../components/Button';
 import { useSiteContent } from '../context/SiteContentContext';
+import { submitContactToWordPress } from '../services/wordpress';
 
 export const ContactPage: React.FC = () => {
   const { siteSettings } = useSiteContent();
   const [sentSuccess, setSentSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [consultationMode, setConsultationMode] = useState<'in_person' | 'video'>('in_person');
   const [openTravelFaq, setOpenTravelFaq] = useState<number | null>(null);
 
@@ -23,8 +26,23 @@ export const ContactPage: React.FC = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    const apiRes = await submitContactToWordPress({
+      ...formData,
+      consultationMode,
+    });
+
+    setIsSubmitting(false);
+
+    if (!apiRes.success) {
+      setSubmitError(apiRes.message || 'Unable to submit request right now. Please try again or call our clinical desk.');
+      return;
+    }
+
     setSentSuccess(true);
     window.scrollTo({ top: 180, behavior: 'smooth' });
   };
@@ -376,13 +394,32 @@ export const ContactPage: React.FC = () => {
                         />
                       </div>
 
+                      {submitError && (
+                        <div
+                          role="alert"
+                          style={{
+                            marginBottom: '16px',
+                            padding: '12px 16px',
+                            borderRadius: '10px',
+                            background: 'rgba(220, 38, 38, 0.14)',
+                            border: '1px solid rgba(248, 113, 113, 0.45)',
+                            color: '#fecaca',
+                            fontSize: '0.85rem',
+                            lineHeight: 1.5,
+                          }}
+                        >
+                          {submitError}
+                        </div>
+                      )}
+
                       <Button
                         type="submit"
                         variant="primary"
                         size="lg"
                         className="contact-submit-btn"
+                        disabled={isSubmitting}
                       >
-                        <span>Submit Consultation Request</span>
+                        <span>{isSubmitting ? 'Submitting Consultation Request...' : 'Submit Consultation Request'}</span>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
                           <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>

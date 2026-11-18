@@ -1,8 +1,23 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Button } from '../components/Button';
-import { WHATSAPP_COORDINATOR_NUMBER } from '../constants/content';
+import { useSiteContent } from '../context/SiteContentContext';
+import { submitDocumentUploadToWordPress } from '../services/wordpress';
+
+interface UploadedDocItem {
+  name: string;
+  size: string;
+  category: string;
+  file: File;
+}
+
+const formatReadableSize = (bytes: number) => {
+  if (bytes < 1024) return `${bytes} B`;
+  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+};
 
 export const DocumentUploadPage: React.FC = () => {
+  const { siteSettings } = useSiteContent();
   const [currentStep, setCurrentStep] = useState<number>(1);
   const [formData, setFormData] = useState({
     patientName: '',
@@ -19,32 +34,41 @@ export const DocumentUploadPage: React.FC = () => {
     dicomLink: '',
   });
 
-  const [uploadedFiles, setUploadedFiles] = useState<Array<{ name: string; size: string; category: string }>>([
-    { name: 'Core_Biopsy_Histopathology_Report.pdf', size: '2.4 MB', category: 'biopsy' },
-    { name: 'PET_CT_Staging_Scan_Summary.pdf', size: '4.8 MB', category: 'imaging' },
-  ]);
+  const [uploadedFiles, setUploadedFiles] = useState<UploadedDocItem[]>([]);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [generatedRef, setGeneratedRef] = useState('JK-89412');
   const [consentGiven, setConsentGiven] = useState(true);
+
+  const biopsyInputRef = useRef<HTMLInputElement>(null);
+  const imagingInputRef = useRef<HTMLInputElement>(null);
+  const notesInputRef = useRef<HTMLInputElement>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleFileDrop = (category: string) => {
-    const sampleNames: Record<string, string[]> = {
-      biopsy: ['IHC_Receptor_Analysis.pdf', 'Surgical_Margin_Histopathology.pdf', 'Biopsy_Pathology_Report.pdf'],
-      imaging: ['FullBody_PET_CT_Scan.pdf', 'Contrast_MRI_Pelvis.pdf', 'High_Res_CT_Abdomen.pdf'],
-      notes: ['Operative_Summary_Prior_Surgery.pdf', 'Medical_Oncologist_Chemo_Protocol.pdf'],
-    };
-    const randomList = sampleNames[category] || ['Diagnostic_Medical_Scan.pdf'];
-    const randomName = randomList[Math.floor(Math.random() * randomList.length)];
-    setUploadedFiles((prev) => [
-      ...prev,
-      { name: randomName, size: `${(Math.random() * 3 + 1.2).toFixed(1)} MB`, category },
-    ]);
+  const handleRealFileSelect = (category: string, fileList: FileList | null) => {
+    if (!fileList || fileList.length === 0) return;
+    const additions: UploadedDocItem[] = [];
+    for (let i = 0; i < fileList.length; i++) {
+      const f = fileList[i];
+      additions.push({
+        name: f.name,
+        size: formatReadableSize(f.size),
+        category,
+        file: f,
+      });
+    }
+    setUploadedFiles((prev) => [...prev, ...additions].slice(0, 10));
+  };
+
+  const triggerCategoryPicker = (category: string) => {
+    if (category === 'biopsy') biopsyInputRef.current?.click();
+    else if (category === 'imaging') imagingInputRef.current?.click();
+    else if (category === 'notes') notesInputRef.current?.click();
   };
 
   const handleRemoveFile = (index: number) => {
@@ -61,23 +85,37 @@ export const DocumentUploadPage: React.FC = () => {
     window.scrollTo({ top: 220, behavior: 'smooth' });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    const refNum = `JK-${Math.floor(Math.random() * 89999 + 10000)}`;
-    setGeneratedRef(refNum);
+    if (!formData.patientName.trim() || !formData.phone.trim()) {
+      setSubmitError('Please ensure Patient Full Name and Phone Number are filled in Step 1.');
+      return;
+    }
 
-    setTimeout(() => {
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    const apiRes = await submitDocumentUploadToWordPress(
+      { ...formData, consentGiven },
+      uploadedFiles
+    );
+
+    if (!apiRes.success) {
       setIsSubmitting(false);
-      setIsSubmitted(true);
-      window.scrollTo({ top: 120, behavior: 'smooth' });
-    }, 850);
+      setSubmitError(apiRes.message || 'Unable to transmit dossier right now. Please try again or reach us on WhatsApp.');
+      return;
+    }
+
+    setGeneratedRef(apiRes.referenceId || `JK-${Math.floor(Math.random() * 89999 + 10000)}`);
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+    window.scrollTo({ top: 120, behavior: 'smooth' });
   };
 
   const whatsappMessage = encodeURIComponent(
     `Hello Dr. Jem Kalathil's Clinical Desk, I am uploading medical records for a second opinion consultation. Patient Name: ${formData.patientName || 'Patient'}. Reference ID: #${generatedRef}.`
   );
-  const whatsappUrl = `https://wa.me/${WHATSAPP_COORDINATOR_NUMBER.replace(/[^0-9]/g, '')}?text=${whatsappMessage}`;
+  const whatsappUrl = `https://wa.me/${siteSettings.whatsappPhone.replace(/[^0-9]/g, '')}?text=${whatsappMessage}`;
 
   return (
     <div className="subpage-wrapper">
@@ -458,34 +496,72 @@ export const DocumentUploadPage: React.FC = () => {
                       </div>
                     </div>
 
+                    {/* Hidden Real File Inputs for Medical Records */}
+                    <input
+                      ref={biopsyInputRef}
+                      type="file"
+                      multiple
+                      accept=".pdf,.jpg,.jpeg,.png,.webp,.heic,.doc,.docx"
+                      style={{ display: 'none' }}
+                      onChange={(e) => {
+                        handleRealFileSelect('biopsy', e.target.files);
+                        e.target.value = '';
+                      }}
+                    />
+                    <input
+                      ref={imagingInputRef}
+                      type="file"
+                      multiple
+                      accept=".pdf,.jpg,.jpeg,.png,.webp,.heic,.doc,.docx"
+                      style={{ display: 'none' }}
+                      onChange={(e) => {
+                        handleRealFileSelect('imaging', e.target.files);
+                        e.target.value = '';
+                      }}
+                    />
+                    <input
+                      ref={notesInputRef}
+                      type="file"
+                      multiple
+                      accept=".pdf,.jpg,.jpeg,.png,.webp,.heic,.doc,.docx"
+                      style={{ display: 'none' }}
+                      onChange={(e) => {
+                        handleRealFileSelect('notes', e.target.files);
+                        e.target.value = '';
+                      }}
+                    />
+
                     <div className="dropzones-grid">
                       <div
                         className="dropzone-box"
-                        onClick={() => handleFileDrop('biopsy')}
+                        onClick={() => triggerCategoryPicker('biopsy')}
+                        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); triggerCategoryPicker('biopsy'); } }}
                         role="button"
                         tabIndex={0}
                       >
                         <span className="dropzone-icon">📄</span>
                         <span className="dropzone-title">Histopathology Reports</span>
-                        <span className="dropzone-formats">Biopsy, IHC markers, cytology (PDF)</span>
+                        <span className="dropzone-formats">Biopsy, IHC markers, cytology (PDF / JPG)</span>
                         <span className="dropzone-action-btn">+ Click to Attach</span>
                       </div>
 
                       <div
                         className="dropzone-box"
-                        onClick={() => handleFileDrop('imaging')}
+                        onClick={() => triggerCategoryPicker('imaging')}
+                        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); triggerCategoryPicker('imaging'); } }}
                         role="button"
                         tabIndex={0}
                       >
                         <span className="dropzone-icon">🔬</span>
                         <span className="dropzone-title">Radiology Scans</span>
-                        <span className="dropzone-formats">PET-CT, MRI, CT scan reports (PDF)</span>
+                        <span className="dropzone-formats">PET-CT, MRI, CT scan reports (PDF / JPG)</span>
                         <span className="dropzone-action-btn">+ Click to Attach</span>
                       </div>
 
                       <div
                         className="dropzone-box"
-                        onClick={() => handleFileDrop('notes')}
+                        onClick={() => triggerCategoryPicker('notes')}
+                        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); triggerCategoryPicker('notes'); } }}
                         role="button"
                         tabIndex={0}
                       >
@@ -644,6 +720,24 @@ export const DocumentUploadPage: React.FC = () => {
                         * Immediate Emergency Notice: If the patient is experiencing acute distress, uncontrolled hemorrhage, or severe breathing difficulties, please proceed to the nearest emergency tertiary hospital immediately.
                       </p>
                     </div>
+
+                    {submitError && (
+                      <div
+                        role="alert"
+                        style={{
+                          marginBottom: '18px',
+                          padding: '12px 16px',
+                          borderRadius: '10px',
+                          background: 'rgba(220, 38, 38, 0.14)',
+                          border: '1px solid rgba(248, 113, 113, 0.45)',
+                          color: '#fecaca',
+                          fontSize: '0.88rem',
+                          lineHeight: 1.5,
+                        }}
+                      >
+                        {submitError}
+                      </div>
+                    )}
 
                     <div className="wizard-buttons-row">
                       <button

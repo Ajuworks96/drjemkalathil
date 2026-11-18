@@ -54,6 +54,7 @@ export const FileUploader: React.FC<FileUploaderProps> = ({
         name: f.name,
         sizeBytes: f.size,
         type: detectedType,
+        file: f,
       });
     }
 

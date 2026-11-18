@@ -82,6 +82,7 @@ export interface FileRecord {
   name: string;
   sizeBytes: number;
   type: string;
+  file?: File;
 }
 
 export interface SubmissionResponse {

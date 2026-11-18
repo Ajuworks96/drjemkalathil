@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { FormField } from './FormField';
 import { FileUploader } from './FileUploader';
 import type { SecondOpinionFormData, SubmissionResponse, FileRecord } from '../types';
-import { CLINICAL_DOCTOR_INFO, WHATSAPP_COORDINATOR_NUMBER } from '../constants/content';
+import { WHATSAPP_COORDINATOR_NUMBER } from '../constants/content';
 import { trackFormStart, trackSecondOpinionSubmit } from '../utils/analytics';
+import { submitSecondOpinionToWordPress } from '../services/wordpress';
 
 export interface SecondOpinionModalProps {
   isOpen: boolean;
@@ -44,6 +45,7 @@ export const SecondOpinionModal: React.FC<SecondOpinionModalProps> = ({
 
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [submissionResult, setSubmissionResult] = useState<SubmissionResponse | null>(null);
 
   // Sync initial domain during render when prop changes
@@ -126,59 +128,61 @@ export const SecondOpinionModal: React.FC<SecondOpinionModalProps> = ({
     setErrors({});
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validateStep2()) return;
 
     setIsSubmitting(true);
+    setSubmitError(null);
 
-    // Simulate backend submission + email notifications
-    setTimeout(() => {
-      const generatedRef = `HC-${new Date().getFullYear()}-${Math.floor(1000 + Math.random() * 9000)}`;
-      
-      const response: SubmissionResponse = {
-        referenceId: generatedRef,
-        patientName: formData.patientFullName,
-        patientEmail: formData.contactEmail,
-        patientPhone: formData.contactPhone,
-        receivedTimestamp: new Date().toLocaleDateString('en-IN', {
+    const apiRes = await submitSecondOpinionToWordPress({
+      patientFullName: formData.patientFullName,
+      patientAge: formData.patientAge,
+      patientGender: formData.patientGender,
+      country: formData.country,
+      city: formData.city,
+      contactPhone: formData.contactPhone,
+      contactEmail: formData.contactEmail,
+      diagnosisCondition: formData.diagnosisCondition,
+      currentTreatment: formData.currentTreatment,
+      previousSurgery: formData.previousSurgery,
+      treatingHospitalDoctor: formData.treatingHospitalDoctor,
+      specificClinicalQuestion: formData.specificClinicalQuestion,
+      consultationMode: formData.consultationMode,
+      uploadedFiles: formData.uploadedFiles,
+    });
+
+    if (!apiRes.success) {
+      setIsSubmitting(false);
+      setSubmitError(apiRes.message || 'Unable to submit case right now. Please try again or reach us via WhatsApp.');
+      return;
+    }
+
+    const generatedRef = apiRes.referenceId || `HC-${new Date().getFullYear()}-${Math.floor(1000 + Math.random() * 9000)}`;
+
+    const response: SubmissionResponse = {
+      referenceId: generatedRef,
+      patientName: formData.patientFullName,
+      patientEmail: formData.contactEmail,
+      patientPhone: formData.contactPhone,
+      receivedTimestamp:
+        apiRes.receivedTimestamp ||
+        new Date().toLocaleDateString('en-IN', {
           day: 'numeric',
           month: 'long',
           year: 'numeric',
           hour: '2-digit',
           minute: '2-digit',
         }),
-        estimatedReviewTurnaround: '48 hours',
-        consultationMode: formData.consultationMode,
-      };
+      estimatedReviewTurnaround: '48 hours',
+      consultationMode: formData.consultationMode,
+    };
 
-      setSubmissionResult(response);
-      setIsSubmitting(false);
+    setSubmissionResult(response);
+    setIsSubmitting(false);
 
-      // GA4 conversion tracking: only fires AFTER successful submission
-      trackSecondOpinionSubmit(generatedRef, formData.consultationMode);
-
-      // Email Workflow Simulation:
-      // 1. Automatic patient acknowledgement email
-      console.info('[Email Sent to Patient]', {
-        to: formData.contactEmail,
-        subject: `Hope & Clarity — Case Received [Ref: ${generatedRef}]`,
-        referenceId: generatedRef,
-        commitment: '48-hour response commitment',
-      });
-
-      // 2. Surgical team notification email
-      console.info('[Email Sent to Surgical Team Desk]', {
-        to: CLINICAL_DOCTOR_INFO.email,
-        subject: `New Second Opinion Dossier [${generatedRef}] - ${formData.patientFullName}`,
-        patient: formData.patientFullName,
-        age: formData.patientAge,
-        phone: formData.contactPhone,
-        diagnosis: formData.diagnosisCondition,
-        question: formData.specificClinicalQuestion,
-        filesAttached: formData.uploadedFiles.length,
-      });
-    }, 900);
+    // GA4 conversion tracking: only fires AFTER successful submission
+    trackSecondOpinionSubmit(generatedRef, formData.consultationMode);
   };
 
   const handleReset = () => {
@@ -612,6 +616,24 @@ export const SecondOpinionModal: React.FC<SecondOpinionModalProps> = ({
                       </p>
                     </div>
                   </div>
+
+                  {submitError && (
+                    <div
+                      role="alert"
+                      style={{
+                        marginBottom: '16px',
+                        padding: '12px 16px',
+                        borderRadius: '10px',
+                        background: 'rgba(220, 38, 38, 0.14)',
+                        border: '1px solid rgba(248, 113, 113, 0.45)',
+                        color: '#fecaca',
+                        fontSize: '0.85rem',
+                        lineHeight: 1.5,
+                      }}
+                    >
+                      {submitError}
+                    </div>
+                  )}
 
                   {/* Action buttons */}
                   <div className="form-modal-footer">
