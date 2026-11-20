@@ -77,8 +77,8 @@ export const ClinicalChaptersSection: React.FC<ClinicalChaptersSectionProps> = (
             <div className="ch1-media-col">
               <div className="ch1-image-stage">
                 <img
-                  src="/images/surgical_theatre.jpg"
-                  alt="Surgical theatre for cytoreductive peritonectomy and heated intraperitoneal chemotherapy (HIPEC)"
+                  src="/images/when_hope_seems_lost.jpg"
+                  alt="Compassionate oncological consultation and clinical guidance when hope seems lost"
                   className="ch1-image"
                   loading="lazy"
                 />

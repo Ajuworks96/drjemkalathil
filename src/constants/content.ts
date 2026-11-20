@@ -2,7 +2,7 @@ import type { ClinicalPillarData, ProcessStepData, PreparationChecklistItem, Faq
 
 export const CLINICAL_DOCTOR_INFO = {
   name: 'Dr. Jem Kalathil',
-  credentials: 'MBBS, MS (General Surgery)',
+  credentials: 'MS, FRCS',
   role: 'Lead Senior Consultant, Surgical Oncology',
   hospital: 'Aster Medcity, Kochi',
   location: 'Cheranallur, Kochi, Kerala 682027, India',
@@ -52,8 +52,8 @@ export const SIMPLE_CLINICAL_AREAS = [
     domainId: 'peritoneal-hipec',
     specialties: ['Peritoneal Surface Malignancies & HIPEC', 'Cytoreductive Surgery', 'Sugarbaker PCI Staging'],
     description: 'For patients who have been told that surgical options may be limited or exhausted.',
-    imageSrc: '/images/surgical_theatre.jpg',
-    imageAlt: 'Surgical theatre for cytoreductive peritonectomy and heated intraperitoneal chemotherapy',
+    imageSrc: '/images/when_hope_seems_lost.jpg',
+    imageAlt: 'Compassionate clinical consultation for complex and advanced peritoneal oncological cases',
   },
   {
     number: '02',
@@ -109,7 +109,7 @@ export const CLINICAL_AREAS: ClinicalAreaDetailedItem[] = [
     subtitle: 'CURATIVE PERITONEAL CLEARANCE',
     description:
       'Pioneering aggressive multi-compartment peritonectomy combined with Hyperthermic Intraperitoneal Chemotherapy (41.5°C–42.5°C) for patients historically deemed inoperable due to peritoneal spread from colorectal, ovarian, or appendiceal origins.',
-    imageSrc: '/images/surgical_theatre.jpg',
+    imageSrc: '/images/when_hope_seems_lost.jpg',
     procedures: [
       'Sugarbaker Peritoneal Cancer Index (PCI) Staging',
       'Complete Multi-Compartment Peritonectomy (CC-0 / CC-1)',
@@ -168,8 +168,8 @@ export const EDITORIAL_CHAPTERS: EditorialChapterData[] = [
       'Pseudomyxoma Peritonei & Ovarian Surface Malignancies',
     ],
     clinicalFocus: 'Curative Cytoreduction & Organ Clearance',
-    imageSrc: '/images/surgical_theatre.jpg',
-    imageAlt: 'Surgical theatre prepared for extensive cytoreductive peritonectomy and heated intraperitoneal chemotherapy',
+    imageSrc: '/images/when_hope_seems_lost.jpg',
+    imageAlt: 'Compassionate clinical consultation and treatment planning for cytoreductive peritonectomy and heated intraperitoneal chemotherapy',
     domainId: 'peritoneal-hipec',
     specNotes: [
       { label: 'Perfusion Temp', value: '41.5°C – 42.5°C' },

@@ -11,6 +11,7 @@ import { DocumentUploadPage } from './pages/DocumentUploadPage';
 import { ContactPage } from './pages/ContactPage';
 import { ArticlesPage } from './pages/ArticlesPage';
 import { ArticleDetailPage } from './pages/ArticleDetailPage';
+import { GalleryPage } from './pages/GalleryPage';
 import { SiteContentProvider } from './context/SiteContentContext';
 
 const ScrollToTop: React.FC = () => {
@@ -48,6 +49,7 @@ export const AppContent: React.FC = () => {
           <Route path="/clinical-areas" element={<ClinicalAreasPage onRequestSecondOpinion={handleOpenModal} />} />
           <Route path="/patient-journey" element={<HowItWorksPage onRequestSecondOpinion={() => handleOpenModal()} />} />
           <Route path="/how-it-works" element={<HowItWorksPage onRequestSecondOpinion={() => handleOpenModal()} />} />
+          <Route path="/gallery" element={<GalleryPage onRequestSecondOpinion={() => handleOpenModal()} />} />
           <Route path="/upload-records" element={<DocumentUploadPage />} />
           <Route path="/document-upload" element={<DocumentUploadPage />} />
           <Route path="/articles" element={<ArticlesPage onRequestSecondOpinion={() => handleOpenModal()} />} />

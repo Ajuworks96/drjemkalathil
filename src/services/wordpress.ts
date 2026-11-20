@@ -460,7 +460,7 @@ export interface SiteSettingsData {
 
 export const DEFAULT_SITE_SETTINGS: SiteSettingsData = {
   doctorName: 'Dr. Jem Kalathil',
-  doctorCredentials: 'MBBS, MS (General Surgery)',
+  doctorCredentials: 'MS, FRCS',
   doctorRole: 'Lead Senior Consultant, Surgical Oncology',
   experienceYears: '30+',
   secretaryPhone: '+91 484 669 9999',

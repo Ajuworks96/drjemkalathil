@@ -164,6 +164,15 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onRequestSecondO
                   <span className="checklist-item">✓ Primary Oncologist's Current Treatment Proposal</span>
                 </div>
               </div>
+              <div className="stage-media-thumb">
+                <img
+                  src="/images/aster_medcity_campus.jpg"
+                  alt="Aster Medcity Quaternary Hospital Campus and Clinical Intake"
+                  className="stage-thumb-img"
+                  loading="lazy"
+                />
+                <span className="stage-thumb-caption">Aster Medcity Intake Desk</span>
+              </div>
             </div>
 
             {/* Stage 2 */}
@@ -187,6 +196,15 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onRequestSecondO
                   <span className="checklist-item">✓ Complete Resection (R0 / CC-0) Feasibility</span>
                 </div>
               </div>
+              <div className="stage-media-thumb">
+                <img
+                  src="/images/clinical_case_review.jpg"
+                  alt="Multidisciplinary Tumor Board (MDT) Staging Scrutiny"
+                  className="stage-thumb-img"
+                  loading="lazy"
+                />
+                <span className="stage-thumb-caption">MDT Scan Cross-Verification</span>
+              </div>
             </div>
 
             {/* Stage 3 */}
@@ -209,6 +227,15 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onRequestSecondO
                   <span className="checklist-item">✓ Transparent, Jargon-Free Clarifications</span>
                   <span className="checklist-item">✓ Direct Review of Scans on Screen</span>
                 </div>
+              </div>
+              <div className="stage-media-thumb">
+                <img
+                  src="/images/when_hope_seems_lost.jpg"
+                  alt="Unhurried 1-on-1 Consultation with Dr. Jem Kalathil"
+                  className="stage-thumb-img"
+                  loading="lazy"
+                />
+                <span className="stage-thumb-caption">Consultation Suite, Aster Medcity</span>
               </div>
             </div>
 
@@ -235,6 +262,15 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onRequestSecondO
                   <span className="checklist-item">✓ Collaborative Respect for Local Doctors</span>
                   <span className="checklist-item">✓ Dedicated International / Gulf Concierge</span>
                 </div>
+              </div>
+              <div className="stage-media-thumb">
+                <img
+                  src="/images/dr_jem_kalathil.jpg"
+                  alt="Dr. Jem Kalathil Formal Clinical Assessment & Signed Memorandum"
+                  className="stage-thumb-img"
+                  loading="lazy"
+                />
+                <span className="stage-thumb-caption">Signed Clinical Assessment</span>
               </div>
             </div>
           </div>

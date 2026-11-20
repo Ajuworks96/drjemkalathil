@@ -174,7 +174,7 @@ export const ArticleDetailPage: React.FC<ArticleDetailPageProps> = ({ onRequestS
             <div className="signature-info">
               <h4 className="signature-doctor-name">Dr. Jem Kalathil</h4>
               <p className="signature-doctor-creds">
-                MBBS, MS (Gen Surg), MCh (Surg Onco), FICS, UICC Fellow (Milan)
+                MS, FRCS
               </p>
               <p className="signature-doctor-bio">
                 Lead Senior Consultant in Surgical Oncology. Practice focused exclusively on oncoplastic breast surgery, peritoneal surface oncology with HIPEC, and robotic surgical oncology in Kochi, Kerala.

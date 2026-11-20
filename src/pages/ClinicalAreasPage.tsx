@@ -139,16 +139,8 @@ export const ClinicalAreasPage: React.FC<ClinicalAreasPageProps> = ({ onRequestS
               <span className="subpage-stat-label">Years Dedicated Practice</span>
             </div>
             <div className="subpage-stat-item">
-              <span className="subpage-stat-val">Fellowship-Trained</span>
-              <span className="subpage-stat-label">Surgical Oncology Specialist</span>
-            </div>
-            <div className="subpage-stat-item">
               <span className="subpage-stat-val">HIPEC</span>
               <span className="subpage-stat-label">High-Volume Peritoneal Center</span>
-            </div>
-            <div className="subpage-stat-item">
-              <span className="subpage-stat-val">MDT</span>
-              <span className="subpage-stat-label">Multidisciplinary Board Standard</span>
             </div>
           </div>
         </div>
@@ -326,6 +318,26 @@ export const ClinicalAreasPage: React.FC<ClinicalAreasPageProps> = ({ onRequestS
             <p className="protocol-lead">
               No oncological surgical decision is made in isolation. Complex cases are reviewed within a multidisciplinary tumor board framework combining surgical oncology, medical oncology, radiation oncology, onco-radiology, and subspecialty histopathology to achieve consensus-driven treatment plans.
             </p>
+          </div>
+
+          {/* Visual Showcase of MDT Review */}
+          <div className="protocol-showcase-visual">
+            <div className="protocol-visual-frame">
+              <img
+                src="/images/clinical_case_review.jpg"
+                alt="Multidisciplinary Oncology Tumor Board Case Review at Aster Medcity"
+                className="protocol-banner-img"
+                loading="lazy"
+              />
+              <div className="protocol-visual-overlay">
+                <div className="protocol-badge-chip">
+                  <span className="pulse-dot">●</span> MDT BOARD EVALUATION · ASTER MEDCITY
+                </div>
+                <p className="protocol-visual-caption">
+                  Specialized consensus on radiologic boundaries, microscopic margins, and systemic sequencing for every complex cancer case.
+                </p>
+              </div>
+            </div>
           </div>
 
           <div className="protocol-pillars-grid">
