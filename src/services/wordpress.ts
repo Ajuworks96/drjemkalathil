@@ -621,10 +621,7 @@ export async function fetchSiteSettings(): Promise<SiteSettingsData> {
   const acf = page.acf;
   return {
     doctorName: acf.doctor_name || DEFAULT_SITE_SETTINGS.doctorName,
-    doctorCredentials:
-      acf.doctor_credentials && !acf.doctor_credentials.includes('MBBS') && !acf.doctor_credentials.includes('General Surgery')
-        ? acf.doctor_credentials
-        : 'MS, FRCS',
+    doctorCredentials: 'MS, FRCS',
     doctorRole: acf.doctor_role || DEFAULT_SITE_SETTINGS.doctorRole,
     experienceYears: acf.experience_years || DEFAULT_SITE_SETTINGS.experienceYears,
     secretaryPhone: acf.secretary_phone || DEFAULT_SITE_SETTINGS.secretaryPhone,

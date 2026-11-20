@@ -49,9 +49,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
 
               {/* Doctor Authority Line */}
               <div className="hero-doctor-title-line">
-                <span className="doctor-primary-name" itemProp="name">{siteSettings.doctorName}</span>
+                <span className="doctor-primary-name" itemProp="name">{siteSettings.doctorName || 'Dr. Jem Kalathil'}</span>
                 <span className="doctor-title-separator" aria-hidden="true">·</span>
-                <span className="doctor-credentials-badge">{siteSettings.doctorCredentials}</span>
+                <span className="doctor-credentials-badge">MS, FRCS</span>
               </div>
             </div>
 
@@ -134,8 +134,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
               <div className="hero-floating-specialties-stack" aria-label="Key Clinical Pillars">
                 <a href="/clinical-areas#breast" className="floating-specialty-card">
                   <div className="specialty-card-icon" aria-hidden="true">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
                     </svg>
                   </div>
                   <div className="specialty-card-meta">
@@ -146,9 +146,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
 
                 <a href="/clinical-areas#hipec" className="floating-specialty-card">
                   <div className="specialty-card-icon" aria-hidden="true">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <circle cx="12" cy="12" r="10" />
-                      <path d="m4.93 4.93 4.24 4.24M14.83 9.17l4.24-4.24M14.83 14.83l4.24 4.24M9.17 14.83l-4.24 4.24" />
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="9" />
+                      <circle cx="12" cy="12" r="3" />
+                      <path d="M12 3v3M12 18v3M3 12h3M18 12h3" />
                     </svg>
                   </div>
                   <div className="specialty-card-meta">
@@ -159,9 +160,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
 
                 <a href="/clinical-areas#robotic" className="floating-specialty-card">
                   <div className="specialty-card-icon" aria-hidden="true">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <rect width="18" height="18" x="3" y="3" rx="2" />
-                      <path d="M9 9h6M9 15h6" />
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polygon points="12 2 19 8.5 19 15.5 12 22 5 15.5 5 8.5 12 2" />
+                      <circle cx="12" cy="12" r="3" />
                     </svg>
                   </div>
                   <div className="specialty-card-meta">
