@@ -456,6 +456,9 @@ export interface SiteSettingsData {
   consultationEmail: string;
   clinicAddress: string;
   opdSchedule: string;
+  instagramUrl?: string;
+  facebookUrl?: string;
+  youtubeUrl?: string;
 }
 
 export const DEFAULT_SITE_SETTINGS: SiteSettingsData = {
@@ -468,6 +471,9 @@ export const DEFAULT_SITE_SETTINGS: SiteSettingsData = {
   consultationEmail: 'surgical.oncology@asterhospital.com',
   clinicAddress: 'Aster Medcity, Cheranallur, Kochi, Kerala 682027, India',
   opdSchedule: 'Monday – Saturday, 09:00 AM – 04:00 PM IST',
+  instagramUrl: 'https://www.instagram.com/drjemkalathil',
+  facebookUrl: 'https://www.facebook.com/drjemkalathil',
+  youtubeUrl: 'https://www.youtube.com/@drjemkalathil',
 };
 
 /**
@@ -587,7 +593,10 @@ export async function fetchSiteSettings(): Promise<SiteSettingsData> {
   const acf = page.acf;
   return {
     doctorName: acf.doctor_name || DEFAULT_SITE_SETTINGS.doctorName,
-    doctorCredentials: acf.doctor_credentials || DEFAULT_SITE_SETTINGS.doctorCredentials,
+    doctorCredentials:
+      acf.doctor_credentials && !acf.doctor_credentials.includes('MBBS') && !acf.doctor_credentials.includes('General Surgery')
+        ? acf.doctor_credentials
+        : 'MS, FRCS',
     doctorRole: acf.doctor_role || DEFAULT_SITE_SETTINGS.doctorRole,
     experienceYears: acf.experience_years || DEFAULT_SITE_SETTINGS.experienceYears,
     secretaryPhone: acf.secretary_phone || DEFAULT_SITE_SETTINGS.secretaryPhone,
@@ -595,6 +604,9 @@ export async function fetchSiteSettings(): Promise<SiteSettingsData> {
     consultationEmail: acf.consultation_email || DEFAULT_SITE_SETTINGS.consultationEmail,
     clinicAddress: acf.clinic_address || DEFAULT_SITE_SETTINGS.clinicAddress,
     opdSchedule: acf.opd_schedule || DEFAULT_SITE_SETTINGS.opdSchedule,
+    instagramUrl: acf.instagram_url || DEFAULT_SITE_SETTINGS.instagramUrl,
+    facebookUrl: acf.facebook_url || DEFAULT_SITE_SETTINGS.facebookUrl,
+    youtubeUrl: acf.youtube_url || DEFAULT_SITE_SETTINGS.youtubeUrl,
   };
 }
 

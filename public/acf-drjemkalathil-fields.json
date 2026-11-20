@@ -16,7 +16,7 @@
         "label": "Credentials / Degrees",
         "name": "doctor_credentials",
         "type": "text",
-        "default_value": "MBBS, MS (General Surgery), MCh (Surg Onco)",
+        "default_value": "MS, FRCS",
         "show_in_rest": 1
       },
       {

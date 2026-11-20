@@ -41,7 +41,7 @@ export const Footer: React.FC<FooterProps> = ({ onRequestSecondOpinion }) => {
               <span className="pub-social-title">Follow &amp; Connect:</span>
               <div className="pub-social-list">
                 <a
-                  href="https://www.instagram.com/"
+                  href={siteSettings.instagramUrl || 'https://www.instagram.com/drjemkalathil'}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="pub-social-link"
@@ -57,7 +57,7 @@ export const Footer: React.FC<FooterProps> = ({ onRequestSecondOpinion }) => {
                 </a>
 
                 <a
-                  href="https://www.facebook.com/"
+                  href={siteSettings.facebookUrl || 'https://www.facebook.com/drjemkalathil'}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="pub-social-link"
@@ -71,7 +71,7 @@ export const Footer: React.FC<FooterProps> = ({ onRequestSecondOpinion }) => {
                 </a>
 
                 <a
-                  href="https://www.youtube.com/"
+                  href={siteSettings.youtubeUrl || 'https://www.youtube.com/@drjemkalathil'}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="pub-social-link"
