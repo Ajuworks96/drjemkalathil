@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { CLINICAL_AREAS, type ClinicalAreaDetailedItem } from '../constants/content';
 import { Button } from '../components/Button';
 import { trackCtaClick } from '../utils/analytics';
@@ -12,6 +13,9 @@ interface DisciplineBenchmark {
   standard: string;
   technique: string;
   preservation: string;
+  standardDetail: string;
+  techniqueDetail: string;
+  preservationDetail: string;
 }
 
 const DISCIPLINE_BENCHMARKS: Record<string, DisciplineBenchmark> = {
@@ -19,16 +23,25 @@ const DISCIPLINE_BENCHMARKS: Record<string, DisciplineBenchmark> = {
     standard: 'R0 Microscopic Negative Margins',
     technique: 'Dual-Tracer Sentinel Lymph Node Sparing',
     preservation: 'Oncoplastic Volume Displacement & Symmetry',
+    standardDetail: 'Zero malignant cells at microscopic inked boundaries verified via specialized onco-pathology protocol.',
+    techniqueDetail: 'Combined radio-colloid and blue dye localisation to avoid unnecessary full axillary clearance.',
+    preservationDetail: 'Therapeutic mammaplasty & local glandular flaps restoring natural contour and contralateral symmetry.',
   },
   hipec: {
     standard: 'CC-0 / CC-1 Complete Peritonectomy',
     technique: 'Hyperthermic Intraperitoneal Perfusion (41.5°C–42.5°C)',
     preservation: 'Systematic Organ Clearance with Standardized ICU Care',
+    standardDetail: 'Macroscopic cytoreduction achieving complete peritoneal clearance scored via Sugarbaker criteria.',
+    techniqueDetail: 'Continuous 60–90 minute heated perfusion circulating chemotherapy to eradicate microscopic seedings.',
+    preservationDetail: 'Preserving vital bowel motility and organ integrity through structured multidisciplinary ICU protocols.',
   },
   'minimally-invasive': {
     standard: 'Anatomical Nodal Dissection with 3D Robotic Vision',
     technique: 'daVinci Robotic & Laparoscopic Resection',
     preservation: 'Sphincter Sparing & Accelerated Post-Op Recovery',
+    standardDetail: 'High-definition 3D stereoscopic view ensuring clear margins around major retroperitoneal vessels.',
+    techniqueDetail: '540-degree wrist articulation allowing tremor-free micro-dissection in deep pelvic spaces.',
+    preservationDetail: 'Preserving pelvic autonomic nerves for continence and enabling rapid return to adjuvant treatment.',
   },
 };
 
@@ -83,6 +96,8 @@ export const ClinicalAreasPage: React.FC<ClinicalAreasPageProps> = ({ onRequestS
   useEffect(() => {
     if (clinicalAreasPage.seo?.title) {
       document.title = clinicalAreasPage.seo.title;
+    } else {
+      document.title = 'Clinical Specialisations & Surgical Oncology Pillars | Dr. Jem Kalathil';
     }
     if (clinicalAreasPage.seo?.description) {
       const metaDesc = document.querySelector('meta[name="description"]');
@@ -110,46 +125,62 @@ export const ClinicalAreasPage: React.FC<ClinicalAreasPageProps> = ({ onRequestS
   const whatsappUrl = `https://wa.me/${siteSettings.whatsappPhone.replace(/[^0-9]/g, '')}?text=${whatsappMessage}`;
 
   return (
-    <div className="subpage-wrapper">
-      {/* 1. Page Editorial Header (Dark Luxury Theme - Clean Medical Authority) */}
+    <div className="subpage-wrapper clinical-page-wrapper">
+      {/* 01. LUXURY EDITORIAL HERO HEADER */}
       <section className="subpage-editorial-hero" aria-label="Clinical Disciplines Overview">
         <div className="editorial-container">
           <div className="subpage-breadcrumb">
-            <span className="crumb-item">HOME</span>
+            <Link to="/" className="crumb-item">HOME</Link>
             <span className="crumb-sep">/</span>
             <span className="crumb-active">CLINICAL SPECIALISATIONS</span>
           </div>
 
           <div className="subpage-hero-meta">
             <div className="hero-crest-badge">
-              <img src="/images/clinical_crystal_emblem.png" alt="Clinical Specialisations" className="hero-crest-img" />
-              <span>SURGICAL ONCOLOGY &amp; CLINICAL SECOND OPINION</span>
+              <img src="/images/clinical_crystal_emblem.png" alt="" className="hero-crest-img" />
+              <span>SURGICAL ONCOLOGY · QUATERNARY MDT BOARD STANDARDS</span>
             </div>
+
             <h1 className="subpage-title">
-              {clinicalAreasPage.pageTitle}
+              {clinicalAreasPage.pageTitle || 'Clinical Specialisations & Surgical Boundaries.'}
             </h1>
+
             <p className="subpage-lead">
-              {clinicalAreasPage.pageLead}
+              {clinicalAreasPage.pageLead ||
+                'Detailed clinical protocols across Oncoplastic Breast Surgery, Peritoneal Surface Malignancies (HIPEC), and Minimally Invasive Robotic Oncology under rigorous multidisciplinary scrutiny.'}
             </p>
           </div>
 
-          <div className="subpage-stats-strip">
-            <div className="subpage-stat-item">
-              <span className="subpage-stat-val">{siteSettings.experienceYears}</span>
-              <span className="subpage-stat-label">Years Dedicated Practice</span>
+          {/* Integrated Luxury Metric Strip */}
+          <div className="subpage-metrics-strip">
+            <div className="metric-strip-card">
+              <span className="metric-strip-val">{siteSettings.experienceYears} Years</span>
+              <span className="metric-strip-label">Dedicated Surgical Oncology</span>
             </div>
-            <div className="subpage-stat-item">
-              <span className="subpage-stat-val">HIPEC</span>
-              <span className="subpage-stat-label">High-Volume Peritoneal Center</span>
+            <div className="metric-strip-divider" aria-hidden="true" />
+            <div className="metric-strip-card">
+              <span className="metric-strip-val">High-Volume</span>
+              <span className="metric-strip-label">Peritoneal Surface &amp; HIPEC Center</span>
+            </div>
+            <div className="metric-strip-divider" aria-hidden="true" />
+            <div className="metric-strip-card">
+              <span className="metric-strip-val">Organ Sparing</span>
+              <span className="metric-strip-label">Oncoplastic Breast Preservation</span>
+            </div>
+            <div className="metric-strip-divider" aria-hidden="true" />
+            <div className="metric-strip-card">
+              <span className="metric-strip-val">MDT Standard</span>
+              <span className="metric-strip-label">Multidisciplinary Tumor Board Scrutiny</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 2. Three Pillars Tab / Detailed Switcher */}
+      {/* 02. INTERACTIVE PILLARS NAVIGATION & SHOWCASE SECTION */}
       <section className="disciplines-detailed-section">
         <div className="editorial-container">
-          <div className="disciplines-tab-nav" role="tablist" aria-label="Clinical Disciplines Selector">
+          {/* Segmented Discipline Tabs */}
+          <div className="disciplines-luxury-tab-bar" role="tablist" aria-label="Clinical Disciplines Selector">
             {mergedAreas.map((area: ClinicalAreaDetailedItem) => {
               const isActive = activeAreaId === area.id;
               return (
@@ -157,159 +188,305 @@ export const ClinicalAreasPage: React.FC<ClinicalAreasPageProps> = ({ onRequestS
                   key={area.id}
                   role="tab"
                   aria-selected={isActive}
-                  className={`discipline-tab-btn ${isActive ? 'is-active' : ''}`}
+                  className={`luxury-tab-btn ${isActive ? 'is-active' : ''}`}
                   onClick={() => setActiveAreaId(area.id)}
                 >
-                  <span className="tab-number">{area.number}</span>
-                  <div className="tab-label-group">
-                    <span className="tab-title">{area.title}</span>
-                    <span className="tab-subtext">{area.subtitle}</span>
+                  <span className="tab-pill-num">{area.number}</span>
+                  <div className="tab-pill-text">
+                    <span className="tab-pill-title">{area.title}</span>
+                    <span className="tab-pill-sub">{area.subtitle}</span>
                   </div>
                 </button>
               );
             })}
           </div>
 
-          {/* Active Discipline Detailed Showcase Card */}
-          <div className="discipline-active-card" key={activeArea.id}>
-            <div className="discipline-grid-layout">
-              {/* Left Column: Image Canvas & Surgeon Insight */}
-              <div className="discipline-visual-col">
-                <div className="discipline-image-canvas">
-                  <div className="canvas-corner-tl" />
-                  <div className="canvas-corner-br" />
-                  <img
-                    src={activeArea.imageSrc}
-                    alt={activeArea.title}
-                    className="discipline-feature-img"
-                  />
-                  <div className="discipline-image-tag">
-                    <span className="tag-dot">●</span> CLINICAL SURGICAL SUITE
-                  </div>
-                </div>
-
-                <div className="discipline-metrics-card">
-                  <div className="quote-icon" aria-hidden="true">“</div>
-                  <span className="metric-kicker">SURGICAL PHILOSOPHY</span>
-                  <p className="metric-text">
-                    “In oncological surgery, the microscopic margin is everything. Preserving anatomy is only meaningful when curative disease clearance is absolute.”
-                  </p>
-                  <span className="metric-author">— Dr. Jem Kalathil, Surgical Oncologist</span>
-                </div>
-
-                {/* Benchmark Specifications */}
-                <div className="discipline-benchmarks-box">
-                  <span className="benchmark-box-title">CLINICAL QUALITY BENCHMARKS</span>
-                  <div className="benchmark-items">
-                    <div className="benchmark-row">
-                      <span className="b-label">Margin Standard:</span>
-                      <span className="b-val">{currentBenchmark.standard}</span>
-                    </div>
-                    <div className="benchmark-row">
-                      <span className="b-label">Key Technique:</span>
-                      <span className="b-val">{currentBenchmark.technique}</span>
-                    </div>
-                    <div className="benchmark-row">
-                      <span className="b-label">Primary Goal:</span>
-                      <span className="b-val">{currentBenchmark.preservation}</span>
-                    </div>
-                  </div>
+          {/* Active Discipline Detailed Showcase Suite */}
+          <div className="discipline-active-showcase" key={activeArea.id}>
+            {/* STAGE A: Cinematic Split (Visual + Discipline Lead & Philosophy) */}
+            <div className="showcase-top-grid">
+              {/* Cinematic Visual Frame */}
+              <div className="showcase-visual-frame">
+                <img
+                  src={activeArea.imageSrc}
+                  alt={activeArea.title}
+                  className="showcase-banner-img"
+                  loading="eager"
+                />
+                <div className="showcase-img-overlay" />
+                <div className="showcase-floating-badge">
+                  <span className="live-dot">●</span>
+                  <span>SURGICAL SUITE EXCELLENCE · ASTER MEDCITY</span>
                 </div>
               </div>
 
-              {/* Right Column: Detailed Clinical Scope */}
-              <div className="discipline-content-col">
-                <div className="discipline-header-cluster">
-                  <span className="discipline-badge">
-                    PILLAR {activeArea.number} · {activeArea.subtitle}
-                  </span>
-                  <h2 className="discipline-heading">{activeArea.title}</h2>
-                  <p className="discipline-description">{activeArea.description}</p>
+              {/* Header Content & Surgeon Philosophy */}
+              <div className="showcase-header-content">
+                <div className="showcase-kicker-row">
+                  <span className="discipline-kicker-tag">PILLAR {activeArea.number}</span>
+                  <span className="meta-sep" aria-hidden="true">·</span>
+                  <span className="discipline-sub-tag">{activeArea.subtitle}</span>
                 </div>
 
-                <div className="discipline-subsections-group">
-                  <h3 className="subsections-title">Key Surgical Innovations & Focus Areas</h3>
-                  <div className="procedures-list">
-                    {activeArea.procedures.map((proc: string, idx: number) => (
-                      <div className="proc-pill" key={idx}>
-                        <div className="proc-icon-circle">
-                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                            <polyline points="20 6 9 17 4 12" />
-                          </svg>
-                        </div>
-                        <span className="proc-text">{proc}</span>
-                      </div>
-                    ))}
+                <h2 className="discipline-primary-title">{activeArea.title}</h2>
+                <p className="discipline-lead-text">{activeArea.description}</p>
+
+                {/* Surgeon Philosophy Quote Monument */}
+                <div className="surgeon-quote-monument">
+                  <div className="quote-mark" aria-hidden="true">“</div>
+                  <p className="quote-text">
+                    “In oncological surgery, the microscopic margin is everything. Preserving anatomy is only meaningful when curative disease clearance is absolute.”
+                  </p>
+                  <div className="quote-author-row">
+                    <span className="quote-author-name">Dr. Jem Kalathil</span>
+                    <span className="quote-author-creds">MS, FRCS · Lead Senior Consultant, Surgical Oncology</span>
                   </div>
                 </div>
+              </div>
+            </div>
 
-                {/* When is Second Opinion Critical */}
-                <div className="clinical-criteria-box">
-                  <div className="criteria-header-row">
-                    <span className="criteria-icon">⚖️</span>
-                    <h4 className="criteria-heading">When is a Second Opinion Critical in this Discipline?</h4>
+            {/* STAGE B: 3 CLINICAL QUALITY BENCHMARKS (Full-Width Executive Row) */}
+            <div className="discipline-benchmarks-grid">
+              <div className="benchmark-card">
+                <div className="benchmark-card-head">
+                  <span className="b-badge">RADICALITY BENCHMARK</span>
+                </div>
+                <span className="benchmark-card-label">Margin Standard</span>
+                <h3 className="benchmark-card-val">{currentBenchmark.standard}</h3>
+                <p className="benchmark-card-desc">{currentBenchmark.standardDetail}</p>
+              </div>
+
+              <div className="benchmark-card">
+                <div className="benchmark-card-head">
+                  <span className="b-badge">SURGICAL TECHNIQUE</span>
+                </div>
+                <span className="benchmark-card-label">Key Technique</span>
+                <h3 className="benchmark-card-val">{currentBenchmark.technique}</h3>
+                <p className="benchmark-card-desc">{currentBenchmark.techniqueDetail}</p>
+              </div>
+
+              <div className="benchmark-card">
+                <div className="benchmark-card-head">
+                  <span className="b-badge">PRIMARY RECOVERY GOAL</span>
+                </div>
+                <span className="benchmark-card-label">Primary Goal</span>
+                <h3 className="benchmark-card-val">{currentBenchmark.preservation}</h3>
+                <p className="benchmark-card-desc">{currentBenchmark.preservationDetail}</p>
+              </div>
+            </div>
+
+            {/* STAGE C: SURGICAL PROCEDURES & INNOVATIONS (2-Column Luxury Grid) */}
+            <div className="showcase-procedures-section">
+              <div className="section-title-wrap">
+                <span className="section-sub-kicker">ONCOLOGICAL REPERTOIRE</span>
+                <h3 className="section-main-heading">Specialised Surgical Innovations &amp; Key Focus Areas</h3>
+              </div>
+
+              <div className="procedures-luxury-grid">
+                {activeArea.procedures.map((proc: string, idx: number) => (
+                  <div className="procedure-luxury-card" key={idx}>
+                    <div className="proc-check-icon" aria-hidden="true">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                    </div>
+                    <span className="proc-card-title">{proc}</span>
                   </div>
-                  <ul className="criteria-list">
-                    {activeArea.id === 'breast' && (
-                      <>
-                        <li><span className="priority-pill">DIAGNOSTIC</span> <strong>Excision Biopsy Proposed for Diagnosis:</strong> Before undergoing open excision biopsy for an undiagnosed breast lump, evaluate minimally invasive core needle biopsy and radio-guided localization options.</li>
-                        <li><span className="priority-pill">HIGH PRIORITY</span> <strong>Proposed Total Mastectomy:</strong> When mastectomy is recommended without evaluating oncoplastic breast conservation or volume displacement techniques.</li>
-                        <li><span className="priority-pill">NEOADJUVANT</span> <strong>Post-Chemotherapy Downstaging:</strong> Reassessing surgical feasibility following chemotherapy before irreversible tissue excision.</li>
-                        <li><span className="priority-pill">AXILLARY</span> <strong>Axillary Surgery Planning:</strong> Comprehensive review of node-positive disease to evaluate targeted axillary dissection (TAD) versus full axillary clearance.</li>
-                        <li><span className="priority-pill">MARGIN CHECK</span> <strong>Uncertain Margin Status:</strong> When previous lumpectomy margins are close or positive, requiring specialized margin re-excision.</li>
-                        <li><span className="priority-pill">PREVENTION</span> <strong>Advanced Lymphoedema Prevention & Management:</strong> Primary prevention protocols including axillary reverse mapping (ARM) and lymphovenous anastomosis (LVA) planning.</li>
-                      </>
-                    )}
-                    {activeArea.id === 'hipec' && (
-                      <>
-                        <li><span className="priority-pill">CRITICAL</span> <strong>Deemed Inoperable Elsewhere:</strong> When peritoneal carcinomatosis has been diagnosed as terminal without formal Peritoneal Cancer Index (PCI) scoring.</li>
-                        <li><span className="priority-pill">SECONDARY</span> <strong>Advanced / Recurrent Ovarian Cancer:</strong> Evaluating secondary cytoreduction feasibility combined with hyperthermic chemotherapy.</li>
-                        <li><span className="priority-pill">RADICAL</span> <strong>Pseudomyxoma Peritonei (PMP) & Appendix Tumors:</strong> Requiring radical multi-compartment peritonectomy by a dedicated high-volume peritoneal team.</li>
-                        <li><span className="priority-pill">PCI STAGING</span> <strong>Strict CC-0 Target Assessment:</strong> Comprehensive imaging review to confirm whether complete macroscopic clearance is surgically achievable.</li>
-                      </>
-                    )}
-                    {activeArea.id === 'minimally-invasive' && (
-                      <>
-                        <li><span className="priority-pill">ROBOTIC</span> <strong>Open Surgery vs Robotic Option:</strong> When open laparotomy is advised but daVinci robotic approaches can reduce recovery time and trauma.</li>
-                        <li><span className="priority-pill">SARCOMA</span> <strong>Complex Retroperitoneal Sarcomas:</strong> Requiring compartmental resection around major vascular structures (vena cava, iliac vessels) while sparing limbs.</li>
-                        <li><span className="priority-pill">SPHINCTER</span> <strong>Low Rectal Sphincter Preservation:</strong> Where permanent colostomy was proposed, but robotic pelvic dexterity allows sphincter-sparing ultra-low resection.</li>
-                        <li><span className="priority-pill">ERAS RECOVERY</span> <strong>Rapid Chemotherapy Transition:</strong> Minimizing post-surgical wound complications to start essential adjuvant chemotherapy on schedule.</li>
-                      </>
-                    )}
-                  </ul>
-                </div>
+                ))}
+              </div>
+            </div>
 
-                {/* Action Row */}
-                <div className="discipline-action-row">
-                  <Button
-                    variant="primary"
-                    size="lg"
-                    className="discipline-cta-btn"
-                    onClick={() => handleCta(activeArea.id)}
-                  >
-                    <span>Request Second Opinion for {activeArea.title}</span>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
-                      <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                  </Button>
-
-                  <a
-                    href={whatsappUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="discipline-whatsapp-btn"
-                  >
-                    <span className="whatsapp-dot">●</span>
-                    <span>Chat with Oncology Triage Desk</span>
-                  </a>
+            {/* STAGE D: CLINICAL SECOND OPINION SAFEGUARDS */}
+            <div className="second-opinion-safeguards-section">
+              <div className="safeguards-header">
+                <div className="safeguards-title-group">
+                  <span className="safeguards-kicker">DECISION-MAKING SAFEGUARDS</span>
+                  <h3 className="safeguards-heading">When is an Independent Surgical Second Opinion Critical?</h3>
                 </div>
+                <span className="safeguards-note">
+                  Objective, evidence-grounded evaluation reviewed within 24–48 hours.
+                </span>
+              </div>
+
+              <div className="safeguards-cards-grid">
+                {activeArea.id === 'breast' && (
+                  <>
+                    <div className="safeguard-card">
+                      <span className="safeguard-badge">ORGAN PRESERVATION</span>
+                      <h4 className="safeguard-title">Proposed Total Mastectomy</h4>
+                      <p className="safeguard-text">
+                        When total mastectomy is advised elsewhere without formal evaluation of therapeutic mammaplasty, local tissue rearrangement, or oncoplastic volume displacement options.
+                      </p>
+                    </div>
+
+                    <div className="safeguard-card">
+                      <span className="safeguard-badge">DIAGNOSTIC WORKUP</span>
+                      <h4 className="safeguard-title">Open Excision Biopsy Proposed</h4>
+                      <p className="safeguard-text">
+                        Before undergoing invasive diagnostic excision of an undiagnosed lump, evaluate image-guided core biopsy and radio-guided occult lesion localisation (ROLL).
+                      </p>
+                    </div>
+
+                    <div className="safeguard-card">
+                      <span className="safeguard-badge">NEOADJUVANT THERAPY</span>
+                      <h4 className="safeguard-title">Post-Chemotherapy Downstaging</h4>
+                      <p className="safeguard-text">
+                        Reassessing surgical feasibility following systemic response to downstage tumor dimensions before committing to irreversible radical tissue sacrifice.
+                      </p>
+                    </div>
+
+                    <div className="safeguard-card">
+                      <span className="safeguard-badge">AXILLARY STAGING</span>
+                      <h4 className="safeguard-title">Axillary Node Clearance vs Sparing</h4>
+                      <p className="safeguard-text">
+                        Review of node-positive disease to evaluate targeted axillary dissection (TAD) and dual-tracer sentinel mapping versus full axillary clearance.
+                      </p>
+                    </div>
+
+                    <div className="safeguard-card">
+                      <span className="safeguard-badge">MARGIN ASSESSMENT</span>
+                      <h4 className="safeguard-title">Close or Positive Margins</h4>
+                      <p className="safeguard-text">
+                        When a previous lumpectomy reports close or positive microscopic borders, requiring specialized re-excision planning to avoid completion mastectomy.
+                      </p>
+                    </div>
+
+                    <div className="safeguard-card">
+                      <span className="safeguard-badge">LYMPHOEDEMA CONTROL</span>
+                      <h4 className="safeguard-title">LYMPHA Immediate Reconstruction</h4>
+                      <p className="safeguard-text">
+                        Primary prevention planning including axillary reverse mapping (ARM) and lymphovenous bypass to prevent lifelong chronic upper-limb lymphoedema.
+                      </p>
+                    </div>
+                  </>
+                )}
+
+                {activeArea.id === 'hipec' && (
+                  <>
+                    <div className="safeguard-card">
+                      <span className="safeguard-badge">INOPERABLE OPINION</span>
+                      <h4 className="safeguard-title">Deemed Inoperable Elsewhere</h4>
+                      <p className="safeguard-text">
+                        When peritoneal surface spread has been declared terminal without systematic cross-sectional imaging review and formal Sugarbaker PCI assessment.
+                      </p>
+                    </div>
+
+                    <div className="safeguard-card">
+                      <span className="safeguard-badge">OVARIAN CARCINOMA</span>
+                      <h4 className="safeguard-title">Recurrent Ovarian Carcinoma</h4>
+                      <p className="safeguard-text">
+                        Evaluating secondary cytoreduction feasibility combined with hyperthermic chemotherapy (HIPEC) in platinum-sensitive recurrence.
+                      </p>
+                    </div>
+
+                    <div className="safeguard-card">
+                      <span className="safeguard-badge">PMP &amp; APPENDIX</span>
+                      <h4 className="safeguard-title">Pseudomyxoma Peritonei Clearance</h4>
+                      <p className="safeguard-text">
+                        Requiring radical multi-compartment peritonectomy by a dedicated high-volume peritoneal team to achieve complete macroscopic cytoreduction.
+                      </p>
+                    </div>
+
+                    <div className="safeguard-card">
+                      <span className="safeguard-badge">PCI STAGING</span>
+                      <h4 className="safeguard-title">Strict CC-0 Target Assessment</h4>
+                      <p className="safeguard-text">
+                        Comprehensive evaluation of high-resolution contrast CT/MRI scans to verify whether complete clearance (CC-0) can be achieved safely.
+                      </p>
+                    </div>
+                  </>
+                )}
+
+                {activeArea.id === 'minimally-invasive' && (
+                  <>
+                    <div className="safeguard-card">
+                      <span className="safeguard-badge">ROBOTIC ALTERNATIVE</span>
+                      <h4 className="safeguard-title">Open Laparotomy vs daVinci Robotic</h4>
+                      <p className="safeguard-text">
+                        When open surgery has been proposed, but robotic 3D binocular optics and tremor filtration offer equal radicality with significantly reduced tissue trauma.
+                      </p>
+                    </div>
+
+                    <div className="safeguard-card">
+                      <span className="safeguard-badge">SPHINCTER PRESERVATION</span>
+                      <h4 className="safeguard-title">Low Rectal Sphincter Preservation</h4>
+                      <p className="safeguard-text">
+                        Where permanent stoma was advised, but robotic deep pelvic dexterity permits ultra-low resection and sphincter preservation.
+                      </p>
+                    </div>
+
+                    <div className="safeguard-card">
+                      <span className="safeguard-badge">RETROPERITONEAL SARCOMA</span>
+                      <h4 className="safeguard-title">Complex Pelvic &amp; Retroperitoneal Tumors</h4>
+                      <p className="safeguard-text">
+                        Compartmental resection around major vascular pathways (vena cava, iliac vessels) with meticulous preservation of nerve plexuses.
+                      </p>
+                    </div>
+
+                    <div className="safeguard-card">
+                      <span className="safeguard-badge">ERAS PROTOCOLS</span>
+                      <h4 className="safeguard-title">Accelerated Oncology Recovery</h4>
+                      <p className="safeguard-text">
+                        Minimizing wound complications and length of stay to ensure planned adjuvant chemotherapy or radiation begins strictly on schedule.
+                      </p>
+                    </div>
+                  </>
+                )}
+              </div>
+            </div>
+
+            {/* STAGE E: EXECUTIVE ACTION BAR */}
+            <div className="showcase-actions-bar">
+              <div className="actions-left-copy">
+                <span className="actions-kicker">EXECUTIVE CLINICAL REVIEW</span>
+                <h4 className="actions-headline">Request an In-Person or Telehealth Evaluation</h4>
+                <p className="actions-subtext">
+                  Direct review of histopathology, operative notes, and contrast scans by Dr. Jem Kalathil.
+                </p>
+              </div>
+
+              <div className="actions-buttons-group">
+                <Button
+                  variant="primary"
+                  size="lg"
+                  className="btn-showcase-primary"
+                  onClick={() => handleCta(activeArea.id)}
+                >
+                  <span>Request Second Opinion for {activeArea.title}</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </Button>
+
+                <a
+                  href={`tel:${siteSettings.secretaryPhone.replace(/\s+/g, '')}`}
+                  className="btn-showcase-secondary"
+                  title="Direct Line to Clinical Desk"
+                >
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                  <span>Desk: +91 484 669 9999</span>
+                </a>
+
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-showcase-whatsapp"
+                >
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                  </svg>
+                  <span>WhatsApp Triage</span>
+                </a>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 3. The Tumor Board Consensus Protocol (Dark Luxury Theme) */}
+      {/* 03. TUMOR BOARD CONSENSUS PROTOCOL (MDT SECTION) */}
       <section className="tumor-board-protocol-section">
         <div className="editorial-container">
           <div className="protocol-intro-header">
@@ -388,12 +565,12 @@ export const ClinicalAreasPage: React.FC<ClinicalAreasPageProps> = ({ onRequestS
         </div>
       </section>
 
-      {/* 4. Native Dark Luxury Clinical Clarifications FAQ */}
+      {/* 04. CLINICAL CLARIFICATIONS FAQ SECTION */}
       <section className="subpage-faq-dark-section" aria-label="Clinical Clarifications">
         <div className="editorial-container">
           <div className="faq-dark-header">
             <span className="editorial-gold-kicker">FREQUENT CLINICAL QUESTIONS</span>
-            <h2 className="faq-dark-title">Second Opinion & Surgical Guidance</h2>
+            <h2 className="faq-dark-title">Second Opinion &amp; Surgical Guidance</h2>
             <p className="faq-dark-lead">
               Clear answers to the most important questions patients and referring physicians ask when evaluating surgical options.
             </p>
@@ -428,25 +605,31 @@ export const ClinicalAreasPage: React.FC<ClinicalAreasPageProps> = ({ onRequestS
         </div>
       </section>
 
-      {/* 5. Bottom Consultation Banner */}
+      {/* 05. MONUMENTAL CLOSING SECOND OPINION CTA */}
       <section className="subpage-bottom-cta">
         <div className="editorial-container">
           <div className="subpage-cta-inner">
             <span className="subpage-cta-kicker">TAKE THE NEXT STEP WITH OBJECTIVE CONFIDENCE</span>
             <h2 className="subpage-cta-title">Require Clarity on a Surgical Recommendation?</h2>
             <p className="subpage-cta-text">
-              Dr. Jem Kalathil and his team review medical records from India and across the Gulf region to provide objective clinical clarity and written direction.
+              Dr. Jem Kalathil and his team review medical records from India and across the Gulf region to provide objective clinical clarity and written direction within 24–48 hours.
             </p>
-            <Button
-              variant="primary"
-              size="lg"
-              onClick={() => onRequestSecondOpinion()}
-            >
-              <span>Consult Dr. Jem Kalathil</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </Button>
+            <div className="subpage-cta-actions">
+              <Button
+                variant="primary"
+                size="lg"
+                onClick={() => onRequestSecondOpinion()}
+              >
+                <span>Consult Dr. Jem Kalathil</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </Button>
+
+              <Link to="/upload-records" className="btn-opinion-secondary">
+                Upload Scans &amp; Pathology
+              </Link>
+            </div>
           </div>
         </div>
       </section>
