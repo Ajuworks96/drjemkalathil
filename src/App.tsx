@@ -9,9 +9,9 @@ import { ClinicalAreasPage } from './pages/ClinicalAreasPage';
 import { HowItWorksPage } from './pages/HowItWorksPage';
 import { DocumentUploadPage } from './pages/DocumentUploadPage';
 import { ContactPage } from './pages/ContactPage';
+import { GalleryPage } from './pages/GalleryPage';
 import { ArticlesPage } from './pages/ArticlesPage';
 import { ArticleDetailPage } from './pages/ArticleDetailPage';
-import { GalleryPage } from './pages/GalleryPage';
 import { SiteContentProvider } from './context/SiteContentContext';
 
 const ScrollToTop: React.FC = () => {

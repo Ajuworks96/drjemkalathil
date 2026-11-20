@@ -60,7 +60,7 @@ export const FALLBACK_ARTICLES: WPPost[] = [
     categoryName: 'Breast Oncology',
     authorName: 'Dr. Jem Kalathil',
     readTimeMinutes: 5,
-    featuredImage: '/images/dr_jem_kalathil.jpg',
+    featuredImage: '/images/clinical_case_review.jpg',
     seo: {
       title: 'Oncoplastic Breast Surgery in Kerala | Dr. Jem Kalathil',
       description:
@@ -85,7 +85,7 @@ export const FALLBACK_ARTICLES: WPPost[] = [
     categoryName: 'Peritoneal Oncology & HIPEC',
     authorName: 'Dr. Jem Kalathil',
     readTimeMinutes: 7,
-    featuredImage: '/images/dr_jem_kalathil.jpg',
+    featuredImage: '/images/when_hope_seems_lost.jpg',
     seo: {
       title: 'HIPEC Surgery & Cytoreduction in Kochi | Dr. Jem Kalathil',
       description:
@@ -112,12 +112,40 @@ export const FALLBACK_ARTICLES: WPPost[] = [
     categoryName: 'Clinical Guidance',
     authorName: 'Dr. Jem Kalathil',
     readTimeMinutes: 4,
-    featuredImage: '/images/dr_jem_kalathil.jpg',
+    featuredImage: '/images/surgical_theatre.jpg',
     seo: {
       title: 'Cancer Second Opinion in Kochi, Kerala | Dr. Jem Kalathil',
       description:
         'Objective surgical second opinions for breast, gastrointestinal, and peritoneal cancer diagnoses by Dr. Jem Kalathil.',
       focusKeyword: 'cancer second opinion kerala',
+    },
+  },
+  {
+    id: 104,
+    slug: 'robotic-surgical-oncology-pelvic-resection',
+    title: 'Robotic Surgical Oncology: Sub-Millimeter Dexterity in Deep Pelvic Resections',
+    excerpt:
+      'Deploying high-magnification 3D optics and wrist-guided instrumentation for complex deep pelvic, gastrointestinal, and retroperitoneal tumors with rapid functional recovery.',
+    content: `
+      <p>Tumors positioned deep within the pelvis, retroperitoneum, or upper abdomen present severe technical challenges under traditional open or standard laparoscopic approaches. Robotic surgical oncology expands surgical dexterity and precision to preserve delicate autonomic nerve networks while achieving complete R0 margin clearance.</p>
+      <h3>Key Advantages of daVinci Surgical Precision</h3>
+      <ul>
+        <li>Sub-millimeter tremor filtration and 540-degree wrist articulation.</li>
+        <li>True 3D high-magnification binocular stereoscopic view of critical micro-vessels.</li>
+        <li>Dramatically reduced intraoperative blood loss and negligible tissue traction trauma.</li>
+        <li>Rapid return of bowel function and shorter postoperative hospital convalescence.</li>
+      </ul>
+    `,
+    date: '2025-11-28',
+    categoryName: 'Robotic Oncology',
+    authorName: 'Dr. Jem Kalathil',
+    readTimeMinutes: 6,
+    featuredImage: '/images/robotic_oncology_frontier.jpg',
+    seo: {
+      title: 'Robotic Cancer Surgery in Kochi | Dr. Jem Kalathil',
+      description:
+        'Advanced robotic surgical oncology for gastrointestinal, pelvic, and retroperitoneal resections by Dr. Jem Kalathil at Aster Medcity, Kochi.',
+      focusKeyword: 'robotic cancer surgery kochi',
     },
   },
 ];

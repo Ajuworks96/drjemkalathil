@@ -207,6 +207,28 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onRequestSecondO
               </div>
             </div>
 
+            {/* Visual Oncology Scrutiny Interstitial */}
+            <div className="pathway-visual-interstitial">
+              <div className="interstitial-media">
+                <img
+                  src="/images/clinical_case_review.jpg"
+                  alt="Multidisciplinary tumor board scan review"
+                  className="interstitial-img"
+                  loading="lazy"
+                />
+                <div className="interstitial-badge">
+                  <span>● MULTIDISCIPLINARY SURGICAL SCRUTINY</span>
+                </div>
+              </div>
+              <div className="interstitial-copy">
+                <span className="interstitial-kicker">ONCOLOGICAL SAFEGUARD</span>
+                <h4 className="interstitial-title">Zero Guesswork. Complete Histological Validation.</h4>
+                <p className="interstitial-text">
+                  Before any surgical pathway is confirmed, imaging slices and pathology receptor markers (ER, PR, HER2, Ki-67, MSI/MMR) are cross-examined to verify clean margin possibilities and prevent premature organ sacrifice.
+                </p>
+              </div>
+            </div>
+
             {/* Stage 3 */}
             <div className="pathway-stage-row">
               <div className="stage-num-column">
