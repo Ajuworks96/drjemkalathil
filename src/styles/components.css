@@ -5832,7 +5832,7 @@
 /* 6. Native Dark Diagnostic Records Checklist */
 .subpage-checklist-dark-section {
   padding: 85px 0;
-  background: radial-gradient(circle at 50% 0%, #250508 0%, #0c0102 75%);
+  background: radial-gradient(circle at 50% 0%, rgba(200, 169, 106, 0.06) 0%, #090a0d 75%);
   border-top: 1px solid rgba(212, 175, 55, 0.2);
 }
 
@@ -5858,7 +5858,7 @@
 }
 
 .checklist-progress-card {
-  background: #180305;
+  background: rgba(18, 19, 24, 0.95);
   border: 1px solid rgba(212, 175, 55, 0.3);
   border-radius: 10px;
   padding: 24px 28px;
@@ -5941,7 +5941,7 @@
   height: 24px;
   border-radius: 4px;
   border: 1px solid rgba(212, 175, 55, 0.4);
-  background: rgba(10, 1, 1, 0.8);
+  background: rgba(14, 15, 20, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -5953,7 +5953,7 @@
 
 .checklist-dark-card.is-checked .card-check-box {
   background: #d4af37;
-  color: #100201;
+  color: #0a0a0a;
   border-color: #d4af37;
 }
 
@@ -6014,7 +6014,7 @@
 /* 7. Comparison Table */
 .subpage-comparison-section {
   padding: 85px 0;
-  background-color: #0e0102;
+  background: linear-gradient(180deg, #090a0d 0%, #0d0e12 100%);
   border-top: 1px solid rgba(212, 175, 55, 0.18);
 }
 
@@ -6103,13 +6103,13 @@
 /* 8. Gulf Travel Support Strip */
 .subpage-gulf-concierge-section {
   padding: 60px 0 80px;
-  background: #0d0102;
+  background: #090a0d;
 }
 
 .gulf-concierge-card {
   max-width: 1040px;
   margin: 0 auto;
-  background: linear-gradient(135deg, rgba(95, 16, 20, 0.55) 0%, rgba(20, 2, 4, 0.95) 100%);
+  background: linear-gradient(135deg, rgba(20, 21, 27, 0.95) 0%, rgba(12, 13, 17, 0.98) 100%);
   border: 1px solid rgba(212, 175, 55, 0.35);
   border-radius: 10px;
   padding: 44px 48px;
@@ -6435,7 +6435,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(135deg, #8b151f 0%, #580c13 100%);
+  background: linear-gradient(135deg, #c8a96a 0%, #b89758 100%);
   border: 1px solid rgba(212, 175, 55, 0.4);
   color: #faf7f2;
   padding: 12px 24px;
@@ -6447,7 +6447,7 @@
 }
 
 .wizard-next-btn:hover {
-  background: linear-gradient(135deg, #a01a25 0%, #680f17 100%);
+  background: linear-gradient(135deg, #deb972 0%, #c8a96a 100%);
   border-color: #d4af37;
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
@@ -6559,7 +6559,7 @@
   font-size: 0.65rem;
   letter-spacing: 0.1em;
   background: #d4af37;
-  color: #100201;
+  color: #0a0a0a;
   padding: 2px 6px;
   border-radius: 3px;
   font-weight: 700;
@@ -6847,7 +6847,7 @@
   position: absolute;
   bottom: 14px;
   left: 14px;
-  background: rgba(10, 1, 1, 0.92);
+  background: rgba(14, 15, 18, 0.92);
   backdrop-filter: blur(8px);
   padding: 6px 14px;
   border-radius: 20px;
@@ -6960,7 +6960,7 @@
 }
 
 .gulf-liaison-box {
-  background: linear-gradient(135deg, rgba(85, 14, 18, 0.55) 0%, rgba(20, 2, 4, 0.95) 100%);
+  background: linear-gradient(135deg, rgba(22, 23, 29, 0.95) 0%, rgba(13, 14, 18, 0.98) 100%);
   border: 1px solid rgba(212, 175, 55, 0.3);
   border-radius: 10px;
   padding: 34px;
@@ -7147,7 +7147,7 @@
 }
 
 .mode-toggle-btn.is-active {
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(90, 16, 12, 0.4) 100%);
+  background: linear-gradient(135deg, rgba(200, 169, 106, 0.2) 0%, rgba(20, 21, 26, 0.95) 100%);
   border-color: #d4af37;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
