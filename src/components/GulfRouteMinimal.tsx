@@ -29,7 +29,7 @@ export const GulfRouteMinimal: React.FC<GulfRouteMinimalProps> = ({
   }, []);
 
   const geographicLocations = [
-    { name: 'Kerala', hub: 'Clinical Surgical Base · Kochi' },
+    { name: 'Kerala', hub: 'Clinical Base · Aster Medcity' },
     { name: 'United Arab Emirates', hub: 'Direct Tele-Review' },
     { name: 'Saudi Arabia', hub: 'Direct Tele-Review' },
     { name: 'Qatar', hub: 'Direct Tele-Review' },
@@ -54,11 +54,11 @@ export const GulfRouteMinimal: React.FC<GulfRouteMinimalProps> = ({
         <header className="gulf-route-header">
           <span className="editorial-gold-kicker">CROSS-BORDER CLINICAL ACCESS</span>
           <h2 className="gulf-route-title">
-            <span className="route-line-break">Second Opinions,</span>
-            <span className="route-line-break">Wherever You Are.</span>
+            <span className="route-line-break">Specialist Review,</span>
+            <span className="route-line-break">Across Borders.</span>
           </h2>
           <p className="gulf-route-supporting">
-            Patients can share their medical information remotely for review.
+            Patients share medical records remotely for direct surgical oncology assessment.
           </p>
         </header>
 

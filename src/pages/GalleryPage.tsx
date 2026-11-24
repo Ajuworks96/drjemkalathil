@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '../components/Button';
 import { trackCtaClick } from '../utils/analytics';
 import { useSiteContent } from '../context/SiteContentContext';
+import { WHATSAPP_COORDINATOR_NUMBER } from '../constants/content';
 
 export interface GalleryPageProps {
   onRequestSecondOpinion: () => void;
@@ -23,27 +24,27 @@ const GALLERY_ITEMS: GalleryItem[] = [
     title: 'Compassionate Consultation Suite',
     category: 'consultations',
     categoryLabel: 'Patient Care & Consultation',
-    imageSrc: '/images/when_hope_seems_lost.jpg',
-    imageAlt: 'Senior surgical oncologist in a calm, modern consultation suite reviewing patient scans with empathy',
+    imageSrc: '/images/clinical_intake_dossier.jpg',
+    imageAlt: 'Surgical oncology consultation suite with diagnostic records and imaging review workstation',
     description: 'Providing patients and families with unhurried clarity, high-resolution scan reviews, and compassionate clinical guidance when choices seem daunting.',
   },
   {
     id: 'dr-jem-portrait',
-    title: 'Dr. Jem Kalathil · MS, FRCS',
+    title: 'Dr. Jem Kalathil · MS, FRCS (Edin)',
     category: 'leadership',
     categoryLabel: 'Surgical Leadership',
     imageSrc: '/images/dr_jem_kalathil.jpg',
-    imageAlt: 'Dr. Jem Kalathil, Lead Senior Consultant Surgical Oncologist',
-    description: 'Over 30 years of dedicated surgical oncology practice, pioneering oncoplastic breast conservation and cytoreductive HIPEC in Kerala and South Asia.',
+    imageAlt: 'Dr. Jem Kalathil, Surgical Oncologist',
+    description: 'Three decades of dedicated surgical oncology practice, pioneering oncoplastic breast conservation and cytoreductive HIPEC in Kerala and South Asia.',
   },
   {
-    id: 'aster-medcity-campus',
-    title: 'Aster Medcity Waterfront Quaternary Campus',
+    id: 'campus-environment',
+    title: 'Clinical Campus Environment, Kochi',
     category: 'campus',
-    categoryLabel: 'Aster Medcity Campus',
+    categoryLabel: 'Surgical Campus',
     imageSrc: '/images/aster_medcity_campus.jpg',
-    imageAlt: 'Aster Medcity waterfront hospital campus in Kochi, Kerala',
-    description: 'Located in Cheranallur, Kochi, on the serene backwaters, offering a tranquil healing environment coupled with quaternary oncology facilities.',
+    imageAlt: 'Quaternary waterfront hospital campus in Kochi, Kerala',
+    description: 'A quaternary oncology centre on the serene Cheranallur backwaters, Kochi — offering a healing environment for complex surgical care.',
   },
   {
     id: 'mdt-case-review',
@@ -59,8 +60,8 @@ const GALLERY_ITEMS: GalleryItem[] = [
     title: 'Advanced daVinci Robotic Oncology Suite',
     category: 'surgical',
     categoryLabel: 'Surgical Technology',
-    imageSrc: '/images/robotic_oncology_frontier.jpg',
-    imageAlt: 'Advanced robotic surgical console for minimally invasive oncological resections',
+    imageSrc: '/images/surgical_precision_instruments.jpg',
+    imageAlt: 'Advanced robotic surgical console instrumentation for minimally invasive oncological resections',
     description: 'Enabling sub-millimeter precision, 3D magnified visualization, and minimal tissue trauma for pelvic, gastrointestinal, and retroperitoneal cancers.',
   },
   {
@@ -68,25 +69,25 @@ const GALLERY_ITEMS: GalleryItem[] = [
     title: 'Quaternary Cytoreductive Perfusion Theatre',
     category: 'surgical',
     categoryLabel: 'Surgical Technology',
-    imageSrc: '/images/surgical_theatre.jpg',
+    imageSrc: '/images/hipec_perfusion_suite.jpg',
     imageAlt: 'Specialized surgical theatre equipped for cytoreductive surgery and heated intraperitoneal chemotherapy',
     description: 'Engineered specifically for extended cytoreductive peritonectomy and continuous 42°C Hyperthermic Intraperitoneal Chemotherapy (HIPEC) perfusions.',
   },
   {
-    id: 'surgical-leadership-banner',
-    title: 'Academic & Surgical Leadership',
-    category: 'leadership',
-    categoryLabel: 'Surgical Leadership',
-    imageSrc: '/images/dr_jem_banner.jpg',
-    imageAlt: 'Dr. Jem Kalathil academic leadership and clinical trials research',
-    description: 'Directing clinical research, training future oncological surgeons, and heading international clinical trials at Aster Clinical Research Centre.',
+    id: 'frozen-section-suite',
+    title: 'Intraoperative Histopathology & Frozen Section Suite',
+    category: 'surgical',
+    categoryLabel: 'Surgical Technology',
+    imageSrc: '/images/neutral_hipec_or.jpg',
+    imageAlt: 'Intraoperative frozen section analysis enabling immediate margin clearance',
+    description: 'Real-time intraoperative frozen section analysis enabling immediate confirmation of microscopic margins while surgery is underway.',
   },
   {
     id: 'dedicated-patient-care',
     title: 'Second Opinion Clinical Evaluation',
     category: 'consultations',
     categoryLabel: 'Patient Care & Consultation',
-    imageSrc: '/images/dr_jem_kalathil_black.jpg',
+    imageSrc: '/images/dr_jem_kalathil.jpg',
     imageAlt: 'Dr. Jem Kalathil dedicated second opinion clinic',
     description: 'Offering objective, calm second opinions to confirm diagnoses, verify resectability, and avoid unnecessary total mastectomies or premature palliative conclusions.',
   },
@@ -96,7 +97,7 @@ const CATEGORIES = [
   { id: 'all', label: 'All Photos' },
   { id: 'consultations', label: 'Consultations & MDT' },
   { id: 'surgical', label: 'Surgical Suites & Technology' },
-  { id: 'campus', label: 'Aster Medcity Campus' },
+  { id: 'campus', label: 'Surgical Campus & Environment' },
   { id: 'leadership', label: 'Leadership & Practice' },
 ];
 
@@ -154,20 +155,20 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onRequestSecondOpinion
           <div className="subpage-hero-meta">
             <div className="hero-crest-badge">
               <img src="/images/clinical_crystal_emblem.png" alt="Clinical Emblem" className="hero-crest-img" />
-              <span>CLINICAL EXCELLENCE &amp; CAMPUS INFRASTRUCTURE</span>
+              <span>QUATERNARY SURGICAL ONCOLOGY · CLINICAL PRACTICE</span>
             </div>
             <h1 className="subpage-title">
-              Clinical Gallery &amp; Campus Showcase
+              Clinical Practice &amp; <span className="hero-title-accent">Surgical Expertise</span>
             </h1>
             <p className="subpage-lead">
-              Explore the surgical facilities, consultation suites, and serene backwater environment at Aster Medcity, Kochi, where Dr. Jem Kalathil provides advanced surgical oncology care.
+              Photographs from Dr. Jem Kalathil's clinical practice — surgical suites, multidisciplinary team reviews, and the quaternary oncology environment where complex cancer cases are evaluated and treated.
             </p>
           </div>
 
           <div className="subpage-stats-strip">
             <div className="subpage-stat-item">
-              <span className="subpage-stat-val">Aster Medcity</span>
-              <span className="subpage-stat-label">Quaternary Waterfront Campus</span>
+              <span className="subpage-stat-val">Quaternary Waterfront</span>
+              <span className="subpage-stat-label">Surgical Campus Environment</span>
             </div>
             <div className="subpage-stat-item">
               <span className="subpage-stat-val">daVinci Xi</span>
@@ -176,6 +177,10 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onRequestSecondOpinion
             <div className="subpage-stat-item">
               <span className="subpage-stat-val">HIPEC Perfusion</span>
               <span className="subpage-stat-label">Dedicated Cytoreduction Theatre</span>
+            </div>
+            <div className="subpage-stat-item">
+              <span className="subpage-stat-val">Multidisciplinary Team</span>
+              <span className="subpage-stat-label">Clinical Leadership &amp; Case Scrutiny</span>
             </div>
           </div>
         </div>
@@ -312,7 +317,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onRequestSecondOpinion
             <span className="simple-section-tag">CLINICAL ORIENTATION</span>
             <h2 className="gallery-cta-heading">Facing a Complex Cancer Surgical Decision?</h2>
             <p className="gallery-cta-lead">
-              Gain clarity and reassurance before committing to irreversible interventions. Dr. Jem Kalathil provides comprehensive second-opinion evaluations in Kochi and via tele-oncology.
+              Have your diagnostic reports and scans reviewed directly by Dr. Jem Kalathil. Gain clarity and reassurance before committing to irreversible interventions.
             </p>
             <div className="gallery-cta-actions">
               <Button
@@ -325,6 +330,14 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onRequestSecondOpinion
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </Button>
+              <a
+                href={`https://wa.me/${WHATSAPP_COORDINATOR_NUMBER.replace(/[^0-9]/g, '')}?text=${encodeURIComponent("Hello Dr. Jem Kalathil's Clinical Desk, I would like to submit my case summary for second opinion review.")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-opinion-whatsapp"
+              >
+                <span>💬 WhatsApp Your Case Summary</span>
+              </a>
               <a
                 href={`tel:${siteSettings.secretaryPhone.replace(/\s+/g, '')}`}
                 className="gallery-desk-call-btn"

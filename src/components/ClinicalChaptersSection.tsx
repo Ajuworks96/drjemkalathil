@@ -77,8 +77,8 @@ export const ClinicalChaptersSection: React.FC<ClinicalChaptersSectionProps> = (
             <div className="ch1-media-col">
               <div className="ch1-image-stage">
                 <img
-                  src="/images/when_hope_seems_lost.jpg"
-                  alt="Compassionate oncological consultation and clinical guidance when hope seems lost"
+                  src="/images/neutral_hipec_or.jpg"
+                  alt="High-precision cytoreductive surgery and HIPEC clinical theatre"
                   className="ch1-image"
                   loading="lazy"
                 />
@@ -95,9 +95,11 @@ export const ClinicalChaptersSection: React.FC<ClinicalChaptersSectionProps> = (
               </h3>
 
               <div className="ch1-disciplines-list">
-                <span className="discipline-tag">Peritoneal Surface Malignancies & HIPEC</span>
+                <span className="discipline-tag">Peritoneal Surface Malignancies</span>
                 <span className="discipline-sep" aria-hidden="true">·</span>
-                <span className="discipline-tag">Cytoreductive Surgery (CRS)</span>
+                <span className="discipline-tag">HIPEC</span>
+                <span className="discipline-sep" aria-hidden="true">·</span>
+                <span className="discipline-tag">Cytoreductive Surgery</span>
               </div>
 
               <div className="chapter-gold-hairline" aria-hidden="true" />
@@ -140,8 +142,8 @@ export const ClinicalChaptersSection: React.FC<ClinicalChaptersSectionProps> = (
             <div className="ch2-media-col">
               <div className="ch2-image-stage">
                 <img
-                  src="/images/clinical_case_review.jpg"
-                  alt="Oncoplastic breast surgery planning and multidisciplinary margin review"
+                  src="/images/surgical_precision_instruments.jpg"
+                  alt="High-precision robotic instrumentation and sterile oncoplastic surgical margin planning"
                   className="ch2-image"
                   loading="lazy"
                 />
@@ -159,27 +161,23 @@ export const ClinicalChaptersSection: React.FC<ClinicalChaptersSectionProps> = (
               {/* Horizontal dividers between procedures */}
               <div className="ch2-procedures-stack">
                 <div className="procedure-row">
-                  <span className="procedure-name">Oncoplastic Breast Surgery</span>
-                  <span className="procedure-role">Organ & Symmetry Preservation</span>
+                  <span className="procedure-name">Robotic Surgical Oncology</span>
+                  <span className="procedure-role">Da Vinci Precision Systems</span>
                 </div>
                 <div className="procedure-row">
-                  <span className="procedure-name">Sentinel Node Biopsy</span>
-                  <span className="procedure-role">Lymphatic Sparing Staging</span>
+                  <span className="procedure-name">Radio-Guided Localisation &amp; Sentinel Node Surgery</span>
+                  <span className="procedure-role">Occult Breast Lesion Localisation and lymphatic preservation</span>
                 </div>
                 <div className="procedure-row">
-                  <span className="procedure-name">Radio-Guided Surgery</span>
-                  <span className="procedure-role">Occult Lesion Localization</span>
-                </div>
-                <div className="procedure-row">
-                  <span className="procedure-name">Breast Reconstruction</span>
-                  <span className="procedure-role">Immediate & Delayed Restorations</span>
+                  <span className="procedure-name">Oncoplastic Breast Surgery and Breast Reconstruction</span>
+                  <span className="procedure-role">Organ &amp; Symmetry Preservation</span>
                 </div>
               </div>
 
               <p className="chapter-narrative">
-                Eradicating breast cancer must never force a compromise between oncologic safety and personal wholeness.
-                By marrying radical tumor clearance with micro-surgical reconstruction, we safeguard both life and physical
-                confidence in a single surgical discipline.
+                Surgical precision is not only about removing disease — it is about preserving what matters. Robotic platforms,
+                radio-guided occult lesion localisation, and sentinel node techniques allow complete oncological clearance
+                without disproportionate tissue loss or functional compromise.
               </p>
 
               <div className="chapter-action-row">

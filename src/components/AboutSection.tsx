@@ -52,7 +52,7 @@ export const AboutSection: React.FC = () => {
             </p>
 
             <p className="surgeon-narrative-paragraph">
-              With more than 25 years dedicated exclusively to complex cancer surgery, Dr. Kalathil has pioneered the clinical adoption of oncoplastic breast preservation and hyperthermic intraperitoneal chemotherapy (HIPEC) across South Asia. His approach combines the rigorous disciplinary standards of the Royal College of Surgeons with unhurried clinical empathy.
+              With three decades dedicated exclusively to complex cancer surgery, Dr. Kalathil has pioneered the clinical adoption of oncoplastic breast preservation and hyperthermic intraperitoneal chemotherapy (HIPEC) across South Asia. His approach combines the rigorous disciplinary standards of the Royal College of Surgeons with unhurried clinical empathy.
             </p>
 
             <div className="surgeon-quote-inset">

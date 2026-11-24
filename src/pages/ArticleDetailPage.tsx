@@ -65,7 +65,7 @@ export const ArticleDetailPage: React.FC<ArticleDetailPageProps> = ({ onRequestS
       author: {
         '@type': 'Physician',
         name: post.authorName || 'Dr. Jem Kalathil',
-        jobTitle: 'Lead Senior Consultant, Surgical Oncology',
+        jobTitle: 'Surgical Oncologist',
       },
       publisher: {
         '@type': 'Organization',
@@ -162,7 +162,7 @@ export const ArticleDetailPage: React.FC<ArticleDetailPageProps> = ({ onRequestS
             <div className="byline-details">
               <span className="byline-name">{post.authorName}</span>
               <span className="byline-title">
-                {siteSettings.doctorCredentials} &bull; Lead Senior Consultant, Surgical Oncology &bull; Aster Medcity, Kochi
+                MS, FRCS (Edin) &bull; Surgical Oncologist
               </span>
             </div>
           </div>
@@ -224,9 +224,9 @@ export const ArticleDetailPage: React.FC<ArticleDetailPageProps> = ({ onRequestS
                 <div className="signature-info">
                   <span className="signature-badge">AUTHORED PERSPECTIVE</span>
                   <h4 className="signature-doctor-name">Dr. Jem Kalathil</h4>
-                  <p className="signature-doctor-creds">{siteSettings.doctorCredentials} &bull; Lead Senior Consultant, Surgical Oncology</p>
+                  <p className="signature-doctor-creds">MS, FRCS (Edin) &bull; Surgical Oncologist</p>
                   <p className="signature-doctor-bio">
-                    Over 30 years of surgical oncology practice at Aster Medcity, Kochi. Practice focused exclusively on oncoplastic breast surgery, cytoreductive surgery with HIPEC for peritoneal malignancies, and minimally invasive robotic oncology.
+                    Three decades of specialised surgical oncology practice focused exclusively on oncoplastic breast surgery, cytoreductive surgery with HIPEC for peritoneal malignancies, and robotic precision oncology.
                   </p>
                   {onRequestSecondOpinion && (
                     <button
@@ -267,8 +267,8 @@ export const ArticleDetailPage: React.FC<ArticleDetailPageProps> = ({ onRequestS
               {/* Direct Desk Line Card */}
               <div className="sidebar-contact-card">
                 <span className="sidebar-card-kicker">DIRECT CLINICAL DESK</span>
-                <h5 className="sidebar-contact-title">Dr. Jem Kalathil's Office</h5>
-                <p className="sidebar-contact-location">Aster Medcity, Kochi, Kerala</p>
+                <h5 className="sidebar-contact-title">Dr. Jem Kalathil's Clinical Desk</h5>
+                <p className="sidebar-contact-location">Kochi, Kerala · Direct Consultation Desk</p>
                 <a href={`tel:${siteSettings.secretaryPhone.replace(/\s+/g, '')}`} className="sidebar-phone-link">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
@@ -329,13 +329,24 @@ export const ArticleDetailPage: React.FC<ArticleDetailPageProps> = ({ onRequestS
                   Submit your imaging, biopsy records, and current operative plan for direct review by Dr. Jem Kalathil within 24–48 hours.
                 </p>
               </div>
-              <button
-                type="button"
-                className="end-cta-button"
-                onClick={onRequestSecondOpinion}
-              >
-                Request a Second Opinion &rarr;
-              </button>
+              <div className="end-cta-actions-row" style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
+                <button
+                  type="button"
+                  className="end-cta-button"
+                  onClick={onRequestSecondOpinion}
+                >
+                  Request a Second Opinion &rarr;
+                </button>
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-opinion-whatsapp"
+                  style={{ textDecoration: 'none' }}
+                >
+                  <span>💬 WhatsApp Oncology Triage</span>
+                </a>
+              </div>
             </div>
           </div>
         </section>

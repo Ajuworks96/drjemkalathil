@@ -107,6 +107,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestSecondOpinion }) => {
                       <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/>
                     </svg>
                   </a>
+                  <a
+                    href={`https://wa.me/${siteSettings.whatsappPhone.replace(/[^0-9]/g, '')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="utility-social-icon"
+                    aria-label="WhatsApp"
+                    title="Connect with Clinical Desk on WhatsApp"
+                  >
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                    </svg>
+                  </a>
                 </div>
 
                 <span className="utility-sep" aria-hidden="true">|</span>
@@ -145,7 +157,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRequestSecondOpinion }) => {
 
                 <div className="utility-status">
                   <span className="status-live-dot" aria-hidden="true" />
-                  <span className="status-text">OPD: 09:00 AM – 04:00 PM IST</span>
+                  <span className="status-text">Structured Second Opinion Protocol</span>
                 </div>
 
                 <span className="utility-sep" aria-hidden="true">|</span>

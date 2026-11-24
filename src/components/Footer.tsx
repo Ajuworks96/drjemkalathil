@@ -31,9 +31,7 @@ export const Footer: React.FC<FooterProps> = ({ onRequestSecondOpinion }) => {
               From confusion to clarity.
             </p>
             <div className="publication-credentials-tag">
-              <span>Surgical Oncology & Clinical Second Opinion</span>
-              <span className="dot-sep" aria-hidden="true">·</span>
-              <span>Kochi, Kerala</span>
+              <span>Surgical Oncology · Kerala &amp; GCC</span>
             </div>
 
             {/* Social Media Channels */}
@@ -84,6 +82,20 @@ export const Footer: React.FC<FooterProps> = ({ onRequestSecondOpinion }) => {
                   </svg>
                   <span>YouTube</span>
                 </a>
+
+                <a
+                  href={`https://wa.me/${siteSettings.whatsappPhone.replace(/[^0-9]/g, '')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="pub-social-link"
+                  aria-label="WhatsApp"
+                  title="Connect on WhatsApp"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                  </svg>
+                  <span>WhatsApp</span>
+                </a>
               </div>
             </div>
           </div>
@@ -96,6 +108,14 @@ export const Footer: React.FC<FooterProps> = ({ onRequestSecondOpinion }) => {
             >
               <span>Request a Second Opinion →</span>
             </button>
+            <a
+              href={`https://wa.me/${siteSettings.whatsappPhone.replace(/[^0-9]/g, '')}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="publication-opinion-whatsapp"
+            >
+              <span>WhatsApp Oncology Triage</span>
+            </a>
           </div>
         </div>
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchWordpressPosts, type WPPost } from '../services/wordpress';
+import { WHATSAPP_COORDINATOR_NUMBER } from '../constants/content';
 
 export interface ArticlesPageProps {
   onRequestSecondOpinion?: () => void;
@@ -100,11 +101,6 @@ export const ArticlesPage: React.FC<ArticlesPageProps> = ({ onRequestSecondOpini
                   onClick={() => setActiveCategory(cat)}
                 >
                   <span>{cat}</span>
-                  {cat !== 'All' && (
-                    <span className="cat-count-badge">
-                      {posts.filter((p) => p.categoryName === cat).length}
-                    </span>
-                  )}
                 </button>
               ))}
             </div>
@@ -117,7 +113,7 @@ export const ArticlesPage: React.FC<ArticlesPageProps> = ({ onRequestSecondOpini
               <input
                 type="search"
                 className="articles-search-input"
-                placeholder="Search topics, HIPEC, breast surgery..."
+                placeholder="Search clinical perspectives..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 aria-label="Search articles"
@@ -140,6 +136,11 @@ export const ArticlesPage: React.FC<ArticlesPageProps> = ({ onRequestSecondOpini
       {/* 02. ARTICLES LUXURY DISPLAY SECTION */}
       <section className="articles-grid-section">
         <div className="editorial-container">
+          {/* Persistent Author Attribution Banner */}
+          <div className="articles-persistent-attribution">
+            <p>All perspectives authored by Dr. Jem Kalathil, MS, FRCS (Edin), Surgical Oncologist</p>
+          </div>
+
           {loading ? (
             <div className="articles-loading-state">
               <div className="loading-spinner" aria-hidden="true" />
@@ -208,7 +209,7 @@ export const ArticlesPage: React.FC<ArticlesPageProps> = ({ onRequestSecondOpini
                         />
                         <div className="author-meta-copy">
                           <span className="author-name-tag">{featuredPost.authorName}</span>
-                          <span className="author-title-tag">Lead Senior Consultant, Surgical Oncology</span>
+                          <span className="author-title-tag">MS, FRCS (Edin) · Surgical Oncologist</span>
                         </div>
                       </div>
 
@@ -262,7 +263,7 @@ export const ArticlesPage: React.FC<ArticlesPageProps> = ({ onRequestSecondOpini
                       <div className="article-card-footer">
                         <div className="article-author-info">
                           <span className="author-name">{post.authorName}</span>
-                          <span className="author-role">Surgical Oncology</span>
+                          <span className="author-role">MS, FRCS (Edin) · Surgical Oncologist</span>
                         </div>
 
                         <Link to={`/articles/${post.slug}`} className="article-read-link">
@@ -298,6 +299,14 @@ export const ArticlesPage: React.FC<ArticlesPageProps> = ({ onRequestSecondOpini
                   Request a Second Opinion →
                 </button>
               )}
+              <a
+                href={`https://wa.me/${WHATSAPP_COORDINATOR_NUMBER.replace(/[^0-9]/g, '')}?text=${encodeURIComponent("Hello Dr. Jem Kalathil's Clinical Desk, I would like to request an oncology triage second opinion.")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-opinion-whatsapp"
+              >
+                <span>💬 WhatsApp Oncology Triage</span>
+              </a>
               <Link to="/upload-records" className="btn-opinion-secondary">
                 Upload Medical Records
               </Link>

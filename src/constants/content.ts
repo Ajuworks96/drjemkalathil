@@ -2,8 +2,8 @@ import type { ClinicalPillarData, ProcessStepData, PreparationChecklistItem, Faq
 
 export const CLINICAL_DOCTOR_INFO = {
   name: 'Dr. Jem Kalathil',
-  credentials: 'MS, FRCS',
-  role: 'Lead Senior Consultant, Surgical Oncology',
+  credentials: 'MS, FRCS (Edin)',
+  role: 'Surgical Oncologist',
   hospital: 'Aster Medcity, Kochi',
   location: 'Cheranallur, Kochi, Kerala 682027, India',
   experienceYears: '30+',

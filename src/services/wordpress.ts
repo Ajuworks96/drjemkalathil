@@ -52,9 +52,11 @@ export const FALLBACK_ARTICLES: WPPost[] = [
     content: `
       <p>Modern breast cancer management has evolved fundamentally beyond simple radical resection. Today, the clinical objective is twofold: achieving indisputable clear surgical margins while simultaneously preserving physical symmetry and self-identity.</p>
       <h3>What is Oncoplastic Breast Surgery?</h3>
-      <p>Oncoplasty integrates plastic surgery principles directly into oncological tumor resection. Rather than leaving a visible defect, surrounding glandular tissue is mobilized and re-sculpted in the same sitting.</p>
+      <p>Oncoplasty integrates plastic surgery principles directly into oncological tumor resection. Rather than leaving a visible defect, surrounding glandular tissue is mobilized and re-sculpted in the same sitting. This approach allows wider tumor clearance margins than standard lumpectomy while avoiding the psychological morbidity of a total mastectomy.</p>
       <h3>The Importance of Sentinel Lymph Node Biopsy</h3>
-      <p>By utilizing dual-modality radio-guided localisation and blue dye, the first draining lymph node is identified and analyzed. This spares unnecessary full axillary clearance when the node is clear, dramatically reducing long-term lymphedema risk.</p>
+      <p>By utilizing dual-modality radio-guided localisation and blue dye, the first draining lymph node is identified and analyzed intraoperatively. This spares unnecessary full axillary clearance when the node is clear, dramatically reducing long-term lymphedema risk while maintaining strict staging accuracy.</p>
+      <h3>Multidisciplinary Sequencing</h3>
+      <p>The timing of surgery relative to systemic therapy is crucial. Neoadjuvant chemotherapy can significantly downstage tumors, transforming previously inoperable lesions or cases requiring mastectomy into candidates for safe breast conservation.</p>
     `,
     date: '2026-02-15',
     categoryName: 'Breast Oncology',
@@ -64,7 +66,7 @@ export const FALLBACK_ARTICLES: WPPost[] = [
     seo: {
       title: 'Oncoplastic Breast Surgery in Kerala | Dr. Jem Kalathil',
       description:
-        'Clinical guide to oncoplastic breast cancer surgery, organ preservation, and sentinel node biopsy by Dr. Jem Kalathil in Kochi, Kerala.',
+        'Clinical guide to oncoplastic breast cancer surgery, organ preservation, and sentinel node biopsy by Dr. Jem Kalathil, Surgical Oncologist in Kochi, Kerala.',
       focusKeyword: 'oncoplastic breast surgery kerala',
     },
   },
@@ -75,21 +77,21 @@ export const FALLBACK_ARTICLES: WPPost[] = [
     excerpt:
       'How heated intraperitoneal chemotherapy (HIPEC) combined with meticulous complete cytoreduction offers therapeutic hope for previously inoperable peritoneal surface disease.',
     content: `
-      <p>Peritoneal carcinomatosis was historically viewed as terminal disease with only palliative options. Over the past two decades, Cytoreductive Surgery (CRS) coupled with Hyperthermic Intraperitoneal Chemotherapy (HIPEC) has established a curative intent pathway for select patients.</p>
+      <p>Peritoneal carcinomatosis was historically viewed as terminal disease with only palliative options. Over the past two decades, Cytoreductive Surgery (CRS) coupled with Hyperthermic Intraperitoneal Chemotherapy (HIPEC) has established a curative intent pathway for select patients with appendiceal malignancies, pseudomyxoma peritonei, colorectal metastases, and primary peritoneal or ovarian carcinomas.</p>
       <h3>How HIPEC Works</h3>
-      <p>Following surgical removal of all visible peritoneal tumor deposits (cytoreduction), a heated chemotherapy bath (41–43°C) is circulated continuously through the abdominal cavity for 60 to 90 minutes. Heat enhances tissue penetration and directly triggers malignant apoptosis.</p>
+      <p>Following surgical removal of all visible peritoneal tumor deposits (cytoreduction down to CC-0 or CC-1 complete clearance), a heated chemotherapy bath (41.5°C to 42.5°C) is circulated continuously through the abdominal cavity for 60 to 90 minutes. Hyperthermia significantly enhances cytotoxic drug penetration into micro-metastases and directly induces malignant apoptosis while sparing systemic toxicity.</p>
       <h3>Candidate Selection is Paramount</h3>
-      <p>Not every patient is a candidate for HIPEC. Rigorous Peritoneal Cancer Index (PCI) evaluation, patient performance status, and prior systemic response dictate suitability.</p>
+      <p>Not every patient is a candidate for HIPEC. Rigorous Peritoneal Cancer Index (PCI) evaluation, patient functional performance status, and prior response to systemic therapy dictate surgical candidacy. Clear patient selection underpins optimal long-term survival.</p>
     `,
     date: '2026-01-20',
-    categoryName: 'Peritoneal Oncology & HIPEC',
+    categoryName: 'Surgical Options',
     authorName: 'Dr. Jem Kalathil',
     readTimeMinutes: 7,
-    featuredImage: '/images/when_hope_seems_lost.jpg',
+    featuredImage: '/images/hipec_perfusion_suite.jpg',
     seo: {
       title: 'HIPEC Surgery & Cytoreduction in Kochi | Dr. Jem Kalathil',
       description:
-        'Comprehensive clinical explanation of CRS and HIPEC procedure for peritoneal malignancies in Kerala by Dr. Jem Kalathil.',
+        'Comprehensive clinical explanation of CRS and HIPEC procedure for peritoneal malignancies in Kerala and the Gulf by Dr. Jem Kalathil.',
       focusKeyword: 'hipec surgery kochi',
     },
   },
@@ -100,19 +102,21 @@ export const FALLBACK_ARTICLES: WPPost[] = [
     excerpt:
       'A second opinion is not a confrontation with your primary surgeon; it is an objective review of histopathology, imaging, and resectability to give you absolute clarity.',
     content: `
-      <p>When facing a complex oncological diagnosis, fear often rushes decisions. A calm, methodical second review of your tissue biopsy, PET-CT, and clinical stage frequently uncovers alternative surgical approaches, such as sphincter-saving or organ-preserving options.</p>
-      <h3>What a Second Opinion Evaluates</h3>
+      <p>When facing a complex oncological diagnosis, fear often rushes decisions. A calm, methodical second review of your tissue biopsy, PET-CT, and clinical stage frequently uncovers alternative surgical approaches, such as sphincter-saving or organ-preserving options, before irreversible cuts are made.</p>
+      <h3>What an Independent Second Review Evaluates</h3>
       <ul>
-        <li>Confirmation of histopathological grade and molecular markers (HER2, ER/PR, MSI-H).</li>
-        <li>Review of vascular invasion and radiological boundaries.</li>
+        <li>Confirmation of histopathological grade and molecular markers (HER2, ER/PR, MSI-H, KRAS/BRAF).</li>
+        <li>Review of vascular invasion and radiological boundaries against quaternary resectability criteria.</li>
         <li>Assessment of whether neoadjuvant systemic therapy could downstage the tumor prior to surgery.</li>
+        <li>Confirmation that operative plans align with international NCCN and ESMO clinical guidelines.</li>
       </ul>
+      <p>Seeking an independent perspective is standard practice in modern oncology and provides peace of mind for both patients and their families.</p>
     `,
     date: '2025-12-10',
-    categoryName: 'Clinical Guidance',
+    categoryName: 'Second Opinions',
     authorName: 'Dr. Jem Kalathil',
     readTimeMinutes: 4,
-    featuredImage: '/images/surgical_theatre.jpg',
+    featuredImage: '/images/clinical_intake_dossier.jpg',
     seo: {
       title: 'Cancer Second Opinion in Kochi, Kerala | Dr. Jem Kalathil',
       description:
@@ -130,22 +134,214 @@ export const FALLBACK_ARTICLES: WPPost[] = [
       <p>Tumors positioned deep within the pelvis, retroperitoneum, or upper abdomen present severe technical challenges under traditional open or standard laparoscopic approaches. Robotic surgical oncology expands surgical dexterity and precision to preserve delicate autonomic nerve networks while achieving complete R0 margin clearance.</p>
       <h3>Key Advantages of daVinci Surgical Precision</h3>
       <ul>
-        <li>Sub-millimeter tremor filtration and 540-degree wrist articulation.</li>
-        <li>True 3D high-magnification binocular stereoscopic view of critical micro-vessels.</li>
+        <li>Sub-millimeter tremor filtration and 540-degree wrist articulation exceeding the natural human hand.</li>
+        <li>True 3D high-magnification binocular stereoscopic view of critical micro-vessels and autonomic plexus.</li>
         <li>Dramatically reduced intraoperative blood loss and negligible tissue traction trauma.</li>
-        <li>Rapid return of bowel function and shorter postoperative hospital convalescence.</li>
+        <li>Rapid return of bowel function, preserved urinary and sexual continence, and shorter postoperative hospital stays.</li>
       </ul>
     `,
     date: '2025-11-28',
-    categoryName: 'Robotic Oncology',
+    categoryName: 'Surgical Options',
     authorName: 'Dr. Jem Kalathil',
     readTimeMinutes: 6,
-    featuredImage: '/images/robotic_oncology_frontier.jpg',
+    featuredImage: '/images/surgical_precision_instruments.jpg',
     seo: {
       title: 'Robotic Cancer Surgery in Kochi | Dr. Jem Kalathil',
       description:
-        'Advanced robotic surgical oncology for gastrointestinal, pelvic, and retroperitoneal resections by Dr. Jem Kalathil at Aster Medcity, Kochi.',
+        'Advanced robotic surgical oncology for gastrointestinal, pelvic, and retroperitoneal resections by Dr. Jem Kalathil, Surgical Oncologist in Kochi, Kerala.',
       focusKeyword: 'robotic cancer surgery kochi',
+    },
+  },
+  {
+    id: 105,
+    slug: 'understanding-cancer-staging-beyond-the-numbers',
+    title: 'Understanding Cancer Staging: Beyond the Numbers',
+    excerpt:
+      'Demystifying TNM and clinical cancer staging in plain language — what Stage I to IV truly means for surgical viability, multimodal sequencing, and treatment decisions.',
+    content: `
+      <p>When patients receive a cancer diagnosis, the number assigned to their stage often triggers intense anxiety. However, in modern surgical oncology, staging is not a fixed sentence or mere prognosis — it is a precise anatomical roadmap that dictates treatment sequencing.</p>
+      <h3>The TNM Framework Demystified</h3>
+      <p>Clinical staging primarily relies on the international TNM classification:</p>
+      <ul>
+        <li><strong>T (Tumor):</strong> The size and local extent of the primary lesion, including whether it has invaded adjacent muscular, vascular, or serosal boundaries.</li>
+        <li><strong>N (Nodes):</strong> Whether regional lymph nodes contain cancer cells, and how many are involved.</li>
+        <li><strong>M (Metastasis):</strong> Whether microscopic or visible cancer cells have spread to distant organs such as the liver, lungs, or peritoneum.</li>
+      </ul>
+      <h3>Staging Guides Sequencing, Not Just Prognosis</h3>
+      <p>A higher stage does not automatically preclude curative intent. In many advanced Stage III and oligometastatic Stage IV scenarios, aggressive modern systemic regimens combined with quaternary surgical resections (such as CRS and HIPEC, or liver metastasectomy) achieve durable disease clearance.</p>
+    `,
+    date: '2025-10-14',
+    categoryName: 'Understanding Your Diagnosis',
+    authorName: 'Dr. Jem Kalathil',
+    readTimeMinutes: 5,
+    featuredImage: '/images/clinical_intake_dossier.jpg',
+    seo: {
+      title: 'Understanding Cancer Staging | Dr. Jem Kalathil',
+      description:
+        'Guide to cancer staging, TNM classification, and clinical treatment sequencing by Dr. Jem Kalathil, Surgical Oncologist.',
+      focusKeyword: 'cancer staging explained',
+    },
+  },
+  {
+    id: 106,
+    slug: 'decoding-your-pathology-report-margins-grade-receptors',
+    title: 'Decoding Your Pathology Report: Margins, Grade & Receptors',
+    excerpt:
+      'A patient guide to histological grade, receptor markers (ER, PR, HER2, Ki-67), and what microscopic R0 margin clearance actually means for recurrence risk.',
+    content: `
+      <p>The histopathology report is the definitive blueprint upon which every oncological decision rests. While imaging shows where a tumor is located, pathology reveals its biological nature and aggressiveness.</p>
+      <h3>Key Parameters in Your Report</h3>
+      <ul>
+        <li><strong>Histological Grade (G1 to G3):</strong> How closely tumor cells resemble healthy tissue under the microscope. Well-differentiated cells (Grade 1) grow more slowly, while poorly differentiated (Grade 3) exhibit higher biological aggressiveness.</li>
+        <li><strong>Receptor Profiling:</strong> In breast carcinoma, ER, PR, and HER2 testing dictates hormone and targeted therapy sensitivity. In colorectal cancer, MSI/MMR testing indicates whether immunotherapy will be effective.</li>
+        <li><strong>Surgical Margins (R0 vs R1/R2):</strong> An R0 resection signifies that no cancer cells are seen at the outer microscopic inked margin of the resected tissue. This is the gold standard of oncological surgery.</li>
+      </ul>
+      <p>If your pathology report notes a positive or close margin, secondary revision or oncoplastic margin re-excision is evaluated to guarantee long-term local control.</p>
+    `,
+    date: '2025-09-22',
+    categoryName: 'Understanding Your Diagnosis',
+    authorName: 'Dr. Jem Kalathil',
+    readTimeMinutes: 6,
+    featuredImage: '/images/clinical_case_review.jpg',
+    seo: {
+      title: 'Decoding Your Oncology Pathology Report | Dr. Jem Kalathil',
+      description:
+        'Understanding pathology margins, histological grade, and receptor markers with Dr. Jem Kalathil.',
+      focusKeyword: 'oncology pathology report guide',
+    },
+  },
+  {
+    id: 107,
+    slug: 'laparoscopic-vs-open-surgery-in-oncology',
+    title: 'Laparoscopic vs. Open Surgery in Oncology: How the Decision is Made',
+    excerpt:
+      'The clinical criteria that dictate whether a minimally invasive or open oncological resection is safest. Why the best approach is chosen for the tumor, not convenience.',
+    content: `
+      <p>Advances in minimally invasive surgery—both laparoscopic and robotic—have transformed cancer care, providing smaller incisions, reduced pain, and shorter hospital stays. However, the fundamental rule of surgical oncology remains unchanged: oncological radicality and complete margin clearance must never be compromised for cosmetic reasons.</p>
+      <h3>When Minimally Invasive Surgery Excels</h3>
+      <p>For early-to-intermediate stage gastrointestinal, gynecological, and pelvic tumors, laparoscopy and robotic platforms offer equivalent oncological clearance to open surgery while facilitating faster return to systemic adjuvant therapies.</p>
+      <h3>When Open Surgery Remains Mandatory</h3>
+      <p>In extensive tumors involving critical vascular bundles, massive locally advanced disease, or cytoreductive peritonectomy for peritoneal carcinomatosis (CRS & HIPEC), wide open surgical exposure is essential to achieve tactile verification and complete CC-0 cytoreduction.</p>
+    `,
+    date: '2025-08-18',
+    categoryName: 'Surgical Options',
+    authorName: 'Dr. Jem Kalathil',
+    readTimeMinutes: 6,
+    featuredImage: '/images/surgical_precision_instruments.jpg',
+    seo: {
+      title: 'Laparoscopic vs Open Cancer Surgery | Dr. Jem Kalathil',
+      description:
+        'Comparing laparoscopic, robotic, and open oncological resections with Dr. Jem Kalathil in Kochi, Kerala.',
+      focusKeyword: 'laparoscopic vs open cancer surgery',
+    },
+  },
+  {
+    id: 108,
+    slug: 'cytoreductive-surgery-what-patients-should-know',
+    title: 'Cytoreductive Surgery: What Patients Should Know Before Consenting',
+    excerpt:
+      'A transparent examination of cytoreductive peritonectomy — surgical scope, physiological demands, ICU recovery arcs, and what complete CC-0 cytoreduction entails.',
+    content: `
+      <p>Cytoreductive surgery (CRS) combined with HIPEC is one of the most extensive procedures performed in modern oncology. Understanding the scope, physiological demands, and expected recovery arc is vital for patients and their families before undertaking this pathway.</p>
+      <h3>What Cytoreduction Entails</h3>
+      <p>The goal of CRS is the macroscopic removal of all visible peritoneal implants across the abdominal cavity. This may require multivisceral peritonectomy, stripping of the diaphragmatic peritoneum, omentectomy, and selective bowel resections to achieve complete cytoreduction (Completeness of Cytoreduction score CC-0 or CC-1).</p>
+      <h3>The Recovery Trajectory</h3>
+      <p>Given the multi-hour duration of CRS and hyperthermic perfusion, recovery involves standardized postoperative ICU monitoring for 24 to 48 hours, followed by early mobilization and structured nutritional rehabilitation on the surgical oncology floor.</p>
+    `,
+    date: '2025-07-09',
+    categoryName: 'Surgical Options',
+    authorName: 'Dr. Jem Kalathil',
+    readTimeMinutes: 7,
+    featuredImage: '/images/neutral_hipec_or.jpg',
+    seo: {
+      title: 'Cytoreductive Surgery Patient Guide | Dr. Jem Kalathil',
+      description:
+        'Detailed overview of cytoreductive surgery and HIPEC recovery protocols by Dr. Jem Kalathil.',
+      focusKeyword: 'cytoreductive surgery hipec guide',
+    },
+  },
+  {
+    id: 109,
+    slug: 'preparing-for-major-oncology-surgery-patient-checklist',
+    title: 'Preparing for Major Oncology Surgery: A Patient & Family Checklist',
+    excerpt:
+      'Evidence-based prehabilitation, nutritional optimization, medication reconciliation, and psychological preparation before major oncological resections.',
+    content: `
+      <p>Optimal surgical outcomes do not begin in the operating theatre — they begin weeks before with deliberate prehabilitation and physiological optimization.</p>
+      <h3>Essential Preparation Pillars</h3>
+      <ul>
+        <li><strong>Nutritional Fortification:</strong> Ensuring adequate protein intake and correcting hypoalbuminemia helps tissue healing and reduces postoperative anastomotic leak risks.</li>
+        <li><strong>Respiratory & Physical Conditioning:</strong> Daily incentive spirometry exercises and moderate walking significantly reduce postoperative atelectasis and pulmonary complications.</li>
+        <li><strong>Medication Reconciliation:</strong> Coordinating with the clinical desk to pause anticoagulants, antiplatelet drugs, or specific diabetic agents at verified intervals before admission.</li>
+        <li><strong>Family Caregiver Alignment:</strong> Preparing discharge accommodations and logistics well in advance to ensure a tranquil environment for home convalescence.</li>
+      </ul>
+    `,
+    date: '2025-06-12',
+    categoryName: 'Before & After Surgery',
+    authorName: 'Dr. Jem Kalathil',
+    readTimeMinutes: 5,
+    featuredImage: '/images/clinical_intake_dossier.jpg',
+    seo: {
+      title: 'Pre-Surgical Oncology Checklist | Dr. Jem Kalathil',
+      description:
+        'Prehabilitation and preparation guidelines for major cancer surgery by Dr. Jem Kalathil.',
+      focusKeyword: 'preparing for cancer surgery',
+    },
+  },
+  {
+    id: 110,
+    slug: 'what-to-expect-in-the-first-72-hours-after-abdominal-surgery',
+    title: 'What to Expect in the First 72 Hours After Major Abdominal Cancer Surgery',
+    excerpt:
+      'Normalizing the immediate postoperative sequence — pain management protocols, surgical drains, early ambulation milestones, and recovery in specialized oncology care.',
+    content: `
+      <p>The first 72 hours following complex abdominal or pelvic cancer surgery can feel overwhelming. Normalizing this sequence dispels anxiety and empowers active participation in recovery.</p>
+      <h3>Milestones in the First 3 Days</h3>
+      <ul>
+        <li><strong>Day 1 (ICU / HDU Transition):</strong> Multi-modal epidural and PCA analgesia keeps pain controlled. Respiratory therapy begins with deep breathing exercises, and bedside sitting is encouraged.</li>
+        <li><strong>Day 2 (Early Ambulation):</strong> Assisted standing and short corridor walks stimulate bowel peristalsis and venous return, sharply lowering DVT and ileus risk.</li>
+        <li><strong>Day 3 (Oral Fluid Transition & Drain Monitoring):</strong> Clear oral liquids are introduced progressively, surgical drains are evaluated for output volume, and intravenous infusions are steadily tapered.</li>
+      </ul>
+    `,
+    date: '2025-05-18',
+    categoryName: 'Before & After Surgery',
+    authorName: 'Dr. Jem Kalathil',
+    readTimeMinutes: 5,
+    featuredImage: '/images/clinical_case_review.jpg',
+    seo: {
+      title: 'First 72 Hours After Abdominal Cancer Surgery | Dr. Jem Kalathil',
+      description:
+        'Postoperative recovery milestones following major abdominal oncological surgery with Dr. Jem Kalathil.',
+      focusKeyword: 'recovery after abdominal cancer surgery',
+    },
+  },
+  {
+    id: 111,
+    slug: 'five-questions-to-ask-before-agreeing-to-cancer-surgery',
+    title: 'Five Questions to Ask Before Agreeing to Oncology Surgery',
+    excerpt:
+      'Empowering patients before major surgery: understanding procedural goals, organ-preserving alternatives, margin targets, institutional volume, and timing.',
+    content: `
+      <p>A cancer diagnosis often creates an overwhelming urgency to agree to surgery immediately. However, an informed patient makes safer decisions. An experienced surgical oncologist will always welcome detailed, thoughtful questions.</p>
+      <h3>The Five Crucial Questions</h3>
+      <ol>
+        <li><strong>What is the specific goal of this surgery?</strong> Is the intention curative with microscopic R0 clearance, diagnostic, cytoreductive, or palliative?</li>
+        <li><strong>Are organ-preserving or minimally invasive alternatives feasible?</strong> For instance, in breast cancer, is oncoplastic conservation possible instead of total mastectomy? In rectal cancer, can sphincter preservation be achieved?</li>
+        <li><strong>Should systemic therapy happen before surgery?</strong> Would neoadjuvant chemotherapy or targeted therapy downstage the disease and improve surgical margins?</li>
+        <li><strong>What is the surgeon’s and center’s experience with this specific procedure?</strong> High-volume surgical oncology centers consistently demonstrate lower complication and recurrence rates.</li>
+        <li><strong>What is the recovery trajectory and how will my post-operative quality of life be protected?</strong> Understanding functional outcomes beforehand allows proactive planning.</li>
+      </ol>
+    `,
+    date: '2025-04-05',
+    categoryName: 'Second Opinions',
+    authorName: 'Dr. Jem Kalathil',
+    readTimeMinutes: 6,
+    featuredImage: '/images/dr_jem_kalathil.jpg',
+    seo: {
+      title: 'Questions to Ask Before Cancer Surgery | Dr. Jem Kalathil',
+      description:
+        'Crucial questions every patient should ask their surgical oncologist before agreeing to cancer surgery.',
+      focusKeyword: 'questions to ask cancer surgeon',
     },
   },
 ];
@@ -491,8 +687,8 @@ export interface SiteSettingsData {
 
 export const DEFAULT_SITE_SETTINGS: SiteSettingsData = {
   doctorName: 'Dr. Jem Kalathil',
-  doctorCredentials: 'MS, FRCS',
-  doctorRole: 'Lead Senior Consultant, Surgical Oncology',
+  doctorCredentials: 'MS, FRCS (Edin)',
+  doctorRole: 'Surgical Oncologist',
   experienceYears: '30+',
   secretaryPhone: '+91 484 669 9999',
   whatsappPhone: '+91 949 771 2345',
@@ -526,11 +722,11 @@ export interface HomePageData {
 export const DEFAULT_HOMEPAGE_DATA: HomePageData = {
   heroHeadline: 'When surgical oncology demands indisputable clarity.',
   heroSubheadline:
-    'Dr Jem Kalathil is a Surgical Oncologist with over thirty years of experience and is Lead Senior Consultant, Surgical Oncology, at the Aster International Institute of Oncology, Aster Medcity, Kochi. His practice is focused on three areas: oncoplastic breast cancer surgery and reconstruction, sentinel node biopsy and radio-guided localisation of non-palpable lesions; cytoreductive surgery with HIPEC for peritoneal surface malignancies; and robotic and complex surgery for gastrointestinal and gynaecological cancers, and extremity and retroperitoneal sarcomas.',
-  specialty1Title: 'Breast Cancer Surgery, Oncoplasty & Reconstruction',
-  specialty1Subtitle: 'Organ Preservation & Symmetry',
-  specialty2Title: 'Peritoneal Surface Malignancies & HIPEC',
-  specialty2Subtitle: 'Curative Cytoreduction',
+    'Three decades of specialised surgical oncology —Advanced breast cancer care focussing on conservation and oncoplasty, HIPEC and cytoreduction, and robotic precision surgery for colorectal and gynaecological cancers. Evidence-based second opinions for patients across Kerala, India, and the Gulf.',
+  specialty1Title: 'Breast Cancer & Oncoplastic Surgery',
+  specialty1Subtitle: 'Organ Preservation & Reconstruction',
+  specialty2Title: 'Advanced HIPEC & CRS',
+  specialty2Subtitle: 'Cytoreductive Surgery for Colorectal & Gynaec Oncology',
   specialty3Title: 'Robotic Surgical Oncology',
   specialty3Subtitle: 'Da Vinci Precision',
   editorialStatement1: 'A second opinion is not disloyalty.',
@@ -540,7 +736,7 @@ export const DEFAULT_HOMEPAGE_DATA: HomePageData = {
   editorialBodyProse:
     'Yet in thirty years of specialized surgical oncology, we know that taking 3 to 5 days to confirm histological receptors, re-examine scan boundaries, and explore organ preservation does not compromise curative outcomes. It protects both life and enduring dignity.',
   surgeonProfileBio:
-    'Trained in the United Kingdom, Italy, Singapore and India, including a UICC Fellowship in Milan under Professor Umberto Veronesi, he was formerly Additional Professor of Surgical Oncology at the Regional Cancer Centre, Thiruvananthapuram. He heads the Aster Clinical Research Centre and is Lead Principal Investigator on clinical trials.',
+    'Trained in the United Kingdom, Italy, Singapore and India, including a UICC Fellowship in Milan under Professor Umberto Veronesi, he was formerly Additional Professor of Surgical Oncology at the Regional Cancer Centre, Thiruvananthapuram, and Former Senior Consultant, Breast Unit, Royal Hospital, Muscat. Lead Principal Investigator on clinical trials.',
 };
 
 /**
@@ -621,8 +817,8 @@ export async function fetchSiteSettings(): Promise<SiteSettingsData> {
   const acf = page.acf;
   return {
     doctorName: acf.doctor_name || DEFAULT_SITE_SETTINGS.doctorName,
-    doctorCredentials: 'MS, FRCS',
-    doctorRole: acf.doctor_role || DEFAULT_SITE_SETTINGS.doctorRole,
+    doctorCredentials: 'MS, FRCS (Edin)',
+    doctorRole: 'Surgical Oncologist',
     experienceYears: acf.experience_years || DEFAULT_SITE_SETTINGS.experienceYears,
     secretaryPhone: acf.secretary_phone || DEFAULT_SITE_SETTINGS.secretaryPhone,
     whatsappPhone: acf.whatsapp_phone || DEFAULT_SITE_SETTINGS.whatsappPhone,
@@ -845,9 +1041,9 @@ export interface ClinicalAreasPageData {
 }
 
 export const DEFAULT_CLINICAL_AREAS_PAGE: ClinicalAreasPageData = {
-  pageTitle: 'Clinical Specialisations',
+  pageTitle: 'Areas of Clinical Focus',
   pageLead:
-    'Under the clinical leadership of Dr. Jem Kalathil (Surgical Oncologist, 30+ Years Experience), our specialised surgical oncology practice balances complete curative cancer clearance with anatomical dignity, tissue preservation, and accelerated recovery.',
+    'Thirty years of surgical oncology practice, refined through thousands of complex oncological cases, is brought to bear on every clinical decision — from the first biopsy to the final margin. The goal is not just tumour clearance. It is to restore life.',
   disciplines: {},
 };
 
@@ -862,8 +1058,8 @@ export interface PatientJourneyPageData {
 export const DEFAULT_PATIENT_JOURNEY_PAGE: PatientJourneyPageData = {
   pageTitle: 'The Clinical Pathway: From Diagnostic Uncertainty to Calm Certainty',
   pageLead:
-    'A critical cancer diagnosis demands decisive action, but hurried decisions often lead to irreversible regret. Our structured second-opinion pathway provides unhurried evaluation, rigorous scientific scrutiny, and clear surgical direction.',
-  turnaroundVal: '24-48h',
+    'A cancer diagnosis demands decisive action. Hurried decisions made under pressure lead to irreversible regret. This structured pathway gives you unhurried evaluation, complete scientific scrutiny, and clear surgical direction - before anything is cut.',
+  turnaroundVal: '24-48 hrs',
   turnaroundLabel: 'Initial Review Turnaround',
 };
 

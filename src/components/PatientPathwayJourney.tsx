@@ -40,7 +40,8 @@ export const PatientPathwayJourney: React.FC = () => {
     {
       num: '03',
       title: 'RECEIVE A RESPONSE',
-      detail: 'Direct specialist assessment on surgical viability and clear recommendations within 48 hours.',
+      detail:
+        'Direct specialist assessment with written recommendations on surgical viability, treatment sequencing, and second-opinion conclusions — within 48 working hours.',
     },
   ];
 

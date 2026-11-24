@@ -19,7 +19,7 @@ export const ClinicalContextSection: React.FC = () => {
             </h2>
 
             <p className="context-lead-text">
-              Dr. Jem Kalathil directs the Department of Surgical Oncology at Aster Medcity, Kochi—a JCI-accredited quaternary medical institution situated along the tranquil Cheranallur backwaters in Kerala.
+              Dr. Jem Kalathil conducts quaternary surgical oncology practice in Kochi, Kerala—within a JCI-accredited medical institution situated along the tranquil Cheranallur backwaters.
             </p>
 
             <p className="context-body-text">
@@ -67,12 +67,12 @@ export const ClinicalContextSection: React.FC = () => {
             <div className="context-image-wrapper">
               <img
                 src="/images/aster_medcity_campus.jpg"
-                alt="Aster Medcity quaternary hospital campus along the Cheranallur waterfront in Kochi"
+                alt="Quaternary surgical oncology hospital campus along the Cheranallur waterfront in Kochi"
                 className="context-campus-image"
               />
               <div className="context-caption-strip">
-                <span className="caption-tag">ASTER MEDCITY · KOCHI, KERALA</span>
-                <span className="caption-sub">A serene, waterfront healing campus engineered for world-class surgical oncology</span>
+                <span className="caption-tag">QUATERNARY SURGICAL CAMPUS · KOCHI, KERALA</span>
+                <span className="caption-sub">A serene, waterfront healing campus engineered for advanced surgical oncology</span>
               </div>
             </div>
           </div>

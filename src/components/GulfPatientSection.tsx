@@ -36,7 +36,7 @@ export const GulfPatientSection: React.FC<GulfPatientSectionProps> = ({ onReques
                 <span className="hub-pulse-dot" aria-hidden="true" />
                 <span className="hub-tag">QUATERNARY ONCOLOGY HUB</span>
               </div>
-              <h3 className="hub-name">Aster Medcity, Kochi</h3>
+              <h3 className="hub-name">Clinical Base · Kochi, Kerala</h3>
               <p className="hub-desc">
                 Direct non-stop flight connections from all GCC international airports into Cochin International Airport (COK).
               </p>

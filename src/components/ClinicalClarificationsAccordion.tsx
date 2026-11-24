@@ -29,7 +29,13 @@ const FAQ_ITEMS: FaqItemData[] = [
     number: '04',
     question: 'How quickly will the team respond?',
     answer:
-      'Our dedicated oncology coordinators acknowledge your case submission within hours. Once complete clinical imaging and pathology reports are received, Dr. Jem Kalathil and the surgical panel deliver a detailed review and clear clinical recommendation within our 48-hour response commitment.',
+      'Our dedicated oncology coordinators acknowledge your case submission within hours. Once complete clinical imaging and pathology reports are received, Dr. Jem Kalathil delivers a detailed review and clear clinical recommendation within our 48-hour response commitment.',
+  },
+  {
+    number: '05',
+    question: 'Is this a substitute for my treating oncologist?',
+    answer:
+      'No. An independent second opinion from Dr. Jem Kalathil is not a substitute for your primary treating oncologist or surgical team. It is a collaborative, evidence-based review designed to confirm staging, re-evaluate margin feasibility, verify resectability, and ensure every conservative or advanced alternative has been evaluated. It provides you and your primary physician with objective clinical clarity.',
   },
 ];
 

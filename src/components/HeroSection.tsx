@@ -38,7 +38,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
                 <svg className="pill-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
                 </svg>
-                <span className="pill-text">Surgical Oncologist · Breast, Peritoneal &amp; Robotic Surgery</span>
+                <span className="pill-text">Surgical Oncologist · Aster Medcity, Kochi</span>
               </div>
 
               {/* Primary SEO Heading (H1) */}
@@ -51,7 +51,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
               <div className="hero-doctor-title-line">
                 <span className="doctor-primary-name" itemProp="name">{siteSettings.doctorName || 'Dr. Jem Kalathil'}</span>
                 <span className="doctor-title-separator" aria-hidden="true">·</span>
-                <span className="doctor-credentials-badge">MS, FRCS</span>
+                <span className="doctor-credentials-badge">MS, FRCS (Edin)</span>
               </div>
             </div>
 
@@ -59,7 +59,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
             <div className="hero-actions-block">
               {/* SEO Lead Description Paragraph (Dynamic from WordPress) */}
               <p className="hero-lead-description" itemProp="description">
-                {homeContent.heroSubheadline}
+                {homeContent.heroSubheadline ||
+                  'Three decades of specialised surgical oncology —Advanced breast cancer care focussing on conservation and oncoplasty, HIPEC and cytoreduction, and robotic precision surgery for colorectal and gynaecological cancers. Evidence-based second opinions for patients across Kerala, India, and the Gulf.'}
               </p>
 
               {/* Action Buttons Row (Modeled after reference dual CTAs) */}
@@ -122,7 +123,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
                 <div className="stage-doctor-cutout-wrap">
                   <img
                     src="/images/dr_jem_kalathil_cutout.png"
-                    alt="Dr. Jem Kalathil, Lead Senior Consultant, Surgical Oncology"
+                    alt="Dr. Jem Kalathil, Surgical Oncologist"
                     className="stage-doctor-img"
                     loading="eager"
                     fetchPriority="high"
@@ -130,17 +131,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
                 </div>
               </div>
 
-              {/* 3 FLOATING SPECIALTY CARDS STACKED ON RIGHT (Exact layout matching user mockup) */}
+              {/* 4 FLOATING SPECIALTY CARDS STACKED ON RIGHT (Exact layout matching user refined brief) */}
               <div className="hero-floating-specialties-stack" aria-label="Key Clinical Pillars">
-                <a href="/clinical-areas#breast" className="floating-specialty-card">
+                <a href="/clinical-areas#breast-cancer" className="floating-specialty-card">
                   <div className="specialty-card-icon" aria-hidden="true">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
                     </svg>
                   </div>
                   <div className="specialty-card-meta">
-                    <span className="specialty-card-title">{homeContent.specialty1Title}</span>
-                    <span className="specialty-card-sub">{homeContent.specialty1Subtitle}</span>
+                    <span className="specialty-card-title">Breast Cancer &amp; Oncoplastic Surgery</span>
+                    <span className="specialty-card-sub">Organ Preservation &amp; Reconstruction</span>
                   </div>
                 </a>
 
@@ -153,8 +154,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
                     </svg>
                   </div>
                   <div className="specialty-card-meta">
-                    <span className="specialty-card-title">{homeContent.specialty2Title}</span>
-                    <span className="specialty-card-sub">{homeContent.specialty2Subtitle}</span>
+                    <span className="specialty-card-title">Advanced HIPEC &amp; CRS</span>
+                    <span className="specialty-card-sub">Cytoreductive Surgery for Colorectal &amp; Gynaec Oncology</span>
                   </div>
                 </a>
 
@@ -166,8 +167,20 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
                     </svg>
                   </div>
                   <div className="specialty-card-meta">
-                    <span className="specialty-card-title">{homeContent.specialty3Title}</span>
-                    <span className="specialty-card-sub">{homeContent.specialty3Subtitle}</span>
+                    <span className="specialty-card-title">Robotic Surgical Oncology</span>
+                    <span className="specialty-card-sub">Da Vinci Precision</span>
+                  </div>
+                </a>
+
+                <a href="/clinical-areas#general" className="floating-specialty-card">
+                  <div className="specialty-card-icon" aria-hidden="true">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                  </div>
+                  <div className="specialty-card-meta">
+                    <span className="specialty-card-title">General Surgical Oncology</span>
+                    <span className="specialty-card-sub">Comprehensive Oncological Resection</span>
                   </div>
                 </a>
               </div>
@@ -178,24 +191,20 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onRequestSecondOpinion
         </div>
       </div>
 
-      {/* Baseline Clinical Authority Bar (NMC compliant - FRCS & institutional promotion replaced) */}
+      {/* Baseline Clinical Authority Bar (NMC compliant - 3 Clean Tiles) */}
       <div className="container">
-        <div className="hero-bottom-credentials">
+        <div className="hero-bottom-credentials hero-bottom-three-tiles">
           <div className="credential-item">
-            <span className="credential-value">{siteSettings.experienceYears} Years</span>
-            <span className="credential-label">Dedicated Surgical Oncology Practice</span>
+            <span className="credential-value">30+</span>
+            <span className="credential-label">Years of Dedicated Surgical Oncology Practice</span>
           </div>
           <div className="credential-item">
-            <span className="credential-value">High-Volume Specialist</span>
-            <span className="credential-label">Peritoneal Surface Oncology &amp; HIPEC</span>
+            <span className="credential-value">Breast · HIPEC · Robotic</span>
+            <span className="credential-label">Core Surgical Oncology Disciplines</span>
           </div>
           <div className="credential-item">
-            <span className="credential-value">Organ Preservation</span>
-            <span className="credential-label">Oncoplastic Breast Surgery &amp; Reconstruction</span>
-          </div>
-          <div className="credential-item">
-            <span className="credential-value">MDT Standard</span>
-            <span className="credential-label">Multidisciplinary Tumor Board Scrutiny</span>
+            <span className="credential-value">Kerala · India · GCC</span>
+            <span className="credential-label">Patient Reach Across Borders</span>
           </div>
         </div>
       </div>

@@ -74,9 +74,10 @@ export const SurgeonEditorialProfile: React.FC<SurgeonEditorialProfileProps> = (
 
             {/* Doctor Identity */}
             <div className="surgeon-identity-meta">
-              <h3 className="surgeon-full-name">{siteSettings.doctorName}</h3>
+              <h3 className="surgeon-full-name">{siteSettings.doctorName} · {siteSettings.doctorCredentials}</h3>
               <p className="surgeon-clinical-role">
-                {siteSettings.doctorRole}
+                Surgical Oncologist<br />
+                <span className="surgeon-inst-sub" style={{ fontSize: '0.9rem', color: 'rgba(250, 247, 242, 0.7)' }}>Aster Medcity, Kochi</span>
               </p>
             </div>
 
@@ -101,7 +102,11 @@ export const SurgeonEditorialProfile: React.FC<SurgeonEditorialProfileProps> = (
                 </div>
                 <div className="cred-bullet-item">
                   <span className="cred-bullet-marker" aria-hidden="true">—</span>
-                  <span className="cred-bullet-text">Heads the Aster Clinical Research Centre and is Lead Principal Investigator on clinical trials</span>
+                  <span className="cred-bullet-text">Former Senior Consultant, Breast Unit, Royal Hospital, Muscat, Oman</span>
+                </div>
+                <div className="cred-bullet-item">
+                  <span className="cred-bullet-marker" aria-hidden="true">—</span>
+                  <span className="cred-bullet-text">Lead Principal Investigator on Clinical Trials, Aster Clinical Research Centre</span>
                 </div>
                 <div className="cred-bullet-item">
                   <span className="cred-bullet-marker" aria-hidden="true">—</span>

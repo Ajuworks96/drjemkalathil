@@ -33,7 +33,7 @@ const DOSSIER_CHECKLIST: ChecklistItem[] = [
     subtitle: 'ANATOMICAL BOUNDARIES & VASCULAR MAPPING',
     description:
       'Radiology scan reports and original imaging series (DICOM CDs or cloud links). PET-CT scans rule out distant metastases; contrast-enhanced MRI provides precise local soft-tissue and vascular mapping.',
-    essentialFor: 'Determining organ preservation feasibility and Sugarbaker PCI scoring.',
+    essentialFor: 'Determining organ preservation feasibility, R0 margin assessment, and Sugarbaker Peritoneal Cancer Index (PCI) distribution.',
   },
   {
     id: 'op_notes',
@@ -52,6 +52,15 @@ const DOSSIER_CHECKLIST: ChecklistItem[] = [
     description:
       'Details of completed or ongoing chemotherapy, targeted therapy, or hormonal agents, including cycle dates and response evaluation scans.',
     essentialFor: 'Timing surgical resection for the window of maximum biological tumor response.',
+  },
+  {
+    id: 'prior_imaging',
+    number: '05',
+    title: 'Prior Imaging Series for Tumour Response Comparison',
+    subtitle: 'PRE- AND POST-CHEMOTHERAPY EVOLUTION',
+    description:
+      'Baseline pre-treatment CT or MRI scans alongside post-neoadjuvant chemotherapy scans to evaluate downstaging and tumor biology response.',
+    essentialFor: 'Assessing tumor regression margins and identifying window for optimal surgical resection.',
   },
 ];
 
@@ -100,33 +109,43 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onRequestSecondO
           <div className="subpage-hero-meta">
             <div className="hero-crest-badge">
               <img src="/images/clinical_crystal_emblem.png" alt="Clinical Emblem" className="hero-crest-img" />
-              <span>OBJECTIVE SURGICAL CLARITY · SPECIALIST CLINICAL DESK</span>
+              <span>QUATERNARY SURGICAL ONCOLOGY · STRUCTURED SECOND OPINION PROTOCOL</span>
             </div>
             <h1 className="subpage-title">
-              {patientJourneyPage.pageTitle}
+              The Clinical Pathway: <span className="hero-title-accent">From Diagnostic Uncertainty to Calm Certainty</span>
             </h1>
             <p className="subpage-lead">
-              {patientJourneyPage.pageLead}
+              A cancer diagnosis demands decisive action. Hurried decisions made under pressure lead to irreversible regret. This structured pathway gives you unhurried evaluation, complete scientific scrutiny, and clear surgical direction — before anything is cut.
             </p>
           </div>
 
           <div className="subpage-stats-strip">
             <div className="subpage-stat-item">
-              <span className="subpage-stat-val">{patientJourneyPage.turnaroundVal}</span>
-              <span className="subpage-stat-label">{patientJourneyPage.turnaroundLabel}</span>
+              <span className="subpage-stat-val">24–48 hrs</span>
+              <span className="subpage-stat-label">Initial Review Turnaround</span>
             </div>
             <div className="subpage-stat-item">
               <span className="subpage-stat-val">1-on-1</span>
-              <span className="subpage-stat-label">Direct Time with Dr. Jem Kalathil</span>
+              <span className="subpage-stat-label">Direct Surgeon Consultation</span>
             </div>
             <div className="subpage-stat-item">
               <span className="subpage-stat-val">Written</span>
-              <span className="subpage-stat-label">Formal Signed Clinical Memorandum</span>
+              <span className="subpage-stat-label">Signed Clinical Memorandum</span>
             </div>
             <div className="subpage-stat-item">
-              <span className="subpage-stat-val">Global</span>
-              <span className="subpage-stat-label">Gulf & International Concierge Desk</span>
+              <span className="subpage-stat-val">Gulf &amp; Global</span>
+              <span className="subpage-stat-label">International Concierge Desk</span>
             </div>
+          </div>
+
+          <div className="subpage-hero-visual-card">
+            <img
+              src="/images/clinical_case_review.jpg"
+              alt="Quaternary Surgical Case Evaluation and Radiographic Margins Analysis"
+              className="subpage-hero-visual-img"
+              loading="eager"
+            />
+            <span className="subpage-hero-visual-caption">Quaternary Surgical Case Evaluation · High-Resolution Scrutiny</span>
           </div>
         </div>
       </section>
@@ -166,12 +185,12 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onRequestSecondO
               </div>
               <div className="stage-media-thumb">
                 <img
-                  src="/images/aster_medcity_campus.jpg"
-                  alt="Aster Medcity Quaternary Hospital Campus and Clinical Intake"
+                  src="/images/clinical_intake_dossier.jpg"
+                  alt="Clinical Intake Desk and Medical Records Triage"
                   className="stage-thumb-img"
                   loading="lazy"
                 />
-                <span className="stage-thumb-caption">Aster Medcity Intake Desk</span>
+                <span className="stage-thumb-caption">Clinical Intake Desk</span>
               </div>
             </div>
 
@@ -242,7 +261,7 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onRequestSecondO
                 </div>
                 <h3 className="stage-heading">Detailed 1-on-1 Discussion with Dr. Jem Kalathil</h3>
                 <p className="stage-text">
-                  You and your family meet directly with Dr. Jem Kalathil—either in person at our clinical consultation suite in Kochi or via encrypted video teleconsultation. Dr. Jem translates intricate clinical data into transparent, human language, reviews surgical alternatives, and answers every question without time pressure.
+                  You and your family meet directly with Dr. Jem Kalathil—either in person at our clinical consultation suite in Kochi or via encrypted video teleconsultation. Dr. Jem translates intricate clinical data into transparent, plain language, reviews surgical alternatives, and answers every question without time pressure.
                 </p>
                 <div className="stage-checklist-inline">
                   <span className="checklist-item">✓ Direct 1-on-1 Consultation Time</span>
@@ -252,13 +271,21 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onRequestSecondO
               </div>
               <div className="stage-media-thumb">
                 <img
-                  src="/images/when_hope_seems_lost.jpg"
+                  src="/images/clinical_case_review.jpg"
                   alt="Unhurried 1-on-1 Consultation with Dr. Jem Kalathil"
                   className="stage-thumb-img"
                   loading="lazy"
                 />
-                <span className="stage-thumb-caption">Consultation Suite, Aster Medcity</span>
+                <span className="stage-thumb-caption">Clinical Consultation</span>
               </div>
+            </div>
+
+            {/* WhatsApp Access After Stage 3 */}
+            <div className="stage-whatsapp-callout">
+              <span className="stage-whatsapp-callout-text">Have questions before your appointment? WhatsApp Our Clinical Desk</span>
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn-opinion-whatsapp">
+                <span>💬 WhatsApp Our Clinical Desk</span>
+              </a>
             </div>
 
             {/* Stage 4 */}
@@ -274,7 +301,7 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onRequestSecondO
                 </div>
                 <h3 className="stage-heading">Formal Signed Memorandum & Actionable Treatment Roadmap</h3>
                 <p className="stage-text">
-                  You receive a formal written Clinical Memorandum detailing Dr. Jem Kalathil's findings, alternative surgical options, and recommended timelines. You are empowered to proceed with absolute clarity—whether returning to your primary local oncologist with our backing, or transitioning to Kochi for surgical admission if indicated.
+                  You receive a formal written Clinical Memorandum detailing Dr. Jem Kalathil's findings, alternative surgical options, and recommended timelines. You are empowered to proceed with absolute clarity—whether returning to your primary local oncologist with Dr. Jem's written assessment, or transitioning to Kochi for surgical admission if indicated.
                 </p>
                 <div className="stage-memorandum-caveat" style={{ marginTop: '0.75rem', padding: '0.625rem 0.875rem', background: 'rgba(200, 169, 106, 0.05)', borderLeft: '2px solid rgba(200, 169, 106, 0.4)', borderRadius: '4px', fontSize: '0.75rem', lineHeight: '1.5', color: '#a0a5aa' }}>
                   <em>The Second Opinion Clinical Memorandum is an independent surgical assessment prepared solely for patient education and clinical guidance. It does not establish a formal doctor-patient relationship, replace in-person clinical examination, or constitute a legally binding prescription.</em>
@@ -292,7 +319,6 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onRequestSecondO
                   className="stage-thumb-img"
                   loading="lazy"
                 />
-                <span className="stage-thumb-caption">Signed Clinical Assessment</span>
               </div>
             </div>
           </div>
@@ -305,9 +331,9 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onRequestSecondO
           <div className="checklist-dark-header">
             <div className="checklist-header-text">
               <span className="editorial-gold-kicker">STANDARDIZED CLINICAL INTAKE</span>
-              <h2 className="checklist-dark-headline">Preparing Your Medical Records</h2>
+              <h2 className="checklist-dark-headline">What Dr. Jem Kalathil Needs to Give You a Definitive Surgical Opinion</h2>
               <p className="checklist-dark-lead">
-                A surgical oncologist operates on precise anatomical landmarks and microscopic cellular pathology. Assemble these key records to ensure Dr. Jem can evaluate margins with millimeter accuracy.
+                A surgical oncologist operates on precise anatomical landmarks and microscopic cellular pathology. These records allow Dr. Jem to evaluate margins with millimetre accuracy, re-stage your disease independently, and determine what is truly resectable.
               </p>
             </div>
 
@@ -374,6 +400,25 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onRequestSecondO
                 </div>
               );
             })}
+          </div>
+
+          {/* Bridge CTA Section */}
+          <div className="subpage-bridge-cta">
+            <div className="bridge-cta-content">
+              <span className="bridge-cta-kicker">READY TO SUBMIT YOUR DOSSIER?</span>
+              <h3 className="bridge-cta-title">Ready to Submit Your Medical Dossier?</h3>
+              <p className="bridge-cta-desc">
+                Upload your diagnostic reports, imaging scans, or histopathology now to initiate Dr. Jem Kalathil's structured second-opinion evaluation.
+              </p>
+            </div>
+            <div className="bridge-cta-actions">
+              <Button variant="primary" size="md" onClick={onRequestSecondOpinion}>
+                <span>Upload Medical Records &rarr;</span>
+              </Button>
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn-opinion-whatsapp">
+                <span>💬 WhatsApp Our Clinical Desk</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -443,7 +488,7 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onRequestSecondO
               <div className="gulf-services-grid">
                 <div className="gulf-service-item">
                   <span className="service-dot">●</span>
-                  <span>Cochin International Airport (COK) reception — 45 mins to clinical consultation centre</span>
+                  <span>Cochin International Airport (COK) — 45 minutes to the consultation centre</span>
                 </div>
                 <div className="gulf-service-item">
                   <span className="service-dot">●</span>
@@ -480,9 +525,9 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onRequestSecondO
         <div className="editorial-container">
           <div className="subpage-cta-inner">
             <span className="subpage-cta-kicker">COMMENCE YOUR EVALUATION WITH COMPLETE CONFIDENCE</span>
-            <h2 className="subpage-cta-title">Begin Your Pathway to Clarity</h2>
+            <h2 className="subpage-cta-title">Your Case Deserves This Level of Scrutiny.</h2>
             <p className="subpage-cta-text">
-              Have your diagnostic reports and scans reviewed by Dr. Jem Kalathil and his senior clinical oncology team.
+              Most patients who come to Dr. Jem Kalathil arrive with a plan already given to them. The question is whether that plan has been tested against every alternative.
             </p>
             <div className="subpage-cta-actions">
               <Button
@@ -490,11 +535,21 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onRequestSecondO
                 size="lg"
                 onClick={onRequestSecondOpinion}
               >
-                <span>Request Second Opinion Review</span>
+                <span>Request a Surgical Second Opinion</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </Button>
+              <Button
+                variant="secondary"
+                size="lg"
+                onClick={onRequestSecondOpinion}
+              >
+                <span>Upload Your Scans &amp; Records</span>
+              </Button>
+            </div>
+            <div style={{ marginTop: '1.25rem', textAlign: 'center', fontSize: '0.85rem', color: '#c8a96a' }}>
+              <span>💬 {siteSettings.secretaryPhone} · Clinical Desk, available 09:00–17:00 IST</span>
             </div>
           </div>
         </div>

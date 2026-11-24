@@ -206,6 +206,12 @@ export const ContactPage: React.FC = () => {
                           </svg>
                           <span>YouTube</span>
                         </a>
+                        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="contact-social-pill" title="Chat on WhatsApp">
+                          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                          </svg>
+                          <span>WhatsApp</span>
+                        </a>
                       </div>
                     </div>
                 </div>
@@ -220,10 +226,13 @@ export const ContactPage: React.FC = () => {
                 </p>
                 <ul className="gulf-box-perks">
                   <li>Preliminary teleconsultation review of pathology & imaging before flight booking.</li>
-                  <li>Airport reception at Cochin International Airport (COK) — 45 mins to hospital campus.</li>
+                  <li>Airport reception at Cochin International Airport (COK) — 45 minutes to hospital campus.</li>
                   <li>Priority fast-track surgical scheduling and local accommodation guidance.</li>
                   <li>Multilingual patient liaisons fluent in Arabic, English, and Malayalam.</li>
                 </ul>
+                <p className="gulf-tele-note" style={{ fontSize: '0.82rem', color: '#c8a96a', margin: '12px 0 0', lineHeight: '1.5' }}>
+                  Video consultations are conducted via a secure encrypted platform. No app download required for Gulf patients.
+                </p>
                 <div className="gulf-desk-direct">
                   <span className="gulf-subhead">International Case Coordinator:</span>
                   <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="gulf-direct-wa">
@@ -409,10 +418,13 @@ export const ContactPage: React.FC = () => {
                           onChange={handleChange}
                           className="select-input"
                         >
-                          <option value="breast">Breast Cancer Surgery, Oncoplasty & Reconstruction</option>
-                          <option value="hipec">Peritoneal Surface Malignancies & HIPEC</option>
-                          <option value="robotic">Robotic Surgical Oncology (GI, Gynaecological & Pelvic)</option>
-                          <option value="sarcoma">Soft Tissue Sarcomas (Retroperitoneal & Extremity)</option>
+                          <option value="breast">Breast Cancer Surgery, Oncoplasty &amp; Reconstruction</option>
+                          <option value="hipec">Advanced Cytoreductive Surgery &amp; HIPEC (Peritoneal Malignancies)</option>
+                          <option value="robotic">Robotic Surgical Oncology (daVinci Precision)</option>
+                          <option value="gi_colorectal">Gastrointestinal &amp; Colorectal Oncology</option>
+                          <option value="gynec">Gynaecological Oncology (Ovarian, Endometrial, Cervical)</option>
+                          <option value="thyroid_endocrine">Thyroid &amp; Endocrine Surgical Oncology</option>
+                          <option value="general_oncology">General Surgical Oncology</option>
                           <option value="second_opinion">Specialist Surgical Second Opinion</option>
                         </select>
                       </div>
