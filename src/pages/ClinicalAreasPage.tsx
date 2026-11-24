@@ -114,7 +114,7 @@ const SPECIALTY_SECTIONS: SpecialtySectionDef[] = [
     badgeLabel: 'PERITONEAL ONCOLOGY',
     description:
       'Pioneering aggressive multi-compartment peritonectomy combined with Hyperthermic Intraperitoneal Chemotherapy (41.5°C–42.5°C) for patients historically deemed inoperable due to peritoneal spread from colorectal, ovarian, or appendiceal origins.',
-    imageSrc: '/images/neutral_hipec_or.jpg',
+    imageSrc: '/images/hipec_perfusion_suite.jpg',
     imageCaptionBadge: 'QUATERNARY PERFUSION THEATRE',
     scenarios: [
       {
@@ -174,7 +174,7 @@ const SPECIALTY_SECTIONS: SpecialtySectionDef[] = [
     badgeLabel: 'GYNAECOLOGICAL ONCOLOGY',
     description:
       'Subspecialty surgical oncology for advanced ovarian, uterine, and cervical malignancies. Implementing radical pelvic cytoreduction, retroperitoneal lymphadenectomy, and nerve-sparing radical hysterectomies.',
-    imageSrc: '/images/clinical_case_review.jpg',
+    imageSrc: '/images/neutral_hipec_or.jpg',
     imageCaptionBadge: 'ADVANCED PELVIC ONCOLOGY',
     scenarios: [
       {
@@ -453,8 +453,8 @@ export const ClinicalAreasPage: React.FC<ClinicalAreasPageProps> = ({ onRequestS
           {/* Full-width Atmospheric Hero Visual Frame (A5 & B4) */}
           <div className="clinical-hero-visual-banner">
             <img
-              src="/images/clinical_case_review.jpg"
-              alt="Physician hands reviewing cross-sectional radiology scans and surgical planning on clinical lightbox"
+              src="/images/surgical_theatre.jpg"
+              alt="Quaternary surgical operating suite equipped for high-precision oncology resections"
               className="clinical-hero-banner-img"
               loading="eager"
             />
@@ -720,8 +720,8 @@ export const ClinicalAreasPage: React.FC<ClinicalAreasPageProps> = ({ onRequestS
           <div className="protocol-showcase-visual">
             <div className="protocol-visual-frame">
               <img
-                src="/images/clinical_case_review.jpg"
-                alt="Multidisciplinary Oncology Tumor Board Case Review"
+                src="/images/clinical_intake_dossier.jpg"
+                alt="Multidisciplinary Oncology Tumor Board Case Review and Diagnostic Dossier Analysis"
                 className="protocol-banner-img"
                 loading="lazy"
               />

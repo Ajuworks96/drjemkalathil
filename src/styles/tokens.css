@@ -18,11 +18,11 @@
   --color-bg-dark-card: #141414;
   --color-bg-dark-elevated: #1c1c1c;
 
-  --color-text-headline: #0a0a0a;
-  --color-text-body: #33302c;
-  --color-text-muted: #6b665f;
-  --color-text-inverted: #faf7f2;
-  --color-text-accent: #9a7b38;
+  --color-text-headline: #ffffff;
+  --color-text-body: #f0ede6;
+  --color-text-muted: #e8e4dc;
+  --color-text-inverted: #0a0a0a;
+  --color-text-accent: #c8a96a;
 
   /* Borders & Dividers */
   --border-hairline: 1px solid rgba(10, 10, 10, 0.1);
@@ -100,6 +100,28 @@ p {
   color: var(--color-text-body);
   font-weight: 400;
   line-height: 1.68;
+}
+
+/* Master High-Contrast Safeguards for Dark Luxury Interface */
+.site-wrapper,
+.subpage-wrapper,
+.clinical-page-wrapper,
+.articles-page-wrapper,
+.article-reader-page,
+.contact-page-wrapper,
+.how-it-works-wrapper,
+.gallery-page-wrapper {
+  color: #f0ede6;
+}
+
+.subpage-wrapper p,
+.clinical-page-wrapper p,
+.articles-page-wrapper p,
+.article-reader-page p,
+.contact-page-wrapper p,
+.how-it-works-wrapper p,
+.gallery-page-wrapper p {
+  color: #f0ede6;
 }
 
 a {
