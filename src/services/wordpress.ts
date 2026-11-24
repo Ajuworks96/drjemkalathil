@@ -386,16 +386,21 @@ export async function fetchWordpressPosts(params?: {
       return FALLBACK_ARTICLES;
     }
 
-    // Filter out standard WordPress boilerplate "Hello world!" if desirable
+    // Filter out standard WordPress boilerplate "Hello world!", gallery posts, and clinical-areas posts
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const filteredPosts = rawPosts.filter((post: any) => post.slug !== 'hello-world');
-
-    if (filteredPosts.length === 0) {
-      return FALLBACK_ARTICLES;
-    }
+    const filteredPosts = rawPosts.filter((post: any) => {
+      if (post.slug === 'hello-world') return false;
+      if (post.slug?.startsWith('gallery-')) return false;
+      const terms = (post._embedded?.['wp:term'] || []).flat();
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const catSlugs = terms.map((t: any) => t.slug?.toLowerCase() || '');
+      if (catSlugs.includes('gallery')) return false;
+      if (catSlugs.includes('clinical-areas')) return false;
+      return true;
+    });
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    return filteredPosts.map((post: any) => {
+    const mappedPosts: WPPost[] = filteredPosts.map((post: any) => {
       // Extract featured media
       const featuredImage =
         post._embedded?.['wp:featuredmedia']?.[0]?.source_url ||
@@ -408,7 +413,7 @@ export async function fetchWordpressPosts(params?: {
 
       // Extract category
       const categoryName =
-        post._embedded?.['wp:term']?.[0]?.[0]?.name || 'Oncology Clinical Notes';
+        post._embedded?.['wp:term']?.[0]?.[0]?.name || 'Clinical Guidance';
 
       // Extract Yoast / Rank Math SEO if installed
       const rankMath = post.rank_math_seo;
@@ -459,6 +464,15 @@ export async function fetchWordpressPosts(params?: {
         },
       } as WPPost;
     });
+
+    if (mappedPosts.length === 0) {
+      return FALLBACK_ARTICLES;
+    }
+
+    // Merge live WordPress blog posts with fallback articles (WP posts take precedence on matching slug)
+    const wpSlugs = new Set(mappedPosts.map((p) => p.slug));
+    const nonDuplicatedFallbacks = FALLBACK_ARTICLES.filter((f) => !wpSlugs.has(f.slug));
+    return [...mappedPosts, ...nonDuplicatedFallbacks];
   } catch (error) {
     console.warn('Could not fetch from WordPress API, using fallback articles:', error);
     return FALLBACK_ARTICLES;
@@ -531,6 +545,181 @@ export async function fetchWordpressPostBySlug(slug: string): Promise<WPPost | n
   } catch (error) {
     console.warn(`Could not fetch post ${slug} from WordPress:`, error);
     return FALLBACK_ARTICLES.find((p) => p.slug === slug) || null;
+  }
+}
+
+/**
+ * Gallery Item Interface & Dynamic WordPress Service
+ */
+export interface GalleryItem {
+  id: string;
+  title: string;
+  category: 'all' | 'consultations' | 'surgical' | 'campus' | 'leadership';
+  categoryLabel: string;
+  imageSrc: string;
+  imageAlt: string;
+  description: string;
+}
+
+export const DEFAULT_GALLERY_ITEMS: GalleryItem[] = [
+  {
+    id: 'consultation-suite',
+    title: 'Compassionate Consultation Suite',
+    category: 'consultations',
+    categoryLabel: 'Patient Care & Consultation',
+    imageSrc: '/images/clinical_intake_dossier.jpg',
+    imageAlt: 'Surgical oncology consultation suite with diagnostic records and imaging review workstation',
+    description: 'Providing patients and families with unhurried clarity, high-resolution scan reviews, and compassionate clinical guidance when choices seem daunting.',
+  },
+  {
+    id: 'dr-jem-portrait',
+    title: 'Dr. Jem Kalathil · MS, FRCS (Edin)',
+    category: 'leadership',
+    categoryLabel: 'Surgical Leadership',
+    imageSrc: '/images/dr_jem_kalathil.jpg',
+    imageAlt: 'Dr. Jem Kalathil, Surgical Oncologist',
+    description: 'Three decades of dedicated surgical oncology practice, pioneering oncoplastic breast conservation and cytoreductive HIPEC in Kerala and South Asia.',
+  },
+  {
+    id: 'campus-environment',
+    title: 'Clinical Campus Environment, Kochi',
+    category: 'campus',
+    categoryLabel: 'Surgical Campus',
+    imageSrc: '/images/aster_medcity_campus.jpg',
+    imageAlt: 'Quaternary waterfront hospital campus in Kochi, Kerala',
+    description: 'A quaternary oncology centre on the serene Cheranallur backwaters, Kochi — offering a healing environment for complex surgical care.',
+  },
+  {
+    id: 'mdt-case-review',
+    title: 'Multidisciplinary Tumor Board (MDT) Review',
+    category: 'consultations',
+    categoryLabel: 'Clinical Review',
+    imageSrc: '/images/clinical_case_review.jpg',
+    imageAlt: 'Multidisciplinary oncology tumor board reviewing imaging and treatment protocols',
+    description: 'Cross-verifying histological staging, resection boundaries, and multimodal sequencing among surgical, medical, and radiation oncology specialists.',
+  },
+  {
+    id: 'robotic-oncology-suite',
+    title: 'Advanced daVinci Robotic Oncology Suite',
+    category: 'surgical',
+    categoryLabel: 'Surgical Technology',
+    imageSrc: '/images/surgical_precision_instruments.jpg',
+    imageAlt: 'Advanced robotic surgical console instrumentation for minimally invasive oncological resections',
+    description: 'Enabling sub-millimeter precision, 3D magnified visualization, and minimal tissue trauma for pelvic, gastrointestinal, and retroperitoneal cancers.',
+  },
+  {
+    id: 'quaternary-theatre',
+    title: 'Quaternary Cytoreductive Perfusion Theatre',
+    category: 'surgical',
+    categoryLabel: 'Surgical Technology',
+    imageSrc: '/images/hipec_perfusion_suite.jpg',
+    imageAlt: 'Specialized surgical theatre equipped for cytoreductive surgery and heated intraperitoneal chemotherapy',
+    description: 'Engineered specifically for extended cytoreductive peritonectomy and continuous 42°C Hyperthermic Intraperitoneal Chemotherapy (HIPEC) perfusions.',
+  },
+  {
+    id: 'frozen-section-suite',
+    title: 'Intraoperative Histopathology & Frozen Section Suite',
+    category: 'surgical',
+    categoryLabel: 'Surgical Technology',
+    imageSrc: '/images/neutral_hipec_or.jpg',
+    imageAlt: 'Intraoperative frozen section analysis enabling immediate margin clearance',
+    description: 'Real-time intraoperative frozen section analysis enabling immediate confirmation of microscopic margins while surgery is underway.',
+  },
+  {
+    id: 'dedicated-patient-care',
+    title: 'Second Opinion Clinical Evaluation',
+    category: 'consultations',
+    categoryLabel: 'Patient Care & Consultation',
+    imageSrc: '/images/dr_jem_kalathil.jpg',
+    imageAlt: 'Dr. Jem Kalathil dedicated second opinion clinic',
+    description: 'Offering objective, calm second opinions to confirm diagnoses, verify resectability, and avoid unnecessary total mastectomies or premature palliative conclusions.',
+  },
+];
+
+/**
+ * Fetch dynamic Gallery items from WordPress REST API
+ * Supports posts in category 'gallery' or posts with slug starting with 'gallery-'
+ */
+export async function fetchGalleryItems(): Promise<GalleryItem[]> {
+  const wpUrl = import.meta.env.VITE_WORDPRESS_URL || WP_BASE_URL;
+  if (!wpUrl) return DEFAULT_GALLERY_ITEMS;
+
+  try {
+    const res = await fetch(`${wpUrl.replace(/\/$/, '')}/wp-json/wp/v2/posts?per_page=50&_embed=true`);
+    if (!res.ok) return DEFAULT_GALLERY_ITEMS;
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const rawPosts = await res.json();
+    if (!Array.isArray(rawPosts)) return DEFAULT_GALLERY_ITEMS;
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const galleryPosts = rawPosts.filter((post: any) => {
+      const isGallerySlug = post.slug?.startsWith('gallery-');
+      const terms = (post._embedded?.['wp:term'] || []).flat();
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const hasGalleryCat = terms.some((t: any) => t.slug === 'gallery' || t.name?.toLowerCase() === 'gallery');
+      return isGallerySlug || hasGalleryCat;
+    });
+
+    if (galleryPosts.length === 0) {
+      return DEFAULT_GALLERY_ITEMS;
+    }
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const dynamicItems: GalleryItem[] = galleryPosts.map((post: any, idx: number) => {
+      const featuredMedia = post._embedded?.['wp:featuredmedia']?.[0];
+      const imageSrc =
+        featuredMedia?.source_url ||
+        post.jetpack_featured_media_url ||
+        DEFAULT_GALLERY_ITEMS[idx % DEFAULT_GALLERY_ITEMS.length]?.imageSrc ||
+        '/images/surgical_precision_instruments.jpg';
+
+      const title = post.title?.rendered?.replace(/<[^>]+>/g, '').trim() || 'Clinical Infrastructure';
+      const description =
+        post.excerpt?.rendered?.replace(/<[^>]+>/g, '').trim() ||
+        post.content?.rendered?.replace(/<[^>]+>/g, '').trim() ||
+        '';
+
+      const terms = (post._embedded?.['wp:term'] || []).flat();
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const termSlugs = terms.map((t: any) => t.slug?.toLowerCase() || '');
+      const fullText = (title + ' ' + description).toLowerCase();
+
+      let cat: 'consultations' | 'surgical' | 'campus' | 'leadership' = 'consultations';
+      if (termSlugs.includes('surgical') || fullText.includes('surgical') || fullText.includes('robotic') || fullText.includes('hipec') || fullText.includes('theatre') || fullText.includes('or')) {
+        cat = 'surgical';
+      } else if (termSlugs.includes('campus') || fullText.includes('campus') || fullText.includes('hospital') || fullText.includes('environment')) {
+        cat = 'campus';
+      } else if (termSlugs.includes('leadership') || fullText.includes('leadership') || fullText.includes('portrait') || fullText.includes('dr. jem') || fullText.includes('practice')) {
+        cat = 'leadership';
+      } else {
+        cat = 'consultations';
+      }
+
+      const labelMap = {
+        consultations: 'Patient Care & Consultation',
+        surgical: 'Surgical Suites & Technology',
+        campus: 'Surgical Campus & Environment',
+        leadership: 'Surgical Leadership',
+      };
+
+      return {
+        id: post.slug || `wp-gallery-${post.id}`,
+        title,
+        category: cat,
+        categoryLabel: labelMap[cat],
+        imageSrc,
+        imageAlt: featuredMedia?.alt_text || title,
+        description,
+      };
+    });
+
+    const existingTitles = new Set(dynamicItems.map((d) => d.title.toLowerCase()));
+    const remainingDefaults = DEFAULT_GALLERY_ITEMS.filter((def) => !existingTitles.has(def.title.toLowerCase()));
+    return [...dynamicItems, ...remainingDefaults];
+  } catch (err) {
+    console.warn('Could not fetch WordPress gallery items, using defaults:', err);
+    return DEFAULT_GALLERY_ITEMS;
   }
 }
 
@@ -1035,6 +1224,9 @@ export interface ClinicalAreasPageData {
   disciplines: {
     breast?: { title?: string; subtitle?: string; description?: string; procedures?: string[] };
     hipec?: { title?: string; subtitle?: string; description?: string; procedures?: string[] };
+    gynec?: { title?: string; subtitle?: string; description?: string; procedures?: string[] };
+    robotic?: { title?: string; subtitle?: string; description?: string; procedures?: string[] };
+    general?: { title?: string; subtitle?: string; description?: string; procedures?: string[] };
     'minimally-invasive'?: { title?: string; subtitle?: string; description?: string; procedures?: string[] };
   };
   seo?: PageSeoMeta;
@@ -1113,32 +1305,113 @@ const extractPageSeo = (page: any): PageSeoMeta | undefined => {
 
 export async function fetchClinicalAreasPageData(): Promise<ClinicalAreasPageData> {
   const page = await fetchWordpressPage('clinical-areas');
-  if (!page || !page.acf) return DEFAULT_CLINICAL_AREAS_PAGE;
-  const acf = page.acf;
+  const wpUrl = import.meta.env.VITE_WORDPRESS_URL || WP_BASE_URL;
 
-  return {
-    pageTitle: acf.ca_page_title || DEFAULT_CLINICAL_AREAS_PAGE.pageTitle,
-    pageLead: acf.ca_page_lead || DEFAULT_CLINICAL_AREAS_PAGE.pageLead,
-    disciplines: {
-      breast: {
+  const disciplines: ClinicalAreasPageData['disciplines'] = {};
+
+  // 1. First, check if page has ACF fields
+  if (page && page.acf) {
+    const acf = page.acf;
+    if (acf.ca_breast_title || acf.ca_breast_desc) {
+      disciplines.breast = {
         title: acf.ca_breast_title || undefined,
         subtitle: acf.ca_breast_subtitle || undefined,
         description: acf.ca_breast_desc || undefined,
         procedures: parseMultilineList(acf.ca_breast_procedures),
-      },
-      hipec: {
+      };
+    }
+    if (acf.ca_hipec_title || acf.ca_hipec_desc) {
+      disciplines.hipec = {
         title: acf.ca_hipec_title || undefined,
         subtitle: acf.ca_hipec_subtitle || undefined,
         description: acf.ca_hipec_desc || undefined,
         procedures: parseMultilineList(acf.ca_hipec_procedures),
-      },
-      'minimally-invasive': {
+      };
+    }
+    if (acf.ca_gynec_title || acf.ca_gynec_desc) {
+      disciplines.gynec = {
+        title: acf.ca_gynec_title || undefined,
+        subtitle: acf.ca_gynec_subtitle || undefined,
+        description: acf.ca_gynec_desc || undefined,
+        procedures: parseMultilineList(acf.ca_gynec_procedures),
+      };
+    }
+    if (acf.ca_robotic_title || acf.ca_robotic_desc) {
+      disciplines.robotic = {
         title: acf.ca_robotic_title || undefined,
         subtitle: acf.ca_robotic_subtitle || undefined,
         description: acf.ca_robotic_desc || undefined,
         procedures: parseMultilineList(acf.ca_robotic_procedures),
-      },
-    },
+      };
+    }
+    if (acf.ca_general_title || acf.ca_general_desc) {
+      disciplines.general = {
+        title: acf.ca_general_title || undefined,
+        subtitle: acf.ca_general_subtitle || undefined,
+        description: acf.ca_general_desc || undefined,
+        procedures: parseMultilineList(acf.ca_general_procedures),
+      };
+    }
+  }
+
+  // 2. Also check if there are WordPress posts under category 'clinical-areas'
+  if (wpUrl) {
+    try {
+      const res = await fetch(`${wpUrl.replace(/\/$/, '')}/wp-json/wp/v2/posts?per_page=50&_embed=true`);
+      if (res.ok) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const rawPosts = await res.json();
+        if (Array.isArray(rawPosts)) {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const caPosts = rawPosts.filter((p: any) => {
+            const terms = (p._embedded?.['wp:term'] || []).flat();
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            const hasCaCat = terms.some((t: any) => t.slug === 'clinical-areas');
+            const isCaSlug =
+              p.slug?.includes('breast-cancer') ||
+              p.slug?.includes('hipec') ||
+              p.slug?.includes('gynec') ||
+              p.slug?.includes('robotic') ||
+              p.slug?.includes('sarcoma');
+            return hasCaCat || isCaSlug;
+          });
+
+          // Helper to extract list items from html
+          const extractListItems = (html: string): string[] => {
+            const matches = html.match(/<li[^>]*>(.*?)<\/li>/gi);
+            if (!matches) return [];
+            return matches.map((m) => m.replace(/<[^>]+>/g, '').trim()).filter(Boolean);
+          };
+
+          for (const post of caPosts) {
+            const slug = post.slug || '';
+            let key: keyof typeof disciplines | undefined;
+            if (slug.includes('breast')) key = 'breast';
+            else if (slug.includes('hipec') || slug.includes('peritoneal')) key = 'hipec';
+            else if (slug.includes('gynec')) key = 'gynec';
+            else if (slug.includes('robotic')) key = 'robotic';
+            else if (slug.includes('sarcoma') || slug.includes('general')) key = 'general';
+
+            if (key && !disciplines[key]) {
+              const postProcedures = extractListItems(post.content?.rendered || '');
+              disciplines[key] = {
+                title: post.title?.rendered?.replace(/<[^>]+>/g, '').trim(),
+                description: post.excerpt?.rendered?.replace(/<[^>]+>/g, '').trim(),
+                procedures: postProcedures.length > 0 ? postProcedures : undefined,
+              };
+            }
+          }
+        }
+      }
+    } catch (e) {
+      console.warn('Could not inspect clinical areas posts from WP:', e);
+    }
+  }
+
+  return {
+    pageTitle: page?.acf?.ca_page_title || DEFAULT_CLINICAL_AREAS_PAGE.pageTitle,
+    pageLead: page?.acf?.ca_page_lead || DEFAULT_CLINICAL_AREAS_PAGE.pageLead,
+    disciplines,
     seo: extractPageSeo(page),
   };
 }

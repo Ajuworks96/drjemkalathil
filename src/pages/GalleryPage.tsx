@@ -3,95 +3,11 @@ import { Button } from '../components/Button';
 import { trackCtaClick } from '../utils/analytics';
 import { useSiteContent } from '../context/SiteContentContext';
 import { WHATSAPP_COORDINATOR_NUMBER } from '../constants/content';
+import { fetchGalleryItems, DEFAULT_GALLERY_ITEMS, type GalleryItem } from '../services/wordpress';
 
 export interface GalleryPageProps {
   onRequestSecondOpinion: () => void;
 }
-
-interface GalleryItem {
-  id: string;
-  title: string;
-  category: 'all' | 'consultations' | 'surgical' | 'campus' | 'leadership';
-  categoryLabel: string;
-  imageSrc: string;
-  imageAlt: string;
-  description: string;
-}
-
-const GALLERY_ITEMS: GalleryItem[] = [
-  {
-    id: 'consultation-suite',
-    title: 'Compassionate Consultation Suite',
-    category: 'consultations',
-    categoryLabel: 'Patient Care & Consultation',
-    imageSrc: '/images/clinical_intake_dossier.jpg',
-    imageAlt: 'Surgical oncology consultation suite with diagnostic records and imaging review workstation',
-    description: 'Providing patients and families with unhurried clarity, high-resolution scan reviews, and compassionate clinical guidance when choices seem daunting.',
-  },
-  {
-    id: 'dr-jem-portrait',
-    title: 'Dr. Jem Kalathil · MS, FRCS (Edin)',
-    category: 'leadership',
-    categoryLabel: 'Surgical Leadership',
-    imageSrc: '/images/dr_jem_kalathil.jpg',
-    imageAlt: 'Dr. Jem Kalathil, Surgical Oncologist',
-    description: 'Three decades of dedicated surgical oncology practice, pioneering oncoplastic breast conservation and cytoreductive HIPEC in Kerala and South Asia.',
-  },
-  {
-    id: 'campus-environment',
-    title: 'Clinical Campus Environment, Kochi',
-    category: 'campus',
-    categoryLabel: 'Surgical Campus',
-    imageSrc: '/images/aster_medcity_campus.jpg',
-    imageAlt: 'Quaternary waterfront hospital campus in Kochi, Kerala',
-    description: 'A quaternary oncology centre on the serene Cheranallur backwaters, Kochi — offering a healing environment for complex surgical care.',
-  },
-  {
-    id: 'mdt-case-review',
-    title: 'Multidisciplinary Tumor Board (MDT) Review',
-    category: 'consultations',
-    categoryLabel: 'Clinical Review',
-    imageSrc: '/images/clinical_case_review.jpg',
-    imageAlt: 'Multidisciplinary oncology tumor board reviewing imaging and treatment protocols',
-    description: 'Cross-verifying histological staging, resection boundaries, and multimodal sequencing among surgical, medical, and radiation oncology specialists.',
-  },
-  {
-    id: 'robotic-oncology-suite',
-    title: 'Advanced daVinci Robotic Oncology Suite',
-    category: 'surgical',
-    categoryLabel: 'Surgical Technology',
-    imageSrc: '/images/surgical_precision_instruments.jpg',
-    imageAlt: 'Advanced robotic surgical console instrumentation for minimally invasive oncological resections',
-    description: 'Enabling sub-millimeter precision, 3D magnified visualization, and minimal tissue trauma for pelvic, gastrointestinal, and retroperitoneal cancers.',
-  },
-  {
-    id: 'quaternary-theatre',
-    title: 'Quaternary Cytoreductive Perfusion Theatre',
-    category: 'surgical',
-    categoryLabel: 'Surgical Technology',
-    imageSrc: '/images/hipec_perfusion_suite.jpg',
-    imageAlt: 'Specialized surgical theatre equipped for cytoreductive surgery and heated intraperitoneal chemotherapy',
-    description: 'Engineered specifically for extended cytoreductive peritonectomy and continuous 42°C Hyperthermic Intraperitoneal Chemotherapy (HIPEC) perfusions.',
-  },
-  {
-    id: 'frozen-section-suite',
-    title: 'Intraoperative Histopathology & Frozen Section Suite',
-    category: 'surgical',
-    categoryLabel: 'Surgical Technology',
-    imageSrc: '/images/neutral_hipec_or.jpg',
-    imageAlt: 'Intraoperative frozen section analysis enabling immediate margin clearance',
-    description: 'Real-time intraoperative frozen section analysis enabling immediate confirmation of microscopic margins while surgery is underway.',
-  },
-  {
-    id: 'dedicated-patient-care',
-    title: 'Second Opinion Clinical Evaluation',
-    category: 'consultations',
-    categoryLabel: 'Patient Care & Consultation',
-    imageSrc: '/images/dr_jem_kalathil.jpg',
-    imageAlt: 'Dr. Jem Kalathil dedicated second opinion clinic',
-    description: 'Offering objective, calm second opinions to confirm diagnoses, verify resectability, and avoid unnecessary total mastectomies or premature palliative conclusions.',
-  },
-];
 
 const CATEGORIES = [
   { id: 'all', label: 'All Photos' },
@@ -103,6 +19,7 @@ const CATEGORIES = [
 
 export const GalleryPage: React.FC<GalleryPageProps> = ({ onRequestSecondOpinion }) => {
   const { siteSettings } = useSiteContent();
+  const [galleryItems, setGalleryItems] = useState<GalleryItem[]>(DEFAULT_GALLERY_ITEMS);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
@@ -110,9 +27,26 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onRequestSecondOpinion
     document.title = 'Clinical Gallery & Infrastructure | Dr. Jem Kalathil';
   }, []);
 
+  useEffect(() => {
+    let isMounted = true;
+    fetchGalleryItems()
+      .then((items) => {
+        if (isMounted && items && items.length > 0) {
+          setGalleryItems(items);
+        }
+      })
+      .catch((err) => {
+        console.warn('Could not fetch dynamic gallery from WordPress:', err);
+      });
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
   const filteredItems = selectedCategory === 'all'
-    ? GALLERY_ITEMS
-    : GALLERY_ITEMS.filter((item) => item.category === selectedCategory);
+    ? galleryItems
+    : galleryItems.filter((item) => item.category === selectedCategory);
 
   const openLightbox = (index: number) => {
     setLightboxIndex(index);

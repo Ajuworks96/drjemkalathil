@@ -379,7 +379,7 @@ const CLINICAL_PAGE_FAQS = [
 ];
 
 export const ClinicalAreasPage: React.FC<ClinicalAreasPageProps> = ({ onRequestSecondOpinion }) => {
-  const { siteSettings } = useSiteContent();
+  const { siteSettings, clinicalAreasPage } = useSiteContent();
   const [activeTabId, setActiveTabId] = useState<string>('breast');
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
@@ -417,7 +417,26 @@ export const ClinicalAreasPage: React.FC<ClinicalAreasPageProps> = ({ onRequestS
     }
   };
 
-  const activeSpecialty = SPECIALTY_SECTIONS.find((s) => s.id === activeTabId || s.anchorId === activeTabId) || SPECIALTY_SECTIONS[0];
+  // Merge default curated specialty structure with dynamic WordPress backend overrides
+  const mergedSpecialties = SPECIALTY_SECTIONS.map((sec) => {
+    const override = clinicalAreasPage?.disciplines?.[sec.id as keyof typeof clinicalAreasPage.disciplines];
+    if (!override) return sec;
+    return {
+      ...sec,
+      title: override.title || sec.title,
+      subtitle: override.subtitle || sec.subtitle,
+      description: override.description || sec.description,
+      procedures:
+        override.procedures && override.procedures.length > 0
+          ? override.procedures.map((p, i) => ({
+              title: p,
+              desc: sec.procedures[i]?.desc || 'Specialized operative procedure conducted under international MDT oncological protocol.',
+            }))
+          : sec.procedures,
+    };
+  });
+
+  const activeSpecialty = mergedSpecialties.find((s) => s.id === activeTabId || s.anchorId === activeTabId) || mergedSpecialties[0];
 
   const whatsappMessage = encodeURIComponent(
     `Hello Dr. Jem Kalathil's Clinical Desk, I would like to enquire about a second opinion consultation regarding ${activeSpecialty.title}.`
@@ -441,12 +460,11 @@ export const ClinicalAreasPage: React.FC<ClinicalAreasPageProps> = ({ onRequestS
               <span>SURGICAL ONCOLOGY · QUATERNARY MDT BOARD STANDARDS</span>
             </div>
 
-            <h1 className="subpage-title">Areas of Clinical Focus</h1>
+            <h1 className="subpage-title">{clinicalAreasPage?.pageTitle || 'Areas of Clinical Focus'}</h1>
 
             <p className="subpage-lead">
-              Thirty years of surgical oncology practice, refined through thousands of complex oncological cases, is
-              brought to bear on every clinical decision — from the first biopsy to the final margin. The goal is not just
-              tumour clearance. It is to restore life.
+              {clinicalAreasPage?.pageLead ||
+                'Thirty years of surgical oncology practice, refined through thousands of complex oncological cases, is brought to bear on every clinical decision — from the first biopsy to the final margin. The goal is not just tumour clearance. It is to restore life.'}
             </p>
           </div>
 
@@ -469,7 +487,7 @@ export const ClinicalAreasPage: React.FC<ClinicalAreasPageProps> = ({ onRequestS
         <div className="specialty-sticky-anchor-bar" aria-label="Specialty Quick Navigation">
           <div className="editorial-container">
             <div className="specialty-anchor-scroll-track" role="tablist">
-              {SPECIALTY_SECTIONS.map((sec) => {
+              {mergedSpecialties.map((sec) => {
                 const isActive = activeTabId === sec.id || activeTabId === sec.anchorId;
                 return (
                   <button
@@ -492,7 +510,7 @@ export const ClinicalAreasPage: React.FC<ClinicalAreasPageProps> = ({ onRequestS
 
       {/* 02. DETAILED SPECIALTY CLINICAL SECTIONS (5 DISCIPLINES) */}
       <div className="specialty-sections-master">
-        {SPECIALTY_SECTIONS.map((spec, sIdx) => {
+        {mergedSpecialties.map((spec, sIdx) => {
           const isFirst = sIdx === 0;
 
           return (
@@ -511,11 +529,13 @@ export const ClinicalAreasPage: React.FC<ClinicalAreasPageProps> = ({ onRequestS
                   </div>
 
                   <h2 className="specialty-chapter-h2">
-                    {spec.id === 'breast' ? 'Situations That Require Specialised Surgical Expertise' : spec.title}
+                    {spec.id === 'breast' && !clinicalAreasPage?.disciplines?.breast?.title
+                      ? 'Situations That Require Specialised Surgical Expertise'
+                      : spec.title}
                   </h2>
 
                   <p className="specialty-chapter-lead">
-                    {spec.id === 'breast'
+                    {spec.id === 'breast' && !clinicalAreasPage?.disciplines?.breast?.description
                       ? 'Most surgical decisions in breast oncology are time-sensitive and irreversible. These are the clinical moments when subspecialty surgical oncology judgement matters most.'
                       : spec.description}
                   </p>

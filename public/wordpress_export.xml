@@ -1,0 +1,744 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- generator="WordPress/6.4" created="2026-11-24 09:30" -->
+<rss version="2.0"
+	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:wp="http://wordpress.org/export/1.2/"
+>
+<channel>
+	<title>Dr. Jem Kalathil - Surgical Oncology</title>
+	<link>https://backend.jemkalathil.com</link>
+	<description>Quaternary Surgical Oncology &amp; Clinical Second Opinion</description>
+	<pubDate>Tue, 24 Nov 2026 09:30:00 +0000</pubDate>
+	<language>en-US</language>
+	<wp:wxr_version>1.2</wp:wxr_version>
+	<wp:base_site_url>https://backend.jemkalathil.com</wp:base_site_url>
+	<wp:base_blog_url>https://backend.jemkalathil.com</wp:base_blog_url>
+
+	<wp:author>
+		<wp:author_id>1</wp:author_id>
+		<wp:author_login><![CDATA[admin]]></wp:author_login>
+		<wp:author_email><![CDATA[surgical.oncology@asterhospital.com]]></wp:author_email>
+		<wp:author_display_name><![CDATA[Dr. Jem Kalathil]]></wp:author_display_name>
+		<wp:author_first_name><![CDATA[Jem]]></wp:author_first_name>
+		<wp:author_last_name><![CDATA[Kalathil]]></wp:author_last_name>
+	</wp:author>
+
+	<wp:category>
+		<wp:term_id>10</wp:term_id>
+		<wp:category_nicename><![CDATA[breast-oncology]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[Breast Oncology]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:term_id>11</wp:term_id>
+		<wp:category_nicename><![CDATA[peritoneal-oncology-hipec]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[Peritoneal Oncology & HIPEC]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:term_id>12</wp:term_id>
+		<wp:category_nicename><![CDATA[robotic-surgical-oncology]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[Robotic Surgical Oncology]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:term_id>13</wp:term_id>
+		<wp:category_nicename><![CDATA[clinical-guidance]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[Clinical Guidance]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:term_id>14</wp:term_id>
+		<wp:category_nicename><![CDATA[gallery]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[Gallery]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:term_id>15</wp:term_id>
+		<wp:category_nicename><![CDATA[clinical-areas]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[Clinical Areas]]></wp:cat_name>
+	</wp:category>
+
+	<item>
+		<title><![CDATA[Oncoplastic Breast Surgery: Preserving Symmetry & Clinical Radicality]]></title>
+		<link>https://backend.jemkalathil.com/oncoplastic-breast-surgery-organ-preservation/</link>
+		<pubDate>Mon, 01 Feb 2026 10:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://backend.jemkalathil.com/?p=101</guid>
+		<description></description>
+		<content:encoded><![CDATA[<p>Modern breast cancer management has evolved fundamentally beyond simple radical resection. Today, the clinical objective is twofold: achieving indisputable clear surgical margins while simultaneously preserving physical symmetry and self-identity.</p>
+<h3>What is Oncoplastic Breast Surgery?</h3>
+<p>Oncoplasty integrates plastic surgery principles directly into oncological tumor resection. Rather than leaving a visible defect, surrounding glandular tissue is mobilized and re-sculpted in the same sitting.</p>
+<h3>The Importance of Sentinel Lymph Node Biopsy</h3>
+<p>By utilizing dual-modality radio-guided localisation and blue dye, the first draining lymph node is identified and analyzed. This spares unnecessary full axillary clearance when the node is clear, dramatically reducing long-term lymphedema risk.</p>
+<h3>Margin Clearance Standards</h3>
+<p>Curative radicality must never be compromised. Standardized ink marking of 6 radial margins and intraoperative microscopic margin assessment guarantee complete malignant clearance before closure.</p>]]></content:encoded>
+		<excerpt:encoded><![CDATA[Understanding how advanced oncoplastic techniques allow radical oncological tumor clearance while preserving the natural contour and aesthetic symmetry of the breast.]]></excerpt:encoded>
+		<wp:post_id>101</wp:post_id>
+		<wp:post_date><![CDATA[2026-02-15 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-02-15 10:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-02-15 10:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-02-15 10:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[oncoplastic-breast-surgery-organ-preservation]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="breast-oncology"><![CDATA[Breast Oncology]]></category>
+	</item>
+
+	<item>
+		<title><![CDATA[Cytoreductive Surgery & HIPEC: A Paradigm Shift for Peritoneal Cancers]]></title>
+		<link>https://backend.jemkalathil.com/hipec-cytoreductive-surgery-peritoneal-cancer/</link>
+		<pubDate>Mon, 01 Feb 2026 10:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://backend.jemkalathil.com/?p=102</guid>
+		<description></description>
+		<content:encoded><![CDATA[<p>Peritoneal carcinomatosis was historically viewed as terminal disease with only palliative options. Over the past two decades, Cytoreductive Surgery (CRS) coupled with Hyperthermic Intraperitoneal Chemotherapy (HIPEC) has established a curative intent pathway for select patients.</p>
+<h3>How HIPEC Works</h3>
+<p>Following surgical removal of all visible peritoneal tumor deposits (cytoreduction), a heated chemotherapy bath (41.5°C–42.5°C) is circulated continuously through the abdominal cavity for 60 to 90 minutes. Heat enhances tissue penetration and directly triggers malignant apoptosis.</p>
+<h3>Candidate Selection is Paramount</h3>
+<p>Not every patient is a candidate for HIPEC. Rigorous Peritoneal Cancer Index (PCI) evaluation, patient performance status, and prior systemic response dictate suitability.</p>
+<h3>The Multidisciplinary Perfusion Suite</h3>
+<p>Safe delivery of HIPEC requires dedicated hyperthermic perfusion consoles, experienced critical care intensivists, and standardized post-operative surgical ICU pathways.</p>]]></content:encoded>
+		<excerpt:encoded><![CDATA[How heated intraperitoneal chemotherapy (HIPEC) combined with meticulous complete cytoreduction offers therapeutic hope for previously inoperable peritoneal surface disease.]]></excerpt:encoded>
+		<wp:post_id>102</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-20 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-20 10:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-01-20 10:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-01-20 10:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[hipec-cytoreductive-surgery-peritoneal-cancer]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="peritoneal-oncology-hipec"><![CDATA[Peritoneal Oncology & HIPEC]]></category>
+	</item>
+
+	<item>
+		<title><![CDATA[The Value of a Calm, Methodical Second Opinion in Oncology]]></title>
+		<link>https://backend.jemkalathil.com/when-to-seek-second-opinion-in-cancer-surgery/</link>
+		<pubDate>Mon, 01 Feb 2026 10:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://backend.jemkalathil.com/?p=103</guid>
+		<description></description>
+		<content:encoded><![CDATA[<p>A cancer diagnosis is naturally distressing, often accompanied by urgency from well-meaning advisors. However, except in acute physiological emergencies, oncological surgery is rarely an immediate emergency requiring an incision the next morning.</p>
+<h3>Why Timing Matters</h3>
+<p>Taking 3 to 7 days to gather original histopathology slides, review high-resolution DICOM imaging, and consult an independent quaternary surgical oncologist does not lead to tumor progression. It frequently prevents irreversible overtreatment or premature declarations of inoperability.</p>
+<h3>What an Objective Review Covers</h3>
+<p>An independent second opinion evaluates: 1) Histological verification of receptor status; 2) Margin safety and organ preservation feasibility; 3) Appropriate sequencing of neoadjuvant systemic therapy; 4) Functional quality-of-life preservation.</p>]]></content:encoded>
+		<excerpt:encoded><![CDATA[A second opinion is not a confrontation with your primary surgeon; it is an objective review of histopathology, imaging, and resectability to give you absolute clarity.]]></excerpt:encoded>
+		<wp:post_id>103</wp:post_id>
+		<wp:post_date><![CDATA[2025-12-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-12-10 10:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-12-10 10:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-10 10:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[when-to-seek-second-opinion-in-cancer-surgery]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="clinical-guidance"><![CDATA[Clinical Guidance]]></category>
+	</item>
+
+	<item>
+		<title><![CDATA[Robotic Surgical Oncology: Sub-Millimeter Dexterity in Deep Pelvic Resections]]></title>
+		<link>https://backend.jemkalathil.com/robotic-surgical-oncology-pelvic-resection/</link>
+		<pubDate>Mon, 01 Feb 2026 10:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://backend.jemkalathil.com/?p=104</guid>
+		<description></description>
+		<content:encoded><![CDATA[<p>Operating within the confined bony confines of the deep pelvis presents significant technical challenges. Robotic surgical oncology transforms visualization and instrument dexterity, enabling radical tumor extirpation while safeguarding autonomic nerve networks governing continence and sexual function.</p>
+<h3>Total Mesorectal Excision (TME)</h3>
+<p>In low rectal cancers, 3D high-definition magnification allows the surgeon to identify the embryonic holy plane of dissection with crystal clarity, maximizing negative circumferential resection margins.</p>
+<h3>Accelerated Recovery</h3>
+<p>Minimal abdominal wall trauma translates into decreased post-operative pain, earlier ambulation, faster resumption of enteral nutrition, and timely initiation of adjuvant therapies.</p>]]></content:encoded>
+		<excerpt:encoded><![CDATA[How the daVinci robotic platform empowers sub-millimeter dissection, autonomic nerve preservation, and enhanced recovery for complex colorectal and gynaecological cancers.]]></excerpt:encoded>
+		<wp:post_id>104</wp:post_id>
+		<wp:post_date><![CDATA[2025-11-28 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-11-28 10:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-11-28 10:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-11-28 10:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[robotic-surgical-oncology-pelvic-resection]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="robotic-surgical-oncology"><![CDATA[Robotic Surgical Oncology]]></category>
+	</item>
+
+	<item>
+		<title><![CDATA[Understanding Cancer Staging: Beyond the Numbers]]></title>
+		<link>https://backend.jemkalathil.com/understanding-cancer-staging-beyond-the-numbers/</link>
+		<pubDate>Mon, 01 Feb 2026 10:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://backend.jemkalathil.com/?p=105</guid>
+		<description></description>
+		<content:encoded><![CDATA[<p>Patients are often paralyzed when they hear a stage number. Yet clinical staging is merely an anatomical starting point, not an absolute prognosis.</p>
+<h3>Clinical vs Pathological Staging</h3>
+<p>Clinical staging (cTNM) is based on physical examination and radiological scans. Pathological staging (pTNM) is determined after microscopic examination of resected tissue by an onco-pathologist, offering the definitive benchmark.</p>
+<h3>Molecular Signatures</h3>
+<p>Tumor biology, hormone receptor expressions (ER/PR/HER2), MSI status, and Ki-67 proliferation indices are frequently more significant than tumor dimensions alone in guiding surgical timing.</p>]]></content:encoded>
+		<excerpt:encoded><![CDATA[Why clinical staging (cTNM) differs from pathological staging (pTNM), and how molecular biology dictates treatment aggressiveness more accurately than Roman numerals alone.]]></excerpt:encoded>
+		<wp:post_id>105</wp:post_id>
+		<wp:post_date><![CDATA[2025-11-15 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-11-15 10:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-11-15 10:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-11-15 10:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[understanding-cancer-staging-beyond-the-numbers]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="clinical-guidance"><![CDATA[Clinical Guidance]]></category>
+	</item>
+
+	<item>
+		<title><![CDATA[Decoding Your Pathology Report: Margins, Grade & Receptors]]></title>
+		<link>https://backend.jemkalathil.com/decoding-your-pathology-report-margins-grade-receptors/</link>
+		<pubDate>Mon, 01 Feb 2026 10:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://backend.jemkalathil.com/?p=106</guid>
+		<description></description>
+		<content:encoded><![CDATA[<p>The histopathology report is the definitive blueprint of cancer surgery. Understanding what each section means provides immense clarity.</p>
+<h3>R0, R1, and R2 Margins</h3>
+<p>An R0 resection indicates complete microscopic clearance with no cancer cells at the inked surgical border. R1 indicates microscopic margin positivity, while R2 indicates gross macroscopic residual disease.</p>
+<h3>Histological Grade</h3>
+<p>Grade 1 (well differentiated) resembles normal tissue and grows slowly; Grade 3 (poorly differentiated) exhibits aggressive architectural disorganization requiring structured multimodal care.</p>]]></content:encoded>
+		<excerpt:encoded><![CDATA[A patient-first guide to understanding histopathology terminology: microscopic inked margins, histological grade, and immunohistochemistry markers.]]></excerpt:encoded>
+		<wp:post_id>106</wp:post_id>
+		<wp:post_date><![CDATA[2025-11-02 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-11-02 10:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-11-02 10:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-11-02 10:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[decoding-your-pathology-report-margins-grade-receptors]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="clinical-guidance"><![CDATA[Clinical Guidance]]></category>
+	</item>
+
+	<item>
+		<title><![CDATA[Laparoscopic vs. Open Surgery in Oncology: How the Decision is Made]]></title>
+		<link>https://backend.jemkalathil.com/laparoscopic-vs-open-surgery-in-oncology/</link>
+		<pubDate>Mon, 01 Feb 2026 10:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://backend.jemkalathil.com/?p=107</guid>
+		<description></description>
+		<content:encoded><![CDATA[<p>The choice between open laparotomy, laparoscopy, and robotic surgery must never be governed by marketing. It is strictly dictated by the biological behavior, location, and vascular adherence of the tumor.</p>
+<h3>The Non-Negotiable Rule of Radicality</h3>
+<p>If a minimally invasive approach risks capsular violation or compromised resection margins, an open procedure remains the safer, more ethical oncological choice.</p>
+<h3>When Minimally Invasive Excels</h3>
+<p>Early-stage colorectal cancers, endometrial neoplasms, and pelvic dissections benefit tremendously from keyhole and robotic approaches without sacrificing oncological clearance.</p>]]></content:encoded>
+		<excerpt:encoded><![CDATA[Minimally invasive approaches offer swift recovery, but oncological radicality must always come first. How surgeons select the ideal operative approach.]]></excerpt:encoded>
+		<wp:post_id>107</wp:post_id>
+		<wp:post_date><![CDATA[2025-10-18 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-10-18 10:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-10-18 10:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-10-18 10:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[laparoscopic-vs-open-surgery-in-oncology]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="robotic-surgical-oncology"><![CDATA[Robotic Surgical Oncology]]></category>
+	</item>
+
+	<item>
+		<title><![CDATA[Cytoreductive Surgery: What Patients Should Know Before Consenting]]></title>
+		<link>https://backend.jemkalathil.com/cytoreductive-surgery-what-patients-should-know/</link>
+		<pubDate>Mon, 01 Feb 2026 10:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://backend.jemkalathil.com/?p=108</guid>
+		<description></description>
+		<content:encoded><![CDATA[<p>Cytoreductive Surgery (CRS) involves the removal of diseased peritoneal linings and affected non-vital organs. Because of its surgical magnitude, informed family understanding is essential.</p>
+<h3>The Completeness of Cytoreduction Score</h3>
+<p>Surgeons aim for CC-0 (no visible residual tumor nodules) or CC-1 (residual nodules under 2.5 mm, which heated chemotherapy can penetrate effectively).</p>
+<h3>Recovery Expectations</h3>
+<p>Patients typically require 2 to 4 days in specialized Surgical ICU for hemodynamic stabilization, followed by step-down rehabilitation supporting bowel motility restoration.</p>]]></content:encoded>
+		<excerpt:encoded><![CDATA[Complete cytoreduction (CC-0) is an extensive operative procedure. Here is what families need to know regarding operative risks, ICU stay, and recovery.]]></excerpt:encoded>
+		<wp:post_id>108</wp:post_id>
+		<wp:post_date><![CDATA[2025-10-05 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-10-05 10:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-10-05 10:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-10-05 10:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[cytoreductive-surgery-what-patients-should-know]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="peritoneal-oncology-hipec"><![CDATA[Peritoneal Oncology & HIPEC]]></category>
+	</item>
+
+	<item>
+		<title><![CDATA[Preparing for Major Oncology Surgery: A Patient & Family Checklist]]></title>
+		<link>https://backend.jemkalathil.com/preparing-for-major-oncology-surgery-patient-checklist/</link>
+		<pubDate>Mon, 01 Feb 2026 10:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://backend.jemkalathil.com/?p=109</guid>
+		<description></description>
+		<content:encoded><![CDATA[<p>Preparing physically and mentally for major surgery dramatically reduces complications and speeds recovery.</p>
+<h3>Nutritional Prehabilitation</h3>
+<p>Ensuring adequate serum albumin and optimizing protein intake during the 2 weeks preceding surgery supports rapid wound healing and immune competence.</p>
+<h3>Incentive Spirometry</h3>
+<p>Daily deep-breathing exercises expand alveolar capacity and prevent post-operative atelectasis and pneumonia.</p>]]></content:encoded>
+		<excerpt:encoded><![CDATA[Nutrition, respiratory prehabilitation, medication reconciliation, and emotional grounding: four pillars that optimize surgical recovery.]]></excerpt:encoded>
+		<wp:post_id>109</wp:post_id>
+		<wp:post_date><![CDATA[2025-09-22 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-09-22 10:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-09-22 10:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-09-22 10:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[preparing-for-major-oncology-surgery-patient-checklist]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="clinical-guidance"><![CDATA[Clinical Guidance]]></category>
+	</item>
+
+	<item>
+		<title><![CDATA[What to Expect in the First 72 Hours After Complex Abdominal Surgery]]></title>
+		<link>https://backend.jemkalathil.com/what-to-expect-in-the-first-72-hours-after-abdominal-surgery/</link>
+		<pubDate>Mon, 01 Feb 2026 10:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://backend.jemkalathil.com/?p=110</guid>
+		<description></description>
+		<content:encoded><![CDATA[<p>The first 72 hours following complex abdominal or oncoplastic surgery are carefully orchestrated by a multidisciplinary team.</p>
+<h3>Enhanced Recovery After Surgery (ERAS)</h3>
+<p>Modern ERAS pathways minimize fasting, optimize multi-modal opioid-sparing pain relief, and encourage sitting up on day 1.</p>
+<h3>Understanding Drains & Tubes</h3>
+<p>Surgical drains monitor internal fluid clearance and are removed systematically as output drops below predetermined safety thresholds.</p>]]></content:encoded>
+		<excerpt:encoded><![CDATA[A compassionate walkthrough of early post-operative recovery: epidural analgesia, early ambulation, surgical drains, and ERAS protocols.]]></excerpt:encoded>
+		<wp:post_id>110</wp:post_id>
+		<wp:post_date><![CDATA[2025-09-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-09-10 10:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-09-10 10:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-09-10 10:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[what-to-expect-in-the-first-72-hours-after-abdominal-surgery]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="clinical-guidance"><![CDATA[Clinical Guidance]]></category>
+	</item>
+
+	<item>
+		<title><![CDATA[Five Critical Questions to Ask Before Consenting to Cancer Surgery]]></title>
+		<link>https://backend.jemkalathil.com/five-questions-to-ask-before-agreeing-to-cancer-surgery/</link>
+		<pubDate>Mon, 01 Feb 2026 10:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://backend.jemkalathil.com/?p=111</guid>
+		<description></description>
+		<content:encoded><![CDATA[<p>Entering the operating room with complete understanding gives patients and families profound confidence and peace of mind.</p>
+<h3>1. What is the precise oncological goal of this operation?</h3>
+<p>Clarify whether the intervention has curative, organ-sparing, cytoreductive, or symptom-control intent.</p>
+<h3>2. Are organ-preserving alternatives medically feasible?</h3>
+<p>Ask whether neoadjuvant chemotherapy or therapeutic oncoplasty could preserve breasts, sphincters, or limbs.</p>
+<h3>3. What are the planned surgical margins?</h3>
+<p>Ensure that frozen-section verification or inked margin analysis will be performed during surgery.</p>
+<h3>4. Has this case been reviewed by a Multidisciplinary Tumor Board?</h3>
+<p>Confirm that medical, radiation, and surgical oncologists have reached consensus on sequencing.</p>
+<h3>5. What is the expected functional recovery timeline?</h3>
+<p>Discuss return to normal activity, rehabilitation needs, and when subsequent treatments should commence.</p>]]></content:encoded>
+		<excerpt:encoded><![CDATA[Empowering patients to have an honest, informed dialogue with their surgical oncologist regarding goals, alternatives, and life after surgery.]]></excerpt:encoded>
+		<wp:post_id>111</wp:post_id>
+		<wp:post_date><![CDATA[2025-08-28 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-08-28 10:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-08-28 10:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-08-28 10:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[five-questions-to-ask-before-agreeing-to-cancer-surgery]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="clinical-guidance"><![CDATA[Clinical Guidance]]></category>
+	</item>
+
+	<item>
+		<title><![CDATA[Compassionate Consultation Suite]]></title>
+		<link>https://backend.jemkalathil.com/gallery-consultation-suite/</link>
+		<pubDate>Mon, 01 Feb 2026 10:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://backend.jemkalathil.com/?p=201</guid>
+		<description></description>
+		<content:encoded><![CDATA[<p>Providing patients and families with unhurried clarity, high-resolution scan reviews, and compassionate clinical guidance when choices seem daunting.</p>]]></content:encoded>
+		<excerpt:encoded><![CDATA[Providing patients and families with unhurried clarity, high-resolution scan reviews, and compassionate clinical guidance.]]></excerpt:encoded>
+		<wp:post_id>201</wp:post_id>
+		<wp:post_date><![CDATA[2026-02-01 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-02-01 10:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-02-01 10:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-02-01 10:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[gallery-consultation-suite]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="gallery"><![CDATA[Gallery]]></category>
+	</item>
+
+	<item>
+		<title><![CDATA[Dr. Jem Kalathil · MS, FRCS (Edin)]]></title>
+		<link>https://backend.jemkalathil.com/gallery-dr-jem-portrait/</link>
+		<pubDate>Mon, 01 Feb 2026 10:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://backend.jemkalathil.com/?p=202</guid>
+		<description></description>
+		<content:encoded><![CDATA[<p>Three decades of dedicated surgical oncology practice, pioneering oncoplastic breast conservation and cytoreductive HIPEC in Kerala and South Asia.</p>]]></content:encoded>
+		<excerpt:encoded><![CDATA[Three decades of dedicated surgical oncology practice, pioneering oncoplastic breast conservation and cytoreductive HIPEC in Kerala.]]></excerpt:encoded>
+		<wp:post_id>202</wp:post_id>
+		<wp:post_date><![CDATA[2026-02-01 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-02-01 10:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-02-01 10:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-02-01 10:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[gallery-dr-jem-portrait]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="gallery"><![CDATA[Gallery]]></category>
+	</item>
+
+	<item>
+		<title><![CDATA[Clinical Campus Environment, Kochi]]></title>
+		<link>https://backend.jemkalathil.com/gallery-campus-environment/</link>
+		<pubDate>Mon, 01 Feb 2026 10:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://backend.jemkalathil.com/?p=203</guid>
+		<description></description>
+		<content:encoded><![CDATA[<p>A quaternary oncology centre on the serene Cheranallur backwaters, Kochi — offering a healing environment for complex surgical care.</p>]]></content:encoded>
+		<excerpt:encoded><![CDATA[A quaternary oncology centre on the serene Cheranallur backwaters, Kochi — offering a healing environment for complex surgical care.]]></excerpt:encoded>
+		<wp:post_id>203</wp:post_id>
+		<wp:post_date><![CDATA[2026-02-01 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-02-01 10:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-02-01 10:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-02-01 10:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[gallery-campus-environment]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="gallery"><![CDATA[Gallery]]></category>
+	</item>
+
+	<item>
+		<title><![CDATA[Multidisciplinary Tumor Board (MDT) Review]]></title>
+		<link>https://backend.jemkalathil.com/gallery-mdt-case-review/</link>
+		<pubDate>Mon, 01 Feb 2026 10:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://backend.jemkalathil.com/?p=204</guid>
+		<description></description>
+		<content:encoded><![CDATA[<p>Cross-verifying histological staging, resection boundaries, and multimodal sequencing among surgical, medical, and radiation oncology specialists.</p>]]></content:encoded>
+		<excerpt:encoded><![CDATA[Cross-verifying histological staging, resection boundaries, and multimodal sequencing among oncology specialists.]]></excerpt:encoded>
+		<wp:post_id>204</wp:post_id>
+		<wp:post_date><![CDATA[2026-02-01 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-02-01 10:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-02-01 10:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-02-01 10:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[gallery-mdt-case-review]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="gallery"><![CDATA[Gallery]]></category>
+	</item>
+
+	<item>
+		<title><![CDATA[Advanced daVinci Robotic Oncology Suite]]></title>
+		<link>https://backend.jemkalathil.com/gallery-robotic-oncology-suite/</link>
+		<pubDate>Mon, 01 Feb 2026 10:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://backend.jemkalathil.com/?p=205</guid>
+		<description></description>
+		<content:encoded><![CDATA[<p>Enabling sub-millimeter precision, 3D magnified visualization, and minimal tissue trauma for pelvic, gastrointestinal, and retroperitoneal cancers.</p>]]></content:encoded>
+		<excerpt:encoded><![CDATA[Enabling sub-millimeter precision, 3D magnified visualization, and minimal tissue trauma for pelvic, gastrointestinal, and retroperitoneal cancers.]]></excerpt:encoded>
+		<wp:post_id>205</wp:post_id>
+		<wp:post_date><![CDATA[2026-02-01 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-02-01 10:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-02-01 10:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-02-01 10:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[gallery-robotic-oncology-suite]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="gallery"><![CDATA[Gallery]]></category>
+	</item>
+
+	<item>
+		<title><![CDATA[Quaternary Cytoreductive Perfusion Theatre]]></title>
+		<link>https://backend.jemkalathil.com/gallery-quaternary-theatre/</link>
+		<pubDate>Mon, 01 Feb 2026 10:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://backend.jemkalathil.com/?p=206</guid>
+		<description></description>
+		<content:encoded><![CDATA[<p>Engineered specifically for extended cytoreductive peritonectomy and continuous 42°C Hyperthermic Intraperitoneal Chemotherapy (HIPEC) perfusions.</p>]]></content:encoded>
+		<excerpt:encoded><![CDATA[Engineered specifically for extended cytoreductive peritonectomy and continuous 42°C Hyperthermic Intraperitoneal Chemotherapy (HIPEC) perfusions.]]></excerpt:encoded>
+		<wp:post_id>206</wp:post_id>
+		<wp:post_date><![CDATA[2026-02-01 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-02-01 10:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-02-01 10:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-02-01 10:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[gallery-quaternary-theatre]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="gallery"><![CDATA[Gallery]]></category>
+	</item>
+
+	<item>
+		<title><![CDATA[Sterile Operating Suite & Intraoperative Pathology]]></title>
+		<link>https://backend.jemkalathil.com/gallery-neutral-surgical-or/</link>
+		<pubDate>Mon, 01 Feb 2026 10:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://backend.jemkalathil.com/?p=207</guid>
+		<description></description>
+		<content:encoded><![CDATA[<p>Real-time intraoperative frozen section analysis enabling immediate confirmation of microscopic margins while surgery is underway.</p>]]></content:encoded>
+		<excerpt:encoded><![CDATA[Real-time intraoperative frozen section analysis enabling immediate confirmation of microscopic margins while surgery is underway.]]></excerpt:encoded>
+		<wp:post_id>207</wp:post_id>
+		<wp:post_date><![CDATA[2026-02-01 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-02-01 10:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-02-01 10:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-02-01 10:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[gallery-neutral-surgical-or]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="gallery"><![CDATA[Gallery]]></category>
+	</item>
+
+	<item>
+		<title><![CDATA[Surgical Oncology Precision Instrumentation]]></title>
+		<link>https://backend.jemkalathil.com/gallery-precision-instruments/</link>
+		<pubDate>Mon, 01 Feb 2026 10:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://backend.jemkalathil.com/?p=208</guid>
+		<description></description>
+		<content:encoded><![CDATA[<p>Microsurgical and laparoscopic instruments engineered for delicate retroperitoneal and pelvic lymphadenectomy.</p>]]></content:encoded>
+		<excerpt:encoded><![CDATA[Microsurgical and laparoscopic instruments engineered for delicate retroperitoneal and pelvic lymphadenectomy.]]></excerpt:encoded>
+		<wp:post_id>208</wp:post_id>
+		<wp:post_date><![CDATA[2026-02-01 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-02-01 10:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-02-01 10:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-02-01 10:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[gallery-precision-instruments]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="gallery"><![CDATA[Gallery]]></category>
+	</item>
+
+	<item>
+		<title><![CDATA[Breast Cancer Surgery & Oncoplasty]]></title>
+		<link>https://backend.jemkalathil.com/breast-cancer-surgery-oncoplasty/</link>
+		<pubDate>Mon, 01 Feb 2026 10:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://backend.jemkalathil.com/?p=301</guid>
+		<description></description>
+		<content:encoded><![CDATA[<p>Advancing breast conservation through oncoplastic techniques that avoid mastectomy where clinically feasible, without compromising radical disease clearance. Integrating radio-guided surgery, sentinel lymph node biopsies, and aesthetic volume displacement.</p>]]></content:encoded>
+		<excerpt:encoded><![CDATA[Advancing breast conservation through oncoplastic techniques that avoid mastectomy where clinically feasible, without compromising radical disease clearance.]]></excerpt:encoded>
+		<wp:post_id>301</wp:post_id>
+		<wp:post_date><![CDATA[2026-02-01 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-02-01 10:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-02-01 10:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-02-01 10:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[breast-cancer-surgery-oncoplasty]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="clinical-areas"><![CDATA[Clinical Areas]]></category>
+	</item>
+
+	<item>
+		<title><![CDATA[Colorectal & Peritoneal Oncology · HIPEC]]></title>
+		<link>https://backend.jemkalathil.com/colorectal-peritoneal-oncology-hipec/</link>
+		<pubDate>Mon, 01 Feb 2026 10:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://backend.jemkalathil.com/?p=302</guid>
+		<description></description>
+		<content:encoded><![CDATA[<p>Pioneering aggressive multi-compartment peritonectomy combined with Hyperthermic Intraperitoneal Chemotherapy (41.5°C–42.5°C) for patients historically deemed inoperable due to peritoneal spread from colorectal, ovarian, or appendiceal origins.</p>]]></content:encoded>
+		<excerpt:encoded><![CDATA[Pioneering aggressive multi-compartment peritonectomy combined with Hyperthermic Intraperitoneal Chemotherapy (41.5°C–42.5°C) for peritoneal malignancies.]]></excerpt:encoded>
+		<wp:post_id>302</wp:post_id>
+		<wp:post_date><![CDATA[2026-02-01 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-02-01 10:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-02-01 10:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-02-01 10:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[colorectal-peritoneal-oncology-hipec]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="clinical-areas"><![CDATA[Clinical Areas]]></category>
+	</item>
+
+	<item>
+		<title><![CDATA[Gynaecological Oncology]]></title>
+		<link>https://backend.jemkalathil.com/gynaecological-oncology/</link>
+		<pubDate>Mon, 01 Feb 2026 10:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://backend.jemkalathil.com/?p=303</guid>
+		<description></description>
+		<content:encoded><![CDATA[<p>Subspecialty surgical oncology for advanced ovarian, uterine, and cervical malignancies. Implementing radical pelvic cytoreduction, retroperitoneal lymphadenectomy, and nerve-sparing radical hysterectomies.</p>]]></content:encoded>
+		<excerpt:encoded><![CDATA[Subspecialty surgical oncology for advanced ovarian, uterine, and cervical malignancies. Implementing radical pelvic cytoreduction and nerve-sparing surgery.]]></excerpt:encoded>
+		<wp:post_id>303</wp:post_id>
+		<wp:post_date><![CDATA[2026-02-01 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-02-01 10:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-02-01 10:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-02-01 10:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[gynaecological-oncology]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="clinical-areas"><![CDATA[Clinical Areas]]></category>
+	</item>
+
+	<item>
+		<title><![CDATA[Robotic Surgical Oncology]]></title>
+		<link>https://backend.jemkalathil.com/robotic-surgical-oncology/</link>
+		<pubDate>Mon, 01 Feb 2026 10:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://backend.jemkalathil.com/?p=304</guid>
+		<description></description>
+		<content:encoded><![CDATA[<p>Deploying advanced daVinci robotic technology and 3D high-definition visualization for complex deep pelvic, retroperitoneal, and gastrointestinal resections—sparing critical nerves and blood vessels with minimal trauma.</p>]]></content:encoded>
+		<excerpt:encoded><![CDATA[Deploying advanced daVinci robotic technology and 3D high-definition visualization for complex deep pelvic, retroperitoneal, and gastrointestinal resections.]]></excerpt:encoded>
+		<wp:post_id>304</wp:post_id>
+		<wp:post_date><![CDATA[2026-02-01 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-02-01 10:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-02-01 10:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-02-01 10:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[robotic-surgical-oncology]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="clinical-areas"><![CDATA[Clinical Areas]]></category>
+	</item>
+
+	<item>
+		<title><![CDATA[General Surgical Oncology]]></title>
+		<link>https://backend.jemkalathil.com/general-surgical-oncology/</link>
+		<pubDate>Mon, 01 Feb 2026 10:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://backend.jemkalathil.com/?p=305</guid>
+		<description></description>
+		<content:encoded><![CDATA[<p>Compartmental resection for complex trunk and extremity soft tissue sarcomas, gastrointestinal malignancies, endocrine tumors, and locally advanced abdominal neoplasms requiring multi-organ resection.</p>]]></content:encoded>
+		<excerpt:encoded><![CDATA[Compartmental resection for complex trunk and extremity soft tissue sarcomas, gastrointestinal malignancies, and locally advanced abdominal neoplasms.]]></excerpt:encoded>
+		<wp:post_id>305</wp:post_id>
+		<wp:post_date><![CDATA[2026-02-01 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-02-01 10:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2026-02-01 10:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2026-02-01 10:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[general-surgical-oncology]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="clinical-areas"><![CDATA[Clinical Areas]]></category>
+	</item>
+</channel>
+</rss>
