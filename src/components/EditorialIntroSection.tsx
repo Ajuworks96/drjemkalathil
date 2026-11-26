@@ -32,11 +32,11 @@ export const EditorialIntroSection: React.FC = () => {
         {/* Heraldic HC Monogram & Gold Label */}
         <div className="editorial-intro-tag-wrap">
           <img
-            src="/images/hc_monogram.png"
-            alt=""
+            src="/images/hc_monogram_dark.png"
+            alt="Hope & Clarity Monogram"
             className="editorial-intro-monogram"
-            width="56"
-            height="36"
+            width="64"
+            height="42"
             aria-hidden="true"
           />
           <span className="editorial-intro-gold-tag">HOPE & CLARITY</span>

@@ -44,11 +44,11 @@ export const FinalManifestoCTA: React.FC<FinalManifestoCTAProps> = ({
           <div className="manifesto-gold-line-top" aria-hidden="true" />
 
           <img
-            src="/images/hc_monogram.png"
-            alt=""
+            src="/images/hc_monogram_dark.png"
+            alt="Hope & Clarity Monogram"
             className="manifesto-monogram"
-            width="58"
-            height="38"
+            width="64"
+            height="42"
             aria-hidden="true"
           />
 

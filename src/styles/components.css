@@ -217,12 +217,12 @@
 }
 
 .brand-logo-img {
-  height: 44px;
+  height: 48px;
   width: auto;
-  max-width: 170px;
+  max-width: 185px;
   object-fit: contain;
   display: block;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6));
   transition: filter var(--transition-fast), transform var(--transition-fast);
 }
 
@@ -1154,14 +1154,14 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 480px;
-  height: 480px;
-  background-image: url('/images/hc_monogram.png');
+  width: 520px;
+  height: 520px;
+  background-image: url('/images/hc_monogram_dark.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  opacity: 0.20;
-  filter: drop-shadow(0 0 50px rgba(200, 169, 106, 0.45));
+  opacity: 0.06;
+  filter: drop-shadow(0 0 35px rgba(200, 169, 106, 0.2));
   pointer-events: none;
   z-index: 0;
 }
@@ -1184,12 +1184,12 @@
 }
 
 .editorial-intro-monogram {
-  height: 38px;
+  height: 48px;
   width: auto;
   display: block;
-  margin: 0 auto 12px auto;
-  opacity: 0.9;
-  filter: drop-shadow(0 2px 8px rgba(200, 169, 106, 0.25));
+  margin: 0 auto 10px auto;
+  opacity: 1;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
   transition: transform var(--transition-fast);
 }
 
@@ -1200,13 +1200,13 @@
 .editorial-intro-gold-tag {
   display: inline-block;
   font-family: var(--font-body);
-  font-size: 0.6875rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.24em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--color-accent);
-  padding: 4px 14px;
-  border-bottom: 1px solid rgba(200, 169, 106, 0.4);
+  color: #121212;
+  padding: 4px 16px;
+  border-bottom: 2px solid var(--color-accent);
 }
 
 .editorial-intro-headline {
@@ -2748,12 +2748,12 @@
 }
 
 .manifesto-monogram {
-  height: 42px;
+  height: 48px;
   width: auto;
   display: block;
   margin: 0 auto clamp(1.2rem, 2.5vw, 1.8rem) auto;
-  opacity: 0.95;
-  filter: drop-shadow(0 2px 8px rgba(200, 169, 106, 0.3));
+  opacity: 1;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
 }
 
 .manifesto-gold-line-bottom {
