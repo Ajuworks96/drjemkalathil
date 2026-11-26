@@ -1242,7 +1242,7 @@
   font-family: var(--font-body);
   font-size: 0.95rem;
   line-height: 1.75;
-  color: #33302c;
+  color: #1a1a1a;
   max-width: 680px;
   margin: 0 auto clamp(1.5rem, 2.8vw, 2.25rem) auto;
   opacity: 0;
@@ -1389,7 +1389,7 @@
   font-family: var(--font-body);
   font-size: clamp(0.9375rem, 1.4vw, 1.0625rem);
   line-height: 1.75;
-  color: var(--color-text-body);
+  color: #1a1a1a;
   margin: 0 0 var(--space-6) 0;
   max-width: 58ch;
 }
@@ -2133,7 +2133,7 @@
   font-family: var(--font-body);
   font-size: 0.9375rem;
   line-height: 1.65;
-  color: var(--color-text-body);
+  color: #1a1a1a;
   margin: 0;
   max-width: 30ch;
 }
@@ -2183,7 +2183,7 @@
   font-family: var(--font-body);
   font-size: 0.9375rem;
   line-height: 1.6;
-  color: var(--color-text-body);
+  color: #1a1a1a;
   margin: 0;
 }
 
@@ -2313,7 +2313,7 @@
   font-family: var(--font-body);
   font-size: clamp(0.9375rem, 1.4vw, 1.05rem);
   line-height: 1.75;
-  color: var(--color-text-body);
+  color: #1a1a1a;
   margin: 0 0 var(--space-6) 0;
 }
 
@@ -2353,7 +2353,7 @@
   font-family: var(--font-body);
   font-size: 0.8125rem;
   line-height: 1.65;
-  color: var(--color-text-body);
+  color: #1a1a1a;
   margin: 0;
 }
 
@@ -2431,7 +2431,7 @@
   font-family: var(--font-body);
   font-size: clamp(1rem, 1.8vw, 1.15rem);
   line-height: 1.7;
-  color: var(--color-text-body);
+  color: #1a1a1a;
   max-width: 680px;
   margin: 0 auto;
 }
@@ -2621,7 +2621,7 @@
   font-family: var(--font-body);
   font-size: 0.9375rem;
   line-height: 1.75;
-  color: var(--color-text-body);
+  color: #1a1a1a;
   margin: 0;
 }
 
@@ -2793,7 +2793,7 @@
   font-family: var(--font-body);
   font-size: clamp(1.05rem, 2vw, 1.25rem);
   line-height: 1.65;
-  color: var(--color-text-body);
+  color: #1a1a1a;
   margin: 0 auto clamp(2.5rem, 4.5vw, 3.5rem) auto;
   max-width: 620px;
 }
@@ -9944,8 +9944,10 @@ body, h1, h2, h3, h4, h5, h6, p, span, button, a, input, select, textarea {
    GLOBAL HIGH-CONTRAST MASTER SAFEGUARDS (NO FAINT GREY TEXT ON DARK)
    ========================================================================== */
 
-/* Universal paragraph & prose readability enforcement */
-.site-wrapper p,
+/* Universal paragraph & prose readability enforcement
+   NOTE: .site-wrapper p is intentionally excluded — it wraps the ENTIRE app
+   including light ivory sections (#faf7f2) where off-white text becomes invisible.
+   Only dark subpage wrappers get this rule. Light sections have their own rules below. */
 .subpage-wrapper p,
 .clinical-page-wrapper p,
 .articles-page-wrapper p,
@@ -9954,6 +9956,94 @@ body, h1, h2, h3, h4, h5, h6, p, span, button, a, input, select, textarea {
 .how-it-works-wrapper p,
 .gallery-page-wrapper p {
   color: #f0ede6 !important;
+  opacity: 1 !important;
+}
+
+/* ==========================================================================
+   HIGH-CONTRAST DARK TEXT — ALL LIGHT IVORY (#faf7f2) CANVAS SECTIONS
+   These sections sit on light backgrounds. Text MUST be dark for readability.
+   ========================================================================== */
+
+/* Section 2 — Editorial Intro: "When the Diagnosis Is Complex, Clarity Matters" */
+.editorial-intro-paragraph,
+.editorial-intro-chapter p {
+  color: #222222 !important;
+  opacity: 1 !important;
+}
+
+.editorial-intro-quote {
+  color: #111111 !important;
+  opacity: 1 !important;
+}
+
+/* Section 3 — Clinical Chapters (Chapter 1 & 2 on ivory background) */
+.clinical-chapters-master .chapter-narrative,
+.clinical-chapters-master p {
+  color: #222222 !important;
+  opacity: 1 !important;
+}
+
+/* Section 4 — Breathing Transition (ivory background) */
+.breathing-transition-section p {
+  color: #1a1a1a !important;
+  opacity: 1 !important;
+}
+
+/* Section 5 — Patient Pathway / How It Works (ivory background) */
+.patient-pathway-journey .station-detail,
+.patient-pathway-journey p {
+  color: #222222 !important;
+  opacity: 1 !important;
+}
+
+/* Section 6 — Document Teaser Strip (light cream background) */
+.document-teaser-strip .teaser-body,
+.document-teaser-strip p {
+  color: #222222 !important;
+  opacity: 1 !important;
+}
+
+/* Section 7 — Surgeon Editorial Profile (ivory background) */
+.surgeon-editorial-section .surgeon-lead-prose,
+.surgeon-editorial-section .fellowship-note,
+.surgeon-editorial-section p {
+  color: #222222 !important;
+  opacity: 1 !important;
+}
+
+/* Section 7 — surgeon-hospital muted text stays slightly muted but readable */
+.surgeon-hospital {
+  color: #5a5048 !important;
+}
+
+/* Section 8 — Gulf Route (ivory background) */
+.gulf-route-minimal-section .gulf-route-supporting,
+.gulf-route-minimal-section p {
+  color: #222222 !important;
+  opacity: 1 !important;
+}
+
+/* Section 9 — Clinical Clarifications Accordion (ivory background) */
+.clinical-faq-editorial-section .faq-row-answer,
+.clinical-faq-editorial-section p {
+  color: #222222 !important;
+  opacity: 1 !important;
+}
+
+/* Section 11 — Final Manifesto CTA (ivory background) */
+.final-manifesto-section .manifesto-minimal-text,
+.final-manifesto-section p {
+  color: #222222 !important;
+  opacity: 1 !important;
+}
+
+/* Modal light areas — form text on ivory */
+.modal-dialog .modal-header-sub,
+.modal-dialog .form-step-sub,
+.modal-dialog .promise-desc,
+.modal-dialog .privacy-lead,
+.modal-dialog .privacy-links {
+  color: #1a1a1a !important;
   opacity: 1 !important;
 }
 
