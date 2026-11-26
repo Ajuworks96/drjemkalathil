@@ -1245,24 +1245,12 @@
   color: #1a1a1a;
   max-width: 680px;
   margin: 0 auto clamp(1.5rem, 2.8vw, 2.25rem) auto;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.45s, transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.45s;
-}
-
-.editorial-intro-chapter.is-revealed .editorial-intro-paragraph {
   opacity: 1;
   transform: translateY(0);
 }
 
 .editorial-intro-quote-wrap {
   margin: 0 auto clamp(1.8rem, 3.2vw, 2.6rem) auto;
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.6s, transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.6s;
-}
-
-.editorial-intro-chapter.is-revealed .editorial-intro-quote-wrap {
   opacity: 1;
   transform: translateY(0);
 }
@@ -9962,13 +9950,16 @@ body, h1, h2, h3, h4, h5, h6, p, span, button, a, input, select, textarea {
 /* ==========================================================================
    HIGH-CONTRAST DARK TEXT — ALL LIGHT IVORY (#faf7f2) CANVAS SECTIONS
    These sections sit on light backgrounds. Text MUST be dark for readability.
+   IMPORTANT: opacity: 1 !important must target WRAPPERS too — a parent with
+   opacity:0 makes all children invisible regardless of child opacity rules.
    ========================================================================== */
 
-/* Section 2 — Editorial Intro: "When the Diagnosis Is Complex, Clarity Matters" */
+/* Section 2 — Editorial Intro quote wrapper + paragraph */
+.editorial-intro-quote-wrap,
 .editorial-intro-paragraph,
 .editorial-intro-chapter p {
-  color: #222222 !important;
   opacity: 1 !important;
+  color: #222222 !important;
 }
 
 .editorial-intro-quote {
@@ -9976,14 +9967,17 @@ body, h1, h2, h3, h4, h5, h6, p, span, button, a, input, select, textarea {
   opacity: 1 !important;
 }
 
-/* Section 3 — Clinical Chapters (Chapter 1 & 2 on ivory background) */
+/* Section 3 — Clinical Chapters (Chapter 1 & 2 on ivory background)
+   .ch-line, .chapter-num, .ch2-image-stage all use opacity:0 as initial state */
 .clinical-chapters-master .chapter-narrative,
 .clinical-chapters-master p {
   color: #222222 !important;
   opacity: 1 !important;
 }
 
-/* Section 4 — Breathing Transition (ivory background) */
+/* Section 4 — Breathing Transition: .breathing-statement + .statement-line start at opacity:0 */
+.breathing-transition-section .breathing-statement,
+.breathing-transition-section .statement-line,
 .breathing-transition-section p {
   color: #1a1a1a !important;
   opacity: 1 !important;
@@ -10030,7 +10024,8 @@ body, h1, h2, h3, h4, h5, h6, p, span, button, a, input, select, textarea {
   opacity: 1 !important;
 }
 
-/* Section 11 — Final Manifesto CTA (ivory background) */
+/* Section 11 — Final Manifesto CTA (ivory background)
+   .manifesto-line wrappers start at opacity:0 too */
 .final-manifesto-section .manifesto-minimal-text,
 .final-manifesto-section p {
   color: #222222 !important;
