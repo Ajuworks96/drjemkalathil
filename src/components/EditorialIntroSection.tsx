@@ -11,7 +11,7 @@ export const EditorialIntroSection: React.FC = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.25 }
+      { threshold: 0.05 }
     );
 
     if (sectionRef.current) {

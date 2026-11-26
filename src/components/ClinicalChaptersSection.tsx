@@ -21,19 +21,19 @@ export const ClinicalChaptersSection: React.FC<ClinicalChaptersSectionProps> = (
       ([entry]) => {
         if (entry.isIntersecting) setCh1Visible(true);
       },
-      { threshold: 0.2 }
+      { threshold: 0.05 }
     );
     const observer2 = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) setCh2Visible(true);
       },
-      { threshold: 0.2 }
+      { threshold: 0.05 }
     );
     const observer3 = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) setCh3Visible(true);
       },
-      { threshold: 0.15 }
+      { threshold: 0.05 }
     );
 
     if (ch1Ref.current) observer1.observe(ch1Ref.current);

@@ -18,11 +18,11 @@
   --color-bg-dark-card: #141414;
   --color-bg-dark-elevated: #1c1c1c;
 
-  --color-text-headline: #ffffff;
-  --color-text-body: #f0ede6;
-  --color-text-muted: #e8e4dc;
-  --color-text-inverted: #0a0a0a;
-  --color-text-accent: #c8a96a;
+  --color-text-headline: #0a0a0a;
+  --color-text-body: #22201e;
+  --color-text-muted: #5a544c;
+  --color-text-inverted: #faf7f2;
+  --color-text-accent: #825e1b;
 
   /* Borders & Dividers */
   --border-hairline: 1px solid rgba(10, 10, 10, 0.1);
@@ -102,8 +102,12 @@ p {
   line-height: 1.68;
 }
 
-/* Master High-Contrast Safeguards for Dark Luxury Interface */
-.site-wrapper,
+/* Base canvas defaults for light sections and modals */
+.site-wrapper {
+  color: #22201e;
+}
+
+/* Master High-Contrast Safeguards ONLY for Dark Luxury Subpages */
 .subpage-wrapper,
 .clinical-page-wrapper,
 .articles-page-wrapper,
@@ -112,6 +116,21 @@ p {
 .how-it-works-wrapper,
 .gallery-page-wrapper {
   color: #f0ede6;
+}
+
+.subpage-wrapper h1,
+.subpage-wrapper h2,
+.subpage-wrapper h3,
+.subpage-wrapper h4,
+.subpage-wrapper h5,
+.subpage-wrapper h6,
+.clinical-page-wrapper h1,
+.clinical-page-wrapper h2,
+.clinical-page-wrapper h3,
+.clinical-page-wrapper h4,
+.clinical-page-wrapper h5,
+.clinical-page-wrapper h6 {
+  color: #ffffff;
 }
 
 .subpage-wrapper p,

@@ -18,7 +18,7 @@ export const FinalManifestoCTA: React.FC<FinalManifestoCTAProps> = ({
           setInView(true);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.05 }
     );
 
     if (sectionRef.current) {

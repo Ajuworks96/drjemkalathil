@@ -21,7 +21,7 @@ export const SurgeonEditorialProfile: React.FC<SurgeonEditorialProfileProps> = (
           setInView(true);
         }
       },
-      { threshold: 0.25 }
+      { threshold: 0.05 }
     );
 
     if (sectionRef.current) {
@@ -77,7 +77,7 @@ export const SurgeonEditorialProfile: React.FC<SurgeonEditorialProfileProps> = (
               <h3 className="surgeon-full-name">{siteSettings.doctorName} · {siteSettings.doctorCredentials}</h3>
               <p className="surgeon-clinical-role">
                 Surgical Oncologist<br />
-                <span className="surgeon-inst-sub" style={{ fontSize: '0.9rem', color: 'rgba(250, 247, 242, 0.7)' }}>Aster Medcity, Kochi</span>
+                <span className="surgeon-inst-sub">Aster Medcity, Kochi</span>
               </p>
             </div>
 

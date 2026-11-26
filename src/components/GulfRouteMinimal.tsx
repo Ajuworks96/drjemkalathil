@@ -18,7 +18,7 @@ export const GulfRouteMinimal: React.FC<GulfRouteMinimalProps> = ({
           setInView(true);
         }
       },
-      { threshold: 0.25 }
+      { threshold: 0.05 }
     );
 
     if (sectionRef.current) {

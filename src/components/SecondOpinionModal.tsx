@@ -624,9 +624,9 @@ export const SecondOpinionModal: React.FC<SecondOpinionModalProps> = ({
                         marginBottom: '16px',
                         padding: '12px 16px',
                         borderRadius: '10px',
-                        background: 'rgba(220, 38, 38, 0.14)',
-                        border: '1px solid rgba(248, 113, 113, 0.45)',
-                        color: '#fecaca',
+                        background: 'rgba(220, 38, 38, 0.1)',
+                        border: '1px solid rgba(185, 28, 28, 0.45)',
+                        color: '#991b1b',
                         fontSize: '0.85rem',
                         lineHeight: 1.5,
                       }}
